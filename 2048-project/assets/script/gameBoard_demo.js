@@ -7,7 +7,6 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
-
 cc.Class({
     extends: cc.Component,
 
@@ -17,33 +16,71 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    _tilesInit: function() {
-        let tiles = cc.instantiate(this.tilesPrefab);
-        tiles.color = Math.random() > 0.9 ? cc.Color.RED : cc.Color.WHITE;
-        this.node.addChild(tiles);
-    },
 
-    _onKeyDown: function(event) {
-        switch(event.keyCode) {
+    _onKeyDown: function (event) {
+        switch (event.keyCode) {
             case cc.macro.KEY.down:
-                console.log('Press down key');
+                cc.log('down');
                 this._moveDown();
+                break;
+            case cc.macro.KEY.up:
+                cc.log('up');
+                this._moveUp();
+                break;
+            case cc.macro.KEY.right:
+                cc.log('right');
+                this._moveRight();
+                break;
+            case cc.macro.KEY.left:
+                cc.log('left')
+                this._moveLeft();
                 break;
         }
     },
 
-    _moveDown: function() {
-        this.node.children.forEach(function(element) {
+    _moveDown: function () {
+        this.node.children.forEach(function (element) {
+            element.y -= element.width;
         });
-    },
-
-    onLoad () {
-        for (let i = 0; i < 16; i++) this._tilesInit();
         cc.log(this.node.children);
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
+    },
+    _moveUp: function () {
+        this.node.children.forEach(function (element) {
+            element.y += element.width;
+        });
+        cc.log(this.node.children);
+    },
+    _moveLeft: function () {
+        this.node.children.forEach(function (element) {
+            element.x -= element.width;
+        });
+        cc.log(this.node.children);
+    },
+    _moveRight: function () {
+        this.node.children.forEach(function (element) {
+            element.x += element.width;
+        });
+        cc.log(this.node.children);
+    },
+    _tilesInit: function () {
+        let tiles = cc.instantiate(this.tilesPrefab);
+        tiles.color = Math.random() > 0.9 ? cc.Color.RED : cc.Color.WHITE;
+        tiles.x -= 81.25 / 2;
+        tiles.y -= 81.25 / 2;
+        tiles
+        this.node.addChild(tiles);
     },
 
-    start () {
+    onLoad() {
+        for (let i = 0; i < 2; i++) this._tilesInit();
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
+        cc.log(cc.Color.RED === cc.Color.RED);
+        cc.log(cc.Color.RED);
+        // var tilesScript = this.getComponent('tilesScript');
+        // cc.log(tilesScript);
+    },
+
+    start() {
 
     },
 
