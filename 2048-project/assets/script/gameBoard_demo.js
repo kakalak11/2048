@@ -7,6 +7,9 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
+
+var utilities = require('utils');
+
 cc.Class({
     extends: cc.Component,
 
@@ -40,25 +43,25 @@ cc.Class({
 
     _moveDown: function () {
         this.node.children.forEach(function (element) {
-            element.y -= element.width;
+            element.y -= element.width + 5;
         });
         cc.log(this.node.children);
     },
     _moveUp: function () {
         this.node.children.forEach(function (element) {
-            element.y += element.width;
+            element.y += element.width + 5;
         });
         cc.log(this.node.children);
     },
     _moveLeft: function () {
         this.node.children.forEach(function (element) {
-            element.x -= element.width;
+            element.x -= element.width + 5;
         });
         cc.log(this.node.children);
     },
     _moveRight: function () {
         this.node.children.forEach(function (element) {
-            element.x += element.width;
+            element.x += element.width + 5;
         });
         cc.log(this.node.children);
     },
@@ -74,10 +77,7 @@ cc.Class({
     onLoad() {
         for (let i = 0; i < 2; i++) this._tilesInit();
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
-        cc.log(cc.Color.RED === cc.Color.RED);
-        cc.log(cc.Color.RED);
-        // var tilesScript = this.getComponent('tilesScript');
-        // cc.log(tilesScript);
+
     },
 
     start() {
