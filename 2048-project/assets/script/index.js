@@ -36,8 +36,6 @@ function gameplay(array, reverse) {
 
 let array = [2, 2, 0, 0];
 
-// gameplay([2, 2, 2, 2]);
-// gameplay(gameplay([2, 2, 2, 2]));
 
-// gameplay([0, 0, 2, 2], true);
-console.log(gameplay([0, 0, 2, 2], true));
+
+// console.log(gameplay([0, 0, 2, 2]));

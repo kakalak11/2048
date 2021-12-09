@@ -17,11 +17,25 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
-        cc.log(this);
+    _onKeyDown: function (event) {
+        switch (event.keyCode) {
+            case cc.macro.KEY.space:
+                this._moveDown();
+                break;
+        }
     },
 
-    start () {
+    _moveDown() {
+        cc.log(this.node.children);
+    },
+
+    onLoad() {
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
+        cc.log(this.node.children[0].getPosition());
+        cc.log(this.node.children[12].getPosition());
+    },
+
+    start() {
 
     },
 

@@ -22,21 +22,8 @@ cc.Class({
 
     _onKeyDown: function (event) {
         switch (event.keyCode) {
-            case cc.macro.KEY.down:
-                cc.log('down');
+            case macro.KEY.space:
                 this._moveDown();
-                break;
-            case cc.macro.KEY.up:
-                cc.log('up');
-                this._moveUp();
-                break;
-            case cc.macro.KEY.right:
-                cc.log('right');
-                this._moveRight();
-                break;
-            case cc.macro.KEY.left:
-                cc.log('left')
-                this._moveLeft();
                 break;
         }
     },
@@ -47,24 +34,7 @@ cc.Class({
         });
         cc.log(this.node.children);
     },
-    _moveUp: function () {
-        this.node.children.forEach(function (element) {
-            element.y += element.width + 5;
-        });
-        cc.log(this.node.children);
-    },
-    _moveLeft: function () {
-        this.node.children.forEach(function (element) {
-            element.x -= element.width + 5;
-        });
-        cc.log(this.node.children);
-    },
-    _moveRight: function () {
-        this.node.children.forEach(function (element) {
-            element.x += element.width + 5;
-        });
-        cc.log(this.node.children);
-    },
+
     _tilesInit: function () {
         let tiles = cc.instantiate(this.tilesPrefab);
         tiles.color = Math.random() > 0.9 ? cc.Color.RED : cc.Color.WHITE;
@@ -75,7 +45,6 @@ cc.Class({
     },
 
     onLoad() {
-        for (let i = 0; i < 2; i++) this._tilesInit();
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
 
     },
