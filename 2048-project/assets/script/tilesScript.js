@@ -15,10 +15,14 @@ cc.Class({
 
     },
 
+    string() {
+        return ;
+    },
+
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
-        // cc.log(this.node);
+        this.node.on('right', function() {cc.log(this.node)}, this);
     },
 
     start() {
