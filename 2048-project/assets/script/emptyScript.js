@@ -8,23 +8,37 @@
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
+const Emitter = require('event');
+
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        number: {
-            default: 0,
-        }
-    },
-
-    string() {
-        return;
+        // foo: {
+        //     // ATTRIBUTES:
+        //     default: null,        // The default value will be used only when the component attaching
+        //                           // to a node for the first time
+        //     type: cc.SpriteFrame, // optional, default is typeof default
+        //     serializable: true,   // optional, default is true
+        // },
+        // bar: {
+        //     get () {
+        //         return this._bar;
+        //     },
+        //     set (value) {
+        //         this._bar = value;
+        //     }
+        // },
     },
 
     // LIFE-CYCLE CALLBACKS:
 
+    onHello() {
+        Emitter.instance.emit('HELLO', 'haha kakalak')
+    },
+
     onLoad() {
-        cc.log(this.number);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onHello, this);
     },
 
     start() {
