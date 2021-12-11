@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "backgroundGameBoard",
+    "texture": "7a7fa699-f76a-4063-8457-b196ae7476a3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      636,
+      638
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      636,
+      638
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

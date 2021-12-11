@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "2048gameplayDemo",
+    "texture": "923a6fdc-c561-41ae-8837-a932dc5902b3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      349,
+      620
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      349,
+      620
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
