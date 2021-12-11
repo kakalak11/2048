@@ -12,24 +12,32 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        number: {
-            default: 0,
-        }
-    },
-
-    string() {
-        return;
+        number: 0,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
+    setNumber: function(value) {
+        this.number = value;
+        this.node.getComponentInChildren(cc.Label).string = this.number;
+    },
+
     onLoad() {
-        cc.log(this.number);
+        cc.log('tile prefab instantiated !');
+        this.node.on('mousedown', () => {
+            this.node.runAction(cc.moveTo(1,0,0));
+        }, this);
     },
 
     start() {
-
+        if (this.number) {
+            this.node.active = true;
+            return;
+        };
+        this.node.active = false;
+        return;
     },
 
-    // update (dt) {},
+    update (dt) {
+    },
 });

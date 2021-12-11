@@ -20,8 +20,8 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        tilesPrefab: cc.Prefab,
-        tilesRow: [cc.Node]
+        tilePrefab: cc.Prefab,
+        tilesRows: [cc.Node]
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -35,13 +35,31 @@ cc.Class({
     },
 
     _moveRight: function _moveRight() {
-        cc.log(this.tilesRow[0].number);
+        this._generateRandomValue();
     },
 
+    _setupGrid: function _setupGrid() {
+        var _this = this;
+
+        this.node.children.forEach(function (element) {
+            for (var i = 0; i < 4; i++) {
+                var tile = cc.instantiate(_this.tilePrefab);
+                tile.setPosition(cc.v2(-415 / 2 + 50 + 105 * i, 0));
+                tile.getComponent('tilesScript').setNumber(2);
+                element.addChild(tile);
+            }
+        });
+    },
+    _generateRandomValue: function _generateRandomValue() {
+        var tileValue = this.node.children[0].children[0].getComponent('tilesScript').number;
+        cc.log(tileValue);
+    },
     onLoad: function onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
     },
-    start: function start() {}
+    start: function start() {
+        this._setupGrid();
+    }
 }
 
 // update (dt) {},

@@ -2,7 +2,7 @@
 cc._RF.push(module, 'd5151/jsIBEQas95Jda5jHI', 'tilesScript');
 // script/tilesScript.js
 
-"use strict";
+'use strict';
 
 // Learn cc.Class:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/class.html
@@ -18,25 +18,33 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        number: {
-            default: 0
-        }
+        number: 0
     },
-
-    string: function string() {
-        return;
-    },
-
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad: function onLoad() {
-        cc.log(this.number);
+    setNumber: function setNumber(value) {
+        this.number = value;
+        this.node.getComponentInChildren(cc.Label).string = this.number;
     },
-    start: function start() {}
-}
 
-// update (dt) {},
-);
+    onLoad: function onLoad() {
+        var _this = this;
+
+        cc.log('tile prefab instantiated !');
+        this.node.on('mousedown', function () {
+            _this.node.runAction(cc.moveTo(1, 0, 0));
+        }, this);
+    },
+    start: function start() {
+        if (this.number) {
+            this.node.active = true;
+            return;
+        };
+        this.node.active = false;
+        return;
+    },
+    update: function update(dt) {}
+});
 
 cc._RF.pop();

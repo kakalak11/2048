@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "tilesPrefab",
+    "_name": "tilePrefab",
     "_objFlags": 0,
     "_native": "",
     "data": {
