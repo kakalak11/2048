@@ -440,7 +440,7 @@
     "relativePath": "images\\2048demo.jpg"
   },
   "d6a6d43c-5c85-4edb-8438-bf14882a9b82": {
-    "asset": 1639059304778,
+    "asset": 1639218424963,
     "meta": 1638888066425,
     "relativePath": "prefab"
   },
@@ -450,8 +450,8 @@
     "relativePath": "scenes"
   },
   "c7fa7f5d-0ca2-4279-9516-8297944cb42a": {
-    "asset": 1639222052699,
-    "meta": 1639222052712,
+    "asset": 1639235291480,
+    "meta": 1639235291497,
     "relativePath": "scenes\\gameplay_demo.fire"
   },
   "673ee0b0-8281-47d9-adce-5e4694641096": {
@@ -519,14 +519,14 @@
     "meta": 1639215821809,
     "relativePath": "script\\utils.js"
   },
-  "c988084d-ee6b-4a24-8908-6dc9839dc065": {
-    "asset": 1639221813160,
-    "meta": 1639222048476,
-    "relativePath": "script\\gameBoard.js"
-  },
   "d5151fe3-b080-4441-ab3d-e4975ae631c8": {
-    "asset": 1639222007384,
-    "meta": 1639222048476,
+    "asset": 1639232583457,
+    "meta": 1639234635119,
     "relativePath": "script\\tilesScript.js"
+  },
+  "c988084d-ee6b-4a24-8908-6dc9839dc065": {
+    "asset": 1639235280837,
+    "meta": 1639235289675,
+    "relativePath": "script\\gameBoard.js"
   }
 }

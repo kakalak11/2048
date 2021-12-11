@@ -24,9 +24,6 @@ cc.Class({
 
     onLoad() {
         cc.log('tile prefab instantiated !');
-        this.node.on('mousedown', () => {
-            this.node.runAction(cc.moveTo(1,0,0));
-        }, this);
     },
 
     start() {

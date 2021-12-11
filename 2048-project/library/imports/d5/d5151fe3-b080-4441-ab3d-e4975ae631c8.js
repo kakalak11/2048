@@ -29,12 +29,7 @@ cc.Class({
     },
 
     onLoad: function onLoad() {
-        var _this = this;
-
         cc.log('tile prefab instantiated !');
-        this.node.on('mousedown', function () {
-            _this.node.runAction(cc.moveTo(1, 0, 0));
-        }, this);
     },
     start: function start() {
         if (this.number) {
