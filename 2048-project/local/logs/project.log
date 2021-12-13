@@ -1,68 +1,146 @@
-2021-12-12T05:53:38.953Z - normal: Load ~/.CocosCreator/settings.json
-2021-12-12T05:53:40.170Z - normal: Initializing Asset Database
-2021-12-12T05:53:40.208Z - normal: checking language setting...
-2021-12-12T05:53:40.208Z - normal: Language: en
-2021-12-12T05:53:42.732Z - success: preview server running at http://localhost:7456
-2021-12-12T05:53:42.735Z - success: protocol editor-framework registered
-2021-12-12T05:53:42.735Z - success: protocol app registered
-2021-12-12T05:53:42.735Z - success: protocol theme registered
-2021-12-12T05:53:42.735Z - success: protocol packages registered
-2021-12-12T05:53:42.735Z - success: protocol uuid registerred
-2021-12-12T05:53:42.735Z - success: protocol db registerred
-2021-12-12T05:53:42.735Z - success: protocol thumbnail registerred
-2021-12-12T05:53:42.735Z - success: protocol unpack registerred
-2021-12-12T05:53:42.736Z - success: protocol disable-commonjs registerred
-2021-12-12T05:53:43.231Z - normal: connected!
-2021-12-12T05:53:43.232Z - normal: Check project G:\Cocos\2048\2048-project
-2021-12-12T05:53:43.234Z - normal: Initializing project G:\Cocos\2048\2048-project
-2021-12-12T05:53:43.990Z - normal: Initializing Cocos2d
-2021-12-12T05:53:46.992Z - normal: Initializing engine extends
-2021-12-12T05:53:47.854Z - success: alipay-adapter loaded
-2021-12-12T05:53:47.871Z - success: asset-db-debugger loaded
-2021-12-12T05:53:47.879Z - success: baidu-adapter loaded
-2021-12-12T05:53:47.885Z - success: color-picker loaded
-2021-12-12T05:53:48.234Z - success: fb-audience-network loaded
-2021-12-12T05:53:48.328Z - success: fb-live-stream loaded
-2021-12-12T05:53:48.344Z - success: google-play-instant loaded
-2021-12-12T05:53:48.420Z - success: huawei-runtime loaded
-2021-12-12T05:53:49.695Z - success: cpk-publish loaded
-2021-12-12T05:53:49.699Z - success: jsb-adapter loaded
-2021-12-12T05:53:49.772Z - success: oppo-runtime loaded
-2021-12-12T05:53:49.789Z - success: package-manager loaded
-2021-12-12T05:53:50.321Z - success: qqplay-adapter loaded
-2021-12-12T05:53:50.348Z - success: runtime-dev-tools loaded
-2021-12-12T05:53:50.382Z - success: sdkbox loaded
-2021-12-12T05:53:50.402Z - success: tester loaded
-2021-12-12T05:53:50.415Z - success: ui-kit-preview-extra loaded
-2021-12-12T05:53:50.448Z - success: ui-kit-preview loaded
-2021-12-12T05:53:50.460Z - success: ui-kit loaded
-2021-12-12T05:53:50.565Z - success: vivo-runtime loaded
-2021-12-12T05:53:50.570Z - success: weapp-adapter loaded
-2021-12-12T05:53:50.574Z - success: xiaomi-adapter loaded
-2021-12-12T05:53:50.621Z - success: alipay-minigame loaded
-2021-12-12T05:53:50.770Z - success: assets loaded
-2021-12-12T05:53:50.789Z - success: builder loaded
-2021-12-12T05:53:51.355Z - success: cocos-services loaded
-2021-12-12T05:53:51.360Z - success: console loaded
-2021-12-12T05:53:51.407Z - success: fb-instant-games loaded
-2021-12-12T05:53:51.409Z - success: game-window loaded
-2021-12-12T05:53:51.411Z - success: google-instant-games loaded
-2021-12-12T05:53:51.415Z - success: hierarchy loaded
-2021-12-12T05:53:51.418Z - success: inspector loaded
-2021-12-12T05:53:51.419Z - success: keystore loaded
-2021-12-12T05:53:51.423Z - success: node-library loaded
-2021-12-12T05:53:51.425Z - success: package-asset loaded
-2021-12-12T05:53:51.427Z - success: preferences loaded
-2021-12-12T05:53:51.429Z - success: project-exporter loaded
-2021-12-12T05:53:51.431Z - success: project-importer loaded
-2021-12-12T05:53:51.434Z - success: project-settings loaded
-2021-12-12T05:53:51.438Z - success: scene loaded
-2021-12-12T05:53:51.439Z - success: simulator-debugger loaded
-2021-12-12T05:53:51.440Z - success: sprite-editor loaded
-2021-12-12T05:53:51.444Z - success: store loaded
-2021-12-12T05:53:51.449Z - success: timeline loaded
-2021-12-12T05:53:51.456Z - success: xiaomi-runtime loaded
-2021-12-12T05:53:54.233Z - normal: Loading packages
-2021-12-12T05:53:54.238Z - normal: Watching packages
-2021-12-12T05:53:54.914Z - normal: Run Application
-2021-12-12T05:53:55.728Z - info: Cocos Services load base data!
+2021-12-13T03:08:48.902Z - normal: Load ~/.CocosCreator/settings.json
+2021-12-13T03:08:48.942Z - normal: Initializing Asset Database
+2021-12-13T03:08:48.944Z - normal: checking language setting...
+2021-12-13T03:08:48.944Z - normal: Language: en
+2021-12-13T03:08:49.398Z - success: preview server running at http://localhost:7456
+2021-12-13T03:08:49.411Z - success: protocol editor-framework registered
+2021-12-13T03:08:49.411Z - success: protocol app registered
+2021-12-13T03:08:49.411Z - success: protocol theme registered
+2021-12-13T03:08:49.411Z - success: protocol packages registered
+2021-12-13T03:08:49.412Z - success: protocol uuid registerred
+2021-12-13T03:08:49.412Z - success: protocol db registerred
+2021-12-13T03:08:49.412Z - success: protocol thumbnail registerred
+2021-12-13T03:08:49.412Z - success: protocol unpack registerred
+2021-12-13T03:08:49.412Z - success: protocol disable-commonjs registerred
+2021-12-13T03:08:49.847Z - normal: connected!
+2021-12-13T03:08:49.848Z - normal: Check project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
+2021-12-13T03:08:49.855Z - normal: Initializing project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
+2021-12-13T03:08:50.104Z - normal: Initializing Cocos2d
+2021-12-13T03:08:50.576Z - normal: Initializing engine extends
+2021-12-13T03:08:50.607Z - success: alipay-adapter loaded
+2021-12-13T03:08:50.618Z - success: asset-db-debugger loaded
+2021-12-13T03:08:50.622Z - success: baidu-adapter loaded
+2021-12-13T03:08:50.627Z - success: color-picker loaded
+2021-12-13T03:08:50.721Z - success: fb-audience-network loaded
+2021-12-13T03:08:50.753Z - success: fb-live-stream loaded
+2021-12-13T03:08:50.755Z - success: google-play-instant loaded
+2021-12-13T03:08:50.758Z - success: huawei-runtime loaded
+2021-12-13T03:08:50.898Z - success: cpk-publish loaded
+2021-12-13T03:08:50.898Z - success: jsb-adapter loaded
+2021-12-13T03:08:50.901Z - success: oppo-runtime loaded
+2021-12-13T03:08:50.904Z - success: package-manager loaded
+2021-12-13T03:08:50.972Z - success: qqplay-adapter loaded
+2021-12-13T03:08:50.973Z - success: runtime-dev-tools loaded
+2021-12-13T03:08:50.994Z - success: sdkbox loaded
+2021-12-13T03:08:50.997Z - success: tester loaded
+2021-12-13T03:08:50.999Z - success: ui-kit-preview-extra loaded
+2021-12-13T03:08:51.001Z - success: ui-kit-preview loaded
+2021-12-13T03:08:51.003Z - success: ui-kit loaded
+2021-12-13T03:08:51.007Z - success: vivo-runtime loaded
+2021-12-13T03:08:51.008Z - success: weapp-adapter loaded
+2021-12-13T03:08:51.008Z - success: xiaomi-adapter loaded
+2021-12-13T03:08:51.010Z - success: alipay-minigame loaded
+2021-12-13T03:08:51.042Z - success: assets loaded
+2021-12-13T03:08:51.045Z - success: builder loaded
+2021-12-13T03:08:51.210Z - success: cocos-services loaded
+2021-12-13T03:08:51.214Z - success: console loaded
+2021-12-13T03:08:51.237Z - success: fb-instant-games loaded
+2021-12-13T03:08:51.244Z - success: game-window loaded
+2021-12-13T03:08:51.245Z - success: google-instant-games loaded
+2021-12-13T03:08:51.248Z - success: hierarchy loaded
+2021-12-13T03:08:51.250Z - success: inspector loaded
+2021-12-13T03:08:51.251Z - success: keystore loaded
+2021-12-13T03:08:51.254Z - success: node-library loaded
+2021-12-13T03:08:51.255Z - success: package-asset loaded
+2021-12-13T03:08:51.256Z - success: preferences loaded
+2021-12-13T03:08:51.258Z - success: project-exporter loaded
+2021-12-13T03:08:51.261Z - success: project-importer loaded
+2021-12-13T03:08:51.264Z - success: project-settings loaded
+2021-12-13T03:08:51.268Z - success: scene loaded
+2021-12-13T03:08:51.268Z - success: simulator-debugger loaded
+2021-12-13T03:08:51.269Z - success: sprite-editor loaded
+2021-12-13T03:08:51.272Z - success: store loaded
+2021-12-13T03:08:51.277Z - success: timeline loaded
+2021-12-13T03:08:51.279Z - success: xiaomi-runtime loaded
+2021-12-13T03:08:54.751Z - normal: Loading packages
+2021-12-13T03:08:54.755Z - normal: Watching packages
+2021-12-13T03:08:54.841Z - normal: Run Application
+2021-12-13T03:08:55.254Z - info: Cocos Services load base data!
+2021-12-13T03:37:51.332Z - error: Please define 'type' parameter of gameBoard._tilesRows as the constructor of .
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at parseAttributes (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:781:36)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:127:13)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:19:4)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:123:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:130:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:133:3)
+2021-12-13T03:38:57.453Z - error: Please define 'type' parameter of gameBoard._tilesRows as the constructor of .
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at parseAttributes (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:781:36)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:127:13)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:19:4)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:125:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:132:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:135:3)
+2021-12-13T03:39:37.230Z - error: Please define 'type' parameter of gameBoard._tilesRows as the constructor of .
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at parseAttributes (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:781:36)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:127:13)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:19:4)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:126:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:133:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:136:3)
+2021-12-13T03:39:55.286Z - error: Please define 'type' parameter of gameBoard._tilesRows as the constructor of .
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at parseAttributes (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:781:36)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:127:13)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:19:4)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:126:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:133:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:136:3)
+2021-12-13T03:50:53.930Z - failed: [db-task][sync-changes] Failed to import asset /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/assets/script/gameBoard.js, message: Compile error: SyntaxError: /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/assets/script/gameBoard.js: Unexpected token, expected , (58:4)
+  56 |             });
+  57 |         }
+> 58 |     },
+     |     ^
+  59 | 
+  60 |     _moveDown: function () {
+  61 |         this._tilesCollumns.forEach((element, index) => {
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
+    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1749:33)
+    at Parser.pp$3.parseCallExpressionArguments (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3564:12)
+    at Parser.pp$3.parseSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3533:31)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3504:15)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
+2021-12-13T07:32:29.831Z - error: Please define 'type' parameter of gameBoard._tilesMatrix as the constructor of .
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at parseAttributes (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:781:36)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:127:13)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:19:4)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:143:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:150:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:153:3)
+2021-12-13T07:32:54.098Z - error: Please define 'type' parameter of gameBoard._tilesMatrix as the constructor of .
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at parseAttributes (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:781:36)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:127:13)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:19:4)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:143:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:150:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:153:3)

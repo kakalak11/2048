@@ -2,7 +2,7 @@
 cc._RF.push(module, 'd5151/jsIBEQas95Jda5jHI', 'tilesScript');
 // script/tilesScript.js
 
-'use strict';
+"use strict";
 
 // Learn cc.Class:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/class.html
@@ -29,7 +29,7 @@ cc.Class({
     },
 
     onLoad: function onLoad() {
-        cc.log('tile prefab instantiated !');
+        // cc.log('tile prefab instantiated !');
     },
     start: function start() {
         if (this.number) {

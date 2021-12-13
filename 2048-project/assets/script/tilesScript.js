@@ -17,13 +17,13 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    setNumber: function(value) {
+    setNumber: function (value) {
         this.number = value;
         this.node.getComponentInChildren(cc.Label).string = this.number;
     },
 
     onLoad() {
-        cc.log('tile prefab instantiated !');
+        // cc.log('tile prefab instantiated !');
     },
 
     start() {
@@ -35,6 +35,6 @@ cc.Class({
         return;
     },
 
-    update (dt) {
+    update(dt) {
     },
 });

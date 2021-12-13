@@ -21,111 +21,176 @@ cc.Class({
 
     properties: {
         tilePrefab: cc.Prefab,
-        tilesRows: [cc.Node]
+        _tilesMatrix: [],
+        _moving: null
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     _onKeyDown: function _onKeyDown(event) {
+        if (this._moving) return;
         switch (event.keyCode) {
             case cc.macro.KEY.right:
+                this._moving = true;
                 this._moveRight();
                 break;
             case cc.macro.KEY.left:
+                this._moving = true;
                 this._moveLeft();
                 break;
             case cc.macro.KEY.down:
+                this._moving = true;
                 this._moveDown();
+                break;
+            case cc.macro.KEY.up:
+                this._moving = true;
+                this._moveUp();
+                break;
+            case cc.macro.KEY.space:
+                this._showPostion();
                 break;
         }
     },
 
     _moveRight: function _moveRight() {
-        this.node.children.forEach(function (element) {
-            var numbers = element.children.filter(function (element) {
+        var _this = this;
+
+        this._tilesMatrix.forEach(function (element, rowIndex) {
+            var numbers = element.filter(function (element) {
                 return element.active;
             });
-            var zeros = element.children.filter(function (element) {
+            var zeros = element.filter(function (element) {
                 return !element.active;
             });
-            var newArray = zeros.concat(numbers);
-            element.removeAllChildren(true);
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.children.forEach(function (element, index) {
-                return element.runAction(cc.moveTo(0.25, -157.5 + 105 * index, 0));
+            element = zeros.concat(numbers);
+            element.forEach(function (element, collumnIndex) {
+                return element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(function () {
+                    return _this._moving = false;
+                })));
             });
-            cc.log(element.children);
-        }, this.tilePrefab);
+            for (var i = 0; i < 4; i++) {
+                _this._tilesMatrix[rowIndex][i] = element.shift();
+            }
+        });
+        cc.log(this._tilesMatrix);
     },
 
     _moveLeft: function _moveLeft() {
-        this.node.children.forEach(function (element) {
-            var numbers = element.children.filter(function (element) {
+        var _this2 = this;
+
+        this._tilesMatrix.forEach(function (element, rowIndex) {
+            var numbers = element.filter(function (element) {
                 return element.active;
             });
-            var zeros = element.children.filter(function (element) {
+            var zeros = element.filter(function (element) {
                 return !element.active;
             });
-            var newArray = numbers.concat(zeros);
-            element.removeAllChildren(true);
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.children.forEach(function (element, index) {
-                return element.runAction(cc.moveTo(0.25, -157.5 + 105 * index, 0));
+            element = numbers.concat(zeros);
+            element.forEach(function (element, collumnIndex) {
+                return element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(function () {
+                    return _this2._moving = false;
+                })));
             });
-            cc.log(element.children);
-        }, this.tilePrefab);
+            for (var i = 0; i < 4; i++) {
+                _this2._tilesMatrix[rowIndex][i] = element.shift();
+            }
+        });
+        cc.log(this._tilesMatrix);
     },
 
     _moveDown: function _moveDown() {
-        this.node.children.forEach(function (element, index) {
-            // let collum = [];
-            // for (let i = 0; i < 4; i++) {
-            //     collum.push(this.node.children[i].children[index]);
-            //     cc.log(this.node.children[i].children[index]);
-            // }
-            // // cc.log(collum);
-            // let numbers = collum.filter(element => element.active);
-            // let zeros = collum.filter(element => !element.active);
-            // let newArray = zeros.concat(numbers);
-            // // cc.log(newArray);
-            // for (let i = 0; i < 4; i++) {
-            //     // this.node.removeChild(this.node.children[i].children[index]);
-            //     newArray[i].setParent(this.node.children[i]);
-            // }
-            // cc.log(this.node.children)
-        });
-        for (var i = 1; i < 4; i++) {
-            this.node.children[i].children[0].setParent(this.node.children[0]);
-            this.node.children[i].children[0].setParent(this.node.children[0]);
-            this.node.children[i].children[0].setParent(this.node.children[0]);
-            this.node.children[i].children[0].setParent(this.node.children[0]);
+        var _this3 = this;
+
+        var _loop = function _loop(i) {
+            var collumn = [];
+            for (var j = 0; j < 4; j++) {
+                collumn.push(_this3._tilesMatrix[j][i]);
+            }
+            cc.log(collumn);
+            var numbers = collumn.filter(function (element) {
+                return element.active;
+            });
+            var zeros = collumn.filter(function (element) {
+                return !element.active;
+            });
+            collumn = zeros.concat(numbers);
+            cc.log(collumn);
+            collumn.forEach(function (element, index) {
+                return element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * i, 157.5 - 105 * index), cc.callFunc(function () {
+                    return _this3._moving = false;
+                })));
+            });
+            for (var _j = 0; _j < 4; _j++) {
+                _this3._tilesMatrix[_j][i] = collumn.shift();
+            }
+        };
+
+        for (var i = 0; i < 4; i++) {
+            _loop(i);
         }
-        cc.log(this.node.children[0].children);
-        this.node.children[0].children[0] = this.node.children[0].children[15];
-        cc.log(this.node.children[0].children);
+        cc.log(this._tilesMatrix);
+    },
+
+    _moveUp: function _moveUp() {
+        var _this4 = this;
+
+        var _loop2 = function _loop2(i) {
+            var collumn = [];
+            for (var j = 0; j < 4; j++) {
+                collumn.push(_this4._tilesMatrix[j][i]);
+            }
+            cc.log(collumn);
+            var numbers = collumn.filter(function (element) {
+                return element.active;
+            });
+            var zeros = collumn.filter(function (element) {
+                return !element.active;
+            });
+            collumn = numbers.concat(zeros);
+            cc.log(collumn);
+            collumn.forEach(function (element, index) {
+                return element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * i, 157.5 - 105 * index), cc.callFunc(function () {
+                    return _this4._moving = false;
+                })));
+            });
+            for (var _j2 = 0; _j2 < 4; _j2++) {
+                _this4._tilesMatrix[_j2][i] = collumn.shift();
+            }
+        };
+
+        for (var i = 0; i < 4; i++) {
+            _loop2(i);
+        }
+        cc.log(this._tilesMatrix);
+    },
+
+    _showPostion: function _showPostion() {
+        // this._tilesRows.forEach(element => element.forEach(element => cc.log(element.name, Math.floor((element.getPosition().x + 157.5) / 100), Math.floor((element.getPosition().y + 157.5) / 100))));
+        this._tilesRows.forEach(function (element) {
+            element.forEach(function (element) {
+                // this._tilesRows[Math.floor((element.getPosition().x + 157.5) / 100)][Math.floor((element.getPosition().y + 157.5) / 100)] = element;
+                // this._tilesCollumns[Math.floor((element.getPosition().y + 157.5) / 100)][Math.floor((element.getPosition().x + 157.5) / 100)] = element;
+                // cc.log(Math.floor((element.getPosition().x + 157.5) / 100), Math.floor((element.getPosition().y + 157.5) / 100))
+            });
+        });
+        cc.log(this._tilesCollumns, this._tilesRows);
     },
 
     _setupGrid: function _setupGrid() {
-        var _this = this;
-
         var numberIndex = 1;
-        this.node.children.forEach(function (element, index) {
-            for (var i = 0; i < 4; i++) {
-                var tile = cc.instantiate(_this.tilePrefab);
+        this._tilesMatrix.push([], [], [], []);
+        for (var _collumn = 0; _collumn < 4; _collumn++) {
+            for (var row = 0; row < 4; row++) {
+                var tile = cc.instantiate(this.tilePrefab);
                 tile.active = Math.random() > 0.7 ? true : false;
-                tile.setPosition(cc.v2(-415 / 2 + 50 + 105 * i, 0));
-                tile.getComponent('tilesScript').setNumber(numberIndex);
-                tile.name = 'tiles' + numberIndex++;
-                element.addChild(tile);
+                tile.name = 'tile ' + numberIndex;
+                tile.getComponent('tilesScript').setNumber(numberIndex++);
+                tile.setPosition(cc.v2(-157.5 + 105 * row, 157.5 - 105 * _collumn));
+                // cc.log(Number(String(tile.getPosition().x + 157.5)[0]), Number(String((tile.getPosition().y - 157.5) * -1)[0]));
+                this._tilesMatrix[Number(String((tile.getPosition().y - 157.5) * -1)[0])][Number(String(tile.getPosition().x + 157.5)[0])] = tile;
+                this.node.addChild(tile);
             }
-        });
-        // cc.log(this.node.children.forEach(element => element.children.forEach(element => cc.log(element))));
+        }
     },
     _generateRandomValue: function _generateRandomValue() {
         var randomTile = this.node.children[parseInt(Math.random() * 3)].children[parseInt(Math.random() * 3)];

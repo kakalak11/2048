@@ -15,97 +15,128 @@ cc.Class({
 
     properties: {
         tilePrefab: cc.Prefab,
-        tilesRows: [cc.Node],
+        _tilesMatrix: [],
+        _moving: null,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     _onKeyDown: function (event) {
+        if (this._moving) return;
         switch (event.keyCode) {
             case cc.macro.KEY.right:
+                this._moving = true;
                 this._moveRight();
                 break;
             case cc.macro.KEY.left:
+                this._moving = true;
                 this._moveLeft();
                 break;
             case cc.macro.KEY.down:
+                this._moving = true;
                 this._moveDown();
+                break;
+            case cc.macro.KEY.up:
+                this._moving = true;
+                this._moveUp();
+                break;
+            case cc.macro.KEY.space:
+                this._showPostion();
                 break;
         }
     },
 
     _moveRight: function () {
-        this.node.children.forEach(element => {
-            let numbers = element.children.filter(element => element.active);
-            let zeros = element.children.filter(element => !element.active);
-            let newArray = zeros.concat(numbers);
-            element.removeAllChildren(true);
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.children.forEach((element, index) => element.runAction(cc.moveTo(0.25, -157.5 + 105 * index, 0)));
-            cc.log(element.children);
-        }, this.tilePrefab);
+        this._tilesMatrix.forEach((element, rowIndex) => {
+            let numbers = element.filter(element => element.active);
+            let zeros = element.filter(element => !element.active);
+            element = zeros.concat(numbers);
+            element.forEach((element, collumnIndex) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(() => this._moving = false))));
+            for (let i = 0; i < 4; i++) {
+                this._tilesMatrix[rowIndex][i] = element.shift();
+            }
+        });
+        cc.log(this._tilesMatrix);
     },
 
     _moveLeft: function () {
-        this.node.children.forEach(element => {
-            let numbers = element.children.filter(element => element.active);
-            let zeros = element.children.filter(element => !element.active);
-            let newArray = numbers.concat(zeros);
-            element.removeAllChildren(true);
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.addChild(newArray.shift());
-            element.children.forEach((element, index) => element.runAction(cc.moveTo(0.25, -157.5 + 105 * index, 0)));
-            cc.log(element.children);
-        }, this.tilePrefab)
+        this._tilesMatrix.forEach((element, rowIndex) => {
+            let numbers = element.filter(element => element.active);
+            let zeros = element.filter(element => !element.active);
+            element = numbers.concat(zeros);
+            element.forEach((element, collumnIndex) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(() => this._moving = false))));
+            for (let i = 0; i < 4; i++) {
+                this._tilesMatrix[rowIndex][i] = element.shift();
+            }
+        });
+        cc.log(this._tilesMatrix);
     },
 
     _moveDown: function () {
-        this.node.children.forEach((element, index) => {
-            // let collum = [];
-            // for (let i = 0; i < 4; i++) {
-            //     collum.push(this.node.children[i].children[index]);
-            //     cc.log(this.node.children[i].children[index]);
-            // }
-            // // cc.log(collum);
-            // let numbers = collum.filter(element => element.active);
-            // let zeros = collum.filter(element => !element.active);
-            // let newArray = zeros.concat(numbers);
-            // // cc.log(newArray);
-            // for (let i = 0; i < 4; i++) {
-            //     // this.node.removeChild(this.node.children[i].children[index]);
-            //     newArray[i].setParent(this.node.children[i]);
-            // }
-            // cc.log(this.node.children)
-        });
-        for (let i = 1; i < 4; i++) {
-            this.node.children[i].children[0].setParent(this.node.children[0]);
-            this.node.children[i].children[0].setParent(this.node.children[0]);
-            this.node.children[i].children[0].setParent(this.node.children[0]);
-            this.node.children[i].children[0].setParent(this.node.children[0]);
+        for (let i = 0; i < 4; i++) {
+            let collumn = [];
+            for (let j = 0; j < 4; j++) {
+                collumn.push(this._tilesMatrix[j][i]);
+            }
+            cc.log(collumn);
+            let numbers = collumn.filter(element => element.active);
+            let zeros = collumn.filter(element => !element.active);
+            collumn = zeros.concat(numbers);
+            cc.log(collumn);
+            collumn.forEach((element, index) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * i, 157.5 - 105 * index), cc.callFunc(() => this._moving = false))));
+            for (let j = 0; j < 4; j++) {
+                this._tilesMatrix[j][i] = collumn.shift();
+            }
         }
-        cc.log(this.node.children[0].children);
-        this.node.children[0].children[0] = this.node.children[0].children[15];
-        cc.log(this.node.children[0].children);
+        cc.log(this._tilesMatrix);
+    },
+
+    _moveUp: function () {
+        for (let i = 0; i < 4; i++) {
+            let collumn = [];
+            for (let j = 0; j < 4; j++) {
+                collumn.push(this._tilesMatrix[j][i]);
+            }
+            cc.log(collumn);
+            let numbers = collumn.filter(element => element.active);
+            let zeros = collumn.filter(element => !element.active);
+            collumn = numbers.concat(zeros);
+            cc.log(collumn);
+            collumn.forEach((element, index) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * i, 157.5 - 105 * index), cc.callFunc(() => this._moving = false))));
+            for (let j = 0; j < 4; j++) {
+                this._tilesMatrix[j][i] = collumn.shift();
+            }
+        }
+        cc.log(this._tilesMatrix);
+    },
+
+    _showPostion: function () {
+        // this._tilesRows.forEach(element => element.forEach(element => cc.log(element.name, Math.floor((element.getPosition().x + 157.5) / 100), Math.floor((element.getPosition().y + 157.5) / 100))));
+        this._tilesRows.forEach(element => {
+            element.forEach(element => {
+                // this._tilesRows[Math.floor((element.getPosition().x + 157.5) / 100)][Math.floor((element.getPosition().y + 157.5) / 100)] = element;
+                // this._tilesCollumns[Math.floor((element.getPosition().y + 157.5) / 100)][Math.floor((element.getPosition().x + 157.5) / 100)] = element;
+                // cc.log(Math.floor((element.getPosition().x + 157.5) / 100), Math.floor((element.getPosition().y + 157.5) / 100))
+            })
+        });
+        cc.log(this._tilesCollumns, this._tilesRows);
     },
 
     _setupGrid() {
         let numberIndex = 1;
-        this.node.children.forEach((element, index) => {
-            for (let i = 0; i < 4; i++) {
+        this._tilesMatrix.push([], [], [], []);
+        for (let collumn = 0; collumn < 4; collumn++) {
+            for (let row = 0; row < 4; row++) {
                 let tile = cc.instantiate(this.tilePrefab);
                 tile.active = Math.random() > 0.7 ? true : false;
-                tile.setPosition(cc.v2((-415 / 2 + 50) + 105 * i, 0));
-                tile.getComponent('tilesScript').setNumber(numberIndex);
-                tile.name = `tiles${numberIndex++}`;
-                element.addChild(tile);
+                tile.name = `tile ${numberIndex}`;
+                tile.getComponent('tilesScript').setNumber(numberIndex++);
+                tile.setPosition(cc.v2(-157.5 + 105 * row, 157.5 - 105 * collumn));
+                // cc.log(Number(String(tile.getPosition().x + 157.5)[0]), Number(String((tile.getPosition().y - 157.5) * -1)[0]));
+                this._tilesMatrix[Number(String((tile.getPosition().y - 157.5) * -1)[0])][Number(String(tile.getPosition().x + 157.5)[0])] = tile;
+                this.node.addChild(tile);
             }
-        });
-        // cc.log(this.node.children.forEach(element => element.children.forEach(element => cc.log(element))));
+        }
     },
 
     _generateRandomValue() {
