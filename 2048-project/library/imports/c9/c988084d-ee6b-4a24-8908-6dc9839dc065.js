@@ -47,7 +47,8 @@ cc.Class({
                 this._moveUp();
                 break;
             case cc.macro.KEY.space:
-                this._showPostion();
+                // this._showPostion();
+                this._generateRandomValue();
                 break;
         }
     },
@@ -65,14 +66,15 @@ cc.Class({
             element = zeros.concat(numbers);
             element.forEach(function (element, collumnIndex) {
                 return element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(function () {
-                    return _this._moving = false;
+                    _this._moving = false;
                 })));
             });
             for (var i = 0; i < 4; i++) {
                 _this._tilesMatrix[rowIndex][i] = element.shift();
             }
         });
-        cc.log(this._tilesMatrix);
+
+        this.node.emit('move');
     },
 
     _moveLeft: function _moveLeft() {
@@ -88,14 +90,14 @@ cc.Class({
             element = numbers.concat(zeros);
             element.forEach(function (element, collumnIndex) {
                 return element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(function () {
-                    return _this2._moving = false;
+                    _this2._moving = false;
                 })));
             });
             for (var i = 0; i < 4; i++) {
                 _this2._tilesMatrix[rowIndex][i] = element.shift();
             }
         });
-        cc.log(this._tilesMatrix);
+        this.node.emit('move');
     },
 
     _moveDown: function _moveDown() {
@@ -106,7 +108,6 @@ cc.Class({
             for (var j = 0; j < 4; j++) {
                 collumn.push(_this3._tilesMatrix[j][i]);
             }
-            cc.log(collumn);
             var numbers = collumn.filter(function (element) {
                 return element.active;
             });
@@ -114,10 +115,9 @@ cc.Class({
                 return !element.active;
             });
             collumn = zeros.concat(numbers);
-            cc.log(collumn);
             collumn.forEach(function (element, index) {
                 return element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * i, 157.5 - 105 * index), cc.callFunc(function () {
-                    return _this3._moving = false;
+                    _this3._moving = false;
                 })));
             });
             for (var _j = 0; _j < 4; _j++) {
@@ -128,7 +128,7 @@ cc.Class({
         for (var i = 0; i < 4; i++) {
             _loop(i);
         }
-        cc.log(this._tilesMatrix);
+        this.node.emit('move');
     },
 
     _moveUp: function _moveUp() {
@@ -139,7 +139,6 @@ cc.Class({
             for (var j = 0; j < 4; j++) {
                 collumn.push(_this4._tilesMatrix[j][i]);
             }
-            cc.log(collumn);
             var numbers = collumn.filter(function (element) {
                 return element.active;
             });
@@ -147,10 +146,9 @@ cc.Class({
                 return !element.active;
             });
             collumn = numbers.concat(zeros);
-            cc.log(collumn);
             collumn.forEach(function (element, index) {
                 return element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * i, 157.5 - 105 * index), cc.callFunc(function () {
-                    return _this4._moving = false;
+                    _this4._moving = false;
                 })));
             });
             for (var _j2 = 0; _j2 < 4; _j2++) {
@@ -161,30 +159,52 @@ cc.Class({
         for (var i = 0; i < 4; i++) {
             _loop2(i);
         }
+        this.node.emit('move');
+    },
+
+    _showPostion: function _showPostion() {},
+
+
+    _combineTiles: function _combineTiles() {
+        this._tilesMatrix.forEach(function (element) {});
+    },
+
+    _generateRandomValue: function _generateRandomValue() {
         cc.log(this._tilesMatrix);
-    },
-
-    _showPostion: function _showPostion() {
-        // this._tilesRows.forEach(element => element.forEach(element => cc.log(element.name, Math.floor((element.getPosition().x + 157.5) / 100), Math.floor((element.getPosition().y + 157.5) / 100))));
-        this._tilesRows.forEach(function (element) {
-            element.forEach(function (element) {
-                // this._tilesRows[Math.floor((element.getPosition().x + 157.5) / 100)][Math.floor((element.getPosition().y + 157.5) / 100)] = element;
-                // this._tilesCollumns[Math.floor((element.getPosition().y + 157.5) / 100)][Math.floor((element.getPosition().x + 157.5) / 100)] = element;
-                // cc.log(Math.floor((element.getPosition().x + 157.5) / 100), Math.floor((element.getPosition().y + 157.5) / 100))
-            });
+        var randomArray = [];
+        this._tilesMatrix.forEach(function (element) {
+            randomArray.push(element.filter(function (element) {
+                return !element.active;
+            }));
         });
-        cc.log(this._tilesCollumns, this._tilesRows);
+        var randomIndex = Math.floor(Math.random() * randomArray.length);
+        while (!randomArray[randomIndex].length) {
+            randomIndex = Math.floor(Math.random() * randomArray.length);
+            cc.log('generate new random');
+            if (randomArray.every(function (element) {
+                return !element.length;
+            })) {
+                this.node.emit('gameOver');
+                cc.log('game over');
+                return;
+            }
+        };
+        var randomTile = randomArray[randomIndex][Math.floor(Math.random() * randomArray[randomIndex].length)];
+        randomTile.active = true;
+        randomTile.getComponent('tilesScript').setNumber(randomTile.getComponent('tilesScript').number);
+        randomTile.scale = 0;
+        randomTile.runAction(cc.scaleTo(0.25, 1).easing(cc.easeExponentialIn(0.25)));
+        return;
     },
-
     _setupGrid: function _setupGrid() {
         var numberIndex = 1;
         this._tilesMatrix.push([], [], [], []);
         for (var _collumn = 0; _collumn < 4; _collumn++) {
             for (var row = 0; row < 4; row++) {
                 var tile = cc.instantiate(this.tilePrefab);
-                tile.active = Math.random() > 0.7 ? true : false;
-                tile.name = 'tile ' + numberIndex;
-                tile.getComponent('tilesScript').setNumber(numberIndex++);
+                tile.active = Math.random() > 0.9 ? true : false;
+                tile.getComponent('tilesScript').setNumber(numberIndex);
+                tile.name = 'tile ' + numberIndex++;
                 tile.setPosition(cc.v2(-157.5 + 105 * row, 157.5 - 105 * _collumn));
                 // cc.log(Number(String(tile.getPosition().x + 157.5)[0]), Number(String((tile.getPosition().y - 157.5) * -1)[0]));
                 this._tilesMatrix[Number(String((tile.getPosition().y - 157.5) * -1)[0])][Number(String(tile.getPosition().x + 157.5)[0])] = tile;
@@ -192,12 +212,9 @@ cc.Class({
             }
         }
     },
-    _generateRandomValue: function _generateRandomValue() {
-        var randomTile = this.node.children[parseInt(Math.random() * 3)].children[parseInt(Math.random() * 3)];
-        cc.log(randomTile);
-    },
     onLoad: function onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
+        this.node.on('move', this._generateRandomValue, this);
     },
     start: function start() {
         this._setupGrid();

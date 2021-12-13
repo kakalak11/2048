@@ -41,7 +41,8 @@ cc.Class({
                 this._moveUp();
                 break;
             case cc.macro.KEY.space:
-                this._showPostion();
+                // this._showPostion();
+                this._generateRandomValue();
                 break;
         }
     },
@@ -51,12 +52,15 @@ cc.Class({
             let numbers = element.filter(element => element.active);
             let zeros = element.filter(element => !element.active);
             element = zeros.concat(numbers);
-            element.forEach((element, collumnIndex) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(() => this._moving = false))));
+            element.forEach((element, collumnIndex) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(() => {
+                this._moving = false;
+            }))));
             for (let i = 0; i < 4; i++) {
                 this._tilesMatrix[rowIndex][i] = element.shift();
             }
         });
-        cc.log(this._tilesMatrix);
+
+        this.node.emit('move');
     },
 
     _moveLeft: function () {
@@ -64,12 +68,14 @@ cc.Class({
             let numbers = element.filter(element => element.active);
             let zeros = element.filter(element => !element.active);
             element = numbers.concat(zeros);
-            element.forEach((element, collumnIndex) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(() => this._moving = false))));
+            element.forEach((element, collumnIndex) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(() => {
+                this._moving = false;
+            }))));        
             for (let i = 0; i < 4; i++) {
                 this._tilesMatrix[rowIndex][i] = element.shift();
             }
         });
-        cc.log(this._tilesMatrix);
+        this.node.emit('move');
     },
 
     _moveDown: function () {
@@ -78,17 +84,17 @@ cc.Class({
             for (let j = 0; j < 4; j++) {
                 collumn.push(this._tilesMatrix[j][i]);
             }
-            cc.log(collumn);
             let numbers = collumn.filter(element => element.active);
             let zeros = collumn.filter(element => !element.active);
             collumn = zeros.concat(numbers);
-            cc.log(collumn);
-            collumn.forEach((element, index) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * i, 157.5 - 105 * index), cc.callFunc(() => this._moving = false))));
+            collumn.forEach((element, index) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * i, 157.5 - 105 * index), cc.callFunc(() => {
+                this._moving = false;
+            }))));
             for (let j = 0; j < 4; j++) {
                 this._tilesMatrix[j][i] = collumn.shift();
             }
         }
-        cc.log(this._tilesMatrix);
+        this.node.emit('move');
     },
 
     _moveUp: function () {
@@ -97,29 +103,51 @@ cc.Class({
             for (let j = 0; j < 4; j++) {
                 collumn.push(this._tilesMatrix[j][i]);
             }
-            cc.log(collumn);
             let numbers = collumn.filter(element => element.active);
             let zeros = collumn.filter(element => !element.active);
             collumn = numbers.concat(zeros);
-            cc.log(collumn);
-            collumn.forEach((element, index) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * i, 157.5 - 105 * index), cc.callFunc(() => this._moving = false))));
+            collumn.forEach((element, index) => element.runAction(cc.sequence(cc.moveTo(0.25, -157.5 + 105 * i, 157.5 - 105 * index), cc.callFunc(() => {
+                this._moving = false;
+            }))));
             for (let j = 0; j < 4; j++) {
                 this._tilesMatrix[j][i] = collumn.shift();
             }
         }
-        cc.log(this._tilesMatrix);
+        this.node.emit('move');
     },
 
-    _showPostion: function () {
-        // this._tilesRows.forEach(element => element.forEach(element => cc.log(element.name, Math.floor((element.getPosition().x + 157.5) / 100), Math.floor((element.getPosition().y + 157.5) / 100))));
-        this._tilesRows.forEach(element => {
-            element.forEach(element => {
-                // this._tilesRows[Math.floor((element.getPosition().x + 157.5) / 100)][Math.floor((element.getPosition().y + 157.5) / 100)] = element;
-                // this._tilesCollumns[Math.floor((element.getPosition().y + 157.5) / 100)][Math.floor((element.getPosition().x + 157.5) / 100)] = element;
-                // cc.log(Math.floor((element.getPosition().x + 157.5) / 100), Math.floor((element.getPosition().y + 157.5) / 100))
-            })
+    _showPostion() {
+
+    },
+
+    _combineTiles: function () {
+        this._tilesMatrix.forEach(element => {
+
         });
-        cc.log(this._tilesCollumns, this._tilesRows);
+    },
+
+    _generateRandomValue() {
+        cc.log(this._tilesMatrix);
+        let randomArray = [];
+        this._tilesMatrix.forEach(element => {
+            randomArray.push(element.filter(element => !element.active));
+        });
+        let randomIndex = Math.floor(Math.random() * randomArray.length);
+        while (!randomArray[randomIndex].length) {
+            randomIndex = Math.floor(Math.random() * randomArray.length);
+            cc.log('generate new random');
+            if (randomArray.every(element => !element.length)) {
+                this.node.emit('gameOver');
+                cc.log('game over');
+                return;
+            }
+        };
+        let randomTile = randomArray[randomIndex][Math.floor(Math.random() * randomArray[randomIndex].length)];
+        randomTile.active = true;
+        randomTile.getComponent('tilesScript').setNumber(randomTile.getComponent('tilesScript').number);
+        randomTile.scale = 0
+        randomTile.runAction(cc.scaleTo(0.25, 1).easing(cc.easeExponentialIn(0.25)));
+        return;
     },
 
     _setupGrid() {
@@ -128,9 +156,9 @@ cc.Class({
         for (let collumn = 0; collumn < 4; collumn++) {
             for (let row = 0; row < 4; row++) {
                 let tile = cc.instantiate(this.tilePrefab);
-                tile.active = Math.random() > 0.7 ? true : false;
-                tile.name = `tile ${numberIndex}`;
-                tile.getComponent('tilesScript').setNumber(numberIndex++);
+                tile.active = Math.random() > 0.9 ? true : false;
+                tile.getComponent('tilesScript').setNumber(numberIndex);
+                tile.name = `tile ${numberIndex++}`;
                 tile.setPosition(cc.v2(-157.5 + 105 * row, 157.5 - 105 * collumn));
                 // cc.log(Number(String(tile.getPosition().x + 157.5)[0]), Number(String((tile.getPosition().y - 157.5) * -1)[0]));
                 this._tilesMatrix[Number(String((tile.getPosition().y - 157.5) * -1)[0])][Number(String(tile.getPosition().x + 157.5)[0])] = tile;
@@ -139,18 +167,16 @@ cc.Class({
         }
     },
 
-    _generateRandomValue() {
-        let randomTile = this.node.children[parseInt(Math.random() * 3)].children[parseInt(Math.random() * 3)];
-        cc.log(randomTile);
-    },
-
     onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
+        this.node.on('move', this._generateRandomValue, this);
     },
 
     start() {
         this._setupGrid();
     },
 
-    update(dt) { },
+    update(dt) {
+
+    },
 });
