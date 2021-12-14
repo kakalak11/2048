@@ -27,12 +27,12 @@ cc.Class({
     },
 
     start() {
-        if (this.number) {
-            this.node.active = true;
-            return;
-        };
-        this.node.active = false;
-        return;
+        // if (this.number) {
+        //     this.node.active = true;
+        //     return;
+        // };
+        // this.node.active = false;
+        // return;
     },
 
     update(dt) {

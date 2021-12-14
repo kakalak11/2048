@@ -43,6 +43,12 @@ cc.Class({
             case cc.macro.KEY.space:
                 this._generateRandomValue();
                 break;
+            case cc.macro.KEY.c:
+                this.node.emit('combine', true);
+                break;
+            case cc.macro.KEY.v:
+                this.node.emit('combine', false);
+                break;
         }
     },
 
@@ -59,7 +65,6 @@ cc.Class({
             }
         });
         this.node.emit('move');
-        this.node.emit('combine')
     },
 
     _moveLeft: function () {
@@ -117,26 +122,86 @@ cc.Class({
         this.node.emit('move');
     },
 
-    _combineTile: function () {
+    _combineHorizon: function (directionRight) {
         cc.log('time to combine !!!');
+        cc.log(directionRight);
+        if (directionRight) {
+            this._tilesMatrix.forEach(element => {
+                element.forEach((element, index, array) => {
+                    while (this.skip) {
+                        this.skip = false;
+                        return;
+                    }
+                    cc.log(element, this.nextElement);
+                    this.nextElement = array[index + 1];
+                    this.elementScript = element.getComponent('tilesScript');
+                    if (this.nextElement) this.nextElementScript = this.nextElement.getComponent('tilesScript');
+                    else return;
+                    cc.log(this.elementScript.number, this.nextElementScript.number);
+                    cc.log(this.elementScript.number === this.nextElementScript.number);
+                    if (this.elementScript.number === this.nextElementScript.number) {
+                        this.nextElementScript.setNumber(this.nextElementScript.number *= 2);
+                        this.elementScript.setNumber(0);
+                        element.active = false;
+                        this.skip = true;
+                    }
+                });
+            });
+            return;
+        }
+
+        this._tilesMatrix.forEach(element => {
+            element.reverse().forEach((element, index, array) => {
+                cc.log(element);
+                while (this.skip) {
+                    this.skip = false;
+                    return;
+                }
+                cc.log(element, this.nextElement);
+                this.nextElement = array[index + 1];
+                this.elementScript = element.getComponent('tilesScript');
+                if (this.nextElement) this.nextElementScript = this.nextElement.getComponent('tilesScript');
+                else return;
+                cc.log(this.elementScript.number, this.nextElementScript.number);
+                cc.log(this.elementScript.number === this.nextElementScript.number);
+                if (this.elementScript.number === this.nextElementScript.number) {
+                    this.nextElementScript.setNumber(this.nextElementScript.number *= 2);
+                    this.elementScript.setNumber(0);
+                    element.active = false;
+                    this.skip = true;
+                }
+            });
+            element.reverse();
+        });
+    },
+
+    _combineVertical: function () {
+        for (let i = 0; i < 4; i++) {
+            this.collumn = [];
+            for (let j = 0; j < 4; j++) {
+                this.collumn.push(this._tilesMatrix[i][j]);
+            }
+            this.collumn.forEach((element, index, array) => {
+
+            });
+        }
     },
 
     _generateRandomValue() {
         do {
             this.randomCollumn = Math.floor(Math.random() * 4);
             this.randomRow = Math.floor(Math.random() * 4);
-            // cc.log('generate a new random');
             if (this._tilesMatrix.every(element => element.every(element => element.active))) {
                 return;
             }
         } while (this._tilesMatrix[this.randomRow][this.randomCollumn].active);
         this.randomTile = this._tilesMatrix[this.randomRow][this.randomCollumn];
-        // cc.log(this.randomTile);
+        this.number = this.randomTile.getComponent('tilesScript');
         this.randomTile.active = true;
         this.randomTile.scale = 0;
+        this.number.setNumber(Math.random() > 0.7 ? 4 : 2);
         this.randomTile.setPosition(cc.v2(-157.5 + 105 * this.randomCollumn, 157.5 - 105 * this.randomRow));
         this.randomTile.runAction(cc.scaleTo(0.25, 1));
-        // cc.log(this._tilesMatrix);
     },
 
     _setupGrid() {
@@ -146,10 +211,9 @@ cc.Class({
             for (let row = 0; row < 4; row++) {
                 let tile = cc.instantiate(this.tilePrefab);
                 tile.active = Math.random() > 0.9 ? true : false;
-                tile.getComponent('tilesScript').setNumber(2);
+                tile.active ? tile.getComponent('tilesScript').setNumber(Math.random() > 0.5 ? 2 : 4) : tile.getComponent('tilesScript').setNumber(0);
                 tile.name = `tile ${numberIndex++}`;
                 tile.setPosition(cc.v2(-157.5 + 105 * row, 157.5 - 105 * collumn));
-                // cc.log(Number(String(tile.getPosition().x + 157.5)[0]), Number(String((tile.getPosition().y - 157.5) * -1)[0]));
                 this._tilesMatrix[Number(String((tile.getPosition().y - 157.5) * -1)[0])][Number(String(tile.getPosition().x + 157.5)[0])] = tile;
                 this.node.addChild(tile);
             }
@@ -162,20 +226,6 @@ cc.Class({
         this.node.on('move', this._generateRandomValue, this);
         this.node.on('right', this._moveRight, this);
         this.node.on('combine', this._combineTile, this);
-
-        // this._tilesMatrix[0].forEach((element, index, array) => {
-        //     this.nextElement = array[index + 1];
-        //     cc.log(element, this.nextElement);
-        //     this.elementScript = element.getComponent('tilesScript');
-        //     if (this.nextElement) this.nextElementScript = this.nextElement.getComponent('tilesScript');
-        //     else return;
-        //     cc.log(this.elementScript.number, this.nextElementScript.number);
-        //     cc.log(this.elementScript.number === this.nextElementScript.number);
-        //     if (this.elementScript.number === this.nextElementScript.number) {
-        //         this.nextElementScript.setNumber(this.nextElementScript.number *= 2);
-        //         element.active = false;
-        //     }
-        // })
     },
 
     start() {
