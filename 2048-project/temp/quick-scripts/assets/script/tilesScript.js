@@ -30,6 +30,7 @@ cc.Class({
 
     onLoad: function onLoad() {
         // cc.log('tile prefab instantiated !');
+
     },
     start: function start() {
         // if (this.number) {

@@ -24,6 +24,7 @@ cc.Class({
 
     onLoad() {
         // cc.log('tile prefab instantiated !');
+
     },
 
     start() {

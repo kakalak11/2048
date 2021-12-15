@@ -159,7 +159,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 551.6581822106874
+      "z": 550.792156806903
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -3517,6 +3517,7 @@
     },
     "_tilesMatrix": [],
     "_moving": null,
+    "_time": 0.125,
     "_id": "36UdUM+j5CnIs0fbg0bw0O"
   },
   {
