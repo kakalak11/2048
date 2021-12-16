@@ -19,6 +19,7 @@ cc.Class({
         _moving: null,
         _time: 0.125,
         _check: null,
+        _combined: false,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -44,16 +45,7 @@ cc.Class({
                 this._moveUp();
                 break;
             case cc.macro.KEY.space:
-                cc.log(this._tilesMatrix.every((element, index, array) => {
-                    if (element.every((element, index, array) => {
-                        if (array[index + 1] === undefined) return true;
-                        this.number = element.getComponent('tilesScript').number;
-                        this.nextNumber = array[index + 1].getComponent('tilesScript').number;
-                        if (this.number !== this.nextNumber) return true;
-                        return false;
-                    })) return true;
-                    return false;
-                }));
+                cc.log(this._checkLose());
                 break;
         }
     },
@@ -170,11 +162,17 @@ cc.Class({
                             }),
                         );
                         copyTile.runAction(action);
-
+                        // this.node.emit('position-changed');
+                        this._combined = true;
                     }
                 });
                 element.reverse();
             });
+            if (this._combined && !this._check) {
+                this._check = true;
+                // this._generateRandomValue();
+                this._combined = false;
+            }
             this.node.emit('adjustRow', true);
             return;
         }
@@ -203,10 +201,16 @@ cc.Class({
                         }),
                     );
                     copyTile.runAction(action);
-
+                    // this.node.emit('position-changed');
+                    this._combined = true;
                 }
             });
         });
+        if (this._combined && !this._check) {
+            this._check = true;
+            this._generateRandomValue();
+            this._combined = false;
+        }
         this.node.emit('adjustRow', false);
         return;
     },
@@ -230,7 +234,6 @@ cc.Class({
                     if (this.elementScript.number === this.nextElementScript.number) {
                         this.skip = true;
                         let copyTile = this.nextElement;
-                        // copyTile.setPosition(element.getPosition(cc.v2()));
                         this.elementScript.setNumber(this.elementScript.number *= 2);
                         element.runAction(cc.sequence(cc.scaleTo(0.125, 1.25), cc.scaleTo(0.125, 1)));
                         this.nextElement.active = false;
@@ -239,9 +242,12 @@ cc.Class({
                             cc.moveTo(0.125, element.getPosition(cc.v2())),
                             cc.callFunc(() => {
                                 copyTile.destroy();
+
                             }),
                         );
                         copyTile.runAction(action);
+                        // this.node.emit('position-changed');
+
                     }
                 });
                 this.collumn.reverse();
@@ -281,6 +287,7 @@ cc.Class({
                         }),
                     );
                     copyTile.runAction(action);
+                    // this.node.emit('position-changed');
                 }
             });
         }
@@ -324,9 +331,7 @@ cc.Class({
             }
         }
         this._check = true;
-        // this._generateRandomValue();
-        // this._generateRandomValue();
-        for (let i = 0; i < 16; i++) this._generateRandomValue();
+        for (let i = 0; i < 2; i++) this._generateRandomValue();
         this._check = false;
     },
 
@@ -346,7 +351,6 @@ cc.Class({
                 }
             });
             this.node.emit('checkWin');
-            // cc.log(this._tilesMatrix[0]);
         }, this);
         this.node.on('adjustCollumn', (adjustDown) => {
             for (let i = 0; i < 4; i++) {
@@ -379,10 +383,29 @@ cc.Class({
             element.getComponent('tilesScript').number === 2048 ? win = true : null;
         })
         win ? cc.log('you have won') : null;
+        return;
     },
 
     _checkLose: function () {
-
+        this.checkRow = this._tilesMatrix.every((element, index, array) => {
+            if (element.every((element, index, array) => {
+                if (array[index + 1] === undefined) return true;
+                this.number = element.getComponent('tilesScript').number;
+                this.nextNumber = array[index + 1].getComponent('tilesScript').number;
+                if (this.number !== this.nextNumber) return true;
+                return false;
+            })) return true;
+            return false;
+        });
+        this.checkCollumn = this._tilesMatrix.flat().every((element, index, array) => {
+            if (array[index + 4] === undefined) return true;
+            this.number = element.getComponent('tilesScript').number;
+            this.nextNumber = array[index + 4].getComponent('tilesScript').number;
+            if (this.number !== this.nextNumber) return true;
+            return false;
+        });
+        if (this.checkCollumn && this.checkRow) return true;
+        return false;
     },
 
     _onClick: function () {
@@ -395,8 +418,6 @@ cc.Class({
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
         this._setupGrid();
         this._addEvent();
-
-
     },
 
     start() {
