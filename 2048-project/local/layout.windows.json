@@ -19,7 +19,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 447,
+                "height": 432.96875,
                 "type": "panel",
                 "width": 206
               },
@@ -28,12 +28,12 @@
                 "children": [
                   "assets"
                 ],
-                "height": 445,
+                "height": 431.03125,
                 "type": "panel",
                 "width": 206
               }
             ],
-            "height": 894,
+            "height": 866,
             "type": "dock-v",
             "width": 206
           },
@@ -44,7 +44,7 @@
                 "children": [
                   "scene"
                 ],
-                "height": 617,
+                "height": 597.625,
                 "type": "panel",
                 "width": 1128.984375
               },
@@ -55,12 +55,12 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 275,
+                "height": 266.375,
                 "type": "panel",
                 "width": 1128.984375
               }
             ],
-            "height": 894,
+            "height": 866,
             "type": "dock-v",
             "width": 1128.984375
           },
@@ -71,7 +71,7 @@
               "cocos-services",
               "node-library"
             ],
-            "height": 894,
+            "height": 866,
             "type": "panel",
             "width": 341
           }
