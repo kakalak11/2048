@@ -18,7 +18,8 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        number: 0
+        number: 0,
+        position: cc.Vec2
     },
 
     // LIFE-CYCLE CALLBACKS:

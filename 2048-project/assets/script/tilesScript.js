@@ -13,6 +13,8 @@ cc.Class({
 
     properties: {
         number: 0,
+        position: cc.Vec2,
+        _index = null,
     },
 
     // LIFE-CYCLE CALLBACKS:

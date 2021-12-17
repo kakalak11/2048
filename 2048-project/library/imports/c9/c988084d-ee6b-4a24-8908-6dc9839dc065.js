@@ -23,40 +23,42 @@ cc.Class({
         tilePrefab: cc.Prefab,
         _tilesMatrix: [],
         _moving: null,
-        _time: 0.125,
-        _check: null,
-        _combined: false
+        _time: 0.25,
+        _check: true,
+        _combined: false,
+        _posistionChanged: null,
+        _skip: false
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     _onKeyDown: function _onKeyDown(event) {
         if (this._moving) return;
+        this._moving = true;
         switch (event.keyCode) {
-            case cc.macro.KEY.right || cc.macro.KEY.d:
-                this._moving = true;
-                this.node.emit('right');
-                // this._moveRight();
+            case cc.macro.KEY.d:
+                this._moveRow(true);
                 break;
-            case cc.macro.KEY.left || cc.macro.KEY.a:
-                this._moving = true;
-                this._moveLeft();
+            case cc.macro.KEY.a:
+                this._moveRow(false);
                 break;
-            case cc.macro.KEY.down || cc.macro.KEY.s:
-                this._moving = true;
-                this._moveDown();
+            case cc.macro.KEY.s:
+                this._moveCollumn(true);
                 break;
-            case cc.macro.KEY.up || cc.macro.KEY.w:
-                this._moving = true;
-                this._moveUp();
+            case cc.macro.KEY.w:
+                this._moveCollumn(false);
                 break;
             case cc.macro.KEY.space:
-                cc.log(this._checkLose());
+                this._adjustPosition();
+                console.clear();
+                break;
+            default:
+                this._moving = false;
                 break;
         }
     },
 
-    _moveRight: function _moveRight() {
+    _moveRow: function _moveRow(directionRight, adjust) {
         var _this = this;
 
         this._tilesMatrix.forEach(function (element, rowIndex) {
@@ -66,149 +68,114 @@ cc.Class({
             var zeros = element.filter(function (element) {
                 return !element.active;
             });
-            element = zeros.concat(numbers);
-            element.forEach(function (element, collumnIndex) {
-                return element.runAction(cc.sequence(cc.moveTo(_this._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(function () {})));
-            });
-            cc.log();
+            directionRight ? element = zeros.concat(numbers) : element = numbers.concat(zeros);
             for (var i = 0; i < 4; i++) {
                 _this._tilesMatrix[rowIndex][i] = element.shift();
             }
         });
+        if (!adjust) this._combineRow(directionRight);
+        this._adjustPosition();
+        if (adjust) this._generateRandomValue();
+
+        return;
         this.scheduleOnce(function () {
-            _this.node.emit('combineRow', true);
             _this.node.emit('move');
         }, this._time);
     },
 
-    _moveLeft: function _moveLeft() {
+    _moveCollumn: function _moveCollumn(directionDown, adjust) {
         var _this2 = this;
-
-        this._tilesMatrix.forEach(function (element, rowIndex) {
-            var numbers = element.filter(function (element) {
-                return element.active;
-            });
-            var zeros = element.filter(function (element) {
-                return !element.active;
-            });
-            element = numbers.concat(zeros);
-            element.forEach(function (element, collumnIndex) {
-                return element.runAction(cc.sequence(cc.moveTo(_this2._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(function () {})));
-            });
-            for (var i = 0; i < 4; i++) {
-                _this2._tilesMatrix[rowIndex][i] = element.shift();
-            }
-        });
-        this.scheduleOnce(function () {
-            _this2.node.emit('combineRow', false);
-            _this2.node.emit('move');
-        }, this._time);
-    },
-
-    _moveDown: function _moveDown() {
-        var _this3 = this;
 
         for (var i = 0; i < 4; i++) {
             var collumn = [];
             for (var j = 0; j < 4; j++) {
                 collumn.push(this._tilesMatrix[j][i]);
-            }
-            var numbers = collumn.filter(function (element) {
+            }var numbers = collumn.filter(function (element) {
                 return element.active;
             });
             var zeros = collumn.filter(function (element) {
                 return !element.active;
             });
-            collumn = zeros.concat(numbers);
+            directionDown ? collumn = zeros.concat(numbers) : collumn = numbers.concat(zeros);
             for (var _j = 0; _j < 4; _j++) {
                 this._tilesMatrix[_j][i] = collumn.shift();
             }
         }
-        this._tilesMatrix.forEach(function (element, rowIndex) {
-            return element.forEach(function (element, collumnIndex) {
-                element.runAction(cc.moveTo(_this3._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex));
-            });
-        });
+        if (!adjust) this._combineCollumn(directionDown);
+        this._adjustPosition();
+        if (adjust) this._generateRandomValue();
+
+        return;
         this.scheduleOnce(function () {
-            _this3.node.emit('combineCollumn', true);
-            _this3.node.emit('move');
+            _this2.node.emit('combineCollumn', directionDown);
+            _this2.node.emit('move');
         }, this._time);
     },
 
-    _moveUp: function _moveUp() {
-        var _this4 = this;
+    _adjustPosition: function _adjustPosition() {
+        var _this3 = this;
 
-        for (var i = 0; i < 4; i++) {
-            var collumn = [];
-            for (var j = 0; j < 4; j++) {
-                collumn.push(this._tilesMatrix[j][i]);
-            }
-            var numbers = collumn.filter(function (element) {
-                return element.active;
-            });
-            var zeros = collumn.filter(function (element) {
-                return !element.active;
-            });
-            collumn = numbers.concat(zeros);
-            for (var _j2 = 0; _j2 < 4; _j2++) {
-                this._tilesMatrix[_j2][i] = collumn.shift();
-            }
-        }
         this._tilesMatrix.forEach(function (element, rowIndex) {
             return element.forEach(function (element, collumnIndex) {
-                element.runAction(cc.moveTo(_this4._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex));
+                _this3.action = cc.sequence(cc.moveTo(_this3._time / 2, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex).easing(cc.easeCubicActionInOut(_this3._time / 2)), cc.callFunc(function () {
+                    return _this3._moving = false;
+                }));
+                element.runAction(_this3.action);
             });
         });
+        return;
+    },
+
+    _combineRow: function _combineRow(directionRight) {
+        var _this4 = this;
+
+        this._tilesMatrix.forEach(function (element, index) {
+            directionRight ? _this4.array = element.reverse() : _this4.array = element;
+            _this4.array.forEach(function (element, index, array) {
+                if (_this4.skip) {
+                    _this4.skip = false;
+                    return;
+                }
+                _this4.nextElement = array[index + 1];
+                _this4.elementScript = element.getComponent('tilesScript');
+                if (_this4.nextElement === undefined) return;
+                _this4.nextElementScript = _this4.nextElement.getComponent('tilesScript');
+                if (_this4.elementScript.number === 0) return;
+                if (_this4.elementScript.number === _this4.nextElementScript.number) {
+                    _this4.skip = true;
+                    var copyTile = _this4.nextElement;
+                    _this4.elementScript.setNumber(_this4.elementScript.number *= 2);
+                    element.runAction(cc.sequence(cc.scaleTo(_this4._time / 2, 1.25), cc.scaleTo(_this4._time / 2, 1)));
+                    _this4.nextElement.active = false;
+                    _this4.nextElementScript.setNumber(0);
+                    var action = cc.sequence(cc.moveBy(_this4._time, element.getPosition(cc.v2())), cc.callFunc(function () {
+                        copyTile.destroy();
+                    }));
+                    copyTile.runAction(action);
+                    _this4._combined = true;
+                }
+            });
+            directionRight ? _this4.array.reverse() : null;
+        });
         this.scheduleOnce(function () {
-            _this4.node.emit('combineCollumn', false);
-            _this4.node.emit('move');
-        }, this._time);
+            return _this4._moveRow(directionRight, true);
+        }, this._time / 2);
+        this._combined && !this._check ? this._generateRandomValue(true) : this._combined = false;
+        return;
     },
 
     //  2  -  2  -  2  - 0  => move =>  0  -  2  -  2  -  2  => reverse =>  2  -  2  -  2  -  0  => combine =>  4  -  0  -  2  -  0  => reverse 
 
-    _combineRow: function _combineRow(directionRight) {
+    _combineCollumn: function _combineCollumn(directionDown) {
         var _this5 = this;
 
-        if (directionRight) {
-            this._tilesMatrix.forEach(function (element) {
-                element.reverse().forEach(function (element, index, array) {
-                    if (_this5.skip) {
-                        _this5.skip = false;
-                        return;
-                    }
-                    _this5.nextElement = array[index + 1];
-                    _this5.elementScript = element.getComponent('tilesScript');
-                    if (_this5.nextElement === undefined) return;
-                    _this5.nextElementScript = _this5.nextElement.getComponent('tilesScript');
-                    if (_this5.elementScript.number === _this5.nextElementScript.number) {
-                        _this5.skip = true;
-                        var copyTile = _this5.nextElement;
-                        _this5.elementScript.setNumber(_this5.elementScript.number *= 2);
-                        element.runAction(cc.sequence(cc.scaleTo(0.125, 1.25), cc.scaleTo(0.125, 1)));
-                        _this5.nextElement.active = false;
-                        _this5.nextElementScript.setNumber(0);
-                        var action = cc.sequence(cc.moveBy(0.125, element.getPosition(cc.v2())), cc.callFunc(function () {
-                            copyTile.destroy();
-                        }));
-                        copyTile.runAction(action);
-                        // this.node.emit('position-changed');
-                        _this5._combined = true;
-                    }
-                });
-                element.reverse();
-            });
-            if (this._combined && !this._check) {
-                this._check = true;
-                // this._generateRandomValue();
-                this._combined = false;
+        for (var i = 0; i < 4; i++) {
+            this.collumn = [];
+            for (var j = 0; j < 4; j++) {
+                this.collumn.push(this._tilesMatrix[j][i]);
             }
-            this.node.emit('adjustRow', true);
-            return;
-        }
-
-        this._tilesMatrix.forEach(function (element) {
-            element.forEach(function (element, index, array) {
+            directionDown ? this.collumn.reverse() : null;
+            this.collumn.forEach(function (element, index, array) {
                 if (_this5.skip) {
                     _this5.skip = false;
                     return;
@@ -217,14 +184,15 @@ cc.Class({
                 _this5.elementScript = element.getComponent('tilesScript');
                 if (_this5.nextElement === undefined) return;
                 _this5.nextElementScript = _this5.nextElement.getComponent('tilesScript');
+                if (_this5.elementScript.number === 0) return;
                 if (_this5.elementScript.number === _this5.nextElementScript.number) {
                     _this5.skip = true;
                     var copyTile = _this5.nextElement;
                     _this5.elementScript.setNumber(_this5.elementScript.number *= 2);
-                    element.runAction(cc.sequence(cc.scaleTo(0.125, 1.25), cc.scaleTo(0.125, 1)));
+                    element.runAction(cc.sequence(cc.scaleTo(_this5._time / 2, 1.25), cc.scaleTo(_this5._time / 2, 1)));
                     _this5.nextElement.active = false;
                     _this5.nextElementScript.setNumber(0);
-                    var action = cc.sequence(cc.moveBy(0.125, element.getPosition(cc.v2())), cc.callFunc(function () {
+                    var action = cc.sequence(cc.moveTo(_this5._time, element.getPosition(cc.v2())), cc.callFunc(function () {
                         copyTile.destroy();
                     }));
                     copyTile.runAction(action);
@@ -232,91 +200,30 @@ cc.Class({
                     _this5._combined = true;
                 }
             });
-        });
-        if (this._combined && !this._check) {
-            this._check = true;
-            this._generateRandomValue();
-            this._combined = false;
+            directionDown ? this.collumn.reverse() : null;
         }
-        this.node.emit('adjustRow', false);
-        return;
-    },
-
-    _combineCollumn: function _combineCollumn(directionDown) {
-        var _this6 = this;
-
-        if (directionDown) {
-            for (var i = 0; i < 4; i++) {
-                this.collumn = [];
-                for (var j = 0; j < 4; j++) {
-                    this.collumn.push(this._tilesMatrix[j][i]);
-                }
-                this.collumn.reverse().forEach(function (element, index, array) {
-                    if (_this6.skip) {
-                        _this6.skip = false;
-                        return;
-                    }
-                    _this6.nextElement = array[index + 1];
-                    _this6.elementScript = element.getComponent('tilesScript');
-                    if (_this6.nextElement === undefined) return;
-                    _this6.nextElementScript = _this6.nextElement.getComponent('tilesScript');
-                    if (_this6.elementScript.number === _this6.nextElementScript.number) {
-                        _this6.skip = true;
-                        var copyTile = _this6.nextElement;
-                        _this6.elementScript.setNumber(_this6.elementScript.number *= 2);
-                        element.runAction(cc.sequence(cc.scaleTo(0.125, 1.25), cc.scaleTo(0.125, 1)));
-                        _this6.nextElement.active = false;
-                        _this6.nextElementScript.setNumber(0);
-                        var action = cc.sequence(cc.moveTo(0.125, element.getPosition(cc.v2())), cc.callFunc(function () {
-                            copyTile.destroy();
-                        }));
-                        copyTile.runAction(action);
-                        // this.node.emit('position-changed');
-                    }
-                });
-                this.collumn.reverse();
-            }
-            this.node.emit('adjustCollumn', true);
-            return;
-        }
-
-        for (var _i = 0; _i < 4; _i++) {
-            this.collumn = [];
-            for (var _j3 = 0; _j3 < 4; _j3++) {
-                this.collumn.push(this._tilesMatrix[_j3][_i]);
-            }
-            this.collumn.forEach(function (element, index, array) {
-                if (_this6.skip) {
-                    _this6.skip = false;
-                    return;
-                }
-                _this6.nextElement = array[index + 1];
-                _this6.elementScript = element.getComponent('tilesScript');
-                if (_this6.nextElement === undefined) return;
-                _this6.nextElementScript = _this6.nextElement.getComponent('tilesScript');
-                if (_this6.elementScript.number === _this6.nextElementScript.number) {
-                    _this6.skip = true;
-                    var copyTile = _this6.nextElement;
-                    // copyTile.setPosition(element.getPosition(cc.v2()));
-                    _this6.elementScript.setNumber(_this6.elementScript.number *= 2);
-                    element.runAction(cc.sequence(cc.scaleTo(0.125, 1.25), cc.scaleTo(0.125, 1)));
-                    _this6.nextElement.active = false;
-                    _this6.nextElementScript.setNumber(0);
-                    var action = cc.sequence(cc.moveTo(0.125, element.getPosition(cc.v2())), cc.callFunc(function () {
-                        copyTile.destroy();
-                    }));
-                    copyTile.runAction(action);
-                    // this.node.emit('position-changed');
-                }
-            });
-        }
-        this.node.emit('adjustCollumn', false);
+        this.scheduleOnce(function () {
+            return _this5._moveCollumn(directionDown, true);
+        }, this._time / 2);
+        this._combined && !this._check ? this._generateRandomValue(true) : this._combined = false;
         return;
     },
 
     _generateRandomValue: function _generateRandomValue() {
-        var _this7 = this;
+        var bypass = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
+        if (this._skip) {
+            this._skip = false;
+            this._check = false;
+            return;
+        }
+        cc.warn('bypass is ', bypass);
+        cc.warn('check is ', this._check);
+        if (bypass) {
+            this._check = true;
+            this._skip = bypass;
+        }
+        cc.log('===========');
         if (!this._check) return;
         do {
             this.randomCollumn = Math.floor(Math.random() * 4);
@@ -337,11 +244,14 @@ cc.Class({
         this.number.setNumber(Math.random() > 0.7 ? 4 : 2);
         this.randomTile.setPosition(cc.v2(-157.5 + 105 * this.randomCollumn, 157.5 - 105 * this.randomRow));
         this.randomTile.runAction(cc.sequence(cc.scaleTo(this._time, 1), cc.callFunc(function () {
-            return _this7._check = false;
+            return null;
         })));
+        // this.scheduleOnce(() => this._check = false, this._time);
+        this._check = false;
+        this._combined = false;
     },
     _setupGrid: function _setupGrid() {
-        var _this8 = this;
+        var _this6 = this;
 
         var numberIndex = 1;
         this._tilesMatrix.push([], [], [], []);
@@ -354,26 +264,27 @@ cc.Class({
                 this.tile.name = 'tile ' + numberIndex++;
                 this.tile.setPosition(cc.v2(-157.5 + 105 * row, 157.5 - 105 * collumn));
                 this.tile.on('position-changed', function () {
-                    return _this8._check = true;
+                    if (_this6._check) return;
+                    _this6._check = true;
                 }, this);
                 this._tilesMatrix[Number(String((this.tile.getPosition().y - 157.5) * -1)[0])][Number(String(this.tile.getPosition().x + 157.5)[0])] = this.tile;
                 this.node.addChild(this.tile);
             }
         }
-        this._check = true;
         for (var i = 0; i < 2; i++) {
+            this._check = true;
             this._generateRandomValue();
-        }this._check = false;
+        }
+        this._check = false;
     },
 
 
     _addEvent: function _addEvent() {
-        var _this9 = this;
+        var _this7 = this;
 
-        this.node.on('move', this._generateRandomValue, this);
-        this.node.on('right', this._moveRight, this);
+        // this.node.on('move', this._generateRandomValue, this);
         this.node.on('adjustRow', function (adjustRight) {
-            _this9._tilesMatrix.forEach(function (element, rowIndex) {
+            _this7._tilesMatrix.forEach(function (element, rowIndex) {
                 var numbers = element.filter(function (element) {
                     return element.active;
                 });
@@ -382,21 +293,19 @@ cc.Class({
                 });
                 adjustRight ? element = zeros.concat(numbers) : element = numbers.concat(zeros);
                 element.forEach(function (element, collumnIndex) {
-                    return element.runAction(cc.sequence(cc.moveTo(_this9._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(function () {
-                        _this9._moving = false;
-                    })));
+                    return element.runAction(cc.sequence(cc.moveTo(_this7._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(function () {})));
                 });
                 for (var i = 0; i < 4; i++) {
-                    _this9._tilesMatrix[rowIndex][i] = element.shift();
+                    _this7._tilesMatrix[rowIndex][i] = element.shift();
                 }
             });
-            _this9.node.emit('checkWin');
+            _this7.node.emit('checkWin');
         }, this);
         this.node.on('adjustCollumn', function (adjustDown) {
             for (var i = 0; i < 4; i++) {
                 var collumn = [];
                 for (var j = 0; j < 4; j++) {
-                    collumn.push(_this9._tilesMatrix[j][i]);
+                    collumn.push(_this7._tilesMatrix[j][i]);
                 }
                 var numbers = collumn.filter(function (element) {
                     return element.active;
@@ -405,17 +314,16 @@ cc.Class({
                     return !element.active;
                 });
                 adjustDown ? collumn = zeros.concat(numbers) : collumn = numbers.concat(zeros);
-                for (var _j4 = 0; _j4 < 4; _j4++) {
-                    _this9._tilesMatrix[_j4][i] = collumn.shift();
+                for (var _j2 = 0; _j2 < 4; _j2++) {
+                    _this7._tilesMatrix[_j2][i] = collumn.shift();
                 }
             }
-            _this9._tilesMatrix.forEach(function (element, rowIndex) {
+            _this7._tilesMatrix.forEach(function (element, rowIndex) {
                 return element.forEach(function (element, collumnIndex) {
-                    element.runAction(cc.moveTo(_this9._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex));
-                    _this9._moving = false;
+                    element.runAction(cc.moveTo(_this7._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex));
                 });
             });
-            _this9.node.emit('checkWin');
+            _this7.node.emit('checkWin');
         });
         this.node.on('combineRow', this._combineRow, this);
         this.node.on('combineCollumn', this._combineCollumn, this);
@@ -424,6 +332,13 @@ cc.Class({
     },
 
     _checkWin: function _checkWin() {
+        // !this._combined && this._check ? this._check = false : null;
+        // cc.log(this._check);
+        this._combined && !this._check ? this._generateRandomValue(true) : null;
+        this._check ? this._generateRandomValue() : null;
+        this._check && !this._combined ? this._check = false : null;
+        this._combined = false;
+        // this._check ? this._check = false : null;
         var win = false;
         this._tilesMatrix.flat().forEach(function (element) {
             element.getComponent('tilesScript').number === 2048 ? win = true : null;
@@ -433,23 +348,24 @@ cc.Class({
     },
 
     _checkLose: function _checkLose() {
-        var _this10 = this;
+        var _this8 = this;
 
         this.checkRow = this._tilesMatrix.every(function (element, index, array) {
             if (element.every(function (element, index, array) {
                 if (array[index + 1] === undefined) return true;
-                _this10.number = element.getComponent('tilesScript').number;
-                _this10.nextNumber = array[index + 1].getComponent('tilesScript').number;
-                if (_this10.number !== _this10.nextNumber) return true;
+                _this8.number = element.getComponent('tilesScript').number;
+                _this8.nextNumber = array[index + 1].getComponent('tilesScript').number;
+                if (_this8.number !== _this8.nextNumber) return true;
                 return false;
             })) return true;
             return false;
         });
         this.checkCollumn = this._tilesMatrix.flat().every(function (element, index, array) {
             if (array[index + 4] === undefined) return true;
-            _this10.number = element.getComponent('tilesScript').number;
-            _this10.nextNumber = array[index + 4].getComponent('tilesScript').number;
-            if (_this10.number !== _this10.nextNumber) return true;
+            _this8.number = element.getComponent('tilesScript').number;
+            _this8.nextNumber = array[index + 4].getComponent('tilesScript').number;
+            if (_this8.number !== _this8.nextNumber) return true;
+            cc.log('you lose');
             return false;
         });
         if (this.checkCollumn && this.checkRow) return true;
@@ -457,9 +373,11 @@ cc.Class({
     },
 
     _onClick: function _onClick() {
-        cc.log(this.getPosition(cc.v2()));
+        cc.log(this.name);
         this.script = this.getComponent('tilesScript');
         this.script.setNumber(this.script.number === 2 ? 4 : 2);
+        return;
+        cc.log(this.getPosition(cc.v2()));
     },
 
     onLoad: function onLoad() {
@@ -467,8 +385,13 @@ cc.Class({
         this._setupGrid();
         this._addEvent();
     },
-    start: function start() {},
-    update: function update(dt) {}
+    start: function start() {
+
+        // this.schedule(() => console.clear(), 1);
+    },
+    update: function update(dt) {
+        // cc.log('check is ', this._check);
+    }
 });
 
 cc._RF.pop();

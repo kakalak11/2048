@@ -17,168 +17,93 @@ cc.Class({
         tilePrefab: cc.Prefab,
         _tilesMatrix: [],
         _moving: null,
-        _time: 0.125,
-        _check: null,
+        _time: 0.25,
+        _check: true,
         _combined: false,
+        _posistionChanged: null,
+        _skip: false,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     _onKeyDown: function (event) {
         if (this._moving) return;
+        this._moving = true;
         switch (event.keyCode) {
-            case cc.macro.KEY.right || cc.macro.KEY.d:
-                this._moving = true;
-                this.node.emit('right')
-                // this._moveRight();
+            case cc.macro.KEY.d:
+                this._moveRow(true);
                 break;
-            case cc.macro.KEY.left || cc.macro.KEY.a:
-                this._moving = true;
-                this._moveLeft();
+            case cc.macro.KEY.a:
+                this._moveRow(false);
                 break;
-            case cc.macro.KEY.down || cc.macro.KEY.s:
-                this._moving = true;
-                this._moveDown();
+            case cc.macro.KEY.s:
+                this._moveCollumn(true);
                 break;
-            case cc.macro.KEY.up || cc.macro.KEY.w:
-                this._moving = true;
-                this._moveUp();
+            case cc.macro.KEY.w:
+                this._moveCollumn(false);
                 break;
             case cc.macro.KEY.space:
-                cc.log(this._checkLose());
+                this._adjustPosition();
+                console.clear();
+                break;
+            default:
+                this._moving = false;
                 break;
         }
     },
 
-    _moveRight: function () {
+    _moveRow: function (directionRight, adjust) {
         this._tilesMatrix.forEach((element, rowIndex) => {
             let numbers = element.filter(element => element.active);
             let zeros = element.filter(element => !element.active);
-            element = zeros.concat(numbers);
-            element.forEach((element, collumnIndex) => element.runAction(cc.sequence(cc.moveTo(this._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(() => {
-            }))));
-            cc.log()
-            for (let i = 0; i < 4; i++) {
-                this._tilesMatrix[rowIndex][i] = element.shift();
-            }
+            directionRight ? element = zeros.concat(numbers) : element = numbers.concat(zeros);
+            for (let i = 0; i < 4; i++) this._tilesMatrix[rowIndex][i] = element.shift();
         });
+        if (!adjust) this._combineRow(directionRight);
+        this._adjustPosition();
+        if (adjust) this._generateRandomValue();
+
+        return;
         this.scheduleOnce(() => {
-            this.node.emit('combineRow', true);
             this.node.emit('move');
-
-        }, this._time);
-
-    },
-
-    _moveLeft: function () {
-        this._tilesMatrix.forEach((element, rowIndex) => {
-            let numbers = element.filter(element => element.active);
-            let zeros = element.filter(element => !element.active);
-            element = numbers.concat(zeros);
-            element.forEach((element, collumnIndex) => element.runAction(cc.sequence(cc.moveTo(this._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(() => {
-            }))));
-            for (let i = 0; i < 4; i++) {
-                this._tilesMatrix[rowIndex][i] = element.shift();
-            }
-        });
-        this.scheduleOnce(() => {
-            this.node.emit('combineRow', false);
-            this.node.emit('move');
-
         }, this._time);
     },
 
-    _moveDown: function () {
+    _moveCollumn: function (directionDown, adjust) {
         for (let i = 0; i < 4; i++) {
             let collumn = [];
-            for (let j = 0; j < 4; j++) {
-                collumn.push(this._tilesMatrix[j][i]);
-            }
+            for (let j = 0; j < 4; j++) collumn.push(this._tilesMatrix[j][i]);
             let numbers = collumn.filter(element => element.active);
             let zeros = collumn.filter(element => !element.active);
-            collumn = zeros.concat(numbers);
-            for (let j = 0; j < 4; j++) {
-                this._tilesMatrix[j][i] = collumn.shift();
-            }
+            directionDown ? collumn = zeros.concat(numbers) : collumn = numbers.concat(zeros);
+            for (let j = 0; j < 4; j++) this._tilesMatrix[j][i] = collumn.shift();
         }
-        this._tilesMatrix.forEach((element, rowIndex) => element.forEach((element, collumnIndex) => {
-            element.runAction(cc.moveTo(this._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex));
+        if (!adjust) this._combineCollumn(directionDown);
+        this._adjustPosition();
+        if (adjust) this._generateRandomValue();
 
-        }));
+        return;
         this.scheduleOnce(() => {
-            this.node.emit('combineCollumn', true);
+            this.node.emit('combineCollumn', directionDown);
             this.node.emit('move');
         }, this._time);
     },
 
-    _moveUp: function () {
-        for (let i = 0; i < 4; i++) {
-            let collumn = [];
-            for (let j = 0; j < 4; j++) {
-                collumn.push(this._tilesMatrix[j][i]);
-            }
-            let numbers = collumn.filter(element => element.active);
-            let zeros = collumn.filter(element => !element.active);
-            collumn = numbers.concat(zeros);
-            for (let j = 0; j < 4; j++) {
-                this._tilesMatrix[j][i] = collumn.shift();
-            }
-        }
+    _adjustPosition: function () {
         this._tilesMatrix.forEach((element, rowIndex) => element.forEach((element, collumnIndex) => {
-            element.runAction(cc.moveTo(this._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex));
-
+            this.action = cc.sequence(
+                cc.moveTo(this._time / 2, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex).easing(cc.easeCubicActionInOut(this._time / 2)),
+                cc.callFunc(() => this._moving = false),
+            );
+            element.runAction(this.action);
         }));
-        this.scheduleOnce(() => {
-            this.node.emit('combineCollumn', false);
-            this.node.emit('move');
-        }, this._time);
+        return;
     },
-
-    //  2  -  2  -  2  - 0  => move =>  0  -  2  -  2  -  2  => reverse =>  2  -  2  -  2  -  0  => combine =>  4  -  0  -  2  -  0  => reverse 
 
     _combineRow: function (directionRight) {
-        if (directionRight) {
-            this._tilesMatrix.forEach(element => {
-                element.reverse().forEach((element, index, array) => {
-                    if (this.skip) {
-                        this.skip = false;
-                        return;
-                    }
-                    this.nextElement = array[index + 1];
-                    this.elementScript = element.getComponent('tilesScript');
-                    if (this.nextElement === undefined) return;
-                    this.nextElementScript = this.nextElement.getComponent('tilesScript');
-                    if (this.elementScript.number === this.nextElementScript.number) {
-                        this.skip = true;
-                        let copyTile = this.nextElement;
-                        this.elementScript.setNumber(this.elementScript.number *= 2);
-                        element.runAction(cc.sequence(cc.scaleTo(0.125, 1.25), cc.scaleTo(0.125, 1)));
-                        this.nextElement.active = false;
-                        this.nextElementScript.setNumber(0);
-                        let action = cc.sequence(
-                            cc.moveBy(0.125, element.getPosition(cc.v2())),
-                            cc.callFunc(() => {
-                                copyTile.destroy();
-                            }),
-                        );
-                        copyTile.runAction(action);
-                        // this.node.emit('position-changed');
-                        this._combined = true;
-                    }
-                });
-                element.reverse();
-            });
-            if (this._combined && !this._check) {
-                this._check = true;
-                // this._generateRandomValue();
-                this._combined = false;
-            }
-            this.node.emit('adjustRow', true);
-            return;
-        }
-
-        this._tilesMatrix.forEach(element => {
-            element.forEach((element, index, array) => {
+        this._tilesMatrix.forEach((element, index) => {
+            directionRight ? this.array = element.reverse() : this.array = element;
+            this.array.forEach((element, index, array) => {
                 if (this.skip) {
                     this.skip = false;
                     return;
@@ -187,82 +112,40 @@ cc.Class({
                 this.elementScript = element.getComponent('tilesScript');
                 if (this.nextElement === undefined) return;
                 this.nextElementScript = this.nextElement.getComponent('tilesScript');
+                if (this.elementScript.number === 0) return;
                 if (this.elementScript.number === this.nextElementScript.number) {
                     this.skip = true;
                     let copyTile = this.nextElement;
                     this.elementScript.setNumber(this.elementScript.number *= 2);
-                    element.runAction(cc.sequence(cc.scaleTo(0.125, 1.25), cc.scaleTo(0.125, 1)));
+                    element.runAction(cc.sequence(cc.scaleTo(this._time / 2, 1.25), cc.scaleTo(this._time / 2, 1)));
                     this.nextElement.active = false;
                     this.nextElementScript.setNumber(0);
                     let action = cc.sequence(
-                        cc.moveBy(0.125, element.getPosition(cc.v2())),
+                        cc.moveBy(this._time, element.getPosition(cc.v2())),
                         cc.callFunc(() => {
                             copyTile.destroy();
                         }),
                     );
                     copyTile.runAction(action);
-                    // this.node.emit('position-changed');
                     this._combined = true;
                 }
             });
+            directionRight ? this.array.reverse() : null;
         });
-        if (this._combined && !this._check) {
-            this._check = true;
-            this._generateRandomValue();
-            this._combined = false;
-        }
-        this.node.emit('adjustRow', false);
+        this.scheduleOnce(() => this._moveRow(directionRight, true), this._time / 2);
+        this._combined && !this._check ? this._generateRandomValue(true) : this._combined = false;
         return;
     },
 
+    //  2  -  2  -  2  - 0  => move =>  0  -  2  -  2  -  2  => reverse =>  2  -  2  -  2  -  0  => combine =>  4  -  0  -  2  -  0  => reverse 
+
     _combineCollumn: function (directionDown) {
-        if (directionDown) {
-            for (let i = 0; i < 4; i++) {
-                this.collumn = [];
-                for (let j = 0; j < 4; j++) {
-                    this.collumn.push(this._tilesMatrix[j][i]);
-                }
-                this.collumn.reverse().forEach((element, index, array) => {
-                    if (this.skip) {
-                        this.skip = false;
-                        return;
-                    }
-                    this.nextElement = array[index + 1];
-                    this.elementScript = element.getComponent('tilesScript');
-                    if (this.nextElement === undefined) return;
-                    this.nextElementScript = this.nextElement.getComponent('tilesScript');
-                    if (this.elementScript.number === this.nextElementScript.number) {
-                        this.skip = true;
-                        let copyTile = this.nextElement;
-                        this.elementScript.setNumber(this.elementScript.number *= 2);
-                        element.runAction(cc.sequence(cc.scaleTo(0.125, 1.25), cc.scaleTo(0.125, 1)));
-                        this.nextElement.active = false;
-                        this.nextElementScript.setNumber(0);
-                        let action = cc.sequence(
-                            cc.moveTo(0.125, element.getPosition(cc.v2())),
-                            cc.callFunc(() => {
-                                copyTile.destroy();
-
-                            }),
-                        );
-                        copyTile.runAction(action);
-                        // this.node.emit('position-changed');
-
-                    }
-                });
-                this.collumn.reverse();
-            }
-            this.node.emit('adjustCollumn', true);
-            return;
-        }
-
-
-
         for (let i = 0; i < 4; i++) {
             this.collumn = [];
             for (let j = 0; j < 4; j++) {
                 this.collumn.push(this._tilesMatrix[j][i]);
             }
+            directionDown ? this.collumn.reverse() : null;
             this.collumn.forEach((element, index, array) => {
                 if (this.skip) {
                     this.skip = false;
@@ -272,30 +155,46 @@ cc.Class({
                 this.elementScript = element.getComponent('tilesScript');
                 if (this.nextElement === undefined) return;
                 this.nextElementScript = this.nextElement.getComponent('tilesScript');
+                if (this.elementScript.number === 0) return;
                 if (this.elementScript.number === this.nextElementScript.number) {
                     this.skip = true;
                     let copyTile = this.nextElement;
-                    // copyTile.setPosition(element.getPosition(cc.v2()));
                     this.elementScript.setNumber(this.elementScript.number *= 2);
-                    element.runAction(cc.sequence(cc.scaleTo(0.125, 1.25), cc.scaleTo(0.125, 1)));
+                    element.runAction(cc.sequence(cc.scaleTo(this._time / 2, 1.25), cc.scaleTo(this._time / 2, 1)));
                     this.nextElement.active = false;
                     this.nextElementScript.setNumber(0);
                     let action = cc.sequence(
-                        cc.moveTo(0.125, element.getPosition(cc.v2())),
+                        cc.moveTo(this._time, element.getPosition(cc.v2())),
                         cc.callFunc(() => {
                             copyTile.destroy();
                         }),
                     );
                     copyTile.runAction(action);
                     // this.node.emit('position-changed');
+                    this._combined = true;
+
                 }
             });
+            directionDown ? this.collumn.reverse() : null;
         }
-        this.node.emit('adjustCollumn', false);
+        this.scheduleOnce(() => this._moveCollumn(directionDown, true), this._time / 2);
+        this._combined && !this._check ? this._generateRandomValue(true) : this._combined = false;
         return;
     },
 
-    _generateRandomValue() {
+    _generateRandomValue(bypass = false) {
+        if (this._skip) {
+            this._skip = false;
+            this._check = false;
+            return;
+        }
+        cc.warn('bypass is ', bypass);
+        cc.warn('check is ', this._check);
+        if (bypass) {
+            this._check = true;
+            this._skip = bypass;
+        }
+        cc.log('===========');
         if (!this._check) return;
         do {
             this.randomCollumn = Math.floor(Math.random() * 4);
@@ -311,7 +210,10 @@ cc.Class({
         this.randomTile.scale = 0;
         this.number.setNumber(Math.random() > 0.7 ? 4 : 2);
         this.randomTile.setPosition(cc.v2(-157.5 + 105 * this.randomCollumn, 157.5 - 105 * this.randomRow));
-        this.randomTile.runAction(cc.sequence(cc.scaleTo(this._time, 1), cc.callFunc(() => this._check = false)));
+        this.randomTile.runAction(cc.sequence(cc.scaleTo(this._time, 1), cc.callFunc(() => null)));
+        // this.scheduleOnce(() => this._check = false, this._time);
+        this._check = false;
+        this._combined = false;
     },
 
     _setupGrid() {
@@ -325,26 +227,29 @@ cc.Class({
                 // tile.active ? tile.getComponent('tilesScript').setNumber(Math.random() > 0.5 ? 2 : 4) : tile.getComponent('tilesScript').setNumber(0);
                 this.tile.name = `tile ${numberIndex++}`;
                 this.tile.setPosition(cc.v2(-157.5 + 105 * row, 157.5 - 105 * collumn));
-                this.tile.on('position-changed', () => this._check = true, this);
+                this.tile.on('position-changed', () => {
+                    if (this._check) return;
+                    this._check = true;
+                }, this);
                 this._tilesMatrix[Number(String((this.tile.getPosition().y - 157.5) * -1)[0])][Number(String(this.tile.getPosition().x + 157.5)[0])] = this.tile;
                 this.node.addChild(this.tile);
             }
         }
-        this._check = true;
-        for (let i = 0; i < 2; i++) this._generateRandomValue();
+        for (let i = 0; i < 2; i++) {
+            this._check = true;
+            this._generateRandomValue();
+        }
         this._check = false;
     },
 
     _addEvent: function () {
-        this.node.on('move', this._generateRandomValue, this);
-        this.node.on('right', this._moveRight, this);
+        // this.node.on('move', this._generateRandomValue, this);
         this.node.on('adjustRow', (adjustRight) => {
             this._tilesMatrix.forEach((element, rowIndex) => {
                 let numbers = element.filter(element => element.active);
                 let zeros = element.filter(element => !element.active);
                 adjustRight ? element = zeros.concat(numbers) : element = numbers.concat(zeros);
                 element.forEach((element, collumnIndex) => element.runAction(cc.sequence(cc.moveTo(this._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(() => {
-                    this._moving = false;
                 }))));
                 for (let i = 0; i < 4; i++) {
                     this._tilesMatrix[rowIndex][i] = element.shift();
@@ -367,7 +272,6 @@ cc.Class({
             }
             this._tilesMatrix.forEach((element, rowIndex) => element.forEach((element, collumnIndex) => {
                 element.runAction(cc.moveTo(this._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex));
-                this._moving = false;
             }));
             this.node.emit('checkWin');
         });
@@ -378,6 +282,13 @@ cc.Class({
     },
 
     _checkWin: function () {
+        // !this._combined && this._check ? this._check = false : null;
+        // cc.log(this._check);
+        this._combined && !this._check ? this._generateRandomValue(true) : null;
+        this._check ? this._generateRandomValue() : null;
+        this._check && !this._combined ? this._check = false : null;
+        this._combined = false;
+        // this._check ? this._check = false : null;
         let win = false;
         this._tilesMatrix.flat().forEach(element => {
             element.getComponent('tilesScript').number === 2048 ? win = true : null;
@@ -402,6 +313,7 @@ cc.Class({
             this.number = element.getComponent('tilesScript').number;
             this.nextNumber = array[index + 4].getComponent('tilesScript').number;
             if (this.number !== this.nextNumber) return true;
+            cc.log('you lose')
             return false;
         });
         if (this.checkCollumn && this.checkRow) return true;
@@ -409,9 +321,11 @@ cc.Class({
     },
 
     _onClick: function () {
-        cc.log(this.getPosition(cc.v2()));
+        cc.log(this.name);
         this.script = this.getComponent('tilesScript');
         this.script.setNumber(this.script.number === 2 ? 4 : 2);
+        return;
+        cc.log(this.getPosition(cc.v2()));
     },
 
     onLoad() {
@@ -422,9 +336,10 @@ cc.Class({
 
     start() {
 
+        // this.schedule(() => console.clear(), 1);
     },
 
     update(dt) {
-
+        // cc.log('check is ', this._check);
     },
 });
