@@ -217,6 +217,13 @@
       "__id__": 1
     },
     "_enabled": true,
+    "number": 0,
+    "position": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_index": null,
     "_id": ""
   },
   {

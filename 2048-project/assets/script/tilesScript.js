@@ -14,7 +14,7 @@ cc.Class({
     properties: {
         number: 0,
         position: cc.Vec2,
-        _index = null,
+        _index: null,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -22,6 +22,19 @@ cc.Class({
     setNumber: function (value) {
         this.number = value;
         this.node.getComponentInChildren(cc.Label).string = this.number;
+    },
+
+    moveCombine: function (pos, time) {
+        let currentPos = this.node.getPosition(cc.v2());
+        let action = cc.sequence(
+            cc.moveTo(time, pos),
+            cc.callFunc(() => {
+                this.setNumber(0);
+                this.node.active = false;
+                this.node.setPosition(currentPos)
+            }),
+        )
+        this.node.runAction(action);
     },
 
     onLoad() {
