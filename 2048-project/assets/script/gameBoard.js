@@ -114,6 +114,7 @@ cc.Class({
             );
             element.runAction(this.action);
         }));
+        this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
         this.scheduleOnce(this._generateRandomValue, this._time);
         return;
     },
@@ -195,14 +196,14 @@ cc.Class({
         this._check = false;
     },
 
-    _setupGrid() {
+    _setupGrid(playing) {
         let numberIndex = 1;
         this._tilesMatrix.push([], [], [], []);
         for (let collumn = 0; collumn < 4; collumn++) {
             for (let row = 0; row < 4; row++) {
                 this.tile = cc.instantiate(this.tilePrefab);
                 this.tile.active = false;
-                this.tile.on('mousedown', this._onClick, this.tile);
+                // this.tile.on('mousedown', this._onClick, this.tile);
                 this.tile.name = `tile ${numberIndex++}`;
                 this.tile.setPosition(cc.v2(-157.5 + 105 * row, 157.5 - 105 * collumn));
                 this.tile.on('position-changed', () => {
@@ -213,18 +214,20 @@ cc.Class({
                 this.node.addChild(this.tile);
             }
         }
+        if (playing) return;
         for (let i = 0; i < 2; i++) {
             this._check = true;
             this._generateRandomValue();
         }
         this._check = false;
     },
-    
+
     _checkWin: function () {
         let win = false;
         this._tilesMatrix.flat().forEach(element => element.getComponent('tilesScript').number === 2048 ? win = true : null);
         if (win) {
             cc.log('you have won');
+            this.node.dispatchEvent(new cc.Event.EventCustom('win', true));
             return true;
         }
         return false;
@@ -250,6 +253,7 @@ cc.Class({
         });
         if (this.checkCollumn && this.checkRow) {
             cc.log('you have lost');
+            this.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
             return true;
         }
         return false;
@@ -266,7 +270,6 @@ cc.Class({
 
     onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
-        this._setupGrid();
         this.node.on('checkWin', this._checkWin, this);
         this.node.on('checkLose', this._checkLose, this);
     },

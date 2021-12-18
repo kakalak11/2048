@@ -1,69 +1,137 @@
-2021-12-17T12:49:52.872Z - normal: Load ~/.CocosCreator/settings.json
-2021-12-17T12:49:54.002Z - normal: Initializing Asset Database
-2021-12-17T12:49:54.005Z - normal: checking language setting...
-2021-12-17T12:49:54.005Z - normal: Language: en
-2021-12-17T12:49:55.238Z - success: preview server running at http://localhost:7456
-2021-12-17T12:49:55.241Z - success: protocol editor-framework registered
-2021-12-17T12:49:55.241Z - success: protocol app registered
-2021-12-17T12:49:55.241Z - success: protocol theme registered
-2021-12-17T12:49:55.241Z - success: protocol packages registered
-2021-12-17T12:49:55.241Z - success: protocol uuid registerred
-2021-12-17T12:49:55.242Z - success: protocol db registerred
-2021-12-17T12:49:55.242Z - success: protocol thumbnail registerred
-2021-12-17T12:49:55.242Z - success: protocol unpack registerred
-2021-12-17T12:49:55.242Z - success: protocol disable-commonjs registerred
-2021-12-17T12:49:58.240Z - normal: failed to connect login server due to request timeout
-2021-12-17T12:49:58.241Z - normal: Check project G:\Cocos\2048\2048-project
-2021-12-17T12:49:58.243Z - normal: Initializing project G:\Cocos\2048\2048-project
-2021-12-17T12:49:58.757Z - normal: Initializing Cocos2d
-2021-12-17T12:50:00.013Z - normal: Initializing engine extends
-2021-12-17T12:50:00.050Z - success: alipay-adapter loaded
-2021-12-17T12:50:00.074Z - success: asset-db-debugger loaded
-2021-12-17T12:50:00.082Z - success: baidu-adapter loaded
-2021-12-17T12:50:00.087Z - success: color-picker loaded
-2021-12-17T12:50:00.244Z - success: fb-audience-network loaded
-2021-12-17T12:50:00.352Z - success: fb-live-stream loaded
-2021-12-17T12:50:00.356Z - success: google-play-instant loaded
-2021-12-17T12:50:00.361Z - success: huawei-runtime loaded
-2021-12-17T12:50:00.631Z - success: cpk-publish loaded
-2021-12-17T12:50:00.632Z - success: jsb-adapter loaded
-2021-12-17T12:50:00.638Z - success: oppo-runtime loaded
-2021-12-17T12:50:00.642Z - success: package-manager loaded
-2021-12-17T12:50:00.821Z - success: qqplay-adapter loaded
-2021-12-17T12:50:00.827Z - success: runtime-dev-tools loaded
-2021-12-17T12:50:00.834Z - success: sdkbox loaded
-2021-12-17T12:50:00.837Z - success: tester loaded
-2021-12-17T12:50:00.838Z - success: ui-kit-preview-extra loaded
-2021-12-17T12:50:00.840Z - success: ui-kit-preview loaded
-2021-12-17T12:50:00.841Z - success: ui-kit loaded
-2021-12-17T12:50:00.848Z - success: vivo-runtime loaded
-2021-12-17T12:50:00.849Z - success: weapp-adapter loaded
-2021-12-17T12:50:00.850Z - success: xiaomi-adapter loaded
-2021-12-17T12:50:00.852Z - success: alipay-minigame loaded
-2021-12-17T12:50:00.900Z - success: assets loaded
-2021-12-17T12:50:00.901Z - success: builder loaded
-2021-12-17T12:50:01.207Z - success: cocos-services loaded
-2021-12-17T12:50:01.211Z - success: console loaded
-2021-12-17T12:50:01.249Z - success: fb-instant-games loaded
-2021-12-17T12:50:01.251Z - success: game-window loaded
-2021-12-17T12:50:01.252Z - success: google-instant-games loaded
-2021-12-17T12:50:01.256Z - success: hierarchy loaded
-2021-12-17T12:50:01.259Z - success: inspector loaded
-2021-12-17T12:50:01.260Z - success: keystore loaded
-2021-12-17T12:50:01.263Z - success: node-library loaded
-2021-12-17T12:50:01.264Z - success: package-asset loaded
-2021-12-17T12:50:01.265Z - success: preferences loaded
-2021-12-17T12:50:01.267Z - success: project-exporter loaded
-2021-12-17T12:50:01.268Z - success: project-importer loaded
-2021-12-17T12:50:01.270Z - success: project-settings loaded
-2021-12-17T12:50:01.274Z - success: scene loaded
-2021-12-17T12:50:01.275Z - success: simulator-debugger loaded
-2021-12-17T12:50:01.276Z - success: sprite-editor loaded
-2021-12-17T12:50:01.279Z - success: store loaded
-2021-12-17T12:50:01.283Z - success: timeline loaded
-2021-12-17T12:50:01.288Z - success: xiaomi-runtime loaded
-2021-12-17T12:50:04.071Z - info: Cocos Services load base data!
-2021-12-17T12:50:08.106Z - normal: Loading packages
-2021-12-17T12:50:08.112Z - normal: Watching packages
-2021-12-17T12:50:08.524Z - normal: Run Application
-2021-12-17T14:56:46.075Z - info: Only the prefab node "tiles" and its child nodes are saved.
+2021-12-18T02:38:29.489Z - normal: Load ~/.CocosCreator/settings.json
+2021-12-18T02:38:29.538Z - normal: Initializing Asset Database
+2021-12-18T02:38:29.539Z - normal: checking language setting...
+2021-12-18T02:38:29.539Z - normal: Language: en
+2021-12-18T02:38:30.120Z - success: preview server running at http://localhost:7456
+2021-12-18T02:38:30.132Z - success: protocol editor-framework registered
+2021-12-18T02:38:30.132Z - success: protocol app registered
+2021-12-18T02:38:30.132Z - success: protocol theme registered
+2021-12-18T02:38:30.132Z - success: protocol packages registered
+2021-12-18T02:38:30.132Z - success: protocol uuid registerred
+2021-12-18T02:38:30.132Z - success: protocol db registerred
+2021-12-18T02:38:30.132Z - success: protocol thumbnail registerred
+2021-12-18T02:38:30.132Z - success: protocol unpack registerred
+2021-12-18T02:38:30.132Z - success: protocol disable-commonjs registerred
+2021-12-18T02:38:31.678Z - normal: connected!
+2021-12-18T02:38:31.680Z - normal: Check project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
+2021-12-18T02:38:31.682Z - normal: Initializing project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
+2021-12-18T02:38:32.003Z - normal: Initializing Cocos2d
+2021-12-18T02:38:32.710Z - normal: Initializing engine extends
+2021-12-18T02:38:32.729Z - success: alipay-adapter loaded
+2021-12-18T02:38:32.735Z - success: asset-db-debugger loaded
+2021-12-18T02:38:32.736Z - success: baidu-adapter loaded
+2021-12-18T02:38:32.738Z - success: color-picker loaded
+2021-12-18T02:38:32.867Z - success: fb-audience-network loaded
+2021-12-18T02:38:32.920Z - success: fb-live-stream loaded
+2021-12-18T02:38:32.925Z - success: google-play-instant loaded
+2021-12-18T02:38:32.931Z - success: huawei-runtime loaded
+2021-12-18T02:38:33.147Z - success: cpk-publish loaded
+2021-12-18T02:38:33.150Z - success: jsb-adapter loaded
+2021-12-18T02:38:33.154Z - success: oppo-runtime loaded
+2021-12-18T02:38:33.161Z - success: package-manager loaded
+2021-12-18T02:38:33.292Z - success: qqplay-adapter loaded
+2021-12-18T02:38:33.295Z - success: runtime-dev-tools loaded
+2021-12-18T02:38:33.325Z - success: sdkbox loaded
+2021-12-18T02:38:33.333Z - success: tester loaded
+2021-12-18T02:38:33.338Z - success: ui-kit-preview-extra loaded
+2021-12-18T02:38:33.343Z - success: ui-kit-preview loaded
+2021-12-18T02:38:33.348Z - success: ui-kit loaded
+2021-12-18T02:38:33.355Z - success: vivo-runtime loaded
+2021-12-18T02:38:33.358Z - success: weapp-adapter loaded
+2021-12-18T02:38:33.361Z - success: xiaomi-adapter loaded
+2021-12-18T02:38:33.365Z - success: alipay-minigame loaded
+2021-12-18T02:38:33.401Z - success: assets loaded
+2021-12-18T02:38:33.404Z - success: builder loaded
+2021-12-18T02:38:33.661Z - success: cocos-services loaded
+2021-12-18T02:38:33.666Z - success: console loaded
+2021-12-18T02:38:33.695Z - success: fb-instant-games loaded
+2021-12-18T02:38:33.698Z - success: game-window loaded
+2021-12-18T02:38:33.699Z - success: google-instant-games loaded
+2021-12-18T02:38:33.703Z - success: hierarchy loaded
+2021-12-18T02:38:33.706Z - success: inspector loaded
+2021-12-18T02:38:33.708Z - success: keystore loaded
+2021-12-18T02:38:33.711Z - success: node-library loaded
+2021-12-18T02:38:33.713Z - success: package-asset loaded
+2021-12-18T02:38:33.714Z - success: preferences loaded
+2021-12-18T02:38:33.716Z - success: project-exporter loaded
+2021-12-18T02:38:33.721Z - success: project-importer loaded
+2021-12-18T02:38:33.724Z - success: project-settings loaded
+2021-12-18T02:38:33.729Z - success: scene loaded
+2021-12-18T02:38:33.732Z - success: simulator-debugger loaded
+2021-12-18T02:38:33.733Z - success: sprite-editor loaded
+2021-12-18T02:38:33.736Z - success: store loaded
+2021-12-18T02:38:33.741Z - success: timeline loaded
+2021-12-18T02:38:33.745Z - success: xiaomi-runtime loaded
+2021-12-18T02:38:36.579Z - info: Cocos Services load base data!
+2021-12-18T02:38:37.923Z - normal: Loading packages
+2021-12-18T02:38:37.927Z - normal: Watching packages
+2021-12-18T02:38:38.004Z - normal: Run Application
+2021-12-18T03:19:51.175Z - failed: [db-task][sync-changes] Failed to import asset /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/assets/script/menuScript.js, message: Compile error: SyntaxError: /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/assets/script/menuScript.js: Invalid left-hand side in arrow function parameters (31:25)
+  29 |         // this.node.active = true;
+  30 |         this.node.runAction(cc.sequence(
+> 31 |             cc.callFunc((this) => cc.log(this)),
+     |                          ^
+  32 |             cc.fadeIn(0.5, 1),
+  33 |         ));
+  34 |         // cc.log(this.node);
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$2.toAssignable (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3008:16)
+    at Parser.pp$2.toAssignableList (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3035:19)
+    at Parser.pp$3.parseArrowExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4189:22)
+    at Parser.pp$3.parseParenAndDistinguishExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3855:17)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3709:19)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
+2021-12-18T03:32:03.058Z - error: TypeError: Cannot read property 'getChildByName' of null
+    at new windowScript (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:475:20), <anonymous>:10:4)
+    at _Deserializer.prototype._deserializeObject (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:146:31)
+    at _Deserializer.prototype.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:107:65)
+    at Object.cc.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:535:36)
+    at Loader.loadUuid (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:218:28)
+    at Loader.handle (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loader.js:185:29)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:33:35)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+2021-12-18T03:32:03.059Z - error: TypeError: Cannot read property 'getChildByName' of null
+    at new windowScript (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:475:20), <anonymous>:10:4)
+    at _Deserializer.prototype._deserializeObject (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:146:31)
+    at _Deserializer.prototype.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:107:65)
+    at Object.cc.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:535:36)
+    at Loader.loadUuid (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:218:28)
+    at Loader.handle (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loader.js:185:29)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:33:35)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+2021-12-18T03:33:14.661Z - error: TypeError: Cannot read property 'children' of null
+    at new windowScript (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:475:20), <anonymous>:10:4)
+    at _Deserializer.prototype._deserializeObject (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:146:31)
+    at _Deserializer.prototype.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:107:65)
+    at Object.cc.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:535:36)
+    at Loader.loadUuid (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:218:28)
+    at Loader.handle (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loader.js:185:29)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:33:35)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+2021-12-18T03:33:14.661Z - error: TypeError: Cannot read property 'children' of null
+    at new windowScript (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:475:20), <anonymous>:10:4)
+    at _Deserializer.prototype._deserializeObject (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:146:31)
+    at _Deserializer.prototype.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:107:65)
+    at Object.cc.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:535:36)
+    at Loader.loadUuid (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:218:28)
+    at Loader.handle (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loader.js:185:29)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:33:35)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+2021-12-18T03:34:31.259Z - failed: load script [/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/windowScript.js] failed : TypeError: Cannot read property 'node' of undefined
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/windowScript.js:23:25)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/windowScript.js:46:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/windowScript.js:53:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/windowScript.js:56:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)

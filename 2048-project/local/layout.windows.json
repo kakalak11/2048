@@ -6,10 +6,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 120,
+      "x": 0,
       "y": 0,
       "width": 1680,
-      "height": 1040,
+      "height": 1050,
       "layout": {
         "children": [
           {
@@ -19,23 +19,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 461,
+                "height": 495,
                 "type": "panel",
-                "width": 204
+                "width": 322
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 458,
+                "height": 493,
                 "type": "panel",
-                "width": 204
+                "width": 322
               }
             ],
-            "height": 921,
+            "height": 990,
             "type": "dock-v",
-            "width": 204
+            "width": 322
           },
           {
             "children": [
@@ -44,9 +44,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 636,
+                "height": 683,
                 "type": "panel",
-                "width": 1118
+                "width": 1013
               },
               {
                 "active": 0,
@@ -55,14 +55,14 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 283,
+                "height": 305,
                 "type": "panel",
-                "width": 1118
+                "width": 1013
               }
             ],
-            "height": 921,
+            "height": 990,
             "type": "dock-v",
-            "width": 1118
+            "width": 1013
           },
           {
             "active": 0,
@@ -71,9 +71,9 @@
               "cocos-services",
               "node-library"
             ],
-            "height": 921,
+            "height": 990,
             "type": "panel",
-            "width": 338
+            "width": 341
           }
         ],
         "type": "dock-h"

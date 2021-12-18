@@ -138,6 +138,7 @@ cc.Class({
                 element.runAction(_this3.action);
             });
         });
+        this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
         this.scheduleOnce(this._generateRandomValue, this._time);
         return;
     },
@@ -224,7 +225,7 @@ cc.Class({
         this.randomTile.runAction(cc.scaleTo(this._time, 1));
         this._check = false;
     },
-    _setupGrid: function _setupGrid() {
+    _setupGrid: function _setupGrid(playing) {
         var _this6 = this;
 
         var numberIndex = 1;
@@ -233,7 +234,7 @@ cc.Class({
             for (var row = 0; row < 4; row++) {
                 this.tile = cc.instantiate(this.tilePrefab);
                 this.tile.active = false;
-                this.tile.on('mousedown', this._onClick, this.tile);
+                // this.tile.on('mousedown', this._onClick, this.tile);
                 this.tile.name = 'tile ' + numberIndex++;
                 this.tile.setPosition(cc.v2(-157.5 + 105 * row, 157.5 - 105 * collumn));
                 this.tile.on('position-changed', function () {
@@ -244,6 +245,7 @@ cc.Class({
                 this.node.addChild(this.tile);
             }
         }
+        if (playing) return;
         for (var i = 0; i < 2; i++) {
             this._check = true;
             this._generateRandomValue();
@@ -259,6 +261,7 @@ cc.Class({
         });
         if (win) {
             cc.log('you have won');
+            this.node.dispatchEvent(new cc.Event.EventCustom('win', true));
             return true;
         }
         return false;
@@ -286,6 +289,7 @@ cc.Class({
         });
         if (this.checkCollumn && this.checkRow) {
             cc.log('you have lost');
+            this.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
             return true;
         }
         return false;
@@ -302,7 +306,6 @@ cc.Class({
 
     onLoad: function onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
-        this._setupGrid();
         this.node.on('checkWin', this._checkWin, this);
         this.node.on('checkLose', this._checkLose, this);
     },
