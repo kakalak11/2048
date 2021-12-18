@@ -22,22 +22,14 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onClickPlayButton: function onClickPlayButton() {
-        var _this = this;
-
-        this.node.runAction(cc.sequence(cc.fadeOut(0.5, 0), cc.callFunc(function () {
-            _this.node.active = false;
-        })));
+        this.node.runAction(cc.moveTo(0.5, -500, 0).easing(cc.easeExponentialInOut(0.5)));
     },
 
-    onMenuClick: function onMenuClick() {
-        this.node.active = true;
-        this.node.runAction(cc.fadeIn(0.5, 1));
-        cc.log(this.node);
+    onClickMenuButton: function onClickMenuButton() {
+        this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5)));
     },
 
-    onLoad: function onLoad() {
-        cc.log(this.node);
-    },
+    onLoad: function onLoad() {},
     start: function start() {}
 }
 

@@ -31,7 +31,7 @@ cc.Class({
             cc.callFunc(() => {
                 this.setNumber(0);
                 this.node.active = false;
-                this.node.setPosition(currentPos)
+                this.node.setPosition(currentPos);
             }),
         )
         this.node.runAction(action);

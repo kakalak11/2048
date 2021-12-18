@@ -21,6 +21,8 @@ cc.Class({
 
     properties: {
         tilePrefab: cc.Prefab,
+        winBoard: cc.Node,
+        loseBoard: cc.Node,
         _tilesMatrix: [],
         _moving: null,
         _time: 0.25 / 8,
@@ -82,7 +84,7 @@ cc.Class({
                 console.clear();
                 break;
             case cc.macro.KEY.c:
-                this._generateRandomValue();
+                this.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
                 break;
             default:
                 this._moving = false;
@@ -138,8 +140,10 @@ cc.Class({
                 element.runAction(_this3.action);
             });
         });
-        this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
-        this.scheduleOnce(this._generateRandomValue, this._time);
+        this.scheduleOnce(function () {
+            _this3._generateRandomValue();
+            _this3.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
+        }, this._time);
         return;
     },
 
@@ -228,13 +232,14 @@ cc.Class({
     _setupGrid: function _setupGrid(playing) {
         var _this6 = this;
 
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
         var numberIndex = 1;
         this._tilesMatrix.push([], [], [], []);
         for (var collumn = 0; collumn < 4; collumn++) {
             for (var row = 0; row < 4; row++) {
                 this.tile = cc.instantiate(this.tilePrefab);
                 this.tile.active = false;
-                // this.tile.on('mousedown', this._onClick, this.tile);
+                this.tile.on('mousedown', this._onClick, this.tile);
                 this.tile.name = 'tile ' + numberIndex++;
                 this.tile.setPosition(cc.v2(-157.5 + 105 * row, 157.5 - 105 * collumn));
                 this.tile.on('position-changed', function () {
@@ -250,50 +255,70 @@ cc.Class({
             this._check = true;
             this._generateRandomValue();
         }
+        cc.log(this._tilesMatrix);
         this._check = false;
     },
 
 
     _checkWin: function _checkWin() {
+        var _this7 = this;
+
         var win = false;
         this._tilesMatrix.flat().forEach(function (element) {
             return element.getComponent('tilesScript').number === 2048 ? win = true : null;
         });
         if (win) {
             cc.log('you have won');
-            this.node.dispatchEvent(new cc.Event.EventCustom('win', true));
+            cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
+            this.scheduleOnce(function () {
+                _this7.node.dispatchEvent(new cc.Event.EventCustom('win', true));
+            }, 0.5);
             return true;
         }
         return false;
     },
 
     _checkLose: function _checkLose() {
-        var _this7 = this;
+        var _this8 = this;
 
-        this.checkRow = this._tilesMatrix.every(function (element, index, array) {
+        if (!this._tilesMatrix.flat().every(function (element) {
+            return element.active;
+        })) return;
+        this.checkRow = this._tilesMatrix.every(function (element) {
             if (element.every(function (element, index, array) {
                 if (array[index + 1] === undefined) return true;
-                _this7.number = element.getComponent('tilesScript').number;
-                _this7.nextNumber = array[index + 1].getComponent('tilesScript').number;
-                if (_this7.number !== _this7.nextNumber) return true;
+                _this8.number = element.getComponent('tilesScript').number;
+                _this8.nextNumber = array[index + 1].getComponent('tilesScript').number;
+                if (_this8.number !== _this8.nextNumber) return true;
                 return false;
             })) return true;
             return false;
         });
         this.checkCollumn = this._tilesMatrix.flat().every(function (element, index, array) {
             if (array[index + 4] === undefined) return true;
-            _this7.number = element.getComponent('tilesScript').number;
-            _this7.nextNumber = array[index + 4].getComponent('tilesScript').number;
-            if (_this7.number !== _this7.nextNumber) return true;
+            _this8.number = element.getComponent('tilesScript').number;
+            _this8.nextNumber = array[index + 4].getComponent('tilesScript').number;
+            if (_this8.number !== _this8.nextNumber) return true;
             return false;
         });
         if (this.checkCollumn && this.checkRow) {
             cc.log('you have lost');
-            this.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
+            cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
+            this.scheduleOnce(function () {
+                _this8.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
+            }, 0.5);
             return true;
         }
         return false;
     },
+
+    _reset: function _reset() {
+        this._tilesMatrix = [];
+        this.node.children.splice(1, 16);
+        this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
+        cc.log(this.node.children);
+    },
+
 
     _onClick: function _onClick() {
         cc.log(this.name);
@@ -305,7 +330,6 @@ cc.Class({
     },
 
     onLoad: function onLoad() {
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
         this.node.on('checkWin', this._checkWin, this);
         this.node.on('checkLose', this._checkLose, this);
     },

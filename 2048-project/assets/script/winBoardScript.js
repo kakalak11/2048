@@ -12,22 +12,28 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        gameScore: cc.Node,
+        menuNode: cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onClickPlayButton: function () {
-        this.node.runAction(cc.moveTo(0.5, -500,0).easing(cc.easeExponentialInOut(0.5)));
+    _win: function() {
+        cc.log('win event');
+        this.node.getChildByName('score').getComponent(cc.Label).string = this.gameScore.getComponent(cc.Label).string;
+        this.node.runAction(this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5))));
     },
 
-    onClickMenuButton: function () {
-        this.node.runAction(cc.moveTo(0.5, 0,0).easing(cc.easeExponentialInOut(0.5)));
+    onClickReturnButton: function() {
+        this.node.runAction(this.node.runAction(cc.moveTo(0.5, 0, 800).easing(cc.easeExponentialInOut(0.5))));
+        this.menuNode.runAction(this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5))));
     },
 
-    onLoad() {
+    onLoad () {
+        this.node.on('winBoard',this._win,this);
     },
 
-    start() {
+    start () {
 
     },
 

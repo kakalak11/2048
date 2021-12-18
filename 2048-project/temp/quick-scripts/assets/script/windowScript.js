@@ -21,15 +21,21 @@ cc.Class({
         menuNode: cc.Node,
         score: cc.Node,
         gameBoard: cc.Node,
+        winBoard: cc.Node,
+        loseBoard: cc.Node,
         _playing: null
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onClickPlayButton: function onClickPlayButton() {
-        cc.log('gamestart', this.gameBoard);
+        this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5)));
         this.gameBoard.getComponent('gameBoard')._setupGrid(this._playing);
         this._playing = true;
+    },
+
+    onClickMenuButton: function onClickMenuButton() {
+        this.node.runAction(cc.moveTo(0.5, -500, 0).easing(cc.easeExponentialInOut(0.5)));
     },
 
     _scoreUpdate: function _scoreUpdate() {
@@ -43,11 +49,25 @@ cc.Class({
         this.score.getComponent('cc.Label').string = this.scoreNumber;
     },
 
-    _win: function _win() {},
+    _win: function _win() {
+        this.winBoard.emit('winBoard');
+        this._playing = false;
+    },
+
+    _lose: function _lose() {
+        this.loseBoard.emit('loseBoard');
+        this._playing = false;
+    },
+
+    onClickReturnButton: function onClickReturnButton() {
+        this.gameBoard._reset();
+        return;
+    },
 
     onLoad: function onLoad() {
         this.node.on('updateScore', this._scoreUpdate, this);
         this.node.on('win', this._win, this);
+        this.node.on('lose', this._lose, this);
     },
     start: function start() {}
 }

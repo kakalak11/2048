@@ -12,33 +12,36 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+        _direction: 1,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
+    _onKeyDown: function (event) {
+        switch (event.keyCode) {
+            case cc.macro.KEY.d:
+                this._direction = 1;
+                break;
+            case cc.macro.KEY.a:
+                this._direction = -1;
+                break;
+        }
+    },
+
+    _onKeyUp: function (event) {
+        this._direction = 0;
+    },
+
     onLoad() {
-        // this.node.on('call', () => cc.log('call received'), this);
-        cc.log(this.node);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this._onKeyUp, this);
     },
 
     start() {
 
     },
 
-    // update (dt) {},
+    update(dt) {
+        this.node.runAction(cc.moveBy(dt, 5 * this._direction, 0))
+    },
 });

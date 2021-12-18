@@ -1,8 +1,8 @@
 "use strict";
-cc._RF.push(module, '9acd1x5HldGMrPqBb5+s7C6', 'scriptB');
-// scenes/testScript/scriptB.js
+cc._RF.push(module, '84aaeTPbc1OtIO6+e+skMbm', 'winBoardScript');
+// script/winBoardScript.js
 
-"use strict";
+'use strict';
 
 // Learn cc.Class:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/class.html
@@ -18,28 +18,25 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+        gameScore: cc.Node,
+        menuNode: cc.Node
     },
 
     // LIFE-CYCLE CALLBACKS:
 
+    _win: function _win() {
+        cc.log('win event');
+        this.node.getChildByName('score').getComponent(cc.Label).string = this.gameScore.getComponent(cc.Label).string;
+        this.node.runAction(this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5))));
+    },
+
+    onClickReturnButton: function onClickReturnButton() {
+        this.node.runAction(this.node.runAction(cc.moveTo(0.5, 0, 800).easing(cc.easeExponentialInOut(0.5))));
+        this.menuNode.runAction(this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5))));
+    },
+
     onLoad: function onLoad() {
-        // this.node.on('call', () => cc.log('call received'), this);
-        cc.log(this.node);
+        this.node.on('winBoard', this._win, this);
     },
     start: function start() {}
 }

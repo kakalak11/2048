@@ -12,28 +12,24 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+        menuNode: cc.Node,
+        gameScore: cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
+    _lose: function () {
+        this.node.getChildByName('score').getComponent(cc.Label).string = this.gameScore.getComponent(cc.Label).string;
+        this.node.runAction(this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5))));
+    },
+
+    onClickReturnButton: function () {
+        this.node.runAction(this.node.runAction(cc.moveTo(0.5, 0, -800).easing(cc.easeExponentialInOut(0.5))));
+        this.menuNode.runAction(this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5))));
+    },
+
     onLoad() {
-        // this.node.emit('call');
-        cc.log(this.node);
+        this.node.on('loseBoard', this._lose, this);
     },
 
     start() {
