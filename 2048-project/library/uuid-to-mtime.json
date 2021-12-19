@@ -450,12 +450,12 @@
     "relativePath": "scenes"
   },
   "c7fa7f5d-0ca2-4279-9516-8297944cb42a": {
-    "asset": 1639829633494,
-    "meta": 1639829633514,
+    "asset": 1639930632125,
+    "meta": 1639930632140,
     "relativePath": "scenes\\game.fire"
   },
   "a9cdab29-c048-44e5-a619-7b8b7fbbbcfd": {
-    "asset": 1639817946313,
+    "asset": 1639845304493,
     "meta": 1638887893850,
     "relativePath": "script"
   },
@@ -470,8 +470,8 @@
     "relativePath": "images\\backgroundGameBoard.png"
   },
   "a5eddeb4-d58c-41b0-8c55-86d46e9a07bb": {
-    "asset": 1639753006092,
-    "meta": 1639814836930,
+    "asset": 1639930531352,
+    "meta": 1639930531369,
     "relativePath": "prefab\\tilePrefab.prefab"
   },
   "34059621-6b2e-4914-8782-cf0e3cab7bb8": {
@@ -484,30 +484,15 @@
     "meta": 1639814837749,
     "relativePath": "sounds\\soundtrack.mp3"
   },
-  "b2ab73fa-8e9d-43d9-9611-be721b4518b8": {
-    "asset": 1639138641893,
-    "meta": 1639814837609,
-    "relativePath": "script\\event.js"
-  },
-  "6c79b249-b969-4f50-b7d7-53a56f063c7d": {
-    "asset": 1639138641918,
-    "meta": 1639814837726,
-    "relativePath": "script\\utils.js"
-  },
   "b178aee5-c85c-4ba9-8811-93045e7b546f": {
-    "asset": 1639827068983,
-    "meta": 1639827069021,
+    "asset": 1639893855673,
+    "meta": 1639893855692,
     "relativePath": "scenes\\test.fire"
   },
   "d9eea8e6-be08-4b55-a2a1-4f9d576b6910": {
-    "asset": 1639657076351,
+    "asset": 1639844765814,
     "meta": 1639657076337,
     "relativePath": "scenes\\testScript"
-  },
-  "4637d873-bd09-4093-90e6-cd5fdf49d73a": {
-    "asset": 1639826995929,
-    "meta": 1639827065728,
-    "relativePath": "scenes\\testScript\\test.js"
   },
   "4e9738b8-2c08-4a88-872e-b78b75cdf161": {
     "asset": 1639828133101,
@@ -524,19 +509,59 @@
     "meta": 1639828477456,
     "relativePath": "script\\menuScript.js"
   },
-  "c988084d-ee6b-4a24-8908-6dc9839dc065": {
-    "asset": 1639828898795,
-    "meta": 1639828899474,
-    "relativePath": "script\\gameBoard.js"
+  "47a82f97-a9d6-4cb4-be36-620c205f3acd": {
+    "asset": 1639845128336,
+    "meta": 1639844757519,
+    "relativePath": "scenes\\testScript\\prefab"
+  },
+  "3eb673c1-28bb-4933-a024-8316a8d76708": {
+    "asset": 1639903297389,
+    "meta": 1639903297402,
+    "relativePath": "scenes\\testScript\\prefab\\nodePrefab.prefab"
+  },
+  "b2ab73fa-8e9d-43d9-9611-be721b4518b8": {
+    "asset": 1639845241990,
+    "meta": 1639845304567,
+    "relativePath": "script\\mEmitter.js"
+  },
+  "6cd4a9f2-4f8c-4a2e-a367-50f4b96eb8ab": {
+    "asset": 1639921239582,
+    "meta": 1639921240179,
+    "relativePath": "scenes\\testScript\\prefabScript.js"
+  },
+  "4637d873-bd09-4093-90e6-cd5fdf49d73a": {
+    "asset": 1639921128830,
+    "meta": 1639921240179,
+    "relativePath": "scenes\\testScript\\test.js"
   },
   "79545e93-e5ee-4111-82d0-17980efb3361": {
-    "asset": 1639828884363,
-    "meta": 1639828899474,
+    "asset": 1639922416655,
+    "meta": 1639922417111,
     "relativePath": "script\\windowScript.js"
   },
+  "ef0a2e29-262a-48b4-b0d2-1bd0e647778b": {
+    "asset": 1639925155485,
+    "meta": 1639925244761,
+    "relativePath": "sounds\\swipe.wav"
+  },
+  "c988084d-ee6b-4a24-8908-6dc9839dc065": {
+    "asset": 1639929775071,
+    "meta": 1639930325820,
+    "relativePath": "script\\gameBoard.js"
+  },
+  "9195c8c3-2f46-4b20-bd71-ba6c41c16737": {
+    "asset": 1639930028736,
+    "meta": 1639930327412,
+    "relativePath": "images\\2.jpg"
+  },
   "d5151fe3-b080-4441-ab3d-e4975ae631c8": {
-    "asset": 1639828965302,
-    "meta": 1639829632199,
+    "asset": 1639930567194,
+    "meta": 1639930631030,
     "relativePath": "script\\tilesScript.js"
+  },
+  "6c79b249-b969-4f50-b7d7-53a56f063c7d": {
+    "asset": 1639930613158,
+    "meta": 1639930631030,
+    "relativePath": "script\\utils.js"
   }
 }

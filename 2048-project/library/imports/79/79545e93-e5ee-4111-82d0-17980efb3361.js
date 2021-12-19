@@ -60,7 +60,7 @@ cc.Class({
     },
 
     onClickReturnButton: function onClickReturnButton() {
-        this.gameBoard._reset();
+        this.gameBoard.getComponent('gameBoard')._reset();
         return;
     },
 

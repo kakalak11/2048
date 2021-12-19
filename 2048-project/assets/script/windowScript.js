@@ -50,7 +50,7 @@ cc.Class({
     },
 
     onClickReturnButton: function () {
-        this.gameBoard._reset();
+        this.gameBoard.getComponent('gameBoard')._reset();
         return;
     },
 

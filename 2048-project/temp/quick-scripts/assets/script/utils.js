@@ -110,58 +110,6 @@ var utilities = {
 
 module.exports = utilities;
 
-var array = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
-
-function randomTiles() {
-    var y = randomNumber();
-    var x = randomNumber();
-
-    while (array[y][x] !== 0) {
-        y = randomNumber();
-        x = randomNumber();
-    }
-
-    array[y][x] = Math.random() > 0.5 ? 2 : 4;
-
-    function randomNumber() {
-        return Math.floor(Math.random() * 3);
-    }
-}
-
-function slideRight() {
-    array = array.map(function (element) {
-        var number = element.filter(function (element) {
-            return element !== 0;
-        });
-        var zero = element.filter(function (element) {
-            return element === 0;
-        });
-        return zero.concat(number);
-    });
-    return array;
-}
-
-function slideLeft() {
-    array = array.map(function (element) {
-        var number = element.filter(function (element) {
-            return element !== 0;
-        });
-        var zero = element.filter(function (element) {
-            return element === 0;
-        });
-        return number.concat(zero);
-    });
-    return array;
-}
-
-// randomTiles(array);
-// randomTiles(array);
-// console.table(array);
-// slideRight();
-// console.table(array);
-// slideLeft();
-// console.table(array);
-
 cc._RF.pop();
         }
         if (CC_EDITOR) {

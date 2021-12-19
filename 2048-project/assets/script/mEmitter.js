@@ -1,4 +1,5 @@
 const EventEmitter = require('events');
+
 class mEmitter {
     constructor() {
         this._emiter = new EventEmitter();
@@ -22,5 +23,6 @@ class mEmitter {
         mEmitter.instance = null;
     }
 }
+
 mEmitter.instance = null;
 module.exports = mEmitter;

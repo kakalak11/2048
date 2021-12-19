@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'b2ab7P6jp1D2ZYRvnIbRRi4', 'event');
-// script/event.js
+cc._RF.push(module, 'b2ab7P6jp1D2ZYRvnIbRRi4', 'mEmitter');
+// script/mEmitter.js
 
 'use strict';
 

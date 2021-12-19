@@ -17,6 +17,7 @@ cc.Class({
         tilePrefab: cc.Prefab,
         winBoard: cc.Node,
         loseBoard: cc.Node,
+        swipeSound: cc.AudioSource,
         _tilesMatrix: [],
         _moving: null,
         _time: 0.25 / 8,
@@ -32,6 +33,7 @@ cc.Class({
         this.node.emit('checkWin');
         this.node.emit('checkLose');
         if (this._moving) return;
+        this.swipeSound.play();
         this._moving = true;
         this._check = false;
         switch (event.keyCode) {
@@ -71,12 +73,12 @@ cc.Class({
                     this._moving = false;
                 }, this._time);
                 break;
-            case cc.macro.KEY.space:
-                this._adjustPosition();
-                console.clear();
-                break;
             case cc.macro.KEY.c:
                 this.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
+                break;
+            case cc.macro.KEY.space:
+                console.clear();
+                this._moving = false;
                 break;
             default:
                 this._moving = false;
@@ -105,21 +107,6 @@ cc.Class({
             directionDown ? collumn = zeros.concat(numbers) : collumn = numbers.concat(zeros);
             for (let j = 0; j < 4; j++) this._tilesMatrix[j][i] = collumn.shift();
         }
-        return;
-    },
-
-    _adjustPosition: function () {
-        this._tilesMatrix.forEach((element, rowIndex) => element.forEach((element, collumnIndex) => {
-            this.action = cc.sequence(
-                cc.moveTo(this._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex).easing(cc.easeSineIn(this._time)),
-                cc.callFunc(() => { }),
-            );
-            element.runAction(this.action);
-        }));
-        this.scheduleOnce(() => {
-            this._generateRandomValue();
-            this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
-        }, this._time);
         return;
     },
 
@@ -172,7 +159,7 @@ cc.Class({
                     this.skip = true;
                     this.elementScript.setNumber(this.elementScript.number *= 2);
                     element.runAction(cc.sequence(cc.scaleTo(this._time / 2, 1.25), cc.scaleTo(this._time / 2, 1)));
-                    this.nextElementScript.moveCombine(element.getPosition(cc.v2()), this._time);
+                    this.nextElementScript.moveCombine(element.getPosition(cc.v2()), this._time / 2);
                     this._combined = true;
                 }
             });
@@ -181,7 +168,38 @@ cc.Class({
         return;
     },
 
+    _adjustPosition: function () {
+        this._tilesMatrix.forEach((element, rowIndex) => element.forEach((element, collumnIndex) => {
+            if (element.active) {
+                let lastPos = element.getPosition(cc.v2());
+                this.action = cc.sequence(
+                    cc.moveTo(this._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex),
+                    cc.callFunc(() => {
+                        let currentPos = element.getPosition(cc.v2());
+                        if (Math.abs(Math.floor(lastPos.x - currentPos.x)) > 25 || Math.abs(Math.floor(lastPos.y - currentPos.y)) > 25) {
+                            this._check = true;
+                            cc.log('last position', lastPos, 'current position', currentPos, element.name);
+                            cc.log('x change', Math.floor(lastPos.x - currentPos.x));
+                            cc.log('y change', Math.floor(lastPos.y - currentPos.y));
+                        }
+                    }),
+                );
+                element.runAction(this.action);
+                return;
+            } else {
+                element.setPosition(cc.v2(-157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex));
+                return;
+            }
+        }));
+        this.scheduleOnce(() => {
+            this._generateRandomValue();
+            this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
+        }, this._time*2);
+        return;
+    },
+
     _generateRandomValue() {
+        cc.log(this._check);
         if (!this._check) return;
         do {
             this.randomCollumn = Math.floor(Math.random() * 4);
@@ -192,6 +210,7 @@ cc.Class({
         } while (this._tilesMatrix[this.randomRow][this.randomCollumn].active);
         this.randomTile = this._tilesMatrix[this.randomRow][this.randomCollumn];
         this.number = this.randomTile.getComponent('tilesScript');
+        // this.randomTile.once('position-changed', () => this._check = true, this);
         this.randomTile.active = true;
         this.randomTile.scale = 0;
         this.number.setNumber(Math.random() > 0.7 ? 4 : 2);
@@ -211,10 +230,6 @@ cc.Class({
                 this.tile.on('mousedown', this._onClick, this.tile);
                 this.tile.name = `tile ${numberIndex++}`;
                 this.tile.setPosition(cc.v2(-157.5 + 105 * row, 157.5 - 105 * collumn));
-                this.tile.on('position-changed', () => {
-                    // cc.log('position changed');
-                    this._check = true;
-                }, this);
                 this._tilesMatrix[Number(String((this.tile.getPosition().y - 157.5) * -1)[0])][Number(String(this.tile.getPosition().x + 157.5)[0])] = this.tile;
                 this.node.addChild(this.tile);
             }
@@ -282,8 +297,8 @@ cc.Class({
     _onClick: function () {
         cc.log(this.name);
         this.script = this.getComponent('tilesScript');
-        // this.script.setNumber(this.script.number === 2 ? 4 : 2);
-        this.script.setNumber(2048);
+        this.script.setNumber(this.script.number === 2 ? 4 : 2);
+        // this.script.setNumber(2048);
         return;
         cc.log(this.getPosition(cc.v2()));
     },
@@ -291,6 +306,10 @@ cc.Class({
     onLoad() {
         this.node.on('checkWin', this._checkWin, this);
         this.node.on('checkLose', this._checkLose, this);
+        this.node.on('move', (event) => {
+            event.stopPropagation();
+            this._check = true;
+        }, this);
     },
 
     start() {
