@@ -23,8 +23,8 @@ cc.Class({
     setNumber: function (value) {
         this.number = value;
         this.node.getComponentInChildren(cc.Label).string = this.number;
-        // this.node.color = new cc.Color(this._color[Math.log(2) / Math.log(this.number)]);
-        this.node.color = new cc.Color('#eee4da');
+        if (!parseInt(Math.log(this.number) / Math.log(2))) return;
+        this.node.color = this._color[(Math.log(this.number) / Math.log(2)) - 1];
     },
 
     moveCombine: function (pos, time) {
@@ -42,17 +42,10 @@ cc.Class({
     },
 
     onLoad() {
-        // cc.log('tile prefab instantiated !');
-        this._color = ['#eee4da','#eedfc8','#f3b079','#ed8c55','#f67c5e','#ea5a38','#f4d86b','#f2d04b','#e5c128','#edc501','#edc501'];
+        this._color = [cc.Color.GRAY, cc.Color.RED, cc.Color.GREEN, cc.Color.BLUE, cc.Color.YELLOW, cc.Color.ORANGE, cc.Color.CYAN, cc.Color.MAGENTA, cc.Color.YELLOW, cc.Color.RED, cc.Color.BLACK];
     },
 
     start() {
-        // if (this.number) {
-        //     this.node.active = true;
-        //     return;
-        // };
-        // this.node.active = false;
-        // return;
     },
 
     update(dt) {

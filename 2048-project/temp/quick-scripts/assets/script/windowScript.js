@@ -20,7 +20,9 @@ cc.Class({
     properties: {
         menuNode: cc.Node,
         score: cc.Node,
+        bestScoreNumber: cc.Label,
         gameBoard: cc.Node,
+        leaderBoard: cc.Node,
         winBoard: cc.Node,
         loseBoard: cc.Node,
         _playing: null
@@ -42,11 +44,16 @@ cc.Class({
         var _this = this;
 
         this.gameMatrix = this.gameBoard.getComponent('gameBoard')._tilesMatrix.flat();
+        if (!this.gameMatrix) {
+            this.score.getComponent('cc.Label').string = 0;
+            return;
+        }
         this.scoreNumber = 0;
         this.gameMatrix.forEach(function (element) {
             return _this.scoreNumber += element.getComponent('tilesScript').number;
         });
         this.score.getComponent('cc.Label').string = this.scoreNumber;
+        return;
     },
 
     _win: function _win() {
@@ -68,6 +75,9 @@ cc.Class({
         this.node.on('updateScore', this._scoreUpdate, this);
         this.node.on('win', this._win, this);
         this.node.on('lose', this._lose, this);
+        this.leaderBoardScript = this.leaderBoard.getComponent('leaderBoardScript');
+        // this.leaderBoardScript.onLoad();
+        this.bestScoreNumber.string = String(this.leaderBoardScript._bestScore);
     },
     start: function start() {}
 }

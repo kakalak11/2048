@@ -14,8 +14,6 @@ cc._RF.push(module, 'c9880hN7mtKJIkIbcmDncBl', 'gameBoard');
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
-var Emitter = require('event');
-
 cc.Class({
     extends: cc.Component,
 
@@ -24,6 +22,7 @@ cc.Class({
         winBoard: cc.Node,
         loseBoard: cc.Node,
         swipeSound: cc.AudioSource,
+        combineSound: cc.AudioSource,
         _tilesMatrix: [],
         _moving: null,
         _time: 0.25 / 8,
@@ -35,69 +34,61 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    _onKeyDown: function _onKeyDown(event) {
-        var _this = this;
-
-        this.node.emit('checkWin');
-        this.node.emit('checkLose');
-        if (this._moving) return;
-        this.swipeSound.play();
-        this._moving = true;
-        this._check = false;
-        switch (event.keyCode) {
-            case cc.macro.KEY.d:
-                this._moveRow(true);
-                this._combineRow(true);
-                this.scheduleOnce(function () {
-                    _this._moveRow(true);
-                    _this._adjustPosition();
-                    _this._moving = false;
-                }, this._time);
-                break;
-            case cc.macro.KEY.a:
-                this._moveRow(false);
-                this._combineRow(false);
-                this.scheduleOnce(function () {
-                    _this._moveRow(false);
-                    _this._adjustPosition();
-                    _this._moving = false;
-                }, this._time);
-                break;
-            case cc.macro.KEY.s:
-                this._moveCollumn(true);
-                this._combineCollumn(true);
-                this.scheduleOnce(function () {
-                    _this._moveCollumn(true);
-                    _this._adjustPosition();
-                    _this._moving = false;
-                }, this._time);
-                break;
-            case cc.macro.KEY.w:
-                this._moveCollumn(false);
-                this._combineCollumn(false);
-                this.scheduleOnce(function () {
-                    _this._moveCollumn(false);
-                    _this._adjustPosition();
-                    _this._moving = false;
-                }, this._time);
-                break;
-            case cc.macro.KEY.c:
-                this.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
-                break;
-            case cc.macro.KEY.space:
-                console.clear();
-                this._moving = false;
-                break;
-            default:
-                this._moving = false;
-                break;
-        }
-    },
+    // _onKeyDown: function (event) {
+    //     if (this._moving) return;
+    //     this.swipeSound.play();
+    //     this._moving = true;
+    //     this._check = false;
+    //     switch (event.keyCode) {
+    //         case cc.macro.KEY.d:
+    //             this._moveRow(true);
+    //             this._combineRow(true);
+    //             this.scheduleOnce(() => {
+    //                 this._moveRow(true);
+    //                 this._adjustPosition();
+    //             }, this._time);
+    //             break;
+    //         case cc.macro.KEY.a:
+    //             this._moveRow(false);
+    //             this._combineRow(false);
+    //             this.scheduleOnce(() => {
+    //                 this._moveRow(false);
+    //                 this._adjustPosition();
+    //             }, this._time);
+    //             break;
+    //         case cc.macro.KEY.s:
+    //             this._moveCollumn(true);
+    //             this._combineCollumn(true);
+    //             this.scheduleOnce(() => {
+    //                 this._moveCollumn(true);
+    //                 this._adjustPosition();
+    //             }, this._time);
+    //             break;
+    //         case cc.macro.KEY.w:
+    //             this._moveCollumn(false);
+    //             this._combineCollumn(false);
+    //             this.scheduleOnce(() => {
+    //                 this._moveCollumn(false);
+    //                 this._adjustPosition();
+    //             }, this._time);
+    //             break;
+    //         case cc.macro.KEY.c:
+    //             this.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
+    //             break;
+    //         case cc.macro.KEY.space:
+    //             console.clear();
+    //             this._moving = false;
+    //             break;
+    //         default:
+    //             this._moving = false;
+    //             break;
+    //     }
+    // },
 
     //Move logic
 
     _moveRow: function _moveRow(directionRight) {
-        var _this2 = this;
+        var _this = this;
 
         this._tilesMatrix.forEach(function (element, rowIndex) {
             var numbers = element.filter(function (element) {
@@ -108,7 +99,7 @@ cc.Class({
             });
             directionRight ? element = zeros.concat(numbers) : element = numbers.concat(zeros);
             for (var i = 0; i < 4; i++) {
-                _this2._tilesMatrix[rowIndex][i] = element.shift();
+                _this._tilesMatrix[rowIndex][i] = element.shift();
             }
         });
         return;
@@ -136,11 +127,43 @@ cc.Class({
     //Combine logic
 
     _combineRow: function _combineRow(directionRight) {
-        var _this3 = this;
+        var _this2 = this;
 
         this._tilesMatrix.forEach(function (element, index) {
-            directionRight ? _this3.array = element.reverse() : _this3.array = element;
-            _this3.array.forEach(function (element, index, array) {
+            directionRight ? _this2.array = element.reverse() : _this2.array = element;
+            _this2.array.forEach(function (element, index, array) {
+                if (_this2.skip) {
+                    _this2.skip = false;
+                    return;
+                }
+                _this2.nextElement = array[index + 1];
+                _this2.elementScript = element.getComponent('tilesScript');
+                if (_this2.nextElement === undefined) return;
+                _this2.nextElementScript = _this2.nextElement.getComponent('tilesScript');
+                if (_this2.elementScript.number === 0) return;
+                if (_this2.elementScript.number === _this2.nextElementScript.number) {
+                    _this2.skip = true;
+                    _this2.elementScript.setNumber(_this2.elementScript.number *= 2);
+                    element.runAction(cc.sequence(cc.scaleTo(_this2._time / 2, 1.25), cc.scaleTo(_this2._time / 2, 1)));
+                    _this2.nextElementScript.moveCombine(element.getPosition(cc.v2()), _this2._time / 2);
+                    _this2._combined = true;
+                }
+            });
+            directionRight ? _this2.array.reverse() : null;
+        });
+        return;
+    },
+
+    _combineCollumn: function _combineCollumn(directionDown) {
+        var _this3 = this;
+
+        for (var i = 0; i < 4; i++) {
+            this.collumn = [];
+            for (var j = 0; j < 4; j++) {
+                this.collumn.push(this._tilesMatrix[j][i]);
+            }
+            directionDown ? this.collumn.reverse() : null;
+            this.collumn.forEach(function (element, index, array) {
                 if (_this3.skip) {
                     _this3.skip = false;
                     return;
@@ -158,60 +181,30 @@ cc.Class({
                     _this3._combined = true;
                 }
             });
-            directionRight ? _this3.array.reverse() : null;
-        });
-        return;
-    },
-
-    _combineCollumn: function _combineCollumn(directionDown) {
-        var _this4 = this;
-
-        for (var i = 0; i < 4; i++) {
-            this.collumn = [];
-            for (var j = 0; j < 4; j++) {
-                this.collumn.push(this._tilesMatrix[j][i]);
-            }
-            directionDown ? this.collumn.reverse() : null;
-            this.collumn.forEach(function (element, index, array) {
-                if (_this4.skip) {
-                    _this4.skip = false;
-                    return;
-                }
-                _this4.nextElement = array[index + 1];
-                _this4.elementScript = element.getComponent('tilesScript');
-                if (_this4.nextElement === undefined) return;
-                _this4.nextElementScript = _this4.nextElement.getComponent('tilesScript');
-                if (_this4.elementScript.number === 0) return;
-                if (_this4.elementScript.number === _this4.nextElementScript.number) {
-                    _this4.skip = true;
-                    _this4.elementScript.setNumber(_this4.elementScript.number *= 2);
-                    element.runAction(cc.sequence(cc.scaleTo(_this4._time / 2, 1.25), cc.scaleTo(_this4._time / 2, 1)));
-                    _this4.nextElementScript.moveCombine(element.getPosition(cc.v2()), _this4._time / 2);
-                    _this4._combined = true;
-                }
-            });
             directionDown ? this.collumn.reverse() : null;
         }
         return;
     },
 
+    // Board logic
+
     _adjustPosition: function _adjustPosition() {
-        var _this5 = this;
+        var _this4 = this;
 
         this._tilesMatrix.forEach(function (element, rowIndex) {
             return element.forEach(function (element, collumnIndex) {
                 if (element.active) {
                     var lastPos = element.getPosition(cc.v2());
-                    _this5.action = cc.sequence(cc.moveTo(_this5._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(function () {
+                    _this4.action = cc.sequence(cc.moveTo(_this4._time, -157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex), cc.callFunc(function () {
                         var currentPos = element.getPosition(cc.v2());
                         if (Math.abs(Math.floor(lastPos.x - currentPos.x)) > 25 || Math.abs(Math.floor(lastPos.y - currentPos.y)) > 25) {
-                            _this5._check = true;
-                            cc.log('last position', lastPos, 'current position', currentPos, element.name);
-                            cc.log('x change', Math.floor(lastPos.x - currentPos.x));
-                            cc.log('y change', Math.floor(lastPos.y - currentPos.y));
+                            _this4._check = true;
+                            // cc.log('last position', lastPos, 'current position', currentPos, element.name);
+                            // cc.log('x change', Math.floor(lastPos.x - currentPos.x));
+                            // cc.log('y change', Math.floor(lastPos.y - currentPos.y));
                         }
                     }));
-                    element.runAction(_this5.action);
+                    element.runAction(_this4.action);
                     return;
                 } else {
                     element.setPosition(cc.v2(-157.5 + 105 * collumnIndex, 157.5 - 105 * rowIndex));
@@ -220,15 +213,24 @@ cc.Class({
             });
         });
         this.scheduleOnce(function () {
-            _this5._generateRandomValue();
-            _this5.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
+            if (_this4._combined) {
+                _this4.combineSound.play();
+                _this4._combined = false;
+            }
+            _this4._generateRandomValue();
+            _this4.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
+            _this4.node.emit('canMove');
         }, this._time * 2);
         return;
     },
 
     _generateRandomValue: function _generateRandomValue() {
-        cc.log(this._check);
-        if (!this._check) return;
+        var _this5 = this;
+
+        if (!this._check) {
+            this._moving = false;
+            return;
+        }
         do {
             this.randomCollumn = Math.floor(Math.random() * 4);
             this.randomRow = Math.floor(Math.random() * 4);
@@ -245,11 +247,15 @@ cc.Class({
         this.randomTile.scale = 0;
         this.number.setNumber(Math.random() > 0.7 ? 4 : 2);
         this.randomTile.setPosition(cc.v2(-157.5 + 105 * this.randomCollumn, 157.5 - 105 * this.randomRow));
-        this.randomTile.runAction(cc.scaleTo(this._time, 1));
+        this.randomTile.runAction(cc.sequence(cc.scaleTo(this._time, 1), cc.callFunc(function () {
+
+            _this5.node.emit('checkWin');
+            _this5.node.emit('checkLose');
+        })));
         this._check = false;
     },
     _setupGrid: function _setupGrid(playing) {
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
+        // cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
         var numberIndex = 1;
         this._tilesMatrix.push([], [], [], []);
         for (var collumn = 0; collumn < 4; collumn++) {
@@ -268,7 +274,7 @@ cc.Class({
             this._check = true;
             this._generateRandomValue();
         }
-        cc.log(this._tilesMatrix);
+        this.node.emit('canMove');
         this._check = false;
     },
 
@@ -285,6 +291,7 @@ cc.Class({
             cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
             this.scheduleOnce(function () {
                 _this6.node.dispatchEvent(new cc.Event.EventCustom('win', true));
+                _this6.node.emit('canMove', false);
             }, 0.5);
             return true;
         }
@@ -319,6 +326,7 @@ cc.Class({
             cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
             this.scheduleOnce(function () {
                 _this7.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
+                _this7.node.emit('canMove', false);
             }, 0.5);
             return true;
         }
@@ -326,8 +334,9 @@ cc.Class({
     },
 
     _reset: function _reset() {
+        this.node.emit('canMove');
+        this.node.removeAllChildren(true);
         this._tilesMatrix = [];
-        this.node.children.splice(1, 16);
         this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
         cc.log(this.node.children);
     },
@@ -336,20 +345,43 @@ cc.Class({
     _onClick: function _onClick() {
         cc.log(this.name);
         this.script = this.getComponent('tilesScript');
-        this.script.setNumber(this.script.number === 2 ? 4 : 2);
-        // this.script.setNumber(2048);
+        this.script.setNumber(2048);
         return;
-        cc.log(this.getPosition(cc.v2()));
+    },
+
+    _addEvent: function _addEvent() {
+        var _this8 = this;
+
+        this.node.on('moveRow', function (directionRight) {
+            _this8.swipeSound.play();
+            _this8._moveRow(directionRight);
+            _this8._combineRow(directionRight);
+            _this8.scheduleOnce(function () {
+                _this8._moveRow(directionRight);
+                _this8._adjustPosition();
+            }, _this8._time);
+        }, this);
+
+        this.node.on('moveCollumn', function (directionDown) {
+            _this8.swipeSound.play();
+            _this8._moveCollumn(directionDown);
+            _this8._combineCollumn(directionDown);
+            _this8.scheduleOnce(function () {
+                _this8._moveCollumn(directionDown);
+                _this8._adjustPosition();
+            }, _this8._time);
+        }, this);
     },
 
     onLoad: function onLoad() {
-        var _this8 = this;
+        var _this9 = this;
 
+        this._addEvent();
         this.node.on('checkWin', this._checkWin, this);
         this.node.on('checkLose', this._checkLose, this);
         this.node.on('move', function (event) {
             event.stopPropagation();
-            _this8._check = true;
+            _this9._check = true;
         }, this);
     },
     start: function start() {},

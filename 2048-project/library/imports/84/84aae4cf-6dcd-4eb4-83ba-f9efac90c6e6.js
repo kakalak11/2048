@@ -19,7 +19,8 @@ cc.Class({
 
     properties: {
         gameScore: cc.Node,
-        menuNode: cc.Node
+        menuNode: cc.Node,
+        leaderBoard: cc.Node
     },
 
     // LIFE-CYCLE CALLBACKS:
