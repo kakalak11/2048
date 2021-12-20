@@ -1,429 +1,68 @@
-2021-12-20T02:03:55.248Z - normal: Load ~/.CocosCreator/settings.json
-2021-12-20T02:03:55.296Z - normal: Initializing Asset Database
-2021-12-20T02:03:55.297Z - normal: checking language setting...
-2021-12-20T02:03:55.298Z - normal: Language: en
-2021-12-20T02:03:55.939Z - success: preview server running at http://localhost:7456
-2021-12-20T02:03:55.948Z - success: protocol editor-framework registered
-2021-12-20T02:03:55.949Z - success: protocol app registered
-2021-12-20T02:03:55.949Z - success: protocol theme registered
-2021-12-20T02:03:55.949Z - success: protocol packages registered
-2021-12-20T02:03:55.949Z - success: protocol uuid registerred
-2021-12-20T02:03:55.949Z - success: protocol db registerred
-2021-12-20T02:03:55.949Z - success: protocol thumbnail registerred
-2021-12-20T02:03:55.949Z - success: protocol unpack registerred
-2021-12-20T02:03:55.949Z - success: protocol disable-commonjs registerred
-2021-12-20T02:03:56.981Z - normal: connected!
-2021-12-20T02:03:56.982Z - normal: Check project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
-2021-12-20T02:03:56.984Z - normal: Initializing project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
-2021-12-20T02:03:57.343Z - normal: Initializing Cocos2d
-2021-12-20T02:03:57.956Z - normal: Initializing engine extends
-2021-12-20T02:03:57.980Z - success: alipay-adapter loaded
-2021-12-20T02:03:57.990Z - success: asset-db-debugger loaded
-2021-12-20T02:03:57.995Z - success: baidu-adapter loaded
-2021-12-20T02:03:57.998Z - success: color-picker loaded
-2021-12-20T02:03:58.150Z - success: fb-audience-network loaded
-2021-12-20T02:03:58.199Z - success: fb-live-stream loaded
-2021-12-20T02:03:58.202Z - success: google-play-instant loaded
-2021-12-20T02:03:58.209Z - success: huawei-runtime loaded
-2021-12-20T02:03:58.410Z - success: cpk-publish loaded
-2021-12-20T02:03:58.411Z - success: jsb-adapter loaded
-2021-12-20T02:03:58.418Z - success: oppo-runtime loaded
-2021-12-20T02:03:58.423Z - success: package-manager loaded
-2021-12-20T02:03:58.551Z - success: qqplay-adapter loaded
-2021-12-20T02:03:58.553Z - success: runtime-dev-tools loaded
-2021-12-20T02:03:58.578Z - success: sdkbox loaded
-2021-12-20T02:03:58.583Z - success: tester loaded
-2021-12-20T02:03:58.587Z - success: ui-kit-preview-extra loaded
-2021-12-20T02:03:58.591Z - success: ui-kit-preview loaded
-2021-12-20T02:03:58.593Z - success: ui-kit loaded
-2021-12-20T02:03:58.599Z - success: vivo-runtime loaded
-2021-12-20T02:03:58.601Z - success: weapp-adapter loaded
-2021-12-20T02:03:58.602Z - success: xiaomi-adapter loaded
-2021-12-20T02:03:58.604Z - success: alipay-minigame loaded
-2021-12-20T02:03:58.638Z - success: assets loaded
-2021-12-20T02:03:58.641Z - success: builder loaded
-2021-12-20T02:03:58.905Z - success: cocos-services loaded
-2021-12-20T02:03:58.910Z - success: console loaded
-2021-12-20T02:03:58.934Z - success: fb-instant-games loaded
-2021-12-20T02:03:58.938Z - success: game-window loaded
-2021-12-20T02:03:58.939Z - success: google-instant-games loaded
-2021-12-20T02:03:58.943Z - success: hierarchy loaded
-2021-12-20T02:03:58.947Z - success: inspector loaded
-2021-12-20T02:03:58.949Z - success: keystore loaded
-2021-12-20T02:03:58.953Z - success: node-library loaded
-2021-12-20T02:03:58.954Z - success: package-asset loaded
-2021-12-20T02:03:58.955Z - success: preferences loaded
-2021-12-20T02:03:58.958Z - success: project-exporter loaded
-2021-12-20T02:03:58.962Z - success: project-importer loaded
-2021-12-20T02:03:58.964Z - success: project-settings loaded
-2021-12-20T02:03:58.969Z - success: scene loaded
-2021-12-20T02:03:58.970Z - success: simulator-debugger loaded
-2021-12-20T02:03:58.972Z - success: sprite-editor loaded
-2021-12-20T02:03:58.975Z - success: store loaded
-2021-12-20T02:03:58.980Z - success: timeline loaded
-2021-12-20T02:03:58.984Z - success: xiaomi-runtime loaded
-2021-12-20T02:04:03.554Z - normal: Loading packages
-2021-12-20T02:04:03.559Z - normal: Watching packages
-2021-12-20T02:04:03.639Z - normal: Run Application
-2021-12-20T02:04:07.579Z - info: Cocos Services load base data!
-2021-12-20T02:04:07.798Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:362:13
-2021-12-20T02:13:38.191Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:362:13
-2021-12-20T02:13:50.273Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:362:13
-2021-12-20T02:14:34.531Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:362:13
-2021-12-20T02:19:46.748Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:362:13
-2021-12-20T02:25:49.456Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:362:13
-2021-12-20T02:57:26.976Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:360:13
-2021-12-20T02:57:53.843Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:01:13.095Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:01:33.111Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:01:51.834Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:02:19.375Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:02:32.418Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:02:57.793Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:04:07.437Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:06:30.037Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:06:41.398Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:07:00.172Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:07:40.016Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:11:51.586Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:12:04.576Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:12:51.649Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:13:02.594Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:13:57.990Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:14:40.864Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:15:17.630Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:15:54.172Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:17:43.551Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:20:26.770Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:20:40.807Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:363:13
-2021-12-20T03:22:06.682Z - info: Only the prefab node "tiles" and its child nodes are saved.
-2021-12-20T03:22:45.664Z - info: Only the prefab node "tiles" and its child nodes are saved.
-2021-12-20T03:24:04.331Z - info: Only the prefab node "tiles" and its child nodes are saved.
-2021-12-20T03:25:46.580Z - failed: load script [event] failed : Error: Cannot find module 'event'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:1:351
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:15)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:364:13
-2021-12-20T03:58:31.684Z - info: Only the prefab node "item" and its child nodes are saved.
-2021-12-20T04:48:56.558Z - info: Only the prefab node "item" and its child nodes are saved.
-2021-12-20T04:51:32.471Z - info: Only the prefab node "item" and its child nodes are saved.
-2021-12-20T04:52:16.007Z - info: Only the prefab node "item" and its child nodes are saved.
-2021-12-20T04:53:31.188Z - info: Only the prefab node "item" and its child nodes are saved.
-2021-12-20T04:55:02.869Z - info: Only the prefab node "item" and its child nodes are saved.
-2021-12-20T08:01:27.377Z - info: Only the prefab node "item" and its child nodes are saved.
-2021-12-20T08:51:31.751Z - error: Can not declare gameBoard._reset method, it is already defined in the properties of gameBoard.
-    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
-    at Object.exports.doValidateMethodWithProps_DEV (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/preprocess-class.js:248:24)
-    at Object.exports.validateMethodWithProps (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/preprocess-class.js:263:26)
-    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:695:33)
-    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:17:4)
-    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:382:13
-    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:389:11)
-    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/gameBoard.js:392:3)
-    at Module._compile (module.js:571:32)
+2021-12-20T12:49:53.273Z - normal: Load ~/.CocosCreator/settings.json
+2021-12-20T12:49:54.452Z - normal: Initializing Asset Database
+2021-12-20T12:49:54.455Z - normal: checking language setting...
+2021-12-20T12:49:54.455Z - normal: Language: en
+2021-12-20T12:49:56.884Z - success: preview server running at http://localhost:7456
+2021-12-20T12:49:56.887Z - success: protocol editor-framework registered
+2021-12-20T12:49:56.887Z - success: protocol app registered
+2021-12-20T12:49:56.887Z - success: protocol theme registered
+2021-12-20T12:49:56.887Z - success: protocol packages registered
+2021-12-20T12:49:56.887Z - success: protocol uuid registerred
+2021-12-20T12:49:56.888Z - success: protocol db registerred
+2021-12-20T12:49:56.888Z - success: protocol thumbnail registerred
+2021-12-20T12:49:56.888Z - success: protocol unpack registerred
+2021-12-20T12:49:56.888Z - success: protocol disable-commonjs registerred
+2021-12-20T12:49:57.402Z - normal: connected!
+2021-12-20T12:49:57.403Z - normal: Check project G:\Cocos\2048\2048-project
+2021-12-20T12:49:57.405Z - normal: Initializing project G:\Cocos\2048\2048-project
+2021-12-20T12:49:58.242Z - normal: Initializing Cocos2d
+2021-12-20T12:50:02.800Z - normal: Initializing engine extends
+2021-12-20T12:50:02.989Z - success: alipay-adapter loaded
+2021-12-20T12:50:03.003Z - success: asset-db-debugger loaded
+2021-12-20T12:50:03.008Z - success: baidu-adapter loaded
+2021-12-20T12:50:03.013Z - success: color-picker loaded
+2021-12-20T12:50:03.300Z - success: fb-audience-network loaded
+2021-12-20T12:50:03.426Z - success: fb-live-stream loaded
+2021-12-20T12:50:03.452Z - success: google-play-instant loaded
+2021-12-20T12:50:03.494Z - success: huawei-runtime loaded
+2021-12-20T12:50:04.927Z - success: cpk-publish loaded
+2021-12-20T12:50:04.931Z - success: jsb-adapter loaded
+2021-12-20T12:50:04.991Z - success: oppo-runtime loaded
+2021-12-20T12:50:05.008Z - success: package-manager loaded
+2021-12-20T12:50:05.503Z - success: qqplay-adapter loaded
+2021-12-20T12:50:05.514Z - success: runtime-dev-tools loaded
+2021-12-20T12:50:05.540Z - success: sdkbox loaded
+2021-12-20T12:50:05.576Z - success: tester loaded
+2021-12-20T12:50:05.602Z - success: ui-kit-preview-extra loaded
+2021-12-20T12:50:05.618Z - success: ui-kit-preview loaded
+2021-12-20T12:50:05.620Z - success: ui-kit loaded
+2021-12-20T12:50:05.705Z - success: vivo-runtime loaded
+2021-12-20T12:50:05.709Z - success: weapp-adapter loaded
+2021-12-20T12:50:05.714Z - success: xiaomi-adapter loaded
+2021-12-20T12:50:05.736Z - success: alipay-minigame loaded
+2021-12-20T12:50:05.792Z - success: assets loaded
+2021-12-20T12:50:05.794Z - success: builder loaded
+2021-12-20T12:50:06.394Z - success: cocos-services loaded
+2021-12-20T12:50:06.399Z - success: console loaded
+2021-12-20T12:50:06.442Z - success: fb-instant-games loaded
+2021-12-20T12:50:06.445Z - success: game-window loaded
+2021-12-20T12:50:06.446Z - success: google-instant-games loaded
+2021-12-20T12:50:06.451Z - success: hierarchy loaded
+2021-12-20T12:50:06.454Z - success: inspector loaded
+2021-12-20T12:50:06.455Z - success: keystore loaded
+2021-12-20T12:50:06.459Z - success: node-library loaded
+2021-12-20T12:50:06.461Z - success: package-asset loaded
+2021-12-20T12:50:06.462Z - success: preferences loaded
+2021-12-20T12:50:06.464Z - success: project-exporter loaded
+2021-12-20T12:50:06.466Z - success: project-importer loaded
+2021-12-20T12:50:06.468Z - success: project-settings loaded
+2021-12-20T12:50:06.472Z - success: scene loaded
+2021-12-20T12:50:06.473Z - success: simulator-debugger loaded
+2021-12-20T12:50:06.475Z - success: sprite-editor loaded
+2021-12-20T12:50:06.478Z - success: store loaded
+2021-12-20T12:50:06.483Z - success: timeline loaded
+2021-12-20T12:50:06.488Z - success: xiaomi-runtime loaded
+2021-12-20T12:50:11.386Z - info: Cocos Services load base data!
+2021-12-20T12:50:19.661Z - normal: Loading packages
+2021-12-20T12:50:19.667Z - normal: Watching packages
+2021-12-20T12:50:20.152Z - normal: Run Application
