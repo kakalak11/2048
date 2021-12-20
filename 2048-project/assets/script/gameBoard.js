@@ -219,7 +219,6 @@ cc.Class({
         this.number.setNumber(Math.random() > 0.7 ? 4 : 2);
         this.randomTile.setPosition(cc.v2(-157.5 + 105 * this.randomCollumn, 157.5 - 105 * this.randomRow));
         this.randomTile.runAction(cc.sequence(cc.scaleTo(this._time, 1), cc.callFunc(() => {
-
             this.node.emit('checkWin');
             this.node.emit('checkLose');
         })));
@@ -297,10 +296,12 @@ cc.Class({
     },
 
     _reset() {
-        this.node.emit('canMove');
         this.node.removeAllChildren(true);
         this._tilesMatrix = [];
         this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
+        // this._addEvent();
+        this.node.emit('reset');
+        this.node.emit('canMove');
         cc.log(this.node.children);
     },
 
@@ -323,6 +324,28 @@ cc.Class({
         }, this);
 
         this.node.on('moveCollumn', (directionDown) => {
+            this.swipeSound.play();
+            this._moveCollumn(directionDown);
+            this._combineCollumn(directionDown);
+            this.scheduleOnce(() => {
+                this._moveCollumn(directionDown);
+                this._adjustPosition();
+            }, this._time);
+        }, this);
+    },
+
+    _shutEvent:function(){
+        this.node.off('moveRow', (directionRight) => {
+            this.swipeSound.play();
+            this._moveRow(directionRight);
+            this._combineRow(directionRight);
+            this.scheduleOnce(() => {
+                this._moveRow(directionRight);
+                this._adjustPosition();
+            }, this._time);
+        }, this);
+
+        this.node.off('moveCollumn', (directionDown) => {
             this.swipeSound.play();
             this._moveCollumn(directionDown);
             this._combineCollumn(directionDown);

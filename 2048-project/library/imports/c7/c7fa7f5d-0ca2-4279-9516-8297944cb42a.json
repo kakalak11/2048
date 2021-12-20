@@ -76,7 +76,7 @@
     "_level": 1,
     "_components": [
       {
-        "__id__": 194
+        "__id__": 196
       }
     ],
     "_prefab": null,
@@ -160,7 +160,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 549.9261314031186
+      "z": 525.6774200971543
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -239,17 +239,20 @@
         "__id__": 184
       },
       {
-        "__id__": 189
+        "__id__": 187
+      },
+      {
+        "__id__": 191
       }
     ],
     "_active": true,
     "_level": 2,
     "_components": [
       {
-        "__id__": 192
+        "__id__": 194
       },
       {
-        "__id__": 193
+        "__id__": 195
       }
     ],
     "_prefab": null,
@@ -6610,7 +6613,7 @@
   {
     "__type__": "cc.Node",
     "_name": "gameBoardBackground",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "_parent": {
       "__id__": 5
     },
@@ -8238,6 +8241,9 @@
       },
       {
         "__id__": 186
+      },
+      {
+        "__id__": 188
       }
     ],
     "_prefab": null,
@@ -8295,6 +8301,76 @@
     "_id": "15gNr+jl1ETZAxgIYM/fJY"
   },
   {
+    "__type__": "291ba7yH55PIYXyaG791xwA",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 184
+    },
+    "_enabled": true,
+    "touchNode": {
+      "__id__": 187
+    },
+    "_xDelta": 0,
+    "_yDelta": 0,
+    "_canTouch": true,
+    "_id": "bal96abSJClpLDnEyymm2a"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "touchArea",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 5
+    },
+    "_children": [],
+    "_active": true,
+    "_level": 3,
+    "_components": [],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 500,
+      "height": 450
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_position": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": -50.332,
+      "z": 0
+    },
+    "_scale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "groupIndex": 0,
+    "_id": "b9pQzXfn9Amb2cTq7UsbJy"
+  },
+  {
     "__type__": "c9880hN7mtKJIkIbcmDncBl",
     "_name": "",
     "_objFlags": 0,
@@ -8312,10 +8388,10 @@
       "__id__": 132
     },
     "swipeSound": {
-      "__id__": 187
+      "__id__": 189
     },
     "combineSound": {
-      "__id__": 191
+      "__id__": 193
     },
     "_tilesMatrix": [],
     "_moving": null,
@@ -8331,7 +8407,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 188
+      "__id__": 190
     },
     "_enabled": true,
     "_clip": {
@@ -8349,14 +8425,14 @@
     "_name": "swipe",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 189
+      "__id__": 191
     },
     "_children": [],
     "_active": true,
     "_level": 4,
     "_components": [
       {
-        "__id__": 187
+        "__id__": 189
       }
     ],
     "_prefab": null,
@@ -8411,10 +8487,10 @@
     },
     "_children": [
       {
-        "__id__": 188
+        "__id__": 190
       },
       {
-        "__id__": 190
+        "__id__": 192
       }
     ],
     "_active": true,
@@ -8468,14 +8544,14 @@
     "_name": "combine",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 189
+      "__id__": 191
     },
     "_children": [],
     "_active": true,
     "_level": 4,
     "_components": [
       {
-        "__id__": 191
+        "__id__": 193
       }
     ],
     "_prefab": null,
@@ -8526,7 +8602,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 190
+      "__id__": 192
     },
     "_enabled": true,
     "_clip": {

@@ -20,7 +20,6 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     _win: function () {
-        cc.log('win event');
         this.node.getChildByName('score').getComponent(cc.Label).string = this.gameScore.getComponent(cc.Label).string;
         this.node.runAction(this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5))));
     },

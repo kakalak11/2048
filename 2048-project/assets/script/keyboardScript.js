@@ -18,6 +18,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     _onKeyDown: function (event) {
+        this.node.emit('setInput',false);
         if (!this._canMove) return;
         this._canMove = false;
         switch (event.keyCode) {
@@ -40,12 +41,21 @@ cc.Class({
         }
     },
 
+    _reset() {
+        cc.log('keyboard reset');
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
+    },
+
     onLoad() {
         this._canMove = true;
         this.node.on('canMove', (value = true) => {
             this._canMove = value;
-            cc.log('can move', value);
         }, this);
+        this.node.on('reset', this._reset, this);
+        this.node.on('setInput', (touch) => {
+            if (touch) this._canMove = false;
+
+        }, this)
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
     },
 

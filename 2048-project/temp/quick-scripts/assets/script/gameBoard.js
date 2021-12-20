@@ -248,7 +248,6 @@ cc.Class({
         this.number.setNumber(Math.random() > 0.7 ? 4 : 2);
         this.randomTile.setPosition(cc.v2(-157.5 + 105 * this.randomCollumn, 157.5 - 105 * this.randomRow));
         this.randomTile.runAction(cc.sequence(cc.scaleTo(this._time, 1), cc.callFunc(function () {
-
             _this5.node.emit('checkWin');
             _this5.node.emit('checkLose');
         })));
@@ -334,10 +333,12 @@ cc.Class({
     },
 
     _reset: function _reset() {
-        this.node.emit('canMove');
         this.node.removeAllChildren(true);
         this._tilesMatrix = [];
         this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
+        // this._addEvent();
+        this.node.emit('reset');
+        this.node.emit('canMove');
         cc.log(this.node.children);
     },
 
@@ -373,15 +374,39 @@ cc.Class({
         }, this);
     },
 
-    onLoad: function onLoad() {
+    _shutEvent: function _shutEvent() {
         var _this9 = this;
+
+        this.node.off('moveRow', function (directionRight) {
+            _this9.swipeSound.play();
+            _this9._moveRow(directionRight);
+            _this9._combineRow(directionRight);
+            _this9.scheduleOnce(function () {
+                _this9._moveRow(directionRight);
+                _this9._adjustPosition();
+            }, _this9._time);
+        }, this);
+
+        this.node.off('moveCollumn', function (directionDown) {
+            _this9.swipeSound.play();
+            _this9._moveCollumn(directionDown);
+            _this9._combineCollumn(directionDown);
+            _this9.scheduleOnce(function () {
+                _this9._moveCollumn(directionDown);
+                _this9._adjustPosition();
+            }, _this9._time);
+        }, this);
+    },
+
+    onLoad: function onLoad() {
+        var _this10 = this;
 
         this._addEvent();
         this.node.on('checkWin', this._checkWin, this);
         this.node.on('checkLose', this._checkLose, this);
         this.node.on('move', function (event) {
             event.stopPropagation();
-            _this9._check = true;
+            _this10._check = true;
         }, this);
     },
     start: function start() {},

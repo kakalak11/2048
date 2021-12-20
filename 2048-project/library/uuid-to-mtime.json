@@ -450,12 +450,12 @@
     "relativePath": "scenes"
   },
   "c7fa7f5d-0ca2-4279-9516-8297944cb42a": {
-    "asset": 1640003937424,
-    "meta": 1640004618093,
+    "asset": 1640011491677,
+    "meta": 1640011491693,
     "relativePath": "scenes\\game.fire"
   },
   "a9cdab29-c048-44e5-a619-7b8b7fbbbcfd": {
-    "asset": 1640003937493,
+    "asset": 1640007296285,
     "meta": 1638887893850,
     "relativePath": "script"
   },
@@ -554,11 +554,6 @@
     "meta": 1640004618076,
     "relativePath": "prefab\\item.prefab"
   },
-  "84aae4cf-6dcd-4eb4-83ba-f9efac90c6e6": {
-    "asset": 1640003937486,
-    "meta": 1640004619079,
-    "relativePath": "script\\winBoardScript.js"
-  },
   "030e4828-7fd9-4d6c-a3ed-4b22bfed809c": {
     "asset": 1640003937471,
     "meta": 1640004618915,
@@ -574,14 +569,24 @@
     "meta": 1640004619049,
     "relativePath": "script\\tilesScript.js"
   },
-  "c988084d-ee6b-4a24-8908-6dc9839dc065": {
-    "asset": 1640003937458,
-    "meta": 1640004618859,
-    "relativePath": "script\\gameBoard.js"
+  "84aae4cf-6dcd-4eb4-83ba-f9efac90c6e6": {
+    "asset": 1640006466971,
+    "meta": 1640006638960,
+    "relativePath": "script\\winBoardScript.js"
   },
   "4ff70031-4eb1-411b-a4da-18f93276d637": {
-    "asset": 1640003937470,
-    "meta": 1640004618885,
+    "asset": 1640010102784,
+    "meta": 1640010142741,
     "relativePath": "script\\keyboardScript.js"
+  },
+  "291baef2-1f9e-4f21-85f2-686efdd71c00": {
+    "asset": 1640011310367,
+    "meta": 1640011365709,
+    "relativePath": "script\\touchScript.js"
+  },
+  "c988084d-ee6b-4a24-8908-6dc9839dc065": {
+    "asset": 1640011482556,
+    "meta": 1640011483648,
+    "relativePath": "script\\gameBoard.js"
   }
 }
