@@ -14,6 +14,7 @@ cc._RF.push(module, '4ff70AxTrFBG6TaGPkydtY3', 'keyboardScript');
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
+var Emitter = require('mEmitter');
 cc.Class({
     extends: cc.Component,
 
@@ -24,6 +25,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     _onKeyDown: function _onKeyDown(event) {
+        Emitter.instance.emit('sound', 'swipe');
         this.node.emit('setInput', false);
         if (!this._canMove) return;
         this._canMove = false;
@@ -54,7 +56,6 @@ cc.Class({
     onLoad: function onLoad() {
         var _this = this;
 
-        this._canMove = true;
         this.node.on('canMove', function () {
             var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
@@ -71,5 +72,21 @@ cc.Class({
 
 // update (dt) {},
 );
+
+// var Move = cc.Class({
+//     ctor: function (direction) {
+//         this.direction = direction;
+//         this._direction = null;
+//     },
+
+//     excute: function () {
+//         this.node.emit('move', this.direction);
+//         this._direction = this.direction;
+//     },
+
+//     undo: function () {
+//         this.node.emit('undo', this._direction);
+//     },
+// })
 
 cc._RF.pop();

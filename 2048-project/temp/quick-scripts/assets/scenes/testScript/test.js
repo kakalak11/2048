@@ -14,7 +14,6 @@ cc._RF.push(module, '4637dhzvQlAk5DmzV/fSdc6', 'test', __filename);
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
-var Emitter = require('mEmitter');
 
 cc.Class({
     extends: cc.Component,
@@ -233,7 +232,6 @@ cc.Class({
 
     onLoad: function onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
-        Emitter.instance = new Emitter();
         this._createTile(4);
         this._addEvent();
     },

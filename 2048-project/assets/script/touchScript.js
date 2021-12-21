@@ -8,6 +8,8 @@
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
+
+const Emitter = require('mEmitter');
 cc.Class({
     extends: cc.Component,
 
@@ -21,6 +23,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     _onTouchStart: function (event) {
+        Emitter.instance.emit('sound', 'swipe');
         this.node.emit('setInput', true);
         if (!this._canTouch) return;
         this._canTouch = false;
@@ -31,56 +34,46 @@ cc.Class({
         }, this);
 
         this.touchNode.once('touchend', function (event) {
-            cc.log(this._xDelta, this._yDelta);
-            if (this._xDelta === 0 && this._yDelta === 0) {
+            let xDelta = event.getLocation().x - event.getStartLocation().x;
+            let yDelta = event.getLocation().y - event.getStartLocation().y;
+            cc.log('x delta is: ', xDelta, ', y delta is: ', yDelta);
+            if (Math.abs(xDelta) === 0 && Math.abs(yDelta) === 0) {
                 this._canTouch = true;
                 return;
             }
-            if (Math.abs(this._xDelta) < 50 && Math.abs(this._yDelta) < 50) {
-                this._xDelta = 0;
-                this._yDelta = 0;
-                this._canTouch = true;
-                return;
+            if (Math.abs(xDelta) > Math.abs(yDelta)) {
+                if (xDelta > 0) {
+                    this.node.emit('moveRow', true);
+                    cc.log('move right');
+                } else {
+                    this.node.emit('moveRow', false);
+                    cc.log('move left');
+                }
+            } else {
+                if (yDelta > 0) {
+                    this.node.emit('moveCollumn', false);
+                    cc.log('move down');
+                } else {
+                    this.node.emit('moveCollumn', true);
+                    cc.log('move up');
+                }
             }
-            if (Math.abs(this._xDelta) > Math.abs(this._yDelta) && this._xDelta < 0) {
-                this.node.emit('moveRow', false);
-                cc.log('move right');
-            }
-            if (Math.abs(this._xDelta) > Math.abs(this._yDelta) && this._xDelta > 0) {
-                this.node.emit('moveRow', true);
-                cc.log('move left');
-            }
-            if (Math.abs(this._xDelta) < Math.abs(this._yDelta) && this._yDelta < 0) {
-                this.node.emit('moveCollumn', true);
-                cc.log('move down');
-            }
-            if (Math.abs(this._xDelta) < Math.abs(this._yDelta) && this._yDelta > 0) {
-                this.node.emit('moveCollumn', false);
-                cc.log('move up');
-            }
-            this._xDelta = 0;
-            this._yDelta = 0;
+            this._canTouch = true;
             return;
         }, this);
 
         this.touchNode.on('touchcancel', (event) => {
             this._canTouch = true;
-            this._xDelta = 0;
-            this._yDelta = 0;
             return;
         }, this);
     },
 
     onLoad() {
         this.touchNode.on('touchstart', this._onTouchStart, this);
-        // this.touchNode.on('touchstart', () => {
-        //     cc.log('touch');
-        //     cc.log(this);
-        // }, this);
         this.node.on('canMove', (value = true) => this._canTouch = value, this);
         this.node.on('setInput', (touch) => {
             if (!touch) this._canTouch = false;
-        }, this)
+        }, this);
     },
 
     start() {

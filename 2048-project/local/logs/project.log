@@ -1,353 +1,121 @@
-2021-12-20T13:37:40.445Z - normal: Load ~/.CocosCreator/settings.json
-2021-12-20T13:37:41.619Z - normal: Initializing Asset Database
-2021-12-20T13:37:41.622Z - normal: checking language setting...
-2021-12-20T13:37:41.622Z - normal: Language: en
-2021-12-20T13:37:43.098Z - success: preview server running at http://localhost:7456
-2021-12-20T13:37:43.100Z - success: protocol editor-framework registered
-2021-12-20T13:37:43.100Z - success: protocol app registered
-2021-12-20T13:37:43.100Z - success: protocol theme registered
-2021-12-20T13:37:43.100Z - success: protocol packages registered
-2021-12-20T13:37:43.101Z - success: protocol uuid registerred
-2021-12-20T13:37:43.101Z - success: protocol db registerred
-2021-12-20T13:37:43.101Z - success: protocol thumbnail registerred
-2021-12-20T13:37:43.101Z - success: protocol unpack registerred
-2021-12-20T13:37:43.101Z - success: protocol disable-commonjs registerred
-2021-12-20T13:37:43.654Z - normal: connected!
-2021-12-20T13:37:43.655Z - normal: Check project G:\Cocos\2048\2048-project
-2021-12-20T13:37:43.657Z - normal: Initializing project G:\Cocos\2048\2048-project
-2021-12-20T13:37:44.154Z - normal: Initializing Cocos2d
-2021-12-20T13:37:45.134Z - normal: Initializing engine extends
-2021-12-20T13:37:45.163Z - success: alipay-adapter loaded
-2021-12-20T13:37:45.176Z - success: asset-db-debugger loaded
-2021-12-20T13:37:45.179Z - success: baidu-adapter loaded
-2021-12-20T13:37:45.180Z - success: color-picker loaded
-2021-12-20T13:37:45.473Z - success: fb-audience-network loaded
-2021-12-20T13:37:45.544Z - success: fb-live-stream loaded
-2021-12-20T13:37:45.551Z - success: google-play-instant loaded
-2021-12-20T13:37:45.571Z - success: huawei-runtime loaded
-2021-12-20T13:37:46.242Z - success: cpk-publish loaded
-2021-12-20T13:37:46.243Z - success: jsb-adapter loaded
-2021-12-20T13:37:46.275Z - success: oppo-runtime loaded
-2021-12-20T13:37:46.279Z - success: package-manager loaded
-2021-12-20T13:37:46.687Z - success: qqplay-adapter loaded
-2021-12-20T13:37:46.689Z - success: runtime-dev-tools loaded
-2021-12-20T13:37:46.700Z - success: sdkbox loaded
-2021-12-20T13:37:46.703Z - success: tester loaded
-2021-12-20T13:37:46.705Z - success: ui-kit-preview-extra loaded
-2021-12-20T13:37:46.707Z - success: ui-kit-preview loaded
-2021-12-20T13:37:46.709Z - success: ui-kit loaded
-2021-12-20T13:37:46.735Z - success: vivo-runtime loaded
-2021-12-20T13:37:46.736Z - success: weapp-adapter loaded
-2021-12-20T13:37:46.737Z - success: xiaomi-adapter loaded
-2021-12-20T13:37:46.746Z - success: alipay-minigame loaded
-2021-12-20T13:37:46.800Z - success: assets loaded
-2021-12-20T13:37:46.802Z - success: builder loaded
-2021-12-20T13:37:47.421Z - success: cocos-services loaded
-2021-12-20T13:37:47.426Z - success: console loaded
-2021-12-20T13:37:47.468Z - success: fb-instant-games loaded
-2021-12-20T13:37:47.471Z - success: game-window loaded
-2021-12-20T13:37:47.473Z - success: google-instant-games loaded
-2021-12-20T13:37:47.481Z - success: hierarchy loaded
-2021-12-20T13:37:47.485Z - success: inspector loaded
-2021-12-20T13:37:47.487Z - success: keystore loaded
-2021-12-20T13:37:47.491Z - success: node-library loaded
-2021-12-20T13:37:47.493Z - success: package-asset loaded
-2021-12-20T13:37:47.515Z - success: preferences loaded
-2021-12-20T13:37:47.517Z - success: project-exporter loaded
-2021-12-20T13:37:47.518Z - success: project-importer loaded
-2021-12-20T13:37:47.521Z - success: project-settings loaded
-2021-12-20T13:37:47.525Z - success: scene loaded
-2021-12-20T13:37:47.526Z - success: simulator-debugger loaded
-2021-12-20T13:37:47.527Z - success: sprite-editor loaded
-2021-12-20T13:37:47.530Z - success: store loaded
-2021-12-20T13:37:47.536Z - success: timeline loaded
-2021-12-20T13:37:47.540Z - success: xiaomi-runtime loaded
-2021-12-20T13:37:48.949Z - normal: Loading packages
-2021-12-20T13:37:48.955Z - normal: Watching packages
-2021-12-20T13:37:49.387Z - normal: Run Application
-2021-12-20T13:37:50.078Z - info: Cocos Services load base data!
-2021-12-20T14:14:33.638Z - success: huawei-runtime unloaded
-2021-12-20T14:14:33.640Z - success: cpk-publish unloaded
-2021-12-20T14:14:33.641Z - success: oppo-runtime unloaded
-2021-12-20T14:14:33.641Z - success: vivo-runtime unloaded
-2021-12-20T14:14:33.648Z - success: huawei-runtime loaded
-2021-12-20T14:14:33.648Z - success: cpk-publish loaded
-2021-12-20T14:14:33.648Z - success: oppo-runtime loaded
-2021-12-20T14:14:33.649Z - success: vivo-runtime loaded
-2021-12-20T14:14:33.699Z - success: huawei-runtime unloaded
-2021-12-20T14:14:33.700Z - success: cpk-publish unloaded
-2021-12-20T14:14:33.700Z - success: oppo-runtime unloaded
-2021-12-20T14:14:33.700Z - success: vivo-runtime unloaded
-2021-12-20T14:14:33.705Z - success: huawei-runtime loaded
-2021-12-20T14:14:33.705Z - success: cpk-publish loaded
-2021-12-20T14:14:33.705Z - success: oppo-runtime loaded
-2021-12-20T14:14:33.705Z - success: vivo-runtime loaded
-2021-12-20T14:14:35.392Z - error: scene not saved. Please build project after saveing project.
-    at Editor.Ipc.sendToPanel (G:\CocosCreator_2.1.3\resources\app.asar\editor\builtin\builder\panel\builder.js:1:7875)
-    at EventEmitter.o.on.n (G:\CocosCreator_2.1.3\resources\app.asar\editor-framework\lib\renderer\ipc.js:1:3757)
-    at emitMany (events.js:127:13)
-    at EventEmitter.emit (events.js:204:7)
-2021-12-20T14:14:43.756Z - normal: Start building with options : {
-  "actualPlatform": "web-mobile",
-  "android-instant": {
-    "REMOTE_SERVER_ROOT": "",
-    "host": "",
-    "pathPattern": "",
-    "recordPath": "",
-    "scheme": "https",
-    "skipRecord": false
-  },
-  "apiLevel": "",
-  "appABIs": [],
-  "appBundle": false,
-  "baidugame": {
-    "REMOTE_SERVER_ROOT": "",
-    "appid": "testappid",
-    "orientation": "portrait",
-    "subContext": ""
-  },
-  "buildPath": "G:\\Cocos\\2048-build",
-  "debug": false,
-  "dest": "G:\\Cocos\\2048-build\\web-mobile",
-  "embedWebDebugger": false,
-  "encryptJs": true,
-  "excludeScenes": [
-    "b178aee5-c85c-4ba9-8811-93045e7b546f"
-  ],
-  "excludedModules": [],
-  "fb-instant-games": {},
-  "includeSDKBox": false,
-  "inlineSpriteFrames": true,
-  "inlineSpriteFrames_native": true,
-  "md5Cache": false,
-  "mergeStartScene": false,
-  "optimizeHotUpdate": false,
-  "orientation": {
-    "landscapeLeft": true,
-    "landscapeRight": true,
-    "portrait": false,
-    "upsideDown": false
-  },
-  "packageName": "org.cocos2d.2048-project",
-  "platform": "web-mobile",
-  "previewHeight": "720",
-  "previewWidth": "1280",
-  "qqplay": {
-    "REMOTE_SERVER_ROOT": "",
-    "orientation": "portrait",
-    "zip": false
-  },
-  "scenes": [
-    "c7fa7f5d-0ca2-4279-9516-8297944cb42a"
-  ],
-  "sourceMaps": false,
-  "startScene": "c7fa7f5d-0ca2-4279-9516-8297944cb42a",
-  "template": "link",
-  "title": "2048-project",
-  "useDebugKeystore": true,
-  "vsVersion": "auto",
-  "webOrientation": "portrait",
-  "wechatgame": {
-    "REMOTE_SERVER_ROOT": "",
-    "appid": "wx6ac3f5090a6b99c5",
-    "orientation": "portrait",
-    "separate_engine": false,
-    "subContext": ""
-  },
-  "xxteaKey": "d4b8d81d-114e-48",
-  "zipCompressJs": true,
-  "project": "G:\\Cocos\\2048\\2048-project",
-  "projectName": "2048-project",
-  "debugBuildWorker": false
-}
-2021-12-20T14:14:43.759Z - normal: Building G:\Cocos\2048\2048-project
-2021-12-20T14:14:43.759Z - normal: Destination G:\Cocos\2048-build\web-mobile
-2021-12-20T14:14:43.968Z - normal: Delete G:\Cocos\2048-build\web-mobile\subpackages/**/*,G:\Cocos\2048-build\web-mobile\**\*
-2021-12-20T14:14:46.280Z - normal: Start building assets
-2021-12-20T14:14:46.280Z - normal: Start spawn build-worker
-2021-12-20T14:14:46.960Z - normal: Finish spawn build-worker
-2021-12-20T14:14:46.960Z - normal: Start init build-worker
-2021-12-20T14:14:50.529Z - normal: Finish init build-worker
-2021-12-20T14:14:50.529Z - normal: Start build-assets in worker
-2021-12-20T14:14:50.889Z - normal: Finish build-assets in worker
-2021-12-20T14:14:50.895Z - normal: Finish building assets
-2021-12-20T14:14:50.905Z - normal: Start building plugin scripts
-2021-12-20T14:14:50.916Z - normal: Generating main.js from G:\CocosCreator_2.1.3\resources\static\build-templates\shares\main.js
-2021-12-20T14:14:50.924Z - normal: Generating html from G:\CocosCreator_2.1.3\resources\static\build-templates\web-mobile\template\index.html
-2021-12-20T14:14:50.940Z - normal: Built to "G:\Cocos\2048-build\web-mobile" successfully
-2021-12-20T14:28:26.427Z - normal: Start building with options : {
-  "actualPlatform": "web-mobile",
-  "android-instant": {
-    "REMOTE_SERVER_ROOT": "",
-    "host": "",
-    "pathPattern": "",
-    "recordPath": "",
-    "scheme": "https",
-    "skipRecord": false
-  },
-  "apiLevel": "",
-  "appABIs": [],
-  "appBundle": false,
-  "baidugame": {
-    "REMOTE_SERVER_ROOT": "",
-    "appid": "testappid",
-    "orientation": "portrait",
-    "subContext": ""
-  },
-  "buildPath": "G:\\Cocos\\2048-build",
-  "debug": false,
-  "dest": "G:\\Cocos\\2048-build\\web-mobile",
-  "embedWebDebugger": false,
-  "encryptJs": true,
-  "excludeScenes": [
-    "b178aee5-c85c-4ba9-8811-93045e7b546f"
-  ],
-  "excludedModules": [],
-  "fb-instant-games": {},
-  "includeSDKBox": false,
-  "inlineSpriteFrames": true,
-  "inlineSpriteFrames_native": true,
-  "md5Cache": false,
-  "mergeStartScene": false,
-  "optimizeHotUpdate": false,
-  "orientation": {
-    "landscapeLeft": true,
-    "landscapeRight": true,
-    "portrait": false,
-    "upsideDown": false
-  },
-  "packageName": "org.cocos2d.2048-project",
-  "platform": "web-mobile",
-  "previewHeight": "720",
-  "previewWidth": "1280",
-  "qqplay": {
-    "REMOTE_SERVER_ROOT": "",
-    "orientation": "portrait",
-    "zip": false
-  },
-  "scenes": [
-    "c7fa7f5d-0ca2-4279-9516-8297944cb42a"
-  ],
-  "sourceMaps": false,
-  "startScene": "c7fa7f5d-0ca2-4279-9516-8297944cb42a",
-  "template": "link",
-  "title": "2048-project",
-  "useDebugKeystore": true,
-  "vsVersion": "auto",
-  "webOrientation": "portrait",
-  "wechatgame": {
-    "REMOTE_SERVER_ROOT": "",
-    "appid": "wx6ac3f5090a6b99c5",
-    "orientation": "portrait",
-    "separate_engine": false,
-    "subContext": ""
-  },
-  "xxteaKey": "d4b8d81d-114e-48",
-  "zipCompressJs": true,
-  "project": "G:\\Cocos\\2048\\2048-project",
-  "projectName": "2048-project",
-  "debugBuildWorker": false
-}
-2021-12-20T14:28:26.431Z - normal: Building G:\Cocos\2048\2048-project
-2021-12-20T14:28:26.431Z - normal: Destination G:\Cocos\2048-build\web-mobile
-2021-12-20T14:28:26.434Z - normal: Delete G:\Cocos\2048-build\web-mobile\subpackages/**/*,G:\Cocos\2048-build\web-mobile\**\*
-2021-12-20T14:28:28.927Z - normal: Start building assets
-2021-12-20T14:28:28.928Z - normal: Start spawn build-worker
-2021-12-20T14:28:29.663Z - normal: Finish spawn build-worker
-2021-12-20T14:28:29.663Z - normal: Start init build-worker
-2021-12-20T14:28:33.459Z - normal: Finish init build-worker
-2021-12-20T14:28:33.459Z - normal: Start build-assets in worker
-2021-12-20T14:28:33.877Z - normal: Finish build-assets in worker
-2021-12-20T14:28:33.882Z - normal: Finish building assets
-2021-12-20T14:28:33.890Z - normal: Start building plugin scripts
-2021-12-20T14:28:33.898Z - normal: Generating main.js from G:\CocosCreator_2.1.3\resources\static\build-templates\shares\main.js
-2021-12-20T14:28:33.905Z - normal: Generating html from G:\CocosCreator_2.1.3\resources\static\build-templates\web-mobile\template\index.html
-2021-12-20T14:28:33.958Z - normal: Built to "G:\Cocos\2048-build\web-mobile" successfully
-2021-12-20T14:44:54.318Z - normal: Start building with options : {
-  "actualPlatform": "web-mobile",
-  "android-instant": {
-    "REMOTE_SERVER_ROOT": "",
-    "host": "",
-    "pathPattern": "",
-    "recordPath": "",
-    "scheme": "https",
-    "skipRecord": false
-  },
-  "apiLevel": "",
-  "appABIs": [],
-  "appBundle": false,
-  "baidugame": {
-    "REMOTE_SERVER_ROOT": "",
-    "appid": "testappid",
-    "orientation": "portrait",
-    "subContext": ""
-  },
-  "buildPath": "G:\\Cocos\\2048-build",
-  "debug": false,
-  "dest": "G:\\Cocos\\2048-build\\web-mobile",
-  "embedWebDebugger": false,
-  "encryptJs": true,
-  "excludeScenes": [
-    "b178aee5-c85c-4ba9-8811-93045e7b546f"
-  ],
-  "excludedModules": [],
-  "fb-instant-games": {},
-  "includeSDKBox": false,
-  "inlineSpriteFrames": true,
-  "inlineSpriteFrames_native": true,
-  "md5Cache": false,
-  "mergeStartScene": false,
-  "optimizeHotUpdate": false,
-  "orientation": {
-    "landscapeLeft": true,
-    "landscapeRight": true,
-    "portrait": false,
-    "upsideDown": false
-  },
-  "packageName": "org.cocos2d.2048-project",
-  "platform": "web-mobile",
-  "previewHeight": "720",
-  "previewWidth": "1280",
-  "qqplay": {
-    "REMOTE_SERVER_ROOT": "",
-    "orientation": "portrait",
-    "zip": false
-  },
-  "scenes": [
-    "c7fa7f5d-0ca2-4279-9516-8297944cb42a"
-  ],
-  "sourceMaps": false,
-  "startScene": "c7fa7f5d-0ca2-4279-9516-8297944cb42a",
-  "template": "link",
-  "title": "2048-project",
-  "useDebugKeystore": true,
-  "vsVersion": "auto",
-  "webOrientation": "portrait",
-  "wechatgame": {
-    "REMOTE_SERVER_ROOT": "",
-    "appid": "wx6ac3f5090a6b99c5",
-    "orientation": "portrait",
-    "separate_engine": false,
-    "subContext": ""
-  },
-  "xxteaKey": "d4b8d81d-114e-48",
-  "zipCompressJs": true,
-  "project": "G:\\Cocos\\2048\\2048-project",
-  "projectName": "2048-project",
-  "debugBuildWorker": false
-}
-2021-12-20T14:44:54.322Z - normal: Building G:\Cocos\2048\2048-project
-2021-12-20T14:44:54.322Z - normal: Destination G:\Cocos\2048-build\web-mobile
-2021-12-20T14:44:54.323Z - normal: Delete G:\Cocos\2048-build\web-mobile\subpackages/**/*,G:\Cocos\2048-build\web-mobile\**\*
-2021-12-20T14:44:56.680Z - normal: Start building assets
-2021-12-20T14:44:56.680Z - normal: Start spawn build-worker
-2021-12-20T14:44:57.348Z - normal: Finish spawn build-worker
-2021-12-20T14:44:57.348Z - normal: Start init build-worker
-2021-12-20T14:45:01.022Z - normal: Finish init build-worker
-2021-12-20T14:45:01.022Z - normal: Start build-assets in worker
-2021-12-20T14:45:01.361Z - normal: Finish build-assets in worker
-2021-12-20T14:45:01.365Z - normal: Finish building assets
-2021-12-20T14:45:01.373Z - normal: Start building plugin scripts
-2021-12-20T14:45:01.382Z - normal: Generating main.js from G:\CocosCreator_2.1.3\resources\static\build-templates\shares\main.js
-2021-12-20T14:45:01.388Z - normal: Generating html from G:\CocosCreator_2.1.3\resources\static\build-templates\web-mobile\template\index.html
-2021-12-20T14:45:01.400Z - normal: Built to "G:\Cocos\2048-build\web-mobile" successfully
+2021-12-21T06:50:32.358Z - normal: Load ~/.CocosCreator/settings.json
+2021-12-21T06:50:32.400Z - normal: Initializing Asset Database
+2021-12-21T06:50:32.402Z - normal: checking language setting...
+2021-12-21T06:50:32.402Z - normal: Language: en
+2021-12-21T06:50:33.047Z - success: preview server running at http://localhost:7456
+2021-12-21T06:50:33.056Z - success: protocol editor-framework registered
+2021-12-21T06:50:33.056Z - success: protocol app registered
+2021-12-21T06:50:33.056Z - success: protocol theme registered
+2021-12-21T06:50:33.056Z - success: protocol packages registered
+2021-12-21T06:50:33.056Z - success: protocol uuid registerred
+2021-12-21T06:50:33.056Z - success: protocol db registerred
+2021-12-21T06:50:33.056Z - success: protocol thumbnail registerred
+2021-12-21T06:50:33.056Z - success: protocol unpack registerred
+2021-12-21T06:50:33.056Z - success: protocol disable-commonjs registerred
+2021-12-21T06:50:35.727Z - normal: connected!
+2021-12-21T06:50:35.729Z - normal: Check project /Users/fe-anhtu-fresher/Desktop/2048/2048-project
+2021-12-21T06:50:35.730Z - normal: Initializing project /Users/fe-anhtu-fresher/Desktop/2048/2048-project
+2021-12-21T06:50:36.046Z - normal: Initializing Cocos2d
+2021-12-21T06:50:36.661Z - normal: Initializing engine extends
+2021-12-21T06:50:36.683Z - success: alipay-adapter loaded
+2021-12-21T06:50:36.693Z - success: asset-db-debugger loaded
+2021-12-21T06:50:36.697Z - success: baidu-adapter loaded
+2021-12-21T06:50:36.700Z - success: color-picker loaded
+2021-12-21T06:50:36.846Z - success: fb-audience-network loaded
+2021-12-21T06:50:36.897Z - success: fb-live-stream loaded
+2021-12-21T06:50:36.899Z - success: google-play-instant loaded
+2021-12-21T06:50:36.905Z - success: huawei-runtime loaded
+2021-12-21T06:50:37.109Z - success: cpk-publish loaded
+2021-12-21T06:50:37.110Z - success: jsb-adapter loaded
+2021-12-21T06:50:37.116Z - success: oppo-runtime loaded
+2021-12-21T06:50:37.121Z - success: package-manager loaded
+2021-12-21T06:50:37.252Z - success: qqplay-adapter loaded
+2021-12-21T06:50:37.254Z - success: runtime-dev-tools loaded
+2021-12-21T06:50:37.276Z - success: sdkbox loaded
+2021-12-21T06:50:37.280Z - success: tester loaded
+2021-12-21T06:50:37.283Z - success: ui-kit-preview-extra loaded
+2021-12-21T06:50:37.285Z - success: ui-kit-preview loaded
+2021-12-21T06:50:37.288Z - success: ui-kit loaded
+2021-12-21T06:50:37.293Z - success: vivo-runtime loaded
+2021-12-21T06:50:37.294Z - success: weapp-adapter loaded
+2021-12-21T06:50:37.295Z - success: xiaomi-adapter loaded
+2021-12-21T06:50:37.297Z - success: alipay-minigame loaded
+2021-12-21T06:50:37.329Z - success: assets loaded
+2021-12-21T06:50:37.332Z - success: builder loaded
+2021-12-21T06:50:37.576Z - success: cocos-services loaded
+2021-12-21T06:50:37.581Z - success: console loaded
+2021-12-21T06:50:37.605Z - success: fb-instant-games loaded
+2021-12-21T06:50:37.609Z - success: game-window loaded
+2021-12-21T06:50:37.610Z - success: google-instant-games loaded
+2021-12-21T06:50:37.614Z - success: hierarchy loaded
+2021-12-21T06:50:37.618Z - success: inspector loaded
+2021-12-21T06:50:37.619Z - success: keystore loaded
+2021-12-21T06:50:37.624Z - success: node-library loaded
+2021-12-21T06:50:37.625Z - success: package-asset loaded
+2021-12-21T06:50:37.627Z - success: preferences loaded
+2021-12-21T06:50:37.630Z - success: project-exporter loaded
+2021-12-21T06:50:37.635Z - success: project-importer loaded
+2021-12-21T06:50:37.637Z - success: project-settings loaded
+2021-12-21T06:50:37.643Z - success: scene loaded
+2021-12-21T06:50:37.644Z - success: simulator-debugger loaded
+2021-12-21T06:50:37.645Z - success: sprite-editor loaded
+2021-12-21T06:50:37.649Z - success: store loaded
+2021-12-21T06:50:37.656Z - success: timeline loaded
+2021-12-21T06:50:37.661Z - success: xiaomi-runtime loaded
+2021-12-21T06:50:38.574Z - normal: Loading packages
+2021-12-21T06:50:38.577Z - normal: Watching packages
+2021-12-21T06:50:38.656Z - normal: Run Application
+2021-12-21T06:50:40.686Z - info: Cocos Services load base data!
+2021-12-21T06:50:42.355Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T06:57:03.163Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T06:59:40.929Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:04:33.035Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:04:46.063Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:04:49.386Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:05:26.983Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:06:38.137Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:06:45.155Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:07:16.443Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:07:39.861Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:08:47.818Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:08:54.105Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:11:29.708Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:11:45.497Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:12:11.885Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:12:12.878Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:12:31.329Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:12:40.996Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:12:50.378Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:13:14.721Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:13:28.488Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:13:35.198Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:14:06.711Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:15:17.081Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:16:12.501Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:17:06.349Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:17:10.048Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:18:39.611Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:20:08.923Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:21:26.650Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:22:18.062Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:23:23.817Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:26:53.660Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:27:14.252Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:30:00.346Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:32:28.864Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:33:22.101Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:40:19.747Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:40:34.062Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:40:47.107Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:41:50.235Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:42:05.355Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:42:16.551Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:57:13.626Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:58:14.291Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:58:47.449Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T07:59:40.598Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T08:01:53.206Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T08:02:01.323Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T08:03:17.250Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-21T09:43:24.342Z - info: Only the prefab node "item" and its child nodes are saved.
+2021-12-21T10:12:08.918Z - info: shutdown preview server

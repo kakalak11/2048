@@ -24,6 +24,7 @@ cc.Class({
         itemPrefab: cc.Prefab,
         userNameBox: cc.EditBox,
         score: cc.Label,
+        _highScoreList: [],
         _data: null,
         _bestScore: 0,
         _bestPlayer: ''
@@ -47,39 +48,60 @@ cc.Class({
     },
 
     onClickSave: function onClickSave() {
-        var value = this.score.string;
-        var key = this.userNameBox.string;
+        var value = this.userNameBox.string + ' : ' + this.score.string;
+        this._highScoreList.push(value);
         this.userNameBox.string = '';
-        this._data.setItem(key, value);
+        this._data.setItem(this._highScoreList.length, value);
         return;
     },
 
-    _updateLeaderBoard: function _updateLeaderBoard() {
-        this._data.clear();
-        this._data.setItem('kakalak', 200);
-        this._data.setItem('kakalak11', 2054);
-        this._data.setItem('kakalak22', 300);
-        this._data.setItem('kakalak33', 3000);
-        this._data.removeItem('debug');
-        var index = 0;
-
-        for (var property in this._data) {
-            if (property === 'length') return;
-            index++;
-            cc.warn(index);
-            if (this._bestScore < parseInt(this._data[property])) {
-                this._bestScore = parseInt(this._data[property]);
-                this._bestPlayer = property;
-            }
-            var item = cc.instantiate(this.itemPrefab);
-            this.content.addChild(item);
-            item.getComponent(cc.Label).string = '__________' + index + '__________\n' + property + '\n' + this._data[property];
+    _loadData: function _loadData() {
+        for (var index = 0; index < this._data.length - 1; index++) {
+            this._highScoreList.push(this._data.getItem(index));
         }
+        cc.log(this._highScoreList);
+        this._sortData();
+        return;
+    },
+
+    _sortData: function _sortData() {
+        var _this2 = this;
+
+        this._highScoreList.forEach(function (element, index, array) {
+            _this2.number = parseInt(element.split(':')[1]);
+            if (_this2._bestScore < _this2.number) {
+                _this2._temp = array[0];
+                array[0] = element;
+                element = _this2._temp;
+                _this2._bestScore = _this2.number;
+                _this2._bestPlayer = element.split(':')[0];
+                return;
+            }
+        });
+        this._highScoreList[0] = this._bestPlayer + ' : ' + this._bestScore;
+        this._updateLeaderBoard();
+    },
+
+    _updateLeaderBoard: function _updateLeaderBoard() {
+        var _this3 = this;
+
+        this.content.removeAllChildren();
+        this._highScoreList.forEach(function (element, index) {
+            var item = cc.instantiate(_this3.itemPrefab);
+            var label = item.getComponent(cc.Label);
+            _this3.content.addChild(item);
+            if (index === 0) {
+                label.string = '_____UWU_____' + (index + 1) + '_____UWU_____\n' + element.split(':')[0] + '\n' + element.split(':')[1];
+                return;
+            }
+            label.string = '__________' + (index + 1) + '__________\n' + element.split(':')[0] + '\n' + element.split(':')[1];
+        });
     },
 
     onLoad: function onLoad() {
         this._data = cc.sys.localStorage;
-        this._updateLeaderBoard();
+        cc.log(this._data);
+        this._loadData();
     },
     start: function start() {}
 }

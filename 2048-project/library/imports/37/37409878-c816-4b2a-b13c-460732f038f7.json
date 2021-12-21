@@ -85,7 +85,7 @@
     "_useOriginalSize": false,
     "_string": "_____________________\n*username*\n*score*\n",
     "_N$string": "_____________________\n*username*\n*score*\n",
-    "_fontSize": 30,
+    "_fontSize": 25,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": {

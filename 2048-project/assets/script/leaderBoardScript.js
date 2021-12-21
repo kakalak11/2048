@@ -18,6 +18,7 @@ cc.Class({
         itemPrefab: cc.Prefab,
         userNameBox: cc.EditBox,
         score: cc.Label,
+        _highScoreList: [],
         _data: null,
         _bestScore: 0,
         _bestPlayer: '',
@@ -40,39 +41,56 @@ cc.Class({
     },
 
     onClickSave: function () {
-        let value = this.score.string;
-        let key = this.userNameBox.string;
+        let value = `${this.userNameBox.string} : ${this.score.string}`;
+        this._highScoreList.push(value);
         this.userNameBox.string = '';
-        this._data.setItem(key, value);
+        this._data.setItem(this._highScoreList.length, value);
         return;
     },
 
-    _updateLeaderBoard: function () {
-        this._data.clear();
-        this._data.setItem('kakalak', 200);
-        this._data.setItem('kakalak11', 2054);
-        this._data.setItem('kakalak22', 300);
-        this._data.setItem('kakalak33', 3000);
-        this._data.removeItem('debug');
-        let index = 0;
-
-        for (const property in this._data) {
-            if (property === 'length') return;
-            index++;
-            cc.warn(index);
-            if (this._bestScore < parseInt(this._data[property])) {
-                this._bestScore = parseInt(this._data[property]);
-                this._bestPlayer = property;
-            }
-            let item = cc.instantiate(this.itemPrefab);
-            this.content.addChild(item);
-            item.getComponent(cc.Label).string = `__________${index}__________\n${property}\n${this._data[property]}`;
+    _loadData: function () {
+        for (let index = 0; index < this._data.length - 1; index++) {
+            this._highScoreList.push(this._data.getItem(index));
         }
+        cc.log(this._highScoreList);
+        this._sortData();
+        return;
+    },
+
+    _sortData: function () {
+        this._highScoreList.forEach((element, index, array) => {
+            this.number = parseInt(element.split(':')[1]);
+            if (this._bestScore < this.number) {
+                this._temp = array[0];
+                array[0] = element;
+                element = this._temp;
+                this._bestScore = this.number;
+                this._bestPlayer = element.split(':')[0];
+                return;
+            }
+        });
+        this._highScoreList[0] = `${this._bestPlayer} : ${this._bestScore}`;
+        this._updateLeaderBoard();
+    },
+
+    _updateLeaderBoard: function () {
+        this.content.removeAllChildren();
+        this._highScoreList.forEach((element, index) => {
+            let item = cc.instantiate(this.itemPrefab);
+            let label = item.getComponent(cc.Label);
+            this.content.addChild(item);
+            if (index === 0) {
+                label.string = `_____UWU_____${index + 1}_____UWU_____\n${element.split(':')[0]}\n${element.split(':')[1]}`;
+                return;
+            }
+            label.string = `__________${index + 1}__________\n${element.split(':')[0]}\n${element.split(':')[1]}`;
+        })
     },
 
     onLoad() {
         this._data = cc.sys.localStorage;
-        this._updateLeaderBoard();
+        cc.log(this._data);
+        this._loadData();
     },
 
     start() {

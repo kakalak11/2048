@@ -8,7 +8,6 @@
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
-const Emitter = require('mEmitter');
 
 cc.Class({
     extends: cc.Component,
@@ -201,7 +200,6 @@ cc.Class({
 
     onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
-        Emitter.instance = new Emitter();
         this._createTile(4);
         this._addEvent();
 

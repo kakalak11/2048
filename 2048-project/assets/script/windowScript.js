@@ -8,6 +8,7 @@
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
+const Emitter = require('mEmitter');
 cc.Class({
     extends: cc.Component,
 
@@ -25,8 +26,10 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onClickPlayButton: function () {
-        this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5)))
-        this.gameBoard.getComponent('gameBoard')._setupGrid(this._playing);
+        this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5)));
+        if (!this._playing) {
+            this.gameBoard.getComponent('gameBoard')._setupGrid(this._playing);
+        }
         this._playing = true;
     },
 
@@ -62,12 +65,16 @@ cc.Class({
     },
 
     onLoad() {
+
+        Emitter.instance = new Emitter();
         this.node.on('updateScore', this._scoreUpdate, this);
         this.node.on('win', this._win, this);
         this.node.on('lose', this._lose, this);
         this.leaderBoardScript = this.leaderBoard.getComponent('leaderBoardScript');
-        // this.leaderBoardScript.onLoad();
-        this.bestScoreNumber.string = String(this.leaderBoardScript._bestScore);
+        // this.leaderBoardScript.active = true;
+        this.leaderBoardScript.active = false;
+        cc.log(this.leaderBoardScript._bestScore);
+        this.bestScoreNumber.string = this.leaderBoardScript._bestScore;
     },
 
     start() {

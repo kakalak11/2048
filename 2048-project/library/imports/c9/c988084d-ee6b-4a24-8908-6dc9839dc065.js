@@ -14,6 +14,7 @@ cc._RF.push(module, 'c9880hN7mtKJIkIbcmDncBl', 'gameBoard');
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
+var Emitter = require('mEmitter');
 cc.Class({
     extends: cc.Component,
 
@@ -21,69 +22,14 @@ cc.Class({
         tilePrefab: cc.Prefab,
         winBoard: cc.Node,
         loseBoard: cc.Node,
-        swipeSound: cc.AudioSource,
-        combineSound: cc.AudioSource,
         _tilesMatrix: [],
-        _moving: null,
         _time: 0.25 / 8,
         _check: true,
         _combined: false,
-        _posistionChanged: null,
         _skip: false
     },
 
     // LIFE-CYCLE CALLBACKS:
-
-    // _onKeyDown: function (event) {
-    //     if (this._moving) return;
-    //     this.swipeSound.play();
-    //     this._moving = true;
-    //     this._check = false;
-    //     switch (event.keyCode) {
-    //         case cc.macro.KEY.d:
-    //             this._moveRow(true);
-    //             this._combineRow(true);
-    //             this.scheduleOnce(() => {
-    //                 this._moveRow(true);
-    //                 this._adjustPosition();
-    //             }, this._time);
-    //             break;
-    //         case cc.macro.KEY.a:
-    //             this._moveRow(false);
-    //             this._combineRow(false);
-    //             this.scheduleOnce(() => {
-    //                 this._moveRow(false);
-    //                 this._adjustPosition();
-    //             }, this._time);
-    //             break;
-    //         case cc.macro.KEY.s:
-    //             this._moveCollumn(true);
-    //             this._combineCollumn(true);
-    //             this.scheduleOnce(() => {
-    //                 this._moveCollumn(true);
-    //                 this._adjustPosition();
-    //             }, this._time);
-    //             break;
-    //         case cc.macro.KEY.w:
-    //             this._moveCollumn(false);
-    //             this._combineCollumn(false);
-    //             this.scheduleOnce(() => {
-    //                 this._moveCollumn(false);
-    //                 this._adjustPosition();
-    //             }, this._time);
-    //             break;
-    //         case cc.macro.KEY.c:
-    //             this.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
-    //             break;
-    //         case cc.macro.KEY.space:
-    //             console.clear();
-    //             this._moving = false;
-    //             break;
-    //         default:
-    //             this._moving = false;
-    //             break;
-    //     }
-    // },
 
     //Move logic
 
@@ -199,9 +145,6 @@ cc.Class({
                         var currentPos = element.getPosition(cc.v2());
                         if (Math.abs(Math.floor(lastPos.x - currentPos.x)) > 25 || Math.abs(Math.floor(lastPos.y - currentPos.y)) > 25) {
                             _this4._check = true;
-                            // cc.log('last position', lastPos, 'current position', currentPos, element.name);
-                            // cc.log('x change', Math.floor(lastPos.x - currentPos.x));
-                            // cc.log('y change', Math.floor(lastPos.y - currentPos.y));
                         }
                     }));
                     element.runAction(_this4.action);
@@ -214,7 +157,7 @@ cc.Class({
         });
         this.scheduleOnce(function () {
             if (_this4._combined) {
-                _this4.combineSound.play();
+                Emitter.instance.emit('sound', 'combine');
                 _this4._combined = false;
             }
             _this4._generateRandomValue();
@@ -228,7 +171,6 @@ cc.Class({
         var _this5 = this;
 
         if (!this._check) {
-            this._moving = false;
             return;
         }
         do {
@@ -242,7 +184,6 @@ cc.Class({
         } while (this._tilesMatrix[this.randomRow][this.randomCollumn].active);
         this.randomTile = this._tilesMatrix[this.randomRow][this.randomCollumn];
         this.number = this.randomTile.getComponent('tilesScript');
-        // this.randomTile.once('position-changed', () => this._check = true, this);
         this.randomTile.active = true;
         this.randomTile.scale = 0;
         this.number.setNumber(Math.random() > 0.7 ? 4 : 2);
@@ -254,7 +195,6 @@ cc.Class({
         this._check = false;
     },
     _setupGrid: function _setupGrid(playing) {
-        // cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
         var numberIndex = 1;
         this._tilesMatrix.push([], [], [], []);
         for (var collumn = 0; collumn < 4; collumn++) {
@@ -333,6 +273,9 @@ cc.Class({
     },
 
     _reset: function _reset() {
+        this.node.children.forEach(function (item) {
+            return item.stopAllActions();
+        });
         this.node.removeAllChildren(true);
         this._tilesMatrix = [];
         this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
@@ -354,7 +297,6 @@ cc.Class({
         var _this8 = this;
 
         this.node.on('moveRow', function (directionRight) {
-            _this8.swipeSound.play();
             _this8._moveRow(directionRight);
             _this8._combineRow(directionRight);
             _this8.scheduleOnce(function () {
@@ -364,7 +306,6 @@ cc.Class({
         }, this);
 
         this.node.on('moveCollumn', function (directionDown) {
-            _this8.swipeSound.play();
             _this8._moveCollumn(directionDown);
             _this8._combineCollumn(directionDown);
             _this8.scheduleOnce(function () {
@@ -372,42 +313,17 @@ cc.Class({
                 _this8._adjustPosition();
             }, _this8._time);
         }, this);
-    },
 
-    _shutEvent: function _shutEvent() {
-        var _this9 = this;
-
-        this.node.off('moveRow', function (directionRight) {
-            _this9.swipeSound.play();
-            _this9._moveRow(directionRight);
-            _this9._combineRow(directionRight);
-            _this9.scheduleOnce(function () {
-                _this9._moveRow(directionRight);
-                _this9._adjustPosition();
-            }, _this9._time);
-        }, this);
-
-        this.node.off('moveCollumn', function (directionDown) {
-            _this9.swipeSound.play();
-            _this9._moveCollumn(directionDown);
-            _this9._combineCollumn(directionDown);
-            _this9.scheduleOnce(function () {
-                _this9._moveCollumn(directionDown);
-                _this9._adjustPosition();
-            }, _this9._time);
-        }, this);
-    },
-
-    onLoad: function onLoad() {
-        var _this10 = this;
-
-        this._addEvent();
         this.node.on('checkWin', this._checkWin, this);
         this.node.on('checkLose', this._checkLose, this);
         this.node.on('move', function (event) {
             event.stopPropagation();
-            _this10._check = true;
+            _this8._check = true;
         }, this);
+    },
+
+    onLoad: function onLoad() {
+        this._addEvent();
     },
     start: function start() {},
     update: function update(dt) {}
