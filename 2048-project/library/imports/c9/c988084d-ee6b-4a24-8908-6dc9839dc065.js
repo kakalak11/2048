@@ -277,6 +277,9 @@ cc.Class({
         this.node.children.forEach(function (item) {
             return item.stopAllActions();
         });
+        this.node.children.forEach(function (element) {
+            return element.destroy();
+        });
         this.node.removeAllChildren(true);
         this._tilesMatrix = [];
         this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));

@@ -30,7 +30,7 @@ cc.Class({
     },
 
     start() {
-        this.label.string = utilities.generateRainbowText(`The best player is ${this._player} with ${this._score}`);
+        this.label.string = utilities.generateRainbowText(`The best player is ${this._player} with the score of ${this._score}`);
         let action = cc.repeatForever(
             cc.sequence(
                 cc.moveTo(5, -500, 0),

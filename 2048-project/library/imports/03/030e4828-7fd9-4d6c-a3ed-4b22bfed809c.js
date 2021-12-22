@@ -44,7 +44,7 @@ cc.Class({
     },
 
     onClickSave: function onClickSave() {
-        var value = this.userNameBox.string + ' : ' + this.score.string;
+        var value = this.userNameBox.string + ':' + this.score.string;
         this._highScoreList.push(value);
         this.userNameBox.string = '';
         this._data.setItem(this._highScoreList.length - 1, value);
@@ -57,7 +57,7 @@ cc.Class({
             if (this._data.getItem(index) === null) continue;
             this._highScoreList.push(this._data.getItem(index));
         }
-        // cc.log(this._highScoreList);
+        cc.log(this._highScoreList);
         this._sortData();
         return;
     },
@@ -75,9 +75,9 @@ cc.Class({
         });
         // cc.log(`${this._bestPlayer}: ${this._bestScore}`);
         var temp = this._highScoreList[0];
-        this._highScoreList[this._highScoreList.indexOf(this._bestPlayer + ': ' + this._bestScore)] = temp;
-        this._highScoreList[0] = this._bestPlayer + ': ' + this._bestScore;
-        // cc.log(this._highScoreList);
+        this._highScoreList[this._highScoreList.indexOf(this._bestPlayer + ':' + this._bestScore)] = temp;
+        this._highScoreList[0] = this._bestPlayer + ':' + this._bestScore;
+        cc.log(this._highScoreList);
         this._updateLeaderBoard();
     },
 
@@ -110,6 +110,7 @@ cc.Class({
 
         this._data = cc.sys.localStorage;
         this._data.removeItem('debug');
+        cc.log(this._data);
         this._loadData();
         Emitter.instance.registerEvent('showLeaderBoard', this._show.bind(this));
         Emitter.instance.registerEvent('hideLeaderBoard', this._hide.bind(this));

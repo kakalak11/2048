@@ -14,13 +14,12 @@ cc._RF.push(module, '84aaeTPbc1OtIO6+e+skMbm', 'winBoardScript', __filename);
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
+var Emitter = require('mEmitter');
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        gameScore: cc.Node,
-        menuNode: cc.Node,
-        leaderBoard: cc.Node
+        gameScore: cc.Node
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -32,7 +31,8 @@ cc.Class({
 
     onClickReturnButton: function onClickReturnButton() {
         this.node.runAction(this.node.runAction(cc.moveTo(0.5, 0, 800).easing(cc.easeExponentialInOut(0.5))));
-        this.menuNode.runAction(this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5))));
+        Emitter.instance.emit('showMenu');
+        Emitter.instance.emit('hideWindow');
     },
 
     onLoad: function onLoad() {

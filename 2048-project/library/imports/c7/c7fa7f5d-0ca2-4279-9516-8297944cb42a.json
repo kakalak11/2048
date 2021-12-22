@@ -597,7 +597,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 500,
-      "height": 600
+      "height": 550
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -607,7 +607,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 22.524,
+      "y": 5.367,
       "z": 0
     },
     "_scale": {
@@ -777,7 +777,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 339.536,
+      "y": 318.089,
       "z": 0
     },
     "_scale": {
@@ -4811,7 +4811,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 346.309,
+      "y": 249.085,
       "z": 0
     },
     "_scale": {
@@ -4901,7 +4901,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 285.341,
+      "y": 188.117,
       "z": 0
     },
     "_scale": {
@@ -5345,9 +5345,6 @@
       "__id__": 102
     },
     "_enabled": true,
-    "menuNode": {
-      "__id__": 57
-    },
     "gameScore": {
       "__id__": 40
     },
@@ -7325,7 +7322,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 314.094,
+      "y": 268.108,
       "z": 0
     },
     "_scale": {
@@ -7415,7 +7412,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 253.126,
+      "y": 207.14,
       "z": 0
     },
     "_scale": {
@@ -7478,12 +7475,6 @@
     "_enabled": true,
     "gameScore": {
       "__id__": 40
-    },
-    "menuNode": {
-      "__id__": 57
-    },
-    "leaderBoard": {
-      "__id__": 5
     },
     "_id": "82P/7kfoRItLRoWsrvDwed"
   },
@@ -8215,11 +8206,11 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 5
+      "__id__": 30
     },
     "component": "",
-    "_componentId": "030e4gof9lNbKPtSyK/7YCc",
-    "handler": "onClickReturn",
+    "_componentId": "84aaeTPbc1OtIO6+e+skMbm",
+    "handler": "onClickReturnButton",
     "customEventData": ""
   },
   {
@@ -8911,7 +8902,7 @@
     "_is3DNode": false,
     "groupIndex": 0,
     "showInEditor": false,
-    "_id": "2aIcsrFlJFJIYRyujCuwMP"
+    "_id": "cbIDAE95BJer2BmxVR7xBn"
   },
   {
     "__type__": "cc.Label",
@@ -8943,7 +8934,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
-    "_id": "e6ZwDHR4FN25XUijJGM6CE"
+    "_id": "9a02kswWxHD6XJO3EttYLn"
   },
   {
     "__type__": "cc.RichText",
@@ -9000,7 +8991,7 @@
         "__id__": 223
       }
     ],
-    "_active": true,
+    "_active": false,
     "_level": 2,
     "_components": [
       {

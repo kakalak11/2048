@@ -238,6 +238,7 @@ cc.Class({
 
     _reset() {
         this.node.children.forEach(item => item.stopAllActions());
+        this.node.children.forEach(element => element.destroy());
         this.node.removeAllChildren(true);
         this._tilesMatrix = [];
         this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
