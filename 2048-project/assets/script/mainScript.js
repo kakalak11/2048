@@ -12,29 +12,13 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onClickPlayButton: function () {
-        Emitter.instance.emit('hideMenu');
-    },
-
-    onClickMenuButton: function () {
-        Emitter.instance.emit('showMenu');
-    },
-
-    _show: function () {
-        this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5)));
-    },
-
-    _hide: function () {
-        this.node.runAction(cc.moveTo(0.5, 500, 0).easing(cc.easeExponentialInOut(0.5)));
-    },
-
     onLoad() {
-        Emitter.instance.registerEvent('showMenu', this._show.bind(this));
-        Emitter.instance.registerEvent('hideMenu', this._hide.bind(this));
+        Emitter.instance = new Emitter();
     },
 
     start() {

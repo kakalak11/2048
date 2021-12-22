@@ -29,24 +29,17 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     _onTouchStart: function _onTouchStart(event) {
-        var _this = this;
-
         Emitter.instance.emit('sound', 'swipe');
         this.node.emit('setInput', true);
         if (!this._canTouch) return;
         this._canTouch = false;
-        this.touchNode.on('touchmove', function (event) {
-            var delta = event.touch.getDelta();
-            this._xDelta += delta.x;
-            this._yDelta += delta.y;
-        }, this);
 
         this.touchNode.once('touchend', function (event) {
             var xDelta = event.getLocation().x - event.getStartLocation().x;
             var yDelta = event.getLocation().y - event.getStartLocation().y;
             cc.log('x delta is: ', xDelta, ', y delta is: ', yDelta);
             if (Math.abs(xDelta) === 0 && Math.abs(yDelta) === 0) {
-                this._canTouch = true;
+                Emitter.instance.emit('canMove');
                 return;
             }
             if (Math.abs(xDelta) > Math.abs(yDelta)) {
@@ -66,26 +59,26 @@ cc.Class({
                     cc.log('move up');
                 }
             }
-            this._canTouch = true;
+            Emitter.instance.emit('canMove');
             return;
         }, this);
 
         this.touchNode.on('touchcancel', function (event) {
-            _this._canTouch = true;
+            Emitter.instance.emit('canMove');
             return;
         }, this);
     },
 
     onLoad: function onLoad() {
-        var _this2 = this;
+        var _this = this;
 
         this.touchNode.on('touchstart', this._onTouchStart, this);
-        this.node.on('canMove', function () {
+        Emitter.instance.registerEvent('canMove', function () {
             var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-            return _this2._canTouch = value;
-        }, this);
+            return _this._canTouch = value;
+        });
         this.node.on('setInput', function (touch) {
-            if (!touch) _this2._canTouch = false;
+            if (!touch) _this._canTouch = false;
         }, this);
     },
     start: function start() {}

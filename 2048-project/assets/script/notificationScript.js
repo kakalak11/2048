@@ -7,38 +7,37 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
+
 const Emitter = require('mEmitter');
+const utilities = require('./utils');
 cc.Class({
     extends: cc.Component,
 
     properties: {
+        label: cc.RichText,
+        _player: '',
+        _score: 0,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onClickPlayButton: function () {
-        Emitter.instance.emit('hideMenu');
-    },
-
-    onClickMenuButton: function () {
-        Emitter.instance.emit('showMenu');
-    },
-
-    _show: function () {
-        this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5)));
-    },
-
-    _hide: function () {
-        this.node.runAction(cc.moveTo(0.5, 500, 0).easing(cc.easeExponentialInOut(0.5)));
-    },
-
     onLoad() {
-        Emitter.instance.registerEvent('showMenu', this._show.bind(this));
-        Emitter.instance.registerEvent('hideMenu', this._hide.bind(this));
+        Emitter.instance.registerEvent('notify', (data) => {
+            this._player = data.player;
+            this._score = data.score;
+            cc.log(data);
+        });
     },
 
     start() {
-
+        this.label.string = utilities.generateRainbowText(`The best player is ${this._player} with ${this._score}`);
+        let action = cc.repeatForever(
+            cc.sequence(
+                cc.moveTo(5, -500, 0),
+                cc.moveTo(0, 500, 0),
+            )
+        )
+        this.label.node.runAction(action);
     },
 
     // update (dt) {},

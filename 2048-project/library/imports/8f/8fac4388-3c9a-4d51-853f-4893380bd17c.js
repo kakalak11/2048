@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, '0b34cd7T+5Gz44/fbqD5O3W', 'menuScript');
-// script/menuScript.js
+cc._RF.push(module, '8fac4OIPJpNUYU/SJM4C9F8', 'mainScript');
+// script/mainScript.js
 
 'use strict';
 
@@ -21,25 +21,8 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onClickPlayButton: function onClickPlayButton() {
-        Emitter.instance.emit('hideMenu');
-    },
-
-    onClickMenuButton: function onClickMenuButton() {
-        Emitter.instance.emit('showMenu');
-    },
-
-    _show: function _show() {
-        this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5)));
-    },
-
-    _hide: function _hide() {
-        this.node.runAction(cc.moveTo(0.5, 500, 0).easing(cc.easeExponentialInOut(0.5)));
-    },
-
     onLoad: function onLoad() {
-        Emitter.instance.registerEvent('showMenu', this._show.bind(this));
-        Emitter.instance.registerEvent('hideMenu', this._hide.bind(this));
+        Emitter.instance = new Emitter();
     },
     start: function start() {}
 }

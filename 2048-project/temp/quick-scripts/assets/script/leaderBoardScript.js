@@ -27,69 +27,68 @@ cc.Class({
         _highScoreList: [],
         _data: null,
         _bestScore: 0,
-        _bestPlayer: ''
+        _bestPlayer: '',
+        _playing: null
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onClickLeaderBoardButton: function onClickLeaderBoardButton() {
-        this.node.active = true;
-        this.node.opacity = 0;
-        this.node.runAction(cc.fadeIn(0.25, 255));
-        // this._updateLeaderBoard();
+        Emitter.instance.emit('showLeaderBoard');
+        Emitter.instance.emit('hideMenu');
     },
 
     onClickReturn: function onClickReturn() {
-        var _this = this;
-
-        this.node.runAction(cc.sequence(cc.fadeOut(0.25, 0), cc.callFunc(function () {
-            return _this.node.active = false;
-        })));
+        Emitter.instance.emit('hideLeaderBoard');
+        Emitter.instance.emit('showMenu');
     },
 
     onClickSave: function onClickSave() {
         var value = this.userNameBox.string + ' : ' + this.score.string;
         this._highScoreList.push(value);
         this.userNameBox.string = '';
-        this._data.setItem(this._highScoreList.length, value);
+        this._data.setItem(this._highScoreList.length - 1, value);
+        cc.log(this._data);
         return;
     },
 
     _loadData: function _loadData() {
-        for (var index = 0; index < this._data.length - 1; index++) {
+        for (var index = 0; index < this._data.length; index++) {
+            if (this._data.getItem(index) === null) continue;
             this._highScoreList.push(this._data.getItem(index));
         }
-        cc.log(this._highScoreList);
+        // cc.log(this._highScoreList);
         this._sortData();
         return;
     },
 
     _sortData: function _sortData() {
-        var _this2 = this;
+        var _this = this;
 
         this._highScoreList.forEach(function (element, index, array) {
-            _this2.number = parseInt(element.split(':')[1]);
-            if (_this2._bestScore < _this2.number) {
-                _this2._temp = array[0];
-                array[0] = element;
-                element = _this2._temp;
-                _this2._bestScore = _this2.number;
-                _this2._bestPlayer = element.split(':')[0];
+            _this.number = parseInt(element.split(':')[1]);
+            if (_this._bestScore < _this.number) {
+                _this._bestScore = _this.number;
+                _this._bestPlayer = element.split(':')[0];
                 return;
             }
         });
-        this._highScoreList[0] = this._bestPlayer + ' : ' + this._bestScore;
+        // cc.log(`${this._bestPlayer}: ${this._bestScore}`);
+        var temp = this._highScoreList[0];
+        this._highScoreList[this._highScoreList.indexOf(this._bestPlayer + ': ' + this._bestScore)] = temp;
+        this._highScoreList[0] = this._bestPlayer + ': ' + this._bestScore;
+        // cc.log(this._highScoreList);
         this._updateLeaderBoard();
     },
 
     _updateLeaderBoard: function _updateLeaderBoard() {
-        var _this3 = this;
+        var _this2 = this;
 
         this.content.removeAllChildren();
         this._highScoreList.forEach(function (element, index) {
-            var item = cc.instantiate(_this3.itemPrefab);
+            var item = cc.instantiate(_this2.itemPrefab);
             var label = item.getComponent(cc.Label);
-            _this3.content.addChild(item);
+            _this2.content.addChild(item);
             if (index === 0) {
                 label.string = '_____UWU_____' + (index + 1) + '_____UWU_____\n' + element.split(':')[0] + '\n' + element.split(':')[1];
                 return;
@@ -98,12 +97,32 @@ cc.Class({
         });
     },
 
-    onLoad: function onLoad() {
-        this._data = cc.sys.localStorage;
-        cc.log(this._data);
-        this._loadData();
+    _show: function _show() {
+        this.node.runAction(cc.moveTo(0.5, cc.v2(0, 0)).easing(cc.easeExponentialInOut(0.5)));
     },
-    start: function start() {}
+
+    _hide: function _hide() {
+        this.node.runAction(cc.moveTo(0.5, cc.v2(500, 0)).easing(cc.easeExponentialInOut(0.5)));
+    },
+
+    onLoad: function onLoad() {
+        var _this3 = this;
+
+        this._data = cc.sys.localStorage;
+        this._data.removeItem('debug');
+        this._loadData();
+        Emitter.instance.registerEvent('showLeaderBoard', this._show.bind(this));
+        Emitter.instance.registerEvent('hideLeaderBoard', this._hide.bind(this));
+        Emitter.instance.registerEvent('playing', function () {
+            return _this3._playing = true;
+        });
+        Emitter.instance.registerEvent('notPlaying', function () {
+            return _this3._playing = false;
+        });
+    },
+    start: function start() {
+        Emitter.instance.emit('notify', { player: this._bestPlayer, score: this._bestScore });
+    }
 }
 
 // update (dt) {},

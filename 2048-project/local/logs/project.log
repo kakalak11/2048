@@ -1,121 +1,261 @@
-2021-12-21T06:50:32.358Z - normal: Load ~/.CocosCreator/settings.json
-2021-12-21T06:50:32.400Z - normal: Initializing Asset Database
-2021-12-21T06:50:32.402Z - normal: checking language setting...
-2021-12-21T06:50:32.402Z - normal: Language: en
-2021-12-21T06:50:33.047Z - success: preview server running at http://localhost:7456
-2021-12-21T06:50:33.056Z - success: protocol editor-framework registered
-2021-12-21T06:50:33.056Z - success: protocol app registered
-2021-12-21T06:50:33.056Z - success: protocol theme registered
-2021-12-21T06:50:33.056Z - success: protocol packages registered
-2021-12-21T06:50:33.056Z - success: protocol uuid registerred
-2021-12-21T06:50:33.056Z - success: protocol db registerred
-2021-12-21T06:50:33.056Z - success: protocol thumbnail registerred
-2021-12-21T06:50:33.056Z - success: protocol unpack registerred
-2021-12-21T06:50:33.056Z - success: protocol disable-commonjs registerred
-2021-12-21T06:50:35.727Z - normal: connected!
-2021-12-21T06:50:35.729Z - normal: Check project /Users/fe-anhtu-fresher/Desktop/2048/2048-project
-2021-12-21T06:50:35.730Z - normal: Initializing project /Users/fe-anhtu-fresher/Desktop/2048/2048-project
-2021-12-21T06:50:36.046Z - normal: Initializing Cocos2d
-2021-12-21T06:50:36.661Z - normal: Initializing engine extends
-2021-12-21T06:50:36.683Z - success: alipay-adapter loaded
-2021-12-21T06:50:36.693Z - success: asset-db-debugger loaded
-2021-12-21T06:50:36.697Z - success: baidu-adapter loaded
-2021-12-21T06:50:36.700Z - success: color-picker loaded
-2021-12-21T06:50:36.846Z - success: fb-audience-network loaded
-2021-12-21T06:50:36.897Z - success: fb-live-stream loaded
-2021-12-21T06:50:36.899Z - success: google-play-instant loaded
-2021-12-21T06:50:36.905Z - success: huawei-runtime loaded
-2021-12-21T06:50:37.109Z - success: cpk-publish loaded
-2021-12-21T06:50:37.110Z - success: jsb-adapter loaded
-2021-12-21T06:50:37.116Z - success: oppo-runtime loaded
-2021-12-21T06:50:37.121Z - success: package-manager loaded
-2021-12-21T06:50:37.252Z - success: qqplay-adapter loaded
-2021-12-21T06:50:37.254Z - success: runtime-dev-tools loaded
-2021-12-21T06:50:37.276Z - success: sdkbox loaded
-2021-12-21T06:50:37.280Z - success: tester loaded
-2021-12-21T06:50:37.283Z - success: ui-kit-preview-extra loaded
-2021-12-21T06:50:37.285Z - success: ui-kit-preview loaded
-2021-12-21T06:50:37.288Z - success: ui-kit loaded
-2021-12-21T06:50:37.293Z - success: vivo-runtime loaded
-2021-12-21T06:50:37.294Z - success: weapp-adapter loaded
-2021-12-21T06:50:37.295Z - success: xiaomi-adapter loaded
-2021-12-21T06:50:37.297Z - success: alipay-minigame loaded
-2021-12-21T06:50:37.329Z - success: assets loaded
-2021-12-21T06:50:37.332Z - success: builder loaded
-2021-12-21T06:50:37.576Z - success: cocos-services loaded
-2021-12-21T06:50:37.581Z - success: console loaded
-2021-12-21T06:50:37.605Z - success: fb-instant-games loaded
-2021-12-21T06:50:37.609Z - success: game-window loaded
-2021-12-21T06:50:37.610Z - success: google-instant-games loaded
-2021-12-21T06:50:37.614Z - success: hierarchy loaded
-2021-12-21T06:50:37.618Z - success: inspector loaded
-2021-12-21T06:50:37.619Z - success: keystore loaded
-2021-12-21T06:50:37.624Z - success: node-library loaded
-2021-12-21T06:50:37.625Z - success: package-asset loaded
-2021-12-21T06:50:37.627Z - success: preferences loaded
-2021-12-21T06:50:37.630Z - success: project-exporter loaded
-2021-12-21T06:50:37.635Z - success: project-importer loaded
-2021-12-21T06:50:37.637Z - success: project-settings loaded
-2021-12-21T06:50:37.643Z - success: scene loaded
-2021-12-21T06:50:37.644Z - success: simulator-debugger loaded
-2021-12-21T06:50:37.645Z - success: sprite-editor loaded
-2021-12-21T06:50:37.649Z - success: store loaded
-2021-12-21T06:50:37.656Z - success: timeline loaded
-2021-12-21T06:50:37.661Z - success: xiaomi-runtime loaded
-2021-12-21T06:50:38.574Z - normal: Loading packages
-2021-12-21T06:50:38.577Z - normal: Watching packages
-2021-12-21T06:50:38.656Z - normal: Run Application
-2021-12-21T06:50:40.686Z - info: Cocos Services load base data!
-2021-12-21T06:50:42.355Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T06:57:03.163Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T06:59:40.929Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:04:33.035Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:04:46.063Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:04:49.386Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:05:26.983Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:06:38.137Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:06:45.155Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:07:16.443Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:07:39.861Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:08:47.818Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:08:54.105Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:11:29.708Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:11:45.497Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:12:11.885Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:12:12.878Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:12:31.329Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:12:40.996Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:12:50.378Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:13:14.721Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:13:28.488Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:13:35.198Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:14:06.711Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:15:17.081Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:16:12.501Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:17:06.349Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:17:10.048Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:18:39.611Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:20:08.923Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:21:26.650Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:22:18.062Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:23:23.817Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:26:53.660Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:27:14.252Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:30:00.346Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:32:28.864Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:33:22.101Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:40:19.747Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:40:34.062Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:40:47.107Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:41:50.235Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:42:05.355Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:42:16.551Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:57:13.626Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:58:14.291Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:58:47.449Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T07:59:40.598Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T08:01:53.206Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T08:02:01.323Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T08:03:17.250Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2021-12-21T09:43:24.342Z - info: Only the prefab node "item" and its child nodes are saved.
-2021-12-21T10:12:08.918Z - info: shutdown preview server
+2021-12-22T02:34:57.473Z - normal: Load ~/.CocosCreator/settings.json
+2021-12-22T02:34:57.523Z - normal: Initializing Asset Database
+2021-12-22T02:34:57.525Z - normal: checking language setting...
+2021-12-22T02:34:57.525Z - normal: Language: en
+2021-12-22T02:34:58.143Z - success: preview server running at http://localhost:7456
+2021-12-22T02:34:58.153Z - success: protocol editor-framework registered
+2021-12-22T02:34:58.154Z - success: protocol app registered
+2021-12-22T02:34:58.154Z - success: protocol theme registered
+2021-12-22T02:34:58.154Z - success: protocol packages registered
+2021-12-22T02:34:58.154Z - success: protocol uuid registerred
+2021-12-22T02:34:58.154Z - success: protocol db registerred
+2021-12-22T02:34:58.154Z - success: protocol thumbnail registerred
+2021-12-22T02:34:58.154Z - success: protocol unpack registerred
+2021-12-22T02:34:58.154Z - success: protocol disable-commonjs registerred
+2021-12-22T02:34:59.057Z - normal: connected!
+2021-12-22T02:34:59.058Z - normal: Check project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
+2021-12-22T02:34:59.060Z - normal: Initializing project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
+2021-12-22T02:34:59.389Z - normal: Initializing Cocos2d
+2021-12-22T02:35:00.004Z - normal: Initializing engine extends
+2021-12-22T02:35:00.030Z - success: alipay-adapter loaded
+2021-12-22T02:35:00.040Z - success: asset-db-debugger loaded
+2021-12-22T02:35:00.049Z - success: baidu-adapter loaded
+2021-12-22T02:35:00.050Z - success: color-picker loaded
+2021-12-22T02:35:00.176Z - success: fb-audience-network loaded
+2021-12-22T02:35:00.220Z - success: fb-live-stream loaded
+2021-12-22T02:35:00.223Z - success: google-play-instant loaded
+2021-12-22T02:35:00.229Z - success: huawei-runtime loaded
+2021-12-22T02:35:00.463Z - success: cpk-publish loaded
+2021-12-22T02:35:00.464Z - success: jsb-adapter loaded
+2021-12-22T02:35:00.468Z - success: oppo-runtime loaded
+2021-12-22T02:35:00.482Z - success: package-manager loaded
+2021-12-22T02:35:00.588Z - success: qqplay-adapter loaded
+2021-12-22T02:35:00.590Z - success: runtime-dev-tools loaded
+2021-12-22T02:35:00.621Z - success: sdkbox loaded
+2021-12-22T02:35:00.635Z - success: tester loaded
+2021-12-22T02:35:00.647Z - success: ui-kit-preview-extra loaded
+2021-12-22T02:35:00.656Z - success: ui-kit-preview loaded
+2021-12-22T02:35:00.667Z - success: ui-kit loaded
+2021-12-22T02:35:00.675Z - success: vivo-runtime loaded
+2021-12-22T02:35:00.677Z - success: weapp-adapter loaded
+2021-12-22T02:35:00.678Z - success: xiaomi-adapter loaded
+2021-12-22T02:35:00.681Z - success: alipay-minigame loaded
+2021-12-22T02:35:00.746Z - success: assets loaded
+2021-12-22T02:35:00.756Z - success: builder loaded
+2021-12-22T02:35:01.013Z - success: cocos-services loaded
+2021-12-22T02:35:01.030Z - success: console loaded
+2021-12-22T02:35:01.056Z - success: fb-instant-games loaded
+2021-12-22T02:35:01.068Z - success: game-window loaded
+2021-12-22T02:35:01.069Z - success: google-instant-games loaded
+2021-12-22T02:35:01.082Z - success: hierarchy loaded
+2021-12-22T02:35:01.096Z - success: inspector loaded
+2021-12-22T02:35:01.097Z - success: keystore loaded
+2021-12-22T02:35:01.111Z - success: node-library loaded
+2021-12-22T02:35:01.112Z - success: package-asset loaded
+2021-12-22T02:35:01.113Z - success: preferences loaded
+2021-12-22T02:35:01.123Z - success: project-exporter loaded
+2021-12-22T02:35:01.140Z - success: project-importer loaded
+2021-12-22T02:35:01.155Z - success: project-settings loaded
+2021-12-22T02:35:01.170Z - success: scene loaded
+2021-12-22T02:35:01.172Z - success: simulator-debugger loaded
+2021-12-22T02:35:01.173Z - success: sprite-editor loaded
+2021-12-22T02:35:01.187Z - success: store loaded
+2021-12-22T02:35:01.204Z - success: timeline loaded
+2021-12-22T02:35:01.207Z - success: xiaomi-runtime loaded
+2021-12-22T02:35:02.146Z - normal: Loading packages
+2021-12-22T02:35:02.149Z - normal: Watching packages
+2021-12-22T02:35:02.225Z - normal: Run Application
+2021-12-22T02:35:03.787Z - info: Cocos Services load base data!
+2021-12-22T03:22:21.741Z - failed: [db-task][sync-changes] Failed to import asset /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/assets/script/leaderBoardScript.js, message: Compile error: SyntaxError: /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/assets/script/leaderBoardScript.js: Invalid left-hand side in arrow function parameters (103:51)
+  101 |         Emitter.instance.registerEvent('showLeaderBoard', this._show.bind(this));
+  102 |         Emitter.instance.registerEvent('hideLeaderBoard', this._hide.bind(this));
+> 103 |         Emitter.instance.registerEvent('playing', (this) => cc.log('playing'));
+      |                                                    ^
+  104 |     },
+  105 | 
+  106 |     start() {
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$2.toAssignable (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3008:16)
+    at Parser.pp$2.toAssignableList (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3035:19)
+    at Parser.pp$3.parseArrowExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4189:22)
+    at Parser.pp$3.parseParenAndDistinguishExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3855:17)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3709:19)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
+2021-12-22T07:40:52.492Z - normal: Add: 100
+Sub: 24
+Mul: 6
+Div: 2
+Undo Div: 2
+Undo Mul: 6
+
+Value: 76
+
+2021-12-22T07:41:17.676Z - normal: Add: 100
+Sub: 24
+Sub: 24
+Sub: 24
+Undo Sub: 24
+Undo Sub: 24
+
+Value: 76
+
+2021-12-22T08:23:05.409Z - failed: load script [/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js] failed : TypeError: Cannot read property 'node' of undefined
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:139:17)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:144:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:151:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:154:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+2021-12-22T08:23:15.942Z - normal: undefined
+2021-12-22T08:23:32.401Z - normal: [object Object]
+2021-12-22T08:23:51.423Z - normal: undefined
+2021-12-22T08:26:07.486Z - error: Each script can have at most one Component.
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at define (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:276:24)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:651:23)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:109:17)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:148:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:155:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:158:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+2021-12-22T08:26:07.487Z - failed: load script [/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js] failed : TypeError: Cannot set property '_sealed' of null
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:655:25)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:109:17)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:148:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:155:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:158:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+2021-12-22T08:26:07.505Z - error: TypeError: Action is not a constructor
+    at new keyboardScript (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:475:20), <anonymous>:10:4)
+    at _Deserializer.prototype._deserializeObject (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:146:31)
+    at _Deserializer.prototype.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:107:65)
+    at Object.cc.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:535:36)
+    at Loader.loadUuid (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:218:28)
+    at Loader.handle (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loader.js:185:29)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:33:35)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+2021-12-22T08:27:14.752Z - error: Each script can have at most one Component.
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at define (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:276:24)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:651:23)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:109:17)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:148:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:155:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:158:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+2021-12-22T08:27:14.753Z - failed: load script [/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js] failed : TypeError: Cannot set property '_sealed' of null
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:655:25)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:109:17)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:148:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:155:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:158:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+2021-12-22T08:27:14.771Z - error: TypeError: Action is not a constructor
+    at new keyboardScript (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:475:20), <anonymous>:10:4)
+    at _Deserializer.prototype._deserializeObject (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:146:31)
+    at _Deserializer.prototype.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:107:65)
+    at Object.cc.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:535:36)
+    at Loader.loadUuid (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:218:28)
+    at Loader.handle (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loader.js:185:29)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:33:35)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+2021-12-22T08:30:44.893Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-22T08:32:04.288Z - error: Each script can have at most one Component.
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at define (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:276:24)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:651:23)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:139:18)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:150:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:157:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:160:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+2021-12-22T08:32:04.288Z - failed: load script [/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js] failed : TypeError: Cannot set property '_sealed' of null
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:655:25)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:139:18)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:150:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:157:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:160:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+2021-12-22T08:32:04.308Z - error: TypeError: Command is not a constructor
+    at new keyboardScript (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:475:20), <anonymous>:10:4)
+    at _Deserializer.prototype._deserializeObject (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:146:31)
+    at _Deserializer.prototype.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:107:65)
+    at Object.cc.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:535:36)
+    at Loader.loadUuid (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:218:28)
+    at Loader.handle (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loader.js:185:29)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:33:35)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+2021-12-22T08:33:49.697Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2021-12-22T08:33:49.698Z - normal: null
+2021-12-22T08:37:27.427Z - error: ReferenceError: Action is not defined
+    at new keyboardScript (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:475:20), <anonymous>:10:4)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:142:16)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:148:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:155:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:158:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+2021-12-22T08:37:27.428Z - normal: null
+2021-12-22T08:37:27.450Z - error: ReferenceError: Action is not defined
+    at new keyboardScript (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:475:20), <anonymous>:10:4)
+    at _Deserializer.prototype._deserializeObject (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:146:31)
+    at _Deserializer.prototype.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:107:65)
+    at Object.cc.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:535:36)
+    at Loader.loadUuid (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:218:28)
+    at Loader.handle (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loader.js:185:29)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:33:35)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+2021-12-22T08:38:05.141Z - error: ReferenceError: Command is not defined
+    at new keyboardScript (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:475:20), <anonymous>:10:4)
+    at __define (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:142:16)
+    at /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:148:13
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:155:11)
+    at Object.<anonymous> (/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/script/keyboardScript.js:158:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+2021-12-22T08:38:05.141Z - normal: null
+2021-12-22T08:38:05.159Z - error: ReferenceError: Command is not defined
+    at new keyboardScript (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:475:20), <anonymous>:10:4)
+    at _Deserializer.prototype._deserializeObject (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:146:31)
+    at _Deserializer.prototype.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:107:65)
+    at Object.cc.deserialize (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/deserialize.js:535:36)
+    at Loader.loadUuid (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:218:28)
+    at Loader.handle (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loader.js:185:29)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:33:35)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+    at flow (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:27:21)
+2021-12-22T08:38:32.439Z - normal: null
+2021-12-22T08:39:39.132Z - normal: null
+2021-12-22T08:39:44.494Z - normal: null
+2021-12-22T08:41:04.440Z - normal: null
+2021-12-22T08:41:46.215Z - normal: null

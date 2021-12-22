@@ -1,6 +1,6 @@
-"use strict";
-cc._RF.push(module, '0b34cd7T+5Gz44/fbqD5O3W', 'menuScript');
-// script/menuScript.js
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/script/mainScript.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '8fac4OIPJpNUYU/SJM4C9F8', 'mainScript', __filename);
+// script/mainScript.js
 
 'use strict';
 
@@ -21,25 +21,8 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onClickPlayButton: function onClickPlayButton() {
-        Emitter.instance.emit('hideMenu');
-    },
-
-    onClickMenuButton: function onClickMenuButton() {
-        Emitter.instance.emit('showMenu');
-    },
-
-    _show: function _show() {
-        this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5)));
-    },
-
-    _hide: function _hide() {
-        this.node.runAction(cc.moveTo(0.5, 500, 0).easing(cc.easeExponentialInOut(0.5)));
-    },
-
     onLoad: function onLoad() {
-        Emitter.instance.registerEvent('showMenu', this._show.bind(this));
-        Emitter.instance.registerEvent('hideMenu', this._hide.bind(this));
+        Emitter.instance = new Emitter();
     },
     start: function start() {}
 }
@@ -48,3 +31,15 @@ cc.Class({
 );
 
 cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=mainScript.js.map
+        

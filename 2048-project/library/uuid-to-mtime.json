@@ -450,12 +450,12 @@
     "relativePath": "scenes"
   },
   "c7fa7f5d-0ca2-4279-9516-8297944cb42a": {
-    "asset": 1640081527393,
-    "meta": 1640081527403,
+    "asset": 1640166150962,
+    "meta": 1640166150970,
     "relativePath": "scenes/game.fire"
   },
   "a9cdab29-c048-44e5-a619-7b8b7fbbbcfd": {
-    "asset": 1640052171162,
+    "asset": 1640070288898,
     "meta": 1638930068026,
     "relativePath": "script"
   },
@@ -498,11 +498,6 @@
     "asset": 1639965494336,
     "meta": 1640052683357,
     "relativePath": "script/loseBoardScript.js"
-  },
-  "0b34c77b-4fee-46cf-8e3f-7dba83e4edd6": {
-    "asset": 1639965494337,
-    "meta": 1640052683378,
-    "relativePath": "script/menuScript.js"
   },
   "47a82f97-a9d6-4cb4-be36-620c205f3acd": {
     "asset": 1639965494334,
@@ -564,34 +559,49 @@
     "meta": 1640071948295,
     "relativePath": "scenes/testScript/test.js"
   },
-  "c988084d-ee6b-4a24-8908-6dc9839dc065": {
-    "asset": 1640072417151,
-    "meta": 1640072536009,
-    "relativePath": "script/gameBoard.js"
-  },
-  "291baef2-1f9e-4f21-85f2-686efdd71c00": {
-    "asset": 1640072432007,
-    "meta": 1640072536040,
-    "relativePath": "script/touchScript.js"
-  },
-  "4ff70031-4eb1-411b-a4da-18f93276d637": {
-    "asset": 1640074045028,
-    "meta": 1640074361736,
-    "relativePath": "script/keyboardScript.js"
-  },
   "672b0091-a6e7-4774-898a-b86f21ca1d43": {
     "asset": 1640074348436,
     "meta": 1640074361736,
     "relativePath": "script/soundScript.js"
   },
-  "030e4828-7fd9-4d6c-a3ed-4b22bfed809c": {
-    "asset": 1640080974601,
-    "meta": 1640080985739,
-    "relativePath": "script/leaderBoardScript.js"
+  "8fac4388-3c9a-4d51-853f-4893380bd17c": {
+    "asset": 1640143629419,
+    "meta": 1640143700721,
+    "relativePath": "script/mainScript.js"
+  },
+  "0b34c77b-4fee-46cf-8e3f-7dba83e4edd6": {
+    "asset": 1640144195971,
+    "meta": 1640144489543,
+    "relativePath": "script/menuScript.js"
+  },
+  "291baef2-1f9e-4f21-85f2-686efdd71c00": {
+    "asset": 1640145281449,
+    "meta": 1640147255178,
+    "relativePath": "script/touchScript.js"
+  },
+  "4ff70031-4eb1-411b-a4da-18f93276d637": {
+    "asset": 1640164495411,
+    "meta": 1640164573467,
+    "relativePath": "script/keyboardScript.js"
   },
   "79545e93-e5ee-4111-82d0-17980efb3361": {
-    "asset": 1640081525519,
-    "meta": 1640081526276,
+    "asset": 1640164594070,
+    "meta": 1640164752658,
     "relativePath": "script/windowScript.js"
+  },
+  "030e4828-7fd9-4d6c-a3ed-4b22bfed809c": {
+    "asset": 1640165819615,
+    "meta": 1640165824070,
+    "relativePath": "script/leaderBoardScript.js"
+  },
+  "688de018-6dd9-43af-857c-d4236430a132": {
+    "asset": 1640165843810,
+    "meta": 1640165869522,
+    "relativePath": "script/notificationScript.js"
+  },
+  "c988084d-ee6b-4a24-8908-6dc9839dc065": {
+    "asset": 1640165958118,
+    "meta": 1640166055571,
+    "relativePath": "script/gameBoard.js"
   }
 }

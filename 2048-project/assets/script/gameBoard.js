@@ -137,7 +137,7 @@ cc.Class({
             }
             this._generateRandomValue();
             this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
-            this.node.emit('canMove');
+            Emitter.instance.emit('canMove');
         }, this._time * 2);
         return;
     },
@@ -166,7 +166,7 @@ cc.Class({
         this._check = false;
     },
 
-    _setupGrid(playing) {
+    _setupGrid() {
         let numberIndex = 1;
         this._tilesMatrix.push([], [], [], []);
         for (let collumn = 0; collumn < 4; collumn++) {
@@ -180,12 +180,13 @@ cc.Class({
                 this.node.addChild(this.tile);
             }
         }
-        if (playing) return;
+        // if (playing) return;
         for (let i = 0; i < 2; i++) {
             this._check = true;
             this._generateRandomValue();
         }
-        this.node.emit('canMove');
+        Emitter.instance.emit('canMove', false);
+
         this._check = false;
     },
 
@@ -197,7 +198,7 @@ cc.Class({
             cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
             this.scheduleOnce(() => {
                 this.node.dispatchEvent(new cc.Event.EventCustom('win', true));
-                this.node.emit('canMove', false);
+                Emitter.instance.emit('canMove', false);
             }, 0.5);
             return true;
         }
@@ -228,7 +229,7 @@ cc.Class({
             cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
             this.scheduleOnce(() => {
                 this.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
-                this.node.emit('canMove', false);
+                Emitter.instance.emit('canMove', false);
             }, 0.5);
             return true;
         }
@@ -240,10 +241,8 @@ cc.Class({
         this.node.removeAllChildren(true);
         this._tilesMatrix = [];
         this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
-        // this._addEvent();
         this.node.emit('reset');
-        this.node.emit('canMove');
-        cc.log(this.node.children);
+        Emitter.instance.emit('canMove', false);
     },
 
     _onClick: function () {
@@ -282,6 +281,9 @@ cc.Class({
 
     onLoad() {
         this._addEvent();
+        Emitter.instance.registerEvent('playing', () => this._playing = true);
+        Emitter.instance.registerEvent('notPlaying', () => this._playing = false);
+        Emitter.instance.registerEvent('start', this._setupGrid.bind(this));
     },
 
     start() {

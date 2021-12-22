@@ -9,6 +9,7 @@
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 const Emitter = require('mEmitter');
+
 cc.Class({
     extends: cc.Component,
 
@@ -19,10 +20,11 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     _onKeyDown: function (event) {
+        // cc.warn('key down', this._canMove);
         Emitter.instance.emit('sound', 'swipe');
         this.node.emit('setInput', false);
         if (!this._canMove) return;
-        this._canMove = false;
+        Emitter.instance.emit('canMove', false);
         switch (event.keyCode) {
             case cc.macro.KEY.a:
                 this.node.emit('moveRow', false);
@@ -37,27 +39,62 @@ cc.Class({
                 this.node.emit('moveCollumn', true);
                 break;
             default:
-                this._canMove = true;
+                Emitter.instance.emit('canMove');
                 break;
-
         }
     },
 
+    // moveLeft() { return this.node.emit('moveRow', false) },
+    // moveRight() { return this.node.emit('moveRow', true) },
+    // moveUp() { return this.node.emit('moveCollumn', false) },
+    // moveDown() { return this.node.emit('moveCollumn', true) },
+
+    // MoveRightCommand: function () { return },
+    // MoveLeftCommand: function () { return },
+    // MoveUpCommand: function () { return },
+    // MoveDownCommand: function () { return },
+
+    // Command: function (execute, undo) {
+    //     this.execute = execute;
+    //     this.undo = undo;
+    // },
+
+    // Action: function () {
+    //     this.current = null;
+    //     this.commands = [];
+
+    //     return {
+    //         _action(command) {
+    //             var name = command.execute.toString().substr(9, 3);
+    //             return name.charAt(0).toUpperCase() + name.slice(1);
+    //         },
+
+    //         execute(command) {
+    //             this.current = command.execute(this.current);
+    //             this.commands.push(command);
+    //         },
+
+    //         undo() {
+    //             var command = commands.pop();
+    //             this.current = command.undo(this.current);
+    //         },
+
+    //     }
+
+
+    // },
+
     _reset() {
-        cc.log('keyboard reset');
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
     },
 
     onLoad() {
-        this.node.on('canMove', (value = true) => {
-            this._canMove = value;
-        }, this);
+        Emitter.instance.registerEvent('canMove', (value = true) => this._canMove = value);
         this.node.on('reset', this._reset, this);
         this.node.on('setInput', (touch) => {
             if (touch) this._canMove = false;
-
         }, this)
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
+        Emitter.instance.registerEvent('start', () => cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this));
     },
 
     start() {
@@ -66,19 +103,3 @@ cc.Class({
 
     // update (dt) {},
 });
-
-// var Move = cc.Class({
-//     ctor: function (direction) {
-//         this.direction = direction;
-//         this._direction = null;
-//     },
-
-//     excute: function () {
-//         this.node.emit('move', this.direction);
-//         this._direction = this.direction;
-//     },
-
-//     undo: function () {
-//         this.node.emit('undo', this._direction);
-//     },
-// })

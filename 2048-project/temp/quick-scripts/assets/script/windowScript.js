@@ -19,28 +19,28 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        menuNode: cc.Node,
         score: cc.Node,
         bestScoreNumber: cc.Label,
         gameBoard: cc.Node,
         leaderBoard: cc.Node,
         winBoard: cc.Node,
         loseBoard: cc.Node,
-        _playing: null
+        _playing: false
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onClickPlayButton: function onClickPlayButton() {
-        this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5)));
+        Emitter.instance.emit('showWindow');
         if (!this._playing) {
-            this.gameBoard.getComponent('gameBoard')._setupGrid(this._playing);
+            Emitter.instance.emit('start');
         }
-        this._playing = true;
+        Emitter.instance.emit('canMove');
+        Emitter.instance.emit('playing');
     },
 
     onClickMenuButton: function onClickMenuButton() {
-        this.node.runAction(cc.moveTo(0.5, -500, 0).easing(cc.easeExponentialInOut(0.5)));
+        Emitter.instance.emit('hideWindow');
     },
 
     _scoreUpdate: function _scoreUpdate() {
@@ -61,30 +61,50 @@ cc.Class({
 
     _win: function _win() {
         this.winBoard.emit('winBoard');
-        this._playing = false;
+        Emitter.instance.emit('notPlaying');
     },
 
     _lose: function _lose() {
         this.loseBoard.emit('loseBoard');
-        this._playing = false;
+        Emitter.instance.emit('notPlaying');
     },
 
     onClickReturnButton: function onClickReturnButton() {
         this.gameBoard.getComponent('gameBoard')._reset();
+        if (this._playing) Emitter.instance.emit('notPlaying');
+        Emitter.instance.emit('start');
+        Emitter.instance.emit('canMove');
+        Emitter.instance.emit('playing');
         return;
     },
 
-    onLoad: function onLoad() {
+    _show: function _show() {
+        this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5)));
+    },
 
-        Emitter.instance = new Emitter();
+    _hide: function _hide() {
+        this.node.runAction(cc.moveTo(0.5, -500, 0).easing(cc.easeExponentialInOut(0.5)));
+    },
+
+    onLoad: function onLoad() {
+        var _this2 = this;
+
         this.node.on('updateScore', this._scoreUpdate, this);
         this.node.on('win', this._win, this);
         this.node.on('lose', this._lose, this);
         this.leaderBoardScript = this.leaderBoard.getComponent('leaderBoardScript');
-        // this.leaderBoardScript.active = true;
         this.leaderBoardScript.active = false;
         cc.log(this.leaderBoardScript._bestScore);
         this.bestScoreNumber.string = this.leaderBoardScript._bestScore;
+
+        Emitter.instance.registerEvent('showWindow', this._show.bind(this));
+        Emitter.instance.registerEvent('hideWindow', this._hide.bind(this));
+        Emitter.instance.registerEvent('playing', function () {
+            return _this2._playing = true;
+        });
+        Emitter.instance.registerEvent('notPlaying', function () {
+            return _this2._playing = false;
+        });
     },
     start: function start() {}
 }

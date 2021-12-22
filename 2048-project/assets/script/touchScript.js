@@ -27,18 +27,13 @@ cc.Class({
         this.node.emit('setInput', true);
         if (!this._canTouch) return;
         this._canTouch = false;
-        this.touchNode.on('touchmove', function (event) {
-            var delta = event.touch.getDelta();
-            this._xDelta += delta.x;
-            this._yDelta += delta.y;
-        }, this);
 
         this.touchNode.once('touchend', function (event) {
             let xDelta = event.getLocation().x - event.getStartLocation().x;
             let yDelta = event.getLocation().y - event.getStartLocation().y;
             cc.log('x delta is: ', xDelta, ', y delta is: ', yDelta);
             if (Math.abs(xDelta) === 0 && Math.abs(yDelta) === 0) {
-                this._canTouch = true;
+                Emitter.instance.emit('canMove');
                 return;
             }
             if (Math.abs(xDelta) > Math.abs(yDelta)) {
@@ -58,19 +53,19 @@ cc.Class({
                     cc.log('move up');
                 }
             }
-            this._canTouch = true;
+            Emitter.instance.emit('canMove');
             return;
         }, this);
 
         this.touchNode.on('touchcancel', (event) => {
-            this._canTouch = true;
+            Emitter.instance.emit('canMove');
             return;
         }, this);
     },
 
     onLoad() {
         this.touchNode.on('touchstart', this._onTouchStart, this);
-        this.node.on('canMove', (value = true) => this._canTouch = value, this);
+        Emitter.instance.registerEvent('canMove', (value = true) => this._canTouch = value);
         this.node.on('setInput', (touch) => {
             if (!touch) this._canTouch = false;
         }, this);
