@@ -450,12 +450,12 @@
     "relativePath": "scenes"
   },
   "c7fa7f5d-0ca2-4279-9516-8297944cb42a": {
-    "asset": 1640166150962,
-    "meta": 1640166150970,
+    "asset": 1640169219154,
+    "meta": 1640169219164,
     "relativePath": "scenes/game.fire"
   },
   "a9cdab29-c048-44e5-a619-7b8b7fbbbcfd": {
-    "asset": 1640070288898,
+    "asset": 1640165160037,
     "meta": 1638930068026,
     "relativePath": "script"
   },
@@ -603,5 +603,40 @@
     "asset": 1640165958118,
     "meta": 1640166055571,
     "relativePath": "script/gameBoard.js"
+  },
+  "7d3862c9-ada0-42e0-b9a8-957b63d2e8b5": {
+    "asset": 1640167976456,
+    "meta": 1640167983936,
+    "relativePath": "script/instructionScript.js"
+  },
+  "8a10faad-6718-4d92-888f-68bc38c29317": {
+    "asset": 1640168568204,
+    "meta": 1640168568203,
+    "relativePath": "images/instructions"
+  },
+  "37d70cb0-560c-4cdf-be15-5ae4a2555c38": {
+    "asset": 1640168412605,
+    "meta": 1640168568285,
+    "relativePath": "images/instructions/instruction2.png"
+  },
+  "eb186085-ded6-4cdd-b6c3-2c2c587e4835": {
+    "asset": 1640168402148,
+    "meta": 1640168568286,
+    "relativePath": "images/instructions/instruction1.png"
+  },
+  "a89f08ed-6ec6-401d-ab8a-51d065c3a1b8": {
+    "asset": 1640168504724,
+    "meta": 1640168568388,
+    "relativePath": "images/instructions/instruction3.png"
+  },
+  "b75bea29-6e43-4f67-9db2-9fcad67fc276": {
+    "asset": 1640168511635,
+    "meta": 1640168568390,
+    "relativePath": "images/instructions/instruction4.png"
+  },
+  "1fc54c53-0ded-4bab-8fb7-a6dc2709946d": {
+    "asset": 1640167033686,
+    "meta": 1640168568455,
+    "relativePath": "images/instructions/win condition.png"
   }
 }
