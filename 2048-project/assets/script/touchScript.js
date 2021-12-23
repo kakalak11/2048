@@ -38,18 +38,18 @@ cc.Class({
             }
             if (Math.abs(xDelta) > Math.abs(yDelta)) {
                 if (xDelta > 0) {
-                    this.node.emit('moveRow', true);
+                    Emitter.instance.emit('moveRow', true);
                     cc.log('move right');
                 } else {
-                    this.node.emit('moveRow', false);
+                    Emitter.instance.emit('moveRow', false);
                     cc.log('move left');
                 }
             } else {
                 if (yDelta > 0) {
-                    this.node.emit('moveCollumn', false);
+                    Emitter.instance.emit('moveCollumn', false);
                     cc.log('move down');
                 } else {
-                    this.node.emit('moveCollumn', true);
+                    Emitter.instance.emit('moveCollumn', true);
                     cc.log('move up');
                 }
             }

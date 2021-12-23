@@ -27,8 +27,7 @@ cc.Class({
         _highScoreList: [],
         _data: null,
         _bestScore: 0,
-        _bestPlayer: '',
-        _playing: null
+        _bestPlayer: ''
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -48,7 +47,6 @@ cc.Class({
         this._highScoreList.push(value);
         this.userNameBox.string = '';
         this._data.setItem(this._highScoreList.length - 1, value);
-        cc.log(this._data);
         return;
     },
 
@@ -57,7 +55,6 @@ cc.Class({
             if (this._data.getItem(index) === null) continue;
             this._highScoreList.push(this._data.getItem(index));
         }
-        cc.log(this._highScoreList);
         this._sortData();
         return;
     },
@@ -73,11 +70,9 @@ cc.Class({
                 return;
             }
         });
-        // cc.log(`${this._bestPlayer}: ${this._bestScore}`);
         var temp = this._highScoreList[0];
-        this._highScoreList[this._highScoreList.indexOf(this._bestPlayer + ':' + this._bestScore)] = temp;
-        this._highScoreList[0] = this._bestPlayer + ':' + this._bestScore;
-        cc.log(this._highScoreList);
+        this._highScoreList[this._highScoreList.indexOf(this._bestPlayer + ': ' + this._bestScore)] = temp;
+        this._highScoreList[0] = this._bestPlayer + ': ' + this._bestScore;
         this._updateLeaderBoard();
     },
 
@@ -106,20 +101,12 @@ cc.Class({
     },
 
     onLoad: function onLoad() {
-        var _this3 = this;
-
         this._data = cc.sys.localStorage;
         this._data.removeItem('debug');
-        cc.log(this._data);
+        // cc.log(this._data);
         this._loadData();
         Emitter.instance.registerEvent('showLeaderBoard', this._show.bind(this));
         Emitter.instance.registerEvent('hideLeaderBoard', this._hide.bind(this));
-        Emitter.instance.registerEvent('playing', function () {
-            return _this3._playing = true;
-        });
-        Emitter.instance.registerEvent('notPlaying', function () {
-            return _this3._playing = false;
-        });
     },
     start: function start() {
         Emitter.instance.emit('notify', { player: this._bestPlayer, score: this._bestScore });

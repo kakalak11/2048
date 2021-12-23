@@ -22,6 +22,9 @@ cc.Class({
         soundButtonText: cc.Label,
         swipeSound: cc.AudioSource,
         combineSound: cc.AudioSource,
+        undoSound: cc.AudioSource,
+        gameWin: cc.AudioSource,
+        gameOver: cc.AudioSource,
         _muted: false
     },
 
@@ -51,6 +54,19 @@ cc.Class({
         }
         if (data === 'combine') {
             this.combineSound.play();
+            return;
+        }
+
+        if (data === 'gameWin') {
+            this.gameWin.play();
+            return;
+        }
+        if (data === 'gameOver') {
+            this.gameOver.play();
+            return;
+        }
+        if (data === 'undo') {
+            this.undoSound.play();
             return;
         }
     },

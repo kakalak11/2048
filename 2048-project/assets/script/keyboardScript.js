@@ -17,6 +17,15 @@ cc.Class({
         _canMove: true,
     },
 
+    ctor() {
+        this.moveRightCommand = new Command(this.moveRight, this.moveLeft);
+        this.moveLeftCommand = new Command(this.moveLeft, this.moveRight);
+        this.moveDownCommand = new Command(this.moveDown, this.moveUp);
+        this.moveUpCommand = new Command(this.moveUp, this.moveDown);
+
+        this.action = new Action();
+    },
+
     // LIFE-CYCLE CALLBACKS:
 
     _onKeyDown: function (event) {
@@ -26,26 +35,43 @@ cc.Class({
         Emitter.instance.emit('canMove', false);
         switch (event.keyCode) {
             case cc.macro.KEY.a:
-                this.node.emit('moveRow', false);
+                // Emitter.instance.emit('moveRow', false);
+                this.action.execute(this.moveLeftCommand);
                 Emitter.instance.emit('sound', 'swipe');
                 break;
             case cc.macro.KEY.d:
-                this.node.emit('moveRow', true);
+                // Emitter.instance.emit('moveRow', true);
+                this.action.execute(this.moveRightCommand);
                 Emitter.instance.emit('sound', 'swipe');
                 break;
             case cc.macro.KEY.w:
-                this.node.emit('moveCollumn', false);
+                // Emitter.instance.emit('moveCollumn', false);
+                this.action.execute(this.moveUpCommand);
                 Emitter.instance.emit('sound', 'swipe');
                 break;
             case cc.macro.KEY.s:
-                this.node.emit('moveCollumn', true);
+                // Emitter.instance.emit('moveCollumn', true);
+                this.action.execute(this.moveDownCommand);
                 Emitter.instance.emit('sound', 'swipe');
+                break;
+            case cc.macro.KEY.space:
+                Emitter.instance.emit('canMove');
+                cc.log(this.action.getCommands());
+                // this.action.undo();
+                break;
+            case cc.macro.KEY.c:
+                Emitter.instance.emit('lose');
                 break;
             default:
                 Emitter.instance.emit('canMove');
                 break;
         }
     },
+
+    moveRight() { Emitter.instance.emit('moveRow', true) },
+    moveLeft() { Emitter.instance.emit('moveRow', false) },
+    moveDown() { Emitter.instance.emit('moveCollumn', true) },
+    moveUp() { Emitter.instance.emit('moveCollumn', false) },
 
     _reset() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
@@ -65,4 +91,40 @@ cc.Class({
     },
 
     // update (dt) {},
+});
+
+
+
+var Command = cc.Class({
+    ctor(execute, undo) {
+        this.execute = execute;
+        this.undo = undo;
+    },
+});
+
+var Action = cc.Class({
+    ctor() {
+        this.current = null;
+        this.commands = [];
+    },
+
+    execute(command) {
+        this.current = command;
+        this.commands.push(command);
+        command.execute();
+    },
+
+    undo() {
+        if (this.commands.length === 0) {
+            cc.log('undo list is empty');
+            return;
+        }
+        var command = this.commands.pop();
+        this.current = command;
+        command.undo();
+    },
+
+    getCommands() {
+        return this.commands;
+    }
 });

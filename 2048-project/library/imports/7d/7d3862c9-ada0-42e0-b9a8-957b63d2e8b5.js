@@ -21,6 +21,14 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
+    onClickInstruction: function onClickInstruction() {
+        this.node.active = true;
+    },
+
+    onClickReturn: function onClickReturn() {
+        this.node.active = false;
+    },
+
     // onLoad () {},
 
     start: function start() {}
