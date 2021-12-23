@@ -20,13 +20,13 @@ cc.Class({
 
     properties: {
         tilePrefab: cc.Prefab,
-        winBoard: cc.Node,
-        loseBoard: cc.Node,
         _tilesMatrix: [],
+        _temp: [],
         _time: 0.25 / 8,
         _check: true,
         _combined: false,
-        _skip: false
+        _skip: false,
+        _turn: 0
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -161,7 +161,7 @@ cc.Class({
                 _this4._combined = false;
             }
             _this4._generateRandomValue();
-            _this4.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
+            Emitter.instance.emit('updateScore', _this4._turn);
             Emitter.instance.emit('canMove');
         }, this._time * 2);
         return;
@@ -220,8 +220,6 @@ cc.Class({
 
 
     _checkWin: function _checkWin() {
-        var _this6 = this;
-
         var win = false;
         this._tilesMatrix.flat().forEach(function (element) {
             return element.getComponent('tilesScript').number === 2048 ? win = true : null;
@@ -230,7 +228,7 @@ cc.Class({
             cc.log('you have won');
             cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
             this.scheduleOnce(function () {
-                _this6.node.dispatchEvent(new cc.Event.EventCustom('win', true));
+                Emitter.instance.emit('win');
                 Emitter.instance.emit('canMove', false);
             }, 0.5);
             return true;
@@ -239,7 +237,7 @@ cc.Class({
     },
 
     _checkLose: function _checkLose() {
-        var _this7 = this;
+        var _this6 = this;
 
         if (!this._tilesMatrix.flat().every(function (element) {
             return element.active;
@@ -247,25 +245,25 @@ cc.Class({
         this.checkRow = this._tilesMatrix.every(function (element) {
             if (element.every(function (element, index, array) {
                 if (array[index + 1] === undefined) return true;
-                _this7.number = element.getComponent('tilesScript').number;
-                _this7.nextNumber = array[index + 1].getComponent('tilesScript').number;
-                if (_this7.number !== _this7.nextNumber) return true;
+                _this6.number = element.getComponent('tilesScript').number;
+                _this6.nextNumber = array[index + 1].getComponent('tilesScript').number;
+                if (_this6.number !== _this6.nextNumber) return true;
                 return false;
             })) return true;
             return false;
         });
         this.checkCollumn = this._tilesMatrix.flat().every(function (element, index, array) {
             if (array[index + 4] === undefined) return true;
-            _this7.number = element.getComponent('tilesScript').number;
-            _this7.nextNumber = array[index + 4].getComponent('tilesScript').number;
-            if (_this7.number !== _this7.nextNumber) return true;
+            _this6.number = element.getComponent('tilesScript').number;
+            _this6.nextNumber = array[index + 4].getComponent('tilesScript').number;
+            if (_this6.number !== _this6.nextNumber) return true;
             return false;
         });
         if (this.checkCollumn && this.checkRow) {
             cc.log('you have lost');
             cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
             this.scheduleOnce(function () {
-                _this7.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
+                Emitter.instance.emit('lose');
                 Emitter.instance.emit('canMove', false);
             }, 0.5);
             return true;
@@ -282,11 +280,43 @@ cc.Class({
         });
         this.node.removeAllChildren(true);
         this._tilesMatrix = [];
-        this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
+        this._temp = [];
+        this._turn = 0;
+        Emitter.instance.emit('updateScore', this._turn);
         this.node.emit('reset');
         Emitter.instance.emit('canMove', false);
     },
 
+
+    _undo: function _undo() {
+        var _this7 = this;
+
+        cc.log('this is undo');
+        if (this._temp.length === 0) return;
+        var temp = this._temp.pop();
+        this._turn--;
+        this._tilesMatrix.flat().forEach(function (element, index) {
+            _this7.script = element.getComponent('tilesScript');
+            // element.setPosition(temp[index].position);
+            element.active = temp[index].active;
+            _this7.script.setNumber(temp[index].number);
+        });
+        Emitter.instance.emit('canMove');
+        Emitter.instance.emit('updateScore', this._turn);
+    },
+
+    _save: function _save() {
+        var _this8 = this;
+
+        this._temp.push([]);
+        this._tilesMatrix.flat().forEach(function (element) {
+            var data = { position: null, number: 0, active: null };
+            data.position = element.getPosition(cc.v2());
+            data.number = element.getComponent('tilesScript').number;
+            data.active = element.active;
+            _this8._temp[_this8._turn].push(data);
+        });
+    },
 
     _onClick: function _onClick() {
         cc.log(this.name);
@@ -296,45 +326,50 @@ cc.Class({
     },
 
     _addEvent: function _addEvent() {
-        var _this8 = this;
+        var _this9 = this;
 
-        this.node.on('moveRow', function (directionRight) {
-            _this8._moveRow(directionRight);
-            _this8._combineRow(directionRight);
-            _this8.scheduleOnce(function () {
-                _this8._moveRow(directionRight);
-                _this8._adjustPosition();
-            }, _this8._time);
+        Emitter.instance.registerEvent('moveRow', function (directionRight) {
+            _this9._save();
+            _this9._turn++;
+            _this9._moveRow(directionRight);
+            _this9._combineRow(directionRight);
+            _this9.scheduleOnce(function () {
+                _this9._moveRow(directionRight);
+                _this9._adjustPosition();
+            }, _this9._time);
         }, this);
 
-        this.node.on('moveCollumn', function (directionDown) {
-            _this8._moveCollumn(directionDown);
-            _this8._combineCollumn(directionDown);
-            _this8.scheduleOnce(function () {
-                _this8._moveCollumn(directionDown);
-                _this8._adjustPosition();
-            }, _this8._time);
+        Emitter.instance.registerEvent('moveCollumn', function (directionDown) {
+            _this9._save();
+            _this9._turn++;
+            _this9._moveCollumn(directionDown);
+            _this9._combineCollumn(directionDown);
+            _this9.scheduleOnce(function () {
+                _this9._moveCollumn(directionDown);
+                _this9._adjustPosition();
+            }, _this9._time);
         }, this);
 
         this.node.on('checkWin', this._checkWin, this);
         this.node.on('checkLose', this._checkLose, this);
         this.node.on('move', function (event) {
             event.stopPropagation();
-            _this8._check = true;
+            _this9._check = true;
         }, this);
     },
 
     onLoad: function onLoad() {
-        var _this9 = this;
+        var _this10 = this;
 
         this._addEvent();
         Emitter.instance.registerEvent('playing', function () {
-            return _this9._playing = true;
+            return _this10._playing = true;
         });
         Emitter.instance.registerEvent('notPlaying', function () {
-            return _this9._playing = false;
+            return _this10._playing = false;
         });
         Emitter.instance.registerEvent('start', this._setupGrid.bind(this));
+        Emitter.instance.registerEvent('undo', this._undo.bind(this));
     },
     start: function start() {},
     update: function update(dt) {}

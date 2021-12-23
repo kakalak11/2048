@@ -25,6 +25,7 @@ cc.Class({
         leaderBoard: cc.Node,
         winBoard: cc.Node,
         loseBoard: cc.Node,
+        turnNumber: cc.Label,
         _playing: false
     },
 
@@ -41,9 +42,10 @@ cc.Class({
 
     onClickMenuButton: function onClickMenuButton() {
         Emitter.instance.emit('hideWindow');
+        Emitter.instance.emit('canMove', false);
     },
 
-    _scoreUpdate: function _scoreUpdate() {
+    _scoreUpdate: function _scoreUpdate(data) {
         var _this = this;
 
         this.gameMatrix = this.gameBoard.getComponent('gameBoard')._tilesMatrix.flat();
@@ -56,20 +58,23 @@ cc.Class({
             return _this.scoreNumber += element.getComponent('tilesScript').number;
         });
         this.score.getComponent('cc.Label').string = this.scoreNumber;
+        this.turnNumber.string = 'Turn: ' + data;
         return;
     },
 
     _win: function _win() {
         this.winBoard.emit('winBoard');
+        Emitter.instance.emit('sound', 'gameWin');
         Emitter.instance.emit('notPlaying');
     },
 
     _lose: function _lose() {
         this.loseBoard.emit('loseBoard');
+        Emitter.instance.emit('sound', 'gameOver');
         Emitter.instance.emit('notPlaying');
     },
 
-    onClickReturnButton: function onClickReturnButton() {
+    onClickContinueButton: function onClickContinueButton() {
         this.gameBoard.getComponent('gameBoard')._reset();
         if (this._playing) Emitter.instance.emit('notPlaying');
         Emitter.instance.emit('start');
@@ -77,6 +82,12 @@ cc.Class({
         Emitter.instance.emit('playing');
         return;
     },
+
+    onClickUndo: function onClickUndo() {
+        Emitter.instance.emit('undo');
+        Emitter.instance.emit('sound', 'undo');
+    },
+
 
     _show: function _show() {
         this.node.runAction(cc.moveTo(0.5, 0, 0).easing(cc.easeExponentialInOut(0.5)));
@@ -89,12 +100,12 @@ cc.Class({
     onLoad: function onLoad() {
         var _this2 = this;
 
-        this.node.on('updateScore', this._scoreUpdate, this);
-        this.node.on('win', this._win, this);
-        this.node.on('lose', this._lose, this);
+        Emitter.instance.registerEvent('updateScore', this._scoreUpdate.bind(this));
+        Emitter.instance.registerEvent('lose', this._lose.bind(this));
+        Emitter.instance.registerEvent('win', this._win.bind(this));
+
         this.leaderBoardScript = this.leaderBoard.getComponent('leaderBoardScript');
         this.leaderBoardScript.active = false;
-        cc.log(this.leaderBoardScript._bestScore);
         this.bestScoreNumber.string = this.leaderBoardScript._bestScore;
 
         Emitter.instance.registerEvent('showWindow', this._show.bind(this));

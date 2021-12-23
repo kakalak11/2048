@@ -14,13 +14,13 @@ cc.Class({
 
     properties: {
         tilePrefab: cc.Prefab,
-        winBoard: cc.Node,
-        loseBoard: cc.Node,
         _tilesMatrix: [],
+        _temp: [],
         _time: 0.25 / 8,
         _check: true,
         _combined: false,
         _skip: false,
+        _turn: 0,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -136,7 +136,7 @@ cc.Class({
                 this._combined = false;
             }
             this._generateRandomValue();
-            this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
+            Emitter.instance.emit('updateScore', this._turn);
             Emitter.instance.emit('canMove');
         }, this._time * 2);
         return;
@@ -197,7 +197,7 @@ cc.Class({
             cc.log('you have won');
             cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
             this.scheduleOnce(() => {
-                this.node.dispatchEvent(new cc.Event.EventCustom('win', true));
+                Emitter.instance.emit('win');
                 Emitter.instance.emit('canMove', false);
             }, 0.5);
             return true;
@@ -228,7 +228,7 @@ cc.Class({
             cc.log('you have lost');
             cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this._onKeyDown, this);
             this.scheduleOnce(() => {
-                this.node.dispatchEvent(new cc.Event.EventCustom('lose', true));
+                Emitter.instance.emit('lose');
                 Emitter.instance.emit('canMove', false);
             }, 0.5);
             return true;
@@ -241,9 +241,37 @@ cc.Class({
         this.node.children.forEach(element => element.destroy());
         this.node.removeAllChildren(true);
         this._tilesMatrix = [];
-        this.node.dispatchEvent(new cc.Event.EventCustom('updateScore', true));
+        this._temp = [];
+        this._turn = 0;
+        Emitter.instance.emit('updateScore', this._turn);
         this.node.emit('reset');
         Emitter.instance.emit('canMove', false);
+    },
+
+    _undo: function () {
+        cc.log('this is undo');
+        if (this._temp.length === 0) return;
+        let temp = this._temp.pop();
+        this._turn--;
+        this._tilesMatrix.flat().forEach((element, index) => {
+            this.script = element.getComponent('tilesScript');
+            // element.setPosition(temp[index].position);
+            element.active = temp[index].active;
+            this.script.setNumber(temp[index].number);
+        });
+        Emitter.instance.emit('canMove');
+        Emitter.instance.emit('updateScore', this._turn);
+    },
+
+    _save: function () {
+        this._temp.push([])
+        this._tilesMatrix.flat().forEach(element => {
+            let data = { position: null, number: 0, active: null };
+            data.position = element.getPosition(cc.v2());
+            data.number = element.getComponent('tilesScript').number;
+            data.active = element.active;
+            this._temp[this._turn].push(data);
+        });
     },
 
     _onClick: function () {
@@ -254,7 +282,9 @@ cc.Class({
     },
 
     _addEvent: function () {
-        this.node.on('moveRow', (directionRight) => {
+        Emitter.instance.registerEvent('moveRow', (directionRight) => {
+            this._save();
+            this._turn++;
             this._moveRow(directionRight);
             this._combineRow(directionRight);
             this.scheduleOnce(() => {
@@ -263,7 +293,9 @@ cc.Class({
             }, this._time);
         }, this);
 
-        this.node.on('moveCollumn', (directionDown) => {
+        Emitter.instance.registerEvent('moveCollumn', (directionDown) => {
+            this._save();
+            this._turn++;
             this._moveCollumn(directionDown);
             this._combineCollumn(directionDown);
             this.scheduleOnce(() => {
@@ -285,6 +317,7 @@ cc.Class({
         Emitter.instance.registerEvent('playing', () => this._playing = true);
         Emitter.instance.registerEvent('notPlaying', () => this._playing = false);
         Emitter.instance.registerEvent('start', this._setupGrid.bind(this));
+        Emitter.instance.registerEvent('undo', this._undo.bind(this));
     },
 
     start() {

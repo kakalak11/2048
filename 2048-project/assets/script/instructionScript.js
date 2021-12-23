@@ -12,10 +12,17 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-
     },
 
     // LIFE-CYCLE CALLBACKS:
+
+    onClickInstruction: function () {
+        this.node.active = true;
+    },
+
+    onClickReturn: function () {
+        this.node.active = false;
+    },
 
     // onLoad () {},
 
