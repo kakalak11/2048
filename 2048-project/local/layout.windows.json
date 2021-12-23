@@ -18,7 +18,11 @@
                 "children": [
                   "hierarchy"
                 ],
+<<<<<<< HEAD
                 "height": 520,
+=======
+                "height": 520.328125,
+>>>>>>> 32e1bbea8a0039cffde4983660d85b4223c9fb90
                 "type": "panel",
                 "width": 300
               },
@@ -27,7 +31,11 @@
                 "children": [
                   "assets"
                 ],
+<<<<<<< HEAD
                 "height": 344,
+=======
+                "height": 343.671875,
+>>>>>>> 32e1bbea8a0039cffde4983660d85b4223c9fb90
                 "type": "panel",
                 "width": 300
               }
@@ -43,7 +51,11 @@
                 "children": [
                   "scene"
                 ],
+<<<<<<< HEAD
                 "height": 597.984375,
+=======
+                "height": 598,
+>>>>>>> 32e1bbea8a0039cffde4983660d85b4223c9fb90
                 "type": "panel",
                 "width": 985.984375
               },
