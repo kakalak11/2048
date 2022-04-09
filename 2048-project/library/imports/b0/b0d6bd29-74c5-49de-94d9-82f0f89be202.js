@@ -1,5 +1,5 @@
-(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/core/GameManager.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
-cc._RF.push(module, 'b0d6b0pdMVJ3pTZgvD4m+IC', 'GameManager', __filename);
+"use strict";
+cc._RF.push(module, 'b0d6b0pdMVJ3pTZgvD4m+IC', 'GameManager');
 // scripts/core/GameManager.ts
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -34,15 +34,3 @@ var GameManager = /** @class */ (function (_super) {
 exports.default = GameManager;
 
 cc._RF.pop();
-        }
-        if (CC_EDITOR) {
-            __define(__module.exports, __require, __module);
-        }
-        else {
-            cc.registerModuleFunc(__filename, function () {
-                __define(__module.exports, __require, __module);
-            });
-        }
-        })();
-        //# sourceMappingURL=GameManager.js.map
-        

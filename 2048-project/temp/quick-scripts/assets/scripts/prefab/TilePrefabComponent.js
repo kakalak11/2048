@@ -22,6 +22,7 @@ var TilePrefabComponent = /** @class */ (function (_super) {
         this._value = value;
         this._color = color;
         this.label.string = this._value;
+        this.sprite.node.color = this._color;
     };
     __decorate([
         property(cc.Sprite)

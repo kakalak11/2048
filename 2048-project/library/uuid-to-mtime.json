@@ -430,12 +430,12 @@
     "relativePath": "font/ClearSans-Bold.ttf"
   },
   "d6a6d43c-5c85-4edb-8438-bf14882a9b82": {
-    "asset": 1639972117005,
+    "asset": 1649495167970,
     "meta": 1638930068025,
     "relativePath": "prefab"
   },
   "b01bdea1-103d-4ac9-96c4-664c0468ce1f": {
-    "asset": 1640224202891,
+    "asset": 1649492320726,
     "meta": 1638930068026,
     "relativePath": "scenes"
   },
@@ -445,13 +445,13 @@
     "relativePath": "scenes/game.fire"
   },
   "a9cdab29-c048-44e5-a619-7b8b7fbbbcfd": {
-    "asset": 1649492214322,
+    "asset": 1649495264023,
     "meta": 1638930068026,
     "relativePath": "scripts"
   },
   "a5eddeb4-d58c-41b0-8c55-86d46e9a07bb": {
-    "asset": 1649496022272,
-    "meta": 1649496022322,
+    "asset": 1649502593288,
+    "meta": 1649502593305,
     "relativePath": "prefab/TilePrefab.prefab"
   },
   "34059621-6b2e-4914-8782-cf0e3cab7bb8": {
@@ -574,18 +574,13 @@
     "meta": 1643907533587,
     "relativePath": "scripts/out-of-date/windowScript.js"
   },
-  "d82ab4cb-89e9-4deb-ab64-0c6cb06f7106": {
-    "asset": 1649492249823,
-    "meta": 1649492299867,
-    "relativePath": "scripts/common/PoolFactory.js"
-  },
   "eb43bd58-e234-4068-9c36-aa5db945cbe0": {
-    "asset": 1649494896825,
-    "meta": 1649494896839,
+    "asset": 1649502965433,
+    "meta": 1649502965441,
     "relativePath": "scenes/2048-v2.fire"
   },
   "25aa30bd-c766-40b9-8c3b-ad974c15574d": {
-    "asset": 1649493010610,
+    "asset": 1649494016408,
     "meta": 1649493010607,
     "relativePath": "sprites"
   },
@@ -635,7 +630,7 @@
     "relativePath": "sprites/instructions/instruction4.png"
   },
   "c52bbdc2-7639-4763-ab9b-9dc0caf4336b": {
-    "asset": 1649493010610,
+    "asset": 1649494025425,
     "meta": 1649493010610,
     "relativePath": "sprites/MainUI"
   },
@@ -690,39 +685,24 @@
     "relativePath": "sprites/tutorial/tutorial-07.jpeg"
   },
   "a50380f7-cff8-4703-ab1c-abbff9842d2e": {
-    "asset": 1649494269453,
+    "asset": 1649496923777,
     "meta": 1649494269454,
     "relativePath": "scripts/core"
   },
-  "4a1532b1-ae50-4f46-8167-5d0c3ae6d0da": {
-    "asset": 1649494532554,
-    "meta": 1649494551744,
-    "relativePath": "scripts/core/GameManager.js"
-  },
   "8da8a522-779b-4c9e-9c18-3c6d830cf93e": {
-    "asset": 1649494614434,
+    "asset": 1649495270714,
     "meta": 1649494614435,
     "relativePath": "scripts/out-of-date"
   },
   "736a71b7-8f61-4b23-acec-b474efe6ee2a": {
-    "asset": 1649494793241,
+    "asset": 1649498036373,
     "meta": 1649494793242,
     "relativePath": "scripts/common"
   },
-  "1e66c32b-4edf-457b-93e2-51ef4048875c": {
-    "asset": 1649495095783,
-    "meta": 1649495096587,
-    "relativePath": "scripts/core/GameTable.js"
-  },
   "667c98b9-5101-4d39-8372-858d40f185f2": {
-    "asset": 1649495261938,
+    "asset": 1649495537397,
     "meta": 1649495261939,
     "relativePath": "scripts/prefab"
-  },
-  "8ea7ddc8-2a48-4a95-8aaa-38eba420298a": {
-    "asset": 1649495494047,
-    "meta": 1649495520893,
-    "relativePath": "scripts/common/getConfig.js"
   },
   "d5151fe3-b080-4441-ab3d-e4975ae631c8": {
     "asset": 1649495332598,
@@ -730,8 +710,33 @@
     "relativePath": "scripts/prefab/tilesScript.js"
   },
   "311cd4d0-fb79-4735-9063-2dd9ccea4680": {
-    "asset": 1649495913369,
-    "meta": 1649495921116,
+    "asset": 1649496453609,
+    "meta": 1649496455555,
     "relativePath": "scripts/prefab/TilePrefabComponent.ts"
+  },
+  "0d6cf932-d3fc-4e50-a7a4-6c8f4252fb9f": {
+    "asset": 1649499369754,
+    "meta": 1649499372112,
+    "relativePath": "scripts/common/PoolFactory.ts"
+  },
+  "e96b4b81-1577-4352-b16b-0811b0433ff5": {
+    "asset": 1649499917801,
+    "meta": 1649499919272,
+    "relativePath": "scripts/core/GameDirector.ts"
+  },
+  "b0d6bd29-74c5-49de-94d9-82f0f89be202": {
+    "asset": 1649501040562,
+    "meta": 1649501164108,
+    "relativePath": "scripts/core/GameManager.ts"
+  },
+  "f4918096-4d15-4f79-82d1-8b4d2df41406": {
+    "asset": 1649502939969,
+    "meta": 1649502957268,
+    "relativePath": "scripts/common/getGameConfig.ts"
+  },
+  "1fcb3c66-94cc-4b99-9dab-fd8e6263f3c1": {
+    "asset": 1649502950167,
+    "meta": 1649502957269,
+    "relativePath": "scripts/core/GameTable.ts"
   }
 }

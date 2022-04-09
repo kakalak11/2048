@@ -19,5 +19,6 @@ export default class TilePrefabComponent extends cc.Component {
         this._color = color;
 
         this.label.string = this._value;
+        this.sprite.node.color = this._color;
     }
 }

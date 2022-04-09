@@ -1,8 +1,10 @@
-cc.Class({
-    extends: cc.Component,
+const { ccclass, property } = cc._decorator;
+
+@ccclass
+export default class NewClass extends cc.Component {
 
     onLoad() {
-        this.node.config = {
+        (this.node as any).config = {
             TILE_COLOR: {
                 GRAY: cc.Color.GRAY,
                 RED: cc.Color.RED,
@@ -14,7 +16,14 @@ cc.Class({
                 MAGENTA: cc.Color.MAGENTA,
                 BLACK: cc.Color.BLACK
             },
-
+            TABLE_CONFIG: {
+                FORMAT: [4, 4, 4, 4],
+                STEP: 76.5,
+                WIDTH: 
+            }
+            
         }
     }
-});
+}
+
+//{-114,114},{-114,37.5}

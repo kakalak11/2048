@@ -4301,6 +4301,7 @@ declare namespace cc {
 		父节点主要根据节点的 zIndex 和添加次序来排序，拥有更高 zIndex 的节点将被排在后面，如果两个节点的 zIndex 一致，先添加的节点会稳定排在另一个节点之前。<br/>
 		节点在 children 中的顺序决定了其渲染顺序。父节点永远在所有子节点之前被渲染 */
 		zIndex: number;		
+        poolFactory: PoolFactory;
 		/**
 		
 		@param name name 
@@ -17881,39 +17882,39 @@ declare namespace cc._decorator {
 	```js
 	const {ccclass, property} = cc._decorator;
 	
-	&#64;ccclass
+	//@ccclass
 	class NewScript extends cc.Component {
-	    &#64;property({
+	    //@property({
 	        type: cc.Node
 	    })
 	    targetNode1 = null;
 	
-	    &#64;property(cc.Node)
+	    //@property(cc.Node)
 	    targetNode2 = null;
 	
-	    &#64;property(cc.Button)
+	    //@property(cc.Button)
 	    targetButton = null;
 	
-	    &#64;property
+	    //@property
 	    _width = 100;
 	
-	    &#64;property
+	    //@property
 	    get width () {
 	        return this._width;
 	    }
 	
-	    &#64;property
+	    //@property
 	    set width (value) {
 	        this._width = value;
 	    }
 	
-	    &#64;property
+	    //@property
 	    offset = new cc.Vec2(100, 100);
 	
-	    &#64;property(cc.Vec2)
+	    //@property(cc.Vec2)
 	    offsets = [];
 	
-	    &#64;property(cc.SpriteFrame)
+	    //@property(cc.SpriteFrame)
 	    frame = null;
 	}
 	

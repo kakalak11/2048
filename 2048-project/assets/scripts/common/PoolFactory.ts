@@ -1,30 +1,32 @@
-const PoolPrefab = cc.Class({
-    name: 'PoolPrefab',
-    properties: {
-        prefabName: {
-            default: '',
-        },
+const { ccclass, property } = cc._decorator;
 
-        objectPrefab: {
-            type: cc.Prefab,
-            default: null,
-        },
+@ccclass('PoolFactoryComponent')
+class PoolFactoryComponent {
+    @property({ displayName: 'Prefab Name', visible: true })
+    prefabName: string = '';
 
-        initialCount: 5,
-    }
-});
-cc.Class({
-    extends: cc.Component,
+    @property({ type: cc.Prefab, displayName: 'Prefab', visible: true })
+    prefab: cc.Prefab = null;
 
-    properties: {
-        poolPrefabList: {
-            type: PoolPrefab,
-            default: [],
-        }
-    },
+    @property({ displayName: 'Initial Count', visible: true })
+    initialCount: number = 5;
+    objectPrefab: any = null;
+}
 
-    // LIFE-CYCLE CALLBACKS:
+interface PoolObject {
+    prefabName: string,
+    objectPrefab: cc.Prefab,
+    pool: cc.NodePool,
+};
 
+@ccclass
+export default class PoolFactory extends cc.Component {
+
+    @property({ type: PoolFactoryComponent })
+    poolPrefabList: PoolFactoryComponent[] = [];
+
+    pools: PoolObject[] = null;
+    
     onLoad() {
         this.pools = [];
         for (let i = 0; i < this.poolPrefabList.length; i++) {
@@ -37,7 +39,7 @@ cc.Class({
                 obj.active = false;
                 aPool.put(obj);
             }
-            const poolObject = {
+            const poolObject: PoolObject = {
                 prefabName: this.poolPrefabList[i].prefabName,
                 objectPrefab: this.poolPrefabList[i].objectPrefab,
                 pool: aPool,
@@ -45,10 +47,10 @@ cc.Class({
             this.pools[i] = poolObject;
         }
         this.node.poolFactory = this;
-    },
+    };
 
-    getObject(_prefabName) {
-        let obj = null;
+    getObject(_prefabName): cc.Node {
+        let obj: cc.Node = null;
         for (let i = 0; i < this.pools.length; i++) {
             const { prefabName, objectPrefab, pool } = this.pools[i];
             if (prefabName == _prefabName) {
@@ -63,9 +65,9 @@ cc.Class({
             }
         }
         return obj;
-    },
+    };
 
-    removeObject(node) {
+    removeObject(node): void {
         let name = node.name;
         for (let i = 0; i < this.pools.length; i++) {
             const { prefabName, pool } = this.pools[i];
@@ -75,7 +77,7 @@ cc.Class({
                 break;
             }
         }
-    },
+    };
 
     onDestroy() {
         for (let i = 0; i < this.pools.length; i++) {
@@ -90,5 +92,5 @@ cc.Class({
         this.poolPrefabList = [];
         this.poolPrefabList = null;
         this.node.poolFactory = null;
-    },
-});
+    };
+}

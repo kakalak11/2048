@@ -1,15 +1,14 @@
 {
   "version": "1.1.1",
   "windows": {
-    "worker": {},
     "main": {
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 0,
-      "y": 0,
-      "width": 1680,
-      "height": 1050,
+      "x": 1680,
+      "y": 25,
+      "width": 1920,
+      "height": 1055,
       "layout": {
         "children": [
           {
@@ -19,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 595,
+                "height": 581.078125,
                 "type": "panel",
-                "width": 300
+                "width": 452
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 393,
+                "height": 383.921875,
                 "type": "panel",
-                "width": 300
+                "width": 452
               }
             ],
-            "height": 990,
+            "height": 967,
             "type": "dock-v",
-            "width": 300
+            "width": 452
           },
           {
             "children": [
@@ -44,9 +43,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 683,
+                "height": 666.40625,
                 "type": "panel",
-                "width": 879.984375
+                "width": 897
               },
               {
                 "active": 0,
@@ -55,14 +54,14 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 305,
+                "height": 298.59375,
                 "type": "panel",
-                "width": 879.984375
+                "width": 897
               }
             ],
-            "height": 990,
+            "height": 967,
             "type": "dock-v",
-            "width": 879.984375
+            "width": 897
           },
           {
             "active": 0,
@@ -70,9 +69,9 @@
               "inspector",
               "node-library"
             ],
-            "height": 990,
+            "height": 967,
             "type": "panel",
-            "width": 496
+            "width": 567
           }
         ],
         "type": "dock-h"
