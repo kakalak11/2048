@@ -116,6 +116,8 @@ cc.Class({
         Emitter.instance.registerEvent('notPlaying', function () {
             return _this2._playing = false;
         });
+
+        console.warn(cc.sys.isBrowser);
     },
     start: function start() {}
 }

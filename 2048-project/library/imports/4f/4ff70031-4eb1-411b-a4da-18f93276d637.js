@@ -104,13 +104,10 @@ cc.Class({
         Emitter.instance.registerEvent('start', function () {
             return cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, _this._onKeyDown, _this);
         });
-    },
-    start: function start() {}
-}
+    }
+});
 
-// update (dt) {},
-);
-
+// This is the game writer
 var Command = cc.Class({
     ctor: function ctor(execute, undo) {
         this.execute = execute;
@@ -118,6 +115,7 @@ var Command = cc.Class({
     }
 });
 
+// This is the base director
 var Action = cc.Class({
     ctor: function ctor() {
         this.current = null;

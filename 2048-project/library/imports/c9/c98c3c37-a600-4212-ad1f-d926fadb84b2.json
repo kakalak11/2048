@@ -1,7 +1,7 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "backgroundGameBoard",
+    "name": "UI_Table",
     "texture": "7a7fa699-f76a-4063-8457-b196ae7476a3",
     "atlas": "",
     "rect": [

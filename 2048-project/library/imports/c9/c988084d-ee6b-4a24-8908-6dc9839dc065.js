@@ -328,11 +328,13 @@ cc.Class({
     _addEvent: function _addEvent() {
         var _this9 = this;
 
+        // This is the game director
         Emitter.instance.registerEvent('moveRow', function (directionRight) {
             _this9._save();
             _this9._turn++;
             _this9._moveRow(directionRight);
             _this9._combineRow(directionRight);
+            // We can add a callback function here so when the moving animation complete, it can use the callback to continue the game
             _this9.scheduleOnce(function () {
                 _this9._moveRow(directionRight);
                 _this9._adjustPosition();
@@ -344,12 +346,14 @@ cc.Class({
             _this9._turn++;
             _this9._moveCollumn(directionDown);
             _this9._combineCollumn(directionDown);
+            // We can add a callback function here so when the moving animation complete, it can use the callback to continue the game
             _this9.scheduleOnce(function () {
                 _this9._moveCollumn(directionDown);
                 _this9._adjustPosition();
             }, _this9._time);
         }, this);
 
+        // Add events
         this.node.on('checkWin', this._checkWin, this);
         this.node.on('checkLose', this._checkLose, this);
         this.node.on('move', function (event) {

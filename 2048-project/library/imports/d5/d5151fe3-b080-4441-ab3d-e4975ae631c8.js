@@ -1,18 +1,8 @@
 "use strict";
 cc._RF.push(module, 'd5151/jsIBEQas95Jda5jHI', 'tilesScript');
-// script/tilesScript.js
+// scripts/prefab/tilesScript.js
 
 'use strict';
-
-// Learn cc.Class:
-//  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/class.html
-//  - [English] http://docs.cocos2d-x.org/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
-//  - [English] http://docs.cocos2d-x.org/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
-//  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 cc.Class({
     extends: cc.Component,
@@ -46,9 +36,7 @@ cc.Class({
         this.node.runAction(action);
     },
 
-    onLoad: function onLoad() {
-        this._color = [cc.Color.GRAY, cc.Color.RED, cc.Color.GREEN, cc.Color.BLUE, cc.Color.YELLOW, cc.Color.ORANGE, cc.Color.CYAN, cc.Color.MAGENTA, cc.Color.YELLOW, cc.Color.RED, cc.Color.BLACK];
-    },
+    onLoad: function onLoad() {},
     start: function start() {},
     update: function update(dt) {}
 });
