@@ -19,6 +19,7 @@ var GameManager = /** @class */ (function (_super) {
         this.poolFactory = poolFactory;
         this.config = config;
         this.gameTable.emit('INIT', poolFactory, config);
+        this.gameSetup();
     };
     GameManager.prototype.gameSetup = function () {
         this.gameTable.emit('TABLE_SETUP');

@@ -7,6 +7,9 @@ export default class GameTable extends cc.Component {
     @property(cc.Node)
     tilesHolder: cc.Node = null;
 
+    @property(String)
+    prefabName: string = 'TILE_PREFAB';
+
     poolFactory: PoolFactory;
     config: any;
 
@@ -23,6 +26,15 @@ export default class GameTable extends cc.Component {
     tableSetup() {
         const { TABLE_FORMAT } = this.config;
 
-        
+        this.randomGenerateTile();
+        this.randomGenerateTile();
+    };
+
+    randomGenerateTile() {
+        const { STEP, TABLE_FORMAT } = this.config;
+        const randomX = Math.floor(Math.random() * TABLE_FORMAT.length);
+        const randomY = Math.floor(Math.random() * TABLE_FORMAT[0]);
+
+        const object = this.poolFactory.getObject()
     };
 }

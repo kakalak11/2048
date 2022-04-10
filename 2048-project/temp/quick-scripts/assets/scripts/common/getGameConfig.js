@@ -25,7 +25,6 @@ var NewClass = /** @class */ (function (_super) {
             TABLE_CONFIG: {
                 FORMAT: [4, 4, 4, 4],
                 STEP: 76.5,
-                WIDTH: 
             }
         };
     };

@@ -21,6 +21,7 @@ export default class GameManager extends cc.Component {
         this.config = config;
 
         this.gameTable.emit('INIT', poolFactory, config);
+        this.gameSetup();
     }
 
     gameSetup() {

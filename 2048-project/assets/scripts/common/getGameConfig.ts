@@ -19,9 +19,7 @@ export default class NewClass extends cc.Component {
             TABLE_CONFIG: {
                 FORMAT: [4, 4, 4, 4],
                 STEP: 76.5,
-                WIDTH: 
             }
-            
         }
     }
 }

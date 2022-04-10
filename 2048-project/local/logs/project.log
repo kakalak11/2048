@@ -1,155 +1,68 @@
-2022-04-09T10:05:12.548Z - normal: Load ~/.CocosCreator/settings.json
-2022-04-09T10:05:12.600Z - normal: Initializing Asset Database
-2022-04-09T10:05:12.602Z - normal: checking language setting...
-2022-04-09T10:05:12.602Z - normal: Language: en
-2022-04-09T10:05:13.220Z - success: preview server running at http://localhost:7456
-2022-04-09T10:05:13.236Z - success: protocol editor-framework registered
-2022-04-09T10:05:13.237Z - success: protocol app registered
-2022-04-09T10:05:13.237Z - success: protocol theme registered
-2022-04-09T10:05:13.237Z - success: protocol packages registered
-2022-04-09T10:05:13.237Z - success: protocol uuid registerred
-2022-04-09T10:05:13.237Z - success: protocol db registerred
-2022-04-09T10:05:13.237Z - success: protocol thumbnail registerred
-2022-04-09T10:05:13.237Z - success: protocol unpack registerred
-2022-04-09T10:05:13.237Z - success: protocol disable-commonjs registerred
-2022-04-09T10:05:16.221Z - normal: failed to connect login server due to request timeout
-2022-04-09T10:05:16.222Z - normal: Check project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
-2022-04-09T10:05:16.224Z - normal: Initializing project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
-2022-04-09T10:05:16.517Z - normal: Initializing Cocos2d
-2022-04-09T10:05:17.109Z - normal: Initializing engine extends
-2022-04-09T10:05:17.130Z - success: alipay-adapter loaded
-2022-04-09T10:05:17.134Z - success: asset-db-debugger loaded
-2022-04-09T10:05:17.135Z - success: baidu-adapter loaded
-2022-04-09T10:05:17.136Z - success: color-picker loaded
-2022-04-09T10:05:17.234Z - success: fb-audience-network loaded
-2022-04-09T10:05:17.276Z - success: fb-live-stream loaded
-2022-04-09T10:05:17.279Z - success: google-play-instant loaded
-2022-04-09T10:05:17.283Z - success: huawei-runtime loaded
-2022-04-09T10:05:17.478Z - success: cpk-publish loaded
-2022-04-09T10:05:17.479Z - success: jsb-adapter loaded
-2022-04-09T10:05:17.483Z - success: oppo-runtime loaded
-2022-04-09T10:05:17.488Z - success: package-manager loaded
-2022-04-09T10:05:17.596Z - success: qqplay-adapter loaded
-2022-04-09T10:05:17.598Z - success: runtime-dev-tools loaded
-2022-04-09T10:05:17.622Z - success: sdkbox loaded
-2022-04-09T10:05:17.629Z - success: tester loaded
-2022-04-09T10:05:17.632Z - success: ui-kit-preview-extra loaded
-2022-04-09T10:05:17.646Z - success: ui-kit-preview loaded
-2022-04-09T10:05:17.649Z - success: ui-kit loaded
-2022-04-09T10:05:17.654Z - success: vivo-runtime loaded
-2022-04-09T10:05:17.655Z - success: weapp-adapter loaded
-2022-04-09T10:05:17.656Z - success: xiaomi-adapter loaded
-2022-04-09T10:05:17.659Z - success: alipay-minigame loaded
-2022-04-09T10:05:17.695Z - success: assets loaded
-2022-04-09T10:05:17.698Z - success: builder loaded
-2022-04-09T10:05:17.937Z - success: cocos-services loaded
-2022-04-09T10:05:17.942Z - success: console loaded
-2022-04-09T10:05:17.969Z - success: fb-instant-games loaded
-2022-04-09T10:05:17.972Z - success: game-window loaded
-2022-04-09T10:05:17.973Z - success: google-instant-games loaded
-2022-04-09T10:05:17.977Z - success: hierarchy loaded
-2022-04-09T10:05:17.980Z - success: inspector loaded
-2022-04-09T10:05:17.982Z - success: keystore loaded
-2022-04-09T10:05:17.986Z - success: node-library loaded
-2022-04-09T10:05:17.988Z - success: package-asset loaded
-2022-04-09T10:05:17.989Z - success: preferences loaded
-2022-04-09T10:05:17.992Z - success: project-exporter loaded
-2022-04-09T10:05:17.996Z - success: project-importer loaded
-2022-04-09T10:05:17.999Z - success: project-settings loaded
-2022-04-09T10:05:18.003Z - success: scene loaded
-2022-04-09T10:05:18.004Z - success: simulator-debugger loaded
-2022-04-09T10:05:18.006Z - success: sprite-editor loaded
-2022-04-09T10:05:18.009Z - success: store loaded
-2022-04-09T10:05:18.014Z - success: timeline loaded
-2022-04-09T10:05:18.019Z - success: xiaomi-runtime loaded
-2022-04-09T10:05:19.033Z - normal: Loading packages
-2022-04-09T10:05:19.037Z - normal: Watching packages
-2022-04-09T10:05:19.116Z - normal: Run Application
-2022-04-09T10:05:22.962Z - warn: Please specifiy a default value for "GameManager" property at its declaration:
- 
-// Before:
-@property(...)
-value; 
-// After:
-@property(...)
-value = 0 table
-2022-04-09T10:05:22.966Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:05:26.048Z - info: Cocos Services load base data!
-2022-04-09T10:05:40.734Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:05:56.513Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:06:26.948Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:07:40.649Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:08:28.602Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:08:42.778Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:08:42.780Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:09:58.260Z - warn: Should not specify class name GameManagerComp for Component which defines in project.
-2022-04-09T10:09:58.261Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:10:07.699Z - warn: Should not specify class name GameManagerComp for Component which defines in project.
-2022-04-09T10:10:07.701Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:10:32.821Z - warn: Should not specify class name GameManagerComp for Component which defines in project.
-2022-04-09T10:10:32.823Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:10:38.794Z - warn: Should not specify class name GameManagerComp for Component which defines in project.
-2022-04-09T10:10:38.796Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:11:13.123Z - warn: Should not specify class name GameManagerComp for Component which defines in project.
-2022-04-09T10:11:13.125Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:11:32.456Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:11:32.458Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:12:05.238Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:12:05.240Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:12:34.192Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:12:34.195Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:12:37.275Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:12:37.277Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:15:16.936Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:15:16.937Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:15:16.937Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:16:12.644Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:16:12.645Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:16:12.646Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:17:19.801Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:17:19.802Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:17:19.803Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:17:40.458Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:17:40.458Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:17:40.461Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:21:07.220Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:21:07.221Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:21:07.221Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:21:57.145Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:21:57.145Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:21:57.148Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:22:05.246Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:22:05.247Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:22:05.248Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:24:08.849Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-09T10:24:08.850Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:24:08.850Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:24:08.850Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:24:49.009Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-09T10:24:49.010Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:24:49.010Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:24:49.011Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:25:19.743Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-09T10:25:19.745Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:25:19.745Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:25:19.747Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:26:41.448Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-09T10:26:41.449Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:26:41.450Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:26:41.451Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:27:02.430Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-09T10:27:02.431Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:27:02.431Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:27:02.432Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:38:16.816Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-09T10:38:16.817Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:38:16.817Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:38:16.818Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T10:46:04.604Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-09T10:46:04.605Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T10:46:04.606Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T10:46:04.606Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T11:15:57.399Z - failed: Failed to import script db://assets/scripts/common/getGameConfig.ts: Compile error: SyntaxError: Unexpected token (30:12) while parsing /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/scripts/common/getGameConfig.js while parsing file: /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/scripts/common/getGameConfig.js
+2022-04-10T05:11:37.995Z - normal: Load ~/.CocosCreator/settings.json
+2022-04-10T05:11:38.039Z - normal: Initializing Asset Database
+2022-04-10T05:11:38.041Z - normal: checking language setting...
+2022-04-10T05:11:38.041Z - normal: Language: en
+2022-04-10T05:11:38.677Z - success: preview server running at http://localhost:7456
+2022-04-10T05:11:38.686Z - success: protocol editor-framework registered
+2022-04-10T05:11:38.686Z - success: protocol app registered
+2022-04-10T05:11:38.686Z - success: protocol theme registered
+2022-04-10T05:11:38.686Z - success: protocol packages registered
+2022-04-10T05:11:38.686Z - success: protocol uuid registerred
+2022-04-10T05:11:38.686Z - success: protocol db registerred
+2022-04-10T05:11:38.686Z - success: protocol thumbnail registerred
+2022-04-10T05:11:38.686Z - success: protocol unpack registerred
+2022-04-10T05:11:38.687Z - success: protocol disable-commonjs registerred
+2022-04-10T05:11:40.928Z - normal: connected!
+2022-04-10T05:11:40.930Z - normal: Check project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
+2022-04-10T05:11:40.937Z - normal: Initializing project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
+2022-04-10T05:11:41.280Z - normal: Initializing Cocos2d
+2022-04-10T05:11:41.945Z - normal: Initializing engine extends
+2022-04-10T05:11:41.971Z - success: alipay-adapter loaded
+2022-04-10T05:11:41.981Z - success: asset-db-debugger loaded
+2022-04-10T05:11:41.986Z - success: baidu-adapter loaded
+2022-04-10T05:11:41.991Z - success: color-picker loaded
+2022-04-10T05:11:42.145Z - success: fb-audience-network loaded
+2022-04-10T05:11:42.199Z - success: fb-live-stream loaded
+2022-04-10T05:11:42.204Z - success: google-play-instant loaded
+2022-04-10T05:11:42.210Z - success: huawei-runtime loaded
+2022-04-10T05:11:42.436Z - success: cpk-publish loaded
+2022-04-10T05:11:42.438Z - success: jsb-adapter loaded
+2022-04-10T05:11:42.442Z - success: oppo-runtime loaded
+2022-04-10T05:11:42.447Z - success: package-manager loaded
+2022-04-10T05:11:42.574Z - success: qqplay-adapter loaded
+2022-04-10T05:11:42.576Z - success: runtime-dev-tools loaded
+2022-04-10T05:11:42.602Z - success: sdkbox loaded
+2022-04-10T05:11:42.607Z - success: tester loaded
+2022-04-10T05:11:42.610Z - success: ui-kit-preview-extra loaded
+2022-04-10T05:11:42.615Z - success: ui-kit-preview loaded
+2022-04-10T05:11:42.617Z - success: ui-kit loaded
+2022-04-10T05:11:42.623Z - success: vivo-runtime loaded
+2022-04-10T05:11:42.624Z - success: weapp-adapter loaded
+2022-04-10T05:11:42.628Z - success: xiaomi-adapter loaded
+2022-04-10T05:11:42.630Z - success: alipay-minigame loaded
+2022-04-10T05:11:42.662Z - success: assets loaded
+2022-04-10T05:11:42.665Z - success: builder loaded
+2022-04-10T05:11:42.906Z - success: cocos-services loaded
+2022-04-10T05:11:42.911Z - success: console loaded
+2022-04-10T05:11:42.935Z - success: fb-instant-games loaded
+2022-04-10T05:11:42.938Z - success: game-window loaded
+2022-04-10T05:11:42.939Z - success: google-instant-games loaded
+2022-04-10T05:11:42.943Z - success: hierarchy loaded
+2022-04-10T05:11:42.946Z - success: inspector loaded
+2022-04-10T05:11:42.947Z - success: keystore loaded
+2022-04-10T05:11:42.952Z - success: node-library loaded
+2022-04-10T05:11:42.953Z - success: package-asset loaded
+2022-04-10T05:11:42.954Z - success: preferences loaded
+2022-04-10T05:11:42.958Z - success: project-exporter loaded
+2022-04-10T05:11:42.962Z - success: project-importer loaded
+2022-04-10T05:11:42.964Z - success: project-settings loaded
+2022-04-10T05:11:42.969Z - success: scene loaded
+2022-04-10T05:11:42.970Z - success: simulator-debugger loaded
+2022-04-10T05:11:42.971Z - success: sprite-editor loaded
+2022-04-10T05:11:42.980Z - success: store loaded
+2022-04-10T05:11:42.987Z - success: timeline loaded
+2022-04-10T05:11:42.992Z - success: xiaomi-runtime loaded
+2022-04-10T05:11:43.962Z - failed: Failed to import script db://assets/scripts/common/getGameConfig.ts: Compile error: SyntaxError: Unexpected token (30:12) while parsing /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/scripts/common/getGameConfig.js while parsing file: /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/scripts/common/getGameConfig.js
     at DestroyableTransform.end [as _flush] (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/insert-module-globals/index.js:96:21)
     at DestroyableTransform.prefinish (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_transform.js:138:10)
     at emitNone (events.js:86:13)
@@ -160,7 +73,10 @@ value = 0 table
     at DestroyableTransform.Writable.end (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_writable.js:594:41)
     at DestroyableTransform.onend (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_readable.js:577:10)
     at Object.onceWrapper (events.js:293:19)
-2022-04-09T11:15:57.783Z - failed: load script [/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/scripts/common/getGameConfig.js] failed : /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/scripts/common/getGameConfig.js:29
+2022-04-10T05:11:44.017Z - normal: Loading packages
+2022-04-10T05:11:44.026Z - normal: Watching packages
+2022-04-10T05:11:44.111Z - normal: Run Application
+2022-04-10T05:11:47.644Z - failed: load script [/Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/scripts/common/getGameConfig.js] failed : /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project/temp/quick-scripts/assets/scripts/common/getGameConfig.js:29
             }
             ^
 SyntaxError: Unexpected token }
@@ -174,12 +90,54 @@ SyntaxError: Unexpected token }
     at Module.require (module.js:498:17)
     at require (internal/module.js:20:19)
     at c (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:458)
-2022-04-09T11:15:57.783Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-09T11:15:57.784Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-09T11:15:57.785Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-09T11:15:57.790Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-09T11:16:05.424Z - warn: Script attached to "2048" is missing or invalid. Detailed information:
+2022-04-10T05:11:47.645Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-10T05:11:47.645Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-10T05:11:47.646Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-10T05:11:47.649Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-10T05:11:47.725Z - warn: Script attached to "2048" in scene "2048-v2.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/2048"
+Asset url: "db://assets/scenes/2048-v2.fire"
+Script UUID: "f4918096-4d15-4f79-82d1-8b4d2df41406"
+Class ID: "f4918CWTRVPeYLRi00t9BQG"
+
+2022-04-10T05:12:25.223Z - info: Cocos Services load base data!
+2022-04-10T05:17:42.364Z - warn: Script attached to "2048" is missing or invalid. Detailed information:
 Node path: "Canvas/2048"
 Script UUID: "f4918096-4d15-4f79-82d1-8b4d2df41406"
 Class ID: "f4918CWTRVPeYLRi00t9BQG"
 
+2022-04-10T05:18:00.960Z - error: Can not find cc.Component in the script f4918CWTRVPeYLRi00t9BQG.
+    at Object.addComponent (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/scene.js:1:6036)
+    at HTMLElement.add-component (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/builtin/scene/panel/messages/scene-operation.js:1:1171)
+    at Object.e._dispatch (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/panel.js:1:1941)
+    at EventEmitter.o.on.s (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ipc.js:1:2921)
+    at emitMany (events.js:127:13)
+    at EventEmitter.emit (events.js:204:7)
+2022-04-10T05:19:03.039Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-10T05:19:03.040Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-10T05:19:03.040Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-10T05:19:03.045Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-10T05:34:03.465Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-10T05:34:03.467Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-10T05:34:03.467Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-10T05:34:03.471Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-10T05:35:27.319Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-10T05:35:27.319Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-10T05:35:27.320Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-10T05:35:27.322Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-10T05:38:03.411Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-10T05:38:03.413Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-10T05:38:03.413Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-10T05:38:03.416Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-10T05:38:08.797Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-10T05:38:08.797Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-10T05:38:08.798Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-10T05:38:08.800Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-10T05:38:25.517Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-10T05:38:25.517Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-10T05:38:25.518Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-10T05:38:25.520Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-10T05:42:40.515Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-10T05:42:40.517Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-10T05:42:40.517Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-10T05:42:40.518Z - warn: Can not instantiate CCClass 'undefined' with arguments.

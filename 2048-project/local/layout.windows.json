@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1680,
+      "x": 0,
       "y": 25,
-      "width": 1920,
-      "height": 1055,
+      "width": 1680,
+      "height": 964,
       "layout": {
         "children": [
           {
@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 581.078125,
+                "height": 526.21875,
                 "type": "panel",
-                "width": 452
+                "width": 395.375
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 383.921875,
+                "height": 347.78125,
                 "type": "panel",
-                "width": 452
+                "width": 395.375
               }
             ],
-            "height": 967,
+            "height": 876,
             "type": "dock-v",
-            "width": 452
+            "width": 395.375
           },
           {
             "children": [
@@ -43,9 +43,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 666.40625,
+                "height": 603.203125,
                 "type": "panel",
-                "width": 897
+                "width": 784.640625
               },
               {
                 "active": 0,
@@ -54,14 +54,14 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 298.59375,
+                "height": 270.796875,
                 "type": "panel",
-                "width": 897
+                "width": 784.640625
               }
             ],
-            "height": 967,
+            "height": 876,
             "type": "dock-v",
-            "width": 897
+            "width": 784.640625
           },
           {
             "active": 0,
@@ -69,9 +69,9 @@
               "inspector",
               "node-library"
             ],
-            "height": 967,
+            "height": 876,
             "type": "panel",
-            "width": 567
+            "width": 495.96875
           }
         ],
         "type": "dock-h"

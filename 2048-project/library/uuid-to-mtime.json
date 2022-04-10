@@ -569,14 +569,9 @@
     "meta": 1640254313495,
     "relativePath": "scripts/out-of-date/leaderBoardScript.js"
   },
-  "79545e93-e5ee-4111-82d0-17980efb3361": {
-    "asset": 1643907531456,
-    "meta": 1643907533587,
-    "relativePath": "scripts/out-of-date/windowScript.js"
-  },
   "eb43bd58-e234-4068-9c36-aa5db945cbe0": {
-    "asset": 1649502965433,
-    "meta": 1649502965441,
+    "asset": 1649568978761,
+    "meta": 1649568978769,
     "relativePath": "scenes/2048-v2.fire"
   },
   "25aa30bd-c766-40b9-8c3b-ad974c15574d": {
@@ -685,7 +680,7 @@
     "relativePath": "sprites/tutorial/tutorial-07.jpeg"
   },
   "a50380f7-cff8-4703-ab1c-abbff9842d2e": {
-    "asset": 1649496923777,
+    "asset": 1649499724783,
     "meta": 1649494269454,
     "relativePath": "scripts/core"
   },
@@ -695,7 +690,7 @@
     "relativePath": "scripts/out-of-date"
   },
   "736a71b7-8f61-4b23-acec-b474efe6ee2a": {
-    "asset": 1649498036373,
+    "asset": 1649500019421,
     "meta": 1649494793242,
     "relativePath": "scripts/common"
   },
@@ -724,19 +719,29 @@
     "meta": 1649499919272,
     "relativePath": "scripts/core/GameDirector.ts"
   },
-  "b0d6bd29-74c5-49de-94d9-82f0f89be202": {
-    "asset": 1649501040562,
-    "meta": 1649501164108,
-    "relativePath": "scripts/core/GameManager.ts"
-  },
   "f4918096-4d15-4f79-82d1-8b4d2df41406": {
-    "asset": 1649502939969,
-    "meta": 1649502957268,
+    "asset": 1649567939644,
+    "meta": 1649567942523,
     "relativePath": "scripts/common/getGameConfig.ts"
   },
+  "b0d6bd29-74c5-49de-94d9-82f0f89be202": {
+    "asset": 1649568776535,
+    "meta": 1649568842939,
+    "relativePath": "scripts/core/GameManager.ts"
+  },
   "1fcb3c66-94cc-4b99-9dab-fd8e6263f3c1": {
-    "asset": 1649502950167,
-    "meta": 1649502957269,
+    "asset": 1649568923006,
+    "meta": 1649568926849,
     "relativePath": "scripts/core/GameTable.ts"
+  },
+  "79545e93-e5ee-4111-82d0-17980efb3361": {
+    "asset": 1649569074830,
+    "meta": 1649569082887,
+    "relativePath": "scripts/out-of-date/windowScript.js"
+  },
+  "fe645508-b8f5-4d3d-a1ee-de9481d3f6cc": {
+    "asset": 1649569339433,
+    "meta": 1649569359986,
+    "relativePath": "scripts/core/GameManagerv1.ts"
   }
 }
