@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "shroom",
+    "texture": "1ad305a2-425b-41d1-9bc0-600c0f00bbd2",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      39,
+      34
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      39,
+      34
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

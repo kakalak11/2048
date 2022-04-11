@@ -1,6 +1,6 @@
 import PoolFactory from "../common/PoolFactory";
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass('GameDirector')
 export default class GameDirector extends cc.Component {
@@ -16,6 +16,6 @@ export default class GameDirector extends cc.Component {
     }
 
     start() {
-        this.gameManager.emit('INIT', this.poolFactory);
+        this.gameManager.emit('INIT', this.poolFactory, (this.node as any).config);
     }
 }

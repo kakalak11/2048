@@ -16,7 +16,7 @@ var GameDirector = /** @class */ (function (_super) {
     GameDirector.prototype.onLoad = function () {
     };
     GameDirector.prototype.start = function () {
-        this.gameManager.emit('INIT', this.poolFactory);
+        this.gameManager.emit('INIT', this.poolFactory, this.node.config);
     };
     __decorate([
         property(PoolFactory_1.default)

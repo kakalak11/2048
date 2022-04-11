@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bridge",
+    "texture": "06c00ba7-62bf-4d00-aac4-bb260e1002f6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      71,
+      24
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      71,
+      24
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

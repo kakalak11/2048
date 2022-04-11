@@ -430,12 +430,12 @@
     "relativePath": "font/ClearSans-Bold.ttf"
   },
   "d6a6d43c-5c85-4edb-8438-bf14882a9b82": {
-    "asset": 1649495167970,
+    "asset": 1649668209963,
     "meta": 1638930068025,
     "relativePath": "prefab"
   },
   "b01bdea1-103d-4ac9-96c4-664c0468ce1f": {
-    "asset": 1649492320726,
+    "asset": 1649668321872,
     "meta": 1638930068026,
     "relativePath": "scenes"
   },
@@ -450,8 +450,8 @@
     "relativePath": "scripts"
   },
   "a5eddeb4-d58c-41b0-8c55-86d46e9a07bb": {
-    "asset": 1649502593288,
-    "meta": 1649502593305,
+    "asset": 1649685460870,
+    "meta": 1649685460876,
     "relativePath": "prefab/TilePrefab.prefab"
   },
   "34059621-6b2e-4914-8782-cf0e3cab7bb8": {
@@ -465,9 +465,9 @@
     "relativePath": "sounds/soundtrack.mp3"
   },
   "b178aee5-c85c-4ba9-8811-93045e7b546f": {
-    "asset": 1639965494333,
-    "meta": 1640224264638,
-    "relativePath": "scenes/test.fire"
+    "asset": 1649672811374,
+    "meta": 1649672811382,
+    "relativePath": "scenes/testScene/test.fire"
   },
   "b2ab73fa-8e9d-43d9-9611-be721b4518b8": {
     "asset": 1639965494336,
@@ -570,8 +570,8 @@
     "relativePath": "scripts/out-of-date/leaderBoardScript.js"
   },
   "eb43bd58-e234-4068-9c36-aa5db945cbe0": {
-    "asset": 1649568978761,
-    "meta": 1649568978769,
+    "asset": 1649685599712,
+    "meta": 1649685599717,
     "relativePath": "scenes/2048-v2.fire"
   },
   "25aa30bd-c766-40b9-8c3b-ad974c15574d": {
@@ -680,7 +680,7 @@
     "relativePath": "sprites/tutorial/tutorial-07.jpeg"
   },
   "a50380f7-cff8-4703-ab1c-abbff9842d2e": {
-    "asset": 1649499724783,
+    "asset": 1649569105008,
     "meta": 1649494269454,
     "relativePath": "scripts/core"
   },
@@ -709,30 +709,10 @@
     "meta": 1649496455555,
     "relativePath": "scripts/prefab/TilePrefabComponent.ts"
   },
-  "0d6cf932-d3fc-4e50-a7a4-6c8f4252fb9f": {
-    "asset": 1649499369754,
-    "meta": 1649499372112,
-    "relativePath": "scripts/common/PoolFactory.ts"
-  },
-  "e96b4b81-1577-4352-b16b-0811b0433ff5": {
-    "asset": 1649499917801,
-    "meta": 1649499919272,
-    "relativePath": "scripts/core/GameDirector.ts"
-  },
-  "f4918096-4d15-4f79-82d1-8b4d2df41406": {
-    "asset": 1649567939644,
-    "meta": 1649567942523,
-    "relativePath": "scripts/common/getGameConfig.ts"
-  },
   "b0d6bd29-74c5-49de-94d9-82f0f89be202": {
     "asset": 1649568776535,
     "meta": 1649568842939,
     "relativePath": "scripts/core/GameManager.ts"
-  },
-  "1fcb3c66-94cc-4b99-9dab-fd8e6263f3c1": {
-    "asset": 1649568923006,
-    "meta": 1649568926849,
-    "relativePath": "scripts/core/GameTable.ts"
   },
   "79545e93-e5ee-4111-82d0-17980efb3361": {
     "asset": 1649569074830,
@@ -743,5 +723,455 @@
     "asset": 1649569339433,
     "meta": 1649569359986,
     "relativePath": "scripts/core/GameManagerv1.ts"
+  },
+  "f2493bca-b8ae-40e1-9c7a-27a6d5294205": {
+    "asset": 1649668209961,
+    "meta": 1649668209963,
+    "relativePath": "prefab/UI_TableBackgroundPrefab.prefab"
+  },
+  "0498acc1-5bce-4aa2-b85d-d16a81c22dec": {
+    "asset": 1649668333836,
+    "meta": 1649668314958,
+    "relativePath": "scenes/testScene"
+  },
+  "b7a99bff-14fb-4959-9d88-e44eb42a9a4d": {
+    "asset": 1649668342710,
+    "meta": 1649668330793,
+    "relativePath": "scenes/testScene/testScript"
+  },
+  "390dc8a6-962d-41d5-9dd4-5512bcb01b58": {
+    "asset": 1649674756218,
+    "meta": 1649674758662,
+    "relativePath": "scenes/testScene/testScript/TimerManager.ts"
+  },
+  "83d7fb2c-bd93-48ac-8d8b-a3e8fb05b0f8": {
+    "asset": 1649683121127,
+    "meta": 1649683121100,
+    "relativePath": "platformerArt_v4"
+  },
+  "5815269a-d5f8-407f-8797-938570cdea83": {
+    "asset": 1357903144000,
+    "meta": 1649683121236,
+    "relativePath": "platformerArt_v4/platformerArt.ai"
+  },
+  "c3983ba3-68fc-4a90-bd86-dde6f7ca348e": {
+    "asset": 1357903122000,
+    "meta": 1649683121239,
+    "relativePath": "platformerArt_v4/platformerArt.svg"
+  },
+  "7a23e0ca-c7a0-48bd-a9d4-9efa1f7ac717": {
+    "asset": 1649683121126,
+    "meta": 1649683121101,
+    "relativePath": "platformerArt_v4/png"
+  },
+  "483c148e-e7dd-4172-81e8-2483e212bf12": {
+    "asset": 1357903098000,
+    "meta": 1649683121242,
+    "relativePath": "platformerArt_v4/platformerArt.swf"
+  },
+  "f8302e89-3c3b-446b-9322-d6e69cb15b77": {
+    "asset": 1357903248000,
+    "meta": 1649683121322,
+    "relativePath": "platformerArt_v4/png/alien_plant.png"
+  },
+  "75fa13f8-9805-4189-8e00-f7b0b1040243": {
+    "asset": 1349372974000,
+    "meta": 1649683121327,
+    "relativePath": "platformerArt_v4/png/block.png"
+  },
+  "7c4dfaea-2ff4-44df-b2e5-c310fa6980b4": {
+    "asset": 1349372946000,
+    "meta": 1649683121331,
+    "relativePath": "platformerArt_v4/png/bonus_used.png"
+  },
+  "92142e3a-c6c6-4c75-9e7e-3f474314e647": {
+    "asset": 1349372932000,
+    "meta": 1649683121337,
+    "relativePath": "platformerArt_v4/png/bonus.png"
+  },
+  "06c00ba7-62bf-4d00-aac4-bb260e1002f6": {
+    "asset": 1357903248000,
+    "meta": 1649683121339,
+    "relativePath": "platformerArt_v4/png/bridge.png"
+  },
+  "e5ef8732-65da-4f10-b2c7-412e9450c65f": {
+    "asset": 1649683121110,
+    "meta": 1649683121103,
+    "relativePath": "platformerArt_v4/png/character"
+  },
+  "e9128964-7530-4bfd-9cbc-1e39ac3214f6": {
+    "asset": 1349373076000,
+    "meta": 1649683121355,
+    "relativePath": "platformerArt_v4/png/bush.png"
+  },
+  "4076b264-0603-4406-8336-f05f8b9386a6": {
+    "asset": 1349422734000,
+    "meta": 1649683121356,
+    "relativePath": "platformerArt_v4/png/character/front.png"
+  },
+  "b5069bab-1efb-4588-8f36-ec503def16bd": {
+    "asset": 1649683121104,
+    "meta": 1649683121104,
+    "relativePath": "platformerArt_v4/png/character/sheet"
+  },
+  "f77eb670-a511-4951-a7c7-9012b447a06a": {
+    "asset": 1349422758000,
+    "meta": 1649683121368,
+    "relativePath": "platformerArt_v4/png/character/jump.png"
+  },
+  "d545a056-a114-43ec-979e-b0d6c3bf9793": {
+    "asset": 1349422748000,
+    "meta": 1649683121378,
+    "relativePath": "platformerArt_v4/png/character/side.png"
+  },
+  "6615e868-2f54-4976-9f24-f8fe65e83323": {
+    "asset": 1649683121113,
+    "meta": 1649683121109,
+    "relativePath": "platformerArt_v4/png/character/walk"
+  },
+  "17a54b80-09ec-4b63-9c56-8e583c06241d": {
+    "asset": 1349422692000,
+    "meta": 1649683121380,
+    "relativePath": "platformerArt_v4/png/character/walk_animation.fla"
+  },
+  "5f170547-06c9-4015-b984-51ad339dc566": {
+    "asset": 1349422682000,
+    "meta": 1649683121382,
+    "relativePath": "platformerArt_v4/png/character/walk_animation.swf"
+  },
+  "a4506c8a-e8ef-4bdd-b406-f74df545e36a": {
+    "asset": 1349524072000,
+    "meta": 1649683121390,
+    "relativePath": "platformerArt_v4/png/character/sheet/walk_sheet.png"
+  },
+  "5d0e214d-f7c8-41a4-9b41-52b1daa029df": {
+    "asset": 1349523986000,
+    "meta": 1649683121393,
+    "relativePath": "platformerArt_v4/png/character/walk/walk0001.png"
+  },
+  "b4847aac-3457-414a-b685-0cd2528d83aa": {
+    "asset": 1349523986000,
+    "meta": 1649683121402,
+    "relativePath": "platformerArt_v4/png/character/walk/walk0002.png"
+  },
+  "40e4dad7-22ce-4fb0-a1e1-3254c08e2972": {
+    "asset": 1349523986000,
+    "meta": 1649683121404,
+    "relativePath": "platformerArt_v4/png/character/walk/walk0003.png"
+  },
+  "f586975e-0949-4dd1-952f-171cf4b97d47": {
+    "asset": 1349523986000,
+    "meta": 1649683121415,
+    "relativePath": "platformerArt_v4/png/character/walk/walk0004.png"
+  },
+  "86e01aaa-e6a1-4900-8f51-32adffeb2aab": {
+    "asset": 1349523986000,
+    "meta": 1649683121416,
+    "relativePath": "platformerArt_v4/png/character/walk/walk0005.png"
+  },
+  "4cc36f8d-1329-4fca-aa85-b034aa50f2fe": {
+    "asset": 1349523986000,
+    "meta": 1649683121427,
+    "relativePath": "platformerArt_v4/png/character/walk/walk0007.png"
+  },
+  "a910a735-289e-4520-bd52-f7d3f55ac0c7": {
+    "asset": 1349523986000,
+    "meta": 1649683121428,
+    "relativePath": "platformerArt_v4/png/character/walk/walk0006.png"
+  },
+  "b4d85dd8-13da-436f-9acc-7bff6e3a0362": {
+    "asset": 1349523986000,
+    "meta": 1649683121439,
+    "relativePath": "platformerArt_v4/png/character/walk/walk0008.png"
+  },
+  "2a5c4b90-d923-4fd6-9746-63a27c71c961": {
+    "asset": 1349523986000,
+    "meta": 1649683121440,
+    "relativePath": "platformerArt_v4/png/character/walk/walk0009.png"
+  },
+  "4ca85c0d-26d5-405c-b274-f9aad2bfb955": {
+    "asset": 1349523986000,
+    "meta": 1649683121452,
+    "relativePath": "platformerArt_v4/png/character/walk/walk0010.png"
+  },
+  "3499b529-22fd-47bc-9508-691f54920540": {
+    "asset": 1349523986000,
+    "meta": 1649683121453,
+    "relativePath": "platformerArt_v4/png/character/walk/walk0011.png"
+  },
+  "d18fe6f7-5fe8-4ec1-813d-483b3bf3d6db": {
+    "asset": 1349423530000,
+    "meta": 1649683121462,
+    "relativePath": "platformerArt_v4/png/cloud_1.png"
+  },
+  "8c75d306-950e-4af7-b8f3-88276929c1e7": {
+    "asset": 1349423538000,
+    "meta": 1649683121463,
+    "relativePath": "platformerArt_v4/png/cloud_2.png"
+  },
+  "589f08db-9b0e-43f8-bc14-e568d367fb93": {
+    "asset": 1357903248000,
+    "meta": 1649683121474,
+    "relativePath": "platformerArt_v4/png/coin_bronze.png"
+  },
+  "cec99e80-ac4b-4dff-8c42-83700b13e3f6": {
+    "asset": 1349423546000,
+    "meta": 1649683121474,
+    "relativePath": "platformerArt_v4/png/cloud_3.png"
+  },
+  "1c572db1-8ce8-436c-bdbf-24eb09149653": {
+    "asset": 1349373034000,
+    "meta": 1649683121484,
+    "relativePath": "platformerArt_v4/png/coin_gold.png"
+  },
+  "dba7c8ee-8e81-4be8-9ea9-633816a7f6f0": {
+    "asset": 1357903248000,
+    "meta": 1649683121485,
+    "relativePath": "platformerArt_v4/png/coin_silver.png"
+  },
+  "8baa6735-3e8c-4308-b9d2-36039fc06efb": {
+    "asset": 1649683121117,
+    "meta": 1649683121115,
+    "relativePath": "platformerArt_v4/png/enemies"
+  },
+  "174f7169-6306-49f6-b82c-1552749ef52b": {
+    "asset": 1349423292000,
+    "meta": 1649683121494,
+    "relativePath": "platformerArt_v4/png/enemies/fly_dead.png"
+  },
+  "5de00175-540c-47f3-b751-e37fce4dfb31": {
+    "asset": 1349373028000,
+    "meta": 1649683121495,
+    "relativePath": "platformerArt_v4/png/crate.png"
+  },
+  "57e6e23a-d90c-40f4-99c5-008a1defcc7e": {
+    "asset": 1349423284000,
+    "meta": 1649683121507,
+    "relativePath": "platformerArt_v4/png/enemies/fly_fly.png"
+  },
+  "e33679ae-eb04-42d7-8358-5b50d9dec35e": {
+    "asset": 1349423276000,
+    "meta": 1649683121508,
+    "relativePath": "platformerArt_v4/png/enemies/fly_normal.png"
+  },
+  "76dc3680-ce6d-47a3-b64d-1f743106f5fc": {
+    "asset": 1349423264000,
+    "meta": 1649683121515,
+    "relativePath": "platformerArt_v4/png/enemies/slime_dead.png"
+  },
+  "97f482e7-a15c-4eb7-80ee-91b79fd20a9b": {
+    "asset": 1349423250000,
+    "meta": 1649683121515,
+    "relativePath": "platformerArt_v4/png/enemies/slime_normal.png"
+  },
+  "b496d010-82d5-4334-b0ca-9134d37de033": {
+    "asset": 1349423256000,
+    "meta": 1649683121525,
+    "relativePath": "platformerArt_v4/png/enemies/slime_walk.png"
+  },
+  "26f3a04c-911b-48dc-81c8-a821d23a9e63": {
+    "asset": 1349373012000,
+    "meta": 1649683121528,
+    "relativePath": "platformerArt_v4/png/fence_broken.png"
+  },
+  "ff7c374c-c3f4-48c7-b3d8-4048cbd106c0": {
+    "asset": 1349373082000,
+    "meta": 1649683121539,
+    "relativePath": "platformerArt_v4/png/grass.png"
+  },
+  "9b44504f-84db-4045-adbd-3013f8812f5f": {
+    "asset": 1349373006000,
+    "meta": 1649683121540,
+    "relativePath": "platformerArt_v4/png/fence.png"
+  },
+  "d23a525f-0578-4607-958d-190cb55e5bd7": {
+    "asset": 1357903248000,
+    "meta": 1649683121552,
+    "relativePath": "platformerArt_v4/png/ground_dirt.png"
+  },
+  "e728d32f-9e2e-4ef9-ae04-f550c71d064b": {
+    "asset": 1349372962000,
+    "meta": 1649683121553,
+    "relativePath": "platformerArt_v4/png/ground_cave.png"
+  },
+  "63520776-7ae9-46e9-9ed5-c10f779b208f": {
+    "asset": 1357903248000,
+    "meta": 1649683121566,
+    "relativePath": "platformerArt_v4/png/ground_sand.png"
+  },
+  "1b647bb9-bc82-4f4e-998f-6c901b9c456a": {
+    "asset": 1357903248000,
+    "meta": 1649683121567,
+    "relativePath": "platformerArt_v4/png/ground_rock.png"
+  },
+  "38688b02-d452-4925-89bd-68b78150a022": {
+    "asset": 1349372918000,
+    "meta": 1649683121579,
+    "relativePath": "platformerArt_v4/png/ground.png"
+  },
+  "2bbfa26c-a62d-4cb6-8977-8c2233991393": {
+    "asset": 1349372988000,
+    "meta": 1649683121583,
+    "relativePath": "platformerArt_v4/png/hill_long.png"
+  },
+  "0b710bc3-bc67-4b63-ac26-19e83a3563dd": {
+    "asset": 1357903248000,
+    "meta": 1649683121592,
+    "relativePath": "platformerArt_v4/png/key_blue.png"
+  },
+  "4ea275ab-f8de-4b97-827d-3b5088e059bf": {
+    "asset": 1349372996000,
+    "meta": 1649683121592,
+    "relativePath": "platformerArt_v4/png/hill_short.png"
+  },
+  "c4298e0b-59f6-4eba-901d-20c3628d3c39": {
+    "asset": 1357903248000,
+    "meta": 1649683121603,
+    "relativePath": "platformerArt_v4/png/key_green.png"
+  },
+  "f2bbaa26-4923-4db1-83f9-1bddf34d4e64": {
+    "asset": 1357903248000,
+    "meta": 1649683121604,
+    "relativePath": "platformerArt_v4/png/key_red.png"
+  },
+  "430fe8f0-b767-4db2-bdef-b2c7b1f7521b": {
+    "asset": 1357903248000,
+    "meta": 1649683121612,
+    "relativePath": "platformerArt_v4/png/key_yellow.png"
+  },
+  "1e57b5ea-7807-4567-86fd-6b866b0ab2f5": {
+    "asset": 1357903248000,
+    "meta": 1649683121613,
+    "relativePath": "platformerArt_v4/png/lava.png"
+  },
+  "bc8b9aed-7f01-4c25-859d-579e02d1a1cc": {
+    "asset": 1357903248000,
+    "meta": 1649683121625,
+    "relativePath": "platformerArt_v4/png/lock_blue.png"
+  },
+  "d2d6ee89-7f69-4331-bbf5-dcedae42ec20": {
+    "asset": 1357903248000,
+    "meta": 1649683121625,
+    "relativePath": "platformerArt_v4/png/lock_green.png"
+  },
+  "689f4628-21fa-40ee-96fb-93da57d8325d": {
+    "asset": 1357903248000,
+    "meta": 1649683121685,
+    "relativePath": "platformerArt_v4/png/lock_yellow.png"
+  },
+  "07c29872-76b5-470d-be5b-84b9833daad0": {
+    "asset": 1357903248000,
+    "meta": 1649683121686,
+    "relativePath": "platformerArt_v4/png/lock_red.png"
+  },
+  "17c237f9-9219-49ca-b82e-f035476972f0": {
+    "asset": 1357903248000,
+    "meta": 1649683121703,
+    "relativePath": "platformerArt_v4/png/plank.png"
+  },
+  "08bc66f8-4d4f-41b9-94ec-b298e9f84b5f": {
+    "asset": 1357903248000,
+    "meta": 1649683121704,
+    "relativePath": "platformerArt_v4/png/rock.png"
+  },
+  "1ad305a2-425b-41d1-9bc0-600c0f00bbd2": {
+    "asset": 1349373090000,
+    "meta": 1649683121716,
+    "relativePath": "platformerArt_v4/png/shroom.png"
+  },
+  "e4226002-57f7-4731-a39a-1dde5765d2de": {
+    "asset": 1349373020000,
+    "meta": 1649683121717,
+    "relativePath": "platformerArt_v4/png/spikes.png"
+  },
+  "12bb8ad8-007f-43d4-bb56-2dd57686353b": {
+    "asset": 1357903248000,
+    "meta": 1649683121726,
+    "relativePath": "platformerArt_v4/png/switch_blue_off.png"
+  },
+  "46721dda-0e2f-40e0-944f-5487426e7744": {
+    "asset": 1357903248000,
+    "meta": 1649683121727,
+    "relativePath": "platformerArt_v4/png/switch_blue_on.png"
+  },
+  "bfae3bf5-3490-4c09-8be9-9d9eb2988dc6": {
+    "asset": 1357903248000,
+    "meta": 1649683121737,
+    "relativePath": "platformerArt_v4/png/switch_green_off.png"
+  },
+  "4d1b2f38-a9c9-4655-8346-55d47dc068c2": {
+    "asset": 1357903248000,
+    "meta": 1649683121738,
+    "relativePath": "platformerArt_v4/png/switch_green_on.png"
+  },
+  "32e5320b-9958-41d4-b880-71838eda64cc": {
+    "asset": 1357903248000,
+    "meta": 1649683121751,
+    "relativePath": "platformerArt_v4/png/switch_red_on.png"
+  },
+  "20664e3b-e068-4df3-a436-fc6c9308148a": {
+    "asset": 1357903248000,
+    "meta": 1649683121754,
+    "relativePath": "platformerArt_v4/png/switch_red_off.png"
+  },
+  "29708616-2d1f-4cd6-ab02-226f7d237d2c": {
+    "asset": 1357903248000,
+    "meta": 1649683121767,
+    "relativePath": "platformerArt_v4/png/switch_yellow_on.png"
+  },
+  "3fbff3ba-7b61-43ef-b80c-18d0e824f27f": {
+    "asset": 1357903248000,
+    "meta": 1649683121768,
+    "relativePath": "platformerArt_v4/png/switch_yellow_off.png"
+  },
+  "d9bee359-cab5-4084-afd0-0dd714167240": {
+    "asset": 1349372980000,
+    "meta": 1649683121780,
+    "relativePath": "platformerArt_v4/png/water.png"
+  },
+  "7364a6e8-1597-4531-9f33-1fd091249a60": {
+    "asset": 1357903198000,
+    "meta": 1649683121782,
+    "relativePath": "platformerArt_v4/readme.txt"
+  },
+  "0e3e89e9-4205-400f-8c10-330f27c49e4f": {
+    "asset": 1357903178000,
+    "meta": 1649683121791,
+    "relativePath": "platformerArt_v4/preview.jpg"
+  },
+  "95d094ad-ef86-4db4-8df0-2918c69f7042": {
+    "asset": 1649683505031,
+    "meta": 1649683505045,
+    "relativePath": "platformerArt_v4/platform.fire"
+  },
+  "cbe6092f-24a4-4ec8-aaf5-a8bba8f85dbb": {
+    "asset": 1649683408510,
+    "meta": 1649683408514,
+    "relativePath": "platformerArt_v4/png/character/walk/WalkAnimation.anim"
+  },
+  "f4918096-4d15-4f79-82d1-8b4d2df41406": {
+    "asset": 1649683809712,
+    "meta": 1649683810604,
+    "relativePath": "scripts/common/getGameConfig.ts"
+  },
+  "0d6cf932-d3fc-4e50-a7a4-6c8f4252fb9f": {
+    "asset": 1649684558409,
+    "meta": 1649684561144,
+    "relativePath": "scripts/common/PoolFactory.ts"
+  },
+  "c0979170-f776-48ef-a4da-b6b0969ae28f": {
+    "asset": 1649684814328,
+    "meta": 1649684949757,
+    "relativePath": "scripts/core/GameControllerComponent.ts"
+  },
+  "e96b4b81-1577-4352-b16b-0811b0433ff5": {
+    "asset": 1649684822844,
+    "meta": 1649684949757,
+    "relativePath": "scripts/core/GameDirector.ts"
+  },
+  "1fcb3c66-94cc-4b99-9dab-fd8e6263f3c1": {
+    "asset": 1649685387162,
+    "meta": 1649685388532,
+    "relativePath": "scripts/core/GameTable.ts"
   }
 }

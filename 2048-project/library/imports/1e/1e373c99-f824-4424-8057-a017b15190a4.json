@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hill_long",
+    "texture": "2bbfa26c-a62d-4cb6-8977-8c2233991393",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      48,
+      146
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      48,
+      146
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

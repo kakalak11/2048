@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "slime_walk",
+    "texture": "b496d010-82d5-4334-b0ca-9134d37de033",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      43,
+      26
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      43,
+      26
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -24,7 +24,8 @@ var NewClass = /** @class */ (function (_super) {
             },
             TABLE_CONFIG: {
                 FORMAT: [4, 4, 4, 4],
-                STEP: 76.5,
+                STEP: 84,
+                START_POS: cc.v2(-126, 126),
             }
         };
     };
@@ -34,6 +35,5 @@ var NewClass = /** @class */ (function (_super) {
     return NewClass;
 }(cc.Component));
 exports.default = NewClass;
-//{-114,114},{-114,37.5}
 
 cc._RF.pop();

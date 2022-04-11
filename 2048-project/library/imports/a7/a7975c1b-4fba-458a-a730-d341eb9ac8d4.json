@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "switch_yellow_off",
+    "texture": "3fbff3ba-7b61-43ef-b80c-18d0e824f27f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      70,
+      46
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      70,
+      46
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

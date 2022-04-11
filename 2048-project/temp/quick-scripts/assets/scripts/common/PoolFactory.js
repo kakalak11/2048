@@ -9,7 +9,6 @@ var PoolFactoryComponent = /** @class */ (function () {
         this.prefabName = '';
         this.prefab = null;
         this.initialCount = 5;
-        this.objectPrefab = null;
     }
     __decorate([
         property({ displayName: 'Prefab Name', visible: true })
@@ -40,14 +39,14 @@ var PoolFactory = /** @class */ (function (_super) {
             var compName = this.poolPrefabList[i].prefabName;
             var aPool = new cc.NodePool(compName);
             for (var j = 0; j < this.poolPrefabList[i].initialCount; j++) {
-                var obj = cc.instantiate(this.poolPrefabList[i].objectPrefab);
+                var obj = cc.instantiate(this.poolPrefabList[i].prefab);
                 obj.name = compName;
                 obj.active = false;
                 aPool.put(obj);
             }
             var poolObject = {
                 prefabName: this.poolPrefabList[i].prefabName,
-                objectPrefab: this.poolPrefabList[i].objectPrefab,
+                objectPrefab: this.poolPrefabList[i].prefab,
                 pool: aPool,
             };
             this.pools[i] = poolObject;
@@ -58,13 +57,13 @@ var PoolFactory = /** @class */ (function (_super) {
     PoolFactory.prototype.getObject = function (_prefabName) {
         var obj = null;
         for (var i = 0; i < this.pools.length; i++) {
-            var _a = this.pools[i], prefabName = _a.prefabName, objectPrefab = _a.objectPrefab, pool = _a.pool;
+            var _a = this.pools[i], prefabName = _a.prefabName, prefab = _a.prefab, pool = _a.pool;
             if (prefabName == _prefabName) {
                 if (pool.size() > 0) {
                     obj = pool.get();
                 }
                 else {
-                    obj = cc.instantiate(objectPrefab);
+                    obj = cc.instantiate(prefab);
                     obj.name = prefabName;
                     obj.active = false;
                 }
@@ -92,7 +91,7 @@ var PoolFactory = /** @class */ (function (_super) {
             if (pool) {
                 pool.clear();
             }
-            this.poolPrefabList[i].objectPrefab = null;
+            this.poolPrefabList[i].prefab = null;
         }
         this.pools = [];
         this.pools = null;

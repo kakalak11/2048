@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "fence_broken",
+    "texture": "26f3a04c-911b-48dc-81c8-a821d23a9e63",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      70,
+      61
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      70,
+      61
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

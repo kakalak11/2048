@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "fly_dead",
+    "texture": "174f7169-6306-49f6-b82c-1552749ef52b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      69,
+      32
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      69,
+      32
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

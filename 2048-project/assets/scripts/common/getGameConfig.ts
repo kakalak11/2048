@@ -18,10 +18,10 @@ export default class NewClass extends cc.Component {
             },
             TABLE_CONFIG: {
                 FORMAT: [4, 4, 4, 4],
-                STEP: 76.5,
+                STEP: 84,
+                START_POS: cc.v2(-126,126),
+
             }
         }
     }
 }
-
-//{-114,114},{-114,37.5}

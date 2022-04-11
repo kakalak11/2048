@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "switch_green_off",
+    "texture": "bfae3bf5-3490-4c09-8be9-9d9eb2988dc6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      70,
+      46
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      70,
+      46
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

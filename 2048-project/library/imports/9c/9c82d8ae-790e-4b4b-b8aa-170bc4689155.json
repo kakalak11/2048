@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "lava",
+    "texture": "1e57b5ea-7807-4567-86fd-6b866b0ab2f5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      70,
+      45
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      70,
+      45
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

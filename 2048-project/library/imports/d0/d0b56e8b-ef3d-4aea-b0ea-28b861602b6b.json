@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "switch_blue_off",
+    "texture": "12bb8ad8-007f-43d4-bb56-2dd57686353b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      70,
+      46
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      70,
+      46
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

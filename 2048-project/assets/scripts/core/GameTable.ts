@@ -24,17 +24,21 @@ export default class GameTable extends cc.Component {
     };
 
     tableSetup() {
-        const { TABLE_FORMAT } = this.config;
+        // const { TABLE_FORMAT } = this.config;
 
         this.randomGenerateTile();
         this.randomGenerateTile();
     };
 
     randomGenerateTile() {
-        const { STEP, TABLE_FORMAT } = this.config;
-        const randomX = Math.floor(Math.random() * TABLE_FORMAT.length);
-        const randomY = Math.floor(Math.random() * TABLE_FORMAT[0]);
+        const { TABLE_CONFIG } = this.config;
+        const { STEP, FORMAT } = TABLE_CONFIG;
+        const randomX = Math.floor(Math.random() * FORMAT.length) * STEP;
+        const randomY = Math.floor(Math.random() * FORMAT[0]) * STEP;
 
-        const object = this.poolFactory.getObject()
+        const object = this.poolFactory.getObject(this.prefabName);
+        object.parent = this.tilesHolder;
+        object.active = true;
+        object.setPosition(randomX, randomY);
     };
 }

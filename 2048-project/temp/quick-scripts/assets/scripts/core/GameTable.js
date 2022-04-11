@@ -23,16 +23,20 @@ var GameTable = /** @class */ (function (_super) {
     };
     ;
     GameTable.prototype.tableSetup = function () {
-        var TABLE_FORMAT = this.config.TABLE_FORMAT;
+        // const { TABLE_FORMAT } = this.config;
         this.randomGenerateTile();
         this.randomGenerateTile();
     };
     ;
     GameTable.prototype.randomGenerateTile = function () {
-        var _a = this.config, STEP = _a.STEP, TABLE_FORMAT = _a.TABLE_FORMAT;
-        var randomX = Math.floor(Math.random() * TABLE_FORMAT.length);
-        var randomY = Math.floor(Math.random() * TABLE_FORMAT[0]);
-        var object = this.poolFactory.getObject();
+        var TABLE_CONFIG = this.config.TABLE_CONFIG;
+        var STEP = TABLE_CONFIG.STEP, FORMAT = TABLE_CONFIG.FORMAT;
+        var randomX = Math.floor(Math.random() * FORMAT.length) * STEP;
+        var randomY = Math.floor(Math.random() * FORMAT[0]) * STEP;
+        var object = this.poolFactory.getObject(this.prefabName);
+        object.parent = this.tilesHolder;
+        object.active = true;
+        object.setPosition(randomX, randomY);
     };
     ;
     __decorate([

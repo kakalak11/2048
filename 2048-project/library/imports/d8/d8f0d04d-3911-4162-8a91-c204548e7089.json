@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "switch_red_off",
+    "texture": "20664e3b-e068-4df3-a436-fc6c9308148a",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      70,
+      46
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      70,
+      46
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
