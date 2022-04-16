@@ -1,0 +1,7 @@
+{
+  "__type__": "cc.TextAsset",
+  "_name": "license",
+  "_objFlags": 0,
+  "_native": "",
+  "text": "\r\n###############################################################################\r\n\r\n\tUI pack by Kenney Vleugels (www.kenney.nl)\r\n\r\n\t\t\t------------------------------\r\n\r\n\t\t\t        License (CC0)\r\n\t       http://creativecommons.org/publicdomain/zero/1.0/\r\n\r\n\tYou may use these graphics in personal and commercial projects.\r\n\tCredit (Kenney or www.kenney.nl) would be nice but is not mandatory.\r\n\r\n###############################################################################"
+}

@@ -1,4 +1,5 @@
 import PoolFactory from "../common/PoolFactory";
+import getGameConfig from "../common/getGameConfig";
 
 const { ccclass, property } = cc._decorator;
 
@@ -12,7 +13,7 @@ export default class GameDirector extends cc.Component {
     gameManager: cc.Node = null;
 
     onLoad() {
-
+        console.log(getGameConfig);
     }
 
     start() {

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dropdownTop",
+    "texture": "aece5fee-e76c-4784-8eaf-0aed0ce05961",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      190,
+      24
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      190,
+      24
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

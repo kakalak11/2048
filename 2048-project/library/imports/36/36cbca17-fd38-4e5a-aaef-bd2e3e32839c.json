@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "greySheet",
+    "texture": "a4934f07-3047-4f43-a32f-d7115c50035c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      293,
+      509
+    ],
+    "offset": [
+      -109.5,
+      1.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "woodSword",
+    "texture": "851c9d70-992c-43d6-9563-4d28e024393b",
+    "atlas": "",
+    "rect": [
+      108,
+      109,
+      295,
+      294
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

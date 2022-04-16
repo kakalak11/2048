@@ -1,7 +1,7 @@
 const { ccclass, property } = cc._decorator;
 
-@ccclass
-export default class NewClass extends cc.Component {
+@ccclass('getGameConfig')
+export default class getGameConfig extends cc.Component {
 
     onLoad() {
         (this.node as any).config = {

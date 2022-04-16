@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "red_sliderUp",
+    "texture": "8c2b8057-e543-4df5-b0bc-107efa73eaa6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      28,
+      42
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      28,
+      42
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

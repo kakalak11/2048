@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "upg_armor",
+    "texture": "b12412b4-03d5-4d9b-9072-60fff34e54c4",
+    "atlas": "",
+    "rect": [
+      0,
+      14,
+      500,
+      474
+    ],
+    "offset": [
+      -6,
+      5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

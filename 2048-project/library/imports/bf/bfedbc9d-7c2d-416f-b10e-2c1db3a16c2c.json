@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "upg_sword",
+    "texture": "f2f7423f-273e-408b-ac07-6b97dd82a8d8",
+    "atlas": "",
+    "rect": [
+      24,
+      20,
+      84,
+      90
+    ],
+    "offset": [
+      2,
+      -1
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

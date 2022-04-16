@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "swordWood",
+    "texture": "edaa7f06-7808-4a8d-bb3d-e97e6b77dfa5",
+    "atlas": "",
+    "rect": [
+      27,
+      27,
+      73,
+      74
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

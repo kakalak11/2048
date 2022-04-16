@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "upg_helmet",
+    "texture": "f869bddc-060a-42e8-a7fa-a003003e9f75",
+    "atlas": "",
+    "rect": [
+      17,
+      9,
+      30,
+      41
+    ],
+    "offset": [
+      0,
+      2.5
+    ],
+    "originalSize": [
+      64,
+      64
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

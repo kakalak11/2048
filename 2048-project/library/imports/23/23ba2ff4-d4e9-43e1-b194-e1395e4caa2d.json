@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "blue_sliderUp",
+    "texture": "c2ac1ddc-786c-4cda-8f5e-8212ce6310b5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      28,
+      42
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      28,
+      42
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

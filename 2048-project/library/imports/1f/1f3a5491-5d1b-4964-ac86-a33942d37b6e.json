@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "upg_bow",
+    "texture": "76a12d4f-2a96-49d7-ba25-9bb84785515a",
+    "atlas": "",
+    "rect": [
+      93,
+      61,
+      312,
+      391
+    ],
+    "offset": [
+      -7,
+      -0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "upg_shieldSmall",
+    "texture": "7533ac5a-585e-493d-8601-ea519c23acad",
+    "atlas": "",
+    "rect": [
+      92,
+      81,
+      280,
+      290
+    ],
+    "offset": [
+      -24,
+      30
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

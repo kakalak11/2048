@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "upg_axeDouble",
+    "texture": "8f8e6292-7f41-43d0-b8cb-a0546c3d57a6",
+    "atlas": "",
+    "rect": [
+      3,
+      4,
+      55,
+      53
+    ],
+    "offset": [
+      -1.5,
+      1.5
+    ],
+    "originalSize": [
+      64,
+      64
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

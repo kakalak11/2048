@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "grey_sliderHorizontal",
+    "texture": "78c6649b-acff-418b-809c-01484d7d2e5d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      190,
+      4
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      190,
+      4
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

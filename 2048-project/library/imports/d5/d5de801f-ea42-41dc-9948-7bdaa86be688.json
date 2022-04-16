@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "redSheet",
+    "texture": "5a3f1824-8aff-4bf3-9cb8-ea546040d7bd",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      444,
+      253
+    ],
+    "offset": [
+      -34,
+      1.5
+    ],
+    "originalSize": [
+      512,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

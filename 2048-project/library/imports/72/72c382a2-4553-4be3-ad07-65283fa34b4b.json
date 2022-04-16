@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "upg_dagger",
+    "texture": "6ed8f33e-33dd-44de-a94e-fc9eb010dab1",
+    "atlas": "",
+    "rect": [
+      19,
+      21,
+      26,
+      31
+    ],
+    "offset": [
+      0,
+      -4.5
+    ],
+    "originalSize": [
+      64,
+      64
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

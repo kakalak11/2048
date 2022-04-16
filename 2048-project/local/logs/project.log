@@ -1,139 +1,314 @@
-2022-04-11T13:18:36.752Z - normal: Load ~/.CocosCreator/settings.json
-2022-04-11T13:18:36.803Z - normal: Initializing Asset Database
-2022-04-11T13:18:36.805Z - normal: checking language setting...
-2022-04-11T13:18:36.805Z - normal: Language: en
-2022-04-11T13:18:37.437Z - success: preview server running at http://localhost:7456
-2022-04-11T13:18:37.446Z - success: protocol editor-framework registered
-2022-04-11T13:18:37.446Z - success: protocol app registered
-2022-04-11T13:18:37.446Z - success: protocol theme registered
-2022-04-11T13:18:37.446Z - success: protocol packages registered
-2022-04-11T13:18:37.446Z - success: protocol uuid registerred
-2022-04-11T13:18:37.447Z - success: protocol db registerred
-2022-04-11T13:18:37.447Z - success: protocol thumbnail registerred
-2022-04-11T13:18:37.447Z - success: protocol unpack registerred
-2022-04-11T13:18:37.447Z - success: protocol disable-commonjs registerred
-2022-04-11T13:18:38.552Z - normal: connected!
-2022-04-11T13:18:38.553Z - normal: Check project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
-2022-04-11T13:18:38.555Z - normal: Initializing project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
-2022-04-11T13:18:38.892Z - normal: Initializing Cocos2d
-2022-04-11T13:18:39.503Z - normal: Initializing engine extends
-2022-04-11T13:18:39.529Z - success: alipay-adapter loaded
-2022-04-11T13:18:39.536Z - success: asset-db-debugger loaded
-2022-04-11T13:18:39.542Z - success: baidu-adapter loaded
-2022-04-11T13:18:39.548Z - success: color-picker loaded
-2022-04-11T13:18:39.680Z - success: fb-audience-network loaded
-2022-04-11T13:18:39.728Z - success: fb-live-stream loaded
-2022-04-11T13:18:39.731Z - success: google-play-instant loaded
-2022-04-11T13:18:39.736Z - success: huawei-runtime loaded
-2022-04-11T13:18:39.934Z - success: cpk-publish loaded
-2022-04-11T13:18:39.935Z - success: jsb-adapter loaded
-2022-04-11T13:18:39.940Z - success: oppo-runtime loaded
-2022-04-11T13:18:39.945Z - success: package-manager loaded
-2022-04-11T13:18:40.055Z - success: qqplay-adapter loaded
-2022-04-11T13:18:40.057Z - success: runtime-dev-tools loaded
-2022-04-11T13:18:40.080Z - success: sdkbox loaded
-2022-04-11T13:18:40.085Z - success: tester loaded
-2022-04-11T13:18:40.089Z - success: ui-kit-preview-extra loaded
-2022-04-11T13:18:40.092Z - success: ui-kit-preview loaded
-2022-04-11T13:18:40.094Z - success: ui-kit loaded
-2022-04-11T13:18:40.100Z - success: vivo-runtime loaded
-2022-04-11T13:18:40.101Z - success: weapp-adapter loaded
-2022-04-11T13:18:40.102Z - success: xiaomi-adapter loaded
-2022-04-11T13:18:40.105Z - success: alipay-minigame loaded
-2022-04-11T13:18:40.139Z - success: assets loaded
-2022-04-11T13:18:40.142Z - success: builder loaded
-2022-04-11T13:18:40.374Z - success: cocos-services loaded
-2022-04-11T13:18:40.378Z - success: console loaded
-2022-04-11T13:18:40.406Z - success: fb-instant-games loaded
-2022-04-11T13:18:40.410Z - success: game-window loaded
-2022-04-11T13:18:40.411Z - success: google-instant-games loaded
-2022-04-11T13:18:40.415Z - success: hierarchy loaded
-2022-04-11T13:18:40.424Z - success: inspector loaded
-2022-04-11T13:18:40.426Z - success: keystore loaded
-2022-04-11T13:18:40.430Z - success: node-library loaded
-2022-04-11T13:18:40.432Z - success: package-asset loaded
-2022-04-11T13:18:40.433Z - success: preferences loaded
-2022-04-11T13:18:40.436Z - success: project-exporter loaded
-2022-04-11T13:18:40.440Z - success: project-importer loaded
-2022-04-11T13:18:40.443Z - success: project-settings loaded
-2022-04-11T13:18:40.448Z - success: scene loaded
-2022-04-11T13:18:40.449Z - success: simulator-debugger loaded
-2022-04-11T13:18:40.450Z - success: sprite-editor loaded
-2022-04-11T13:18:40.455Z - success: store loaded
-2022-04-11T13:18:40.462Z - success: timeline loaded
-2022-04-11T13:18:40.466Z - success: xiaomi-runtime loaded
-2022-04-11T13:18:42.319Z - normal: Loading packages
-2022-04-11T13:18:42.324Z - normal: Watching packages
-2022-04-11T13:18:42.331Z - info: Cocos Services load base data!
-2022-04-11T13:18:42.414Z - normal: Run Application
-2022-04-11T13:18:46.290Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:18:46.291Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:18:46.293Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:18:46.296Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:29:42.591Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:29:42.593Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:29:42.594Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:29:42.598Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:30:11.078Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:30:11.078Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:30:11.079Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:30:11.082Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:33:24.458Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:33:24.459Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:33:24.460Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:33:24.462Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:33:29.190Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:33:29.190Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:33:29.191Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:33:29.192Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:38:09.134Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
-2022-04-11T13:38:09.135Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:38:09.135Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:38:09.136Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:38:09.136Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:38:57.981Z - info: Only the prefab node "TilePrefab" and its child nodes are saved.
-2022-04-11T13:42:41.650Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
-2022-04-11T13:42:41.651Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:42:41.651Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:42:41.653Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:42:41.655Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:44:05.330Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
-2022-04-11T13:44:05.331Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:44:05.331Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:44:05.333Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:44:05.337Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:49:10.265Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
-2022-04-11T13:49:10.266Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:49:10.266Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:49:10.266Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:49:10.267Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:49:49.049Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
-2022-04-11T13:49:49.049Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:49:49.050Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:49:49.051Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:49:49.052Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:51:23.762Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
-2022-04-11T13:51:23.763Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:51:23.763Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:51:23.764Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:51:23.766Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:52:25.032Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
-2022-04-11T13:52:25.032Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:52:25.032Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:52:25.034Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:52:25.036Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:53:55.678Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
-2022-04-11T13:53:55.680Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:53:55.680Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:53:55.680Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:53:55.682Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:55:27.076Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
-2022-04-11T13:55:27.077Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:55:27.077Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:55:27.078Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:55:27.081Z - warn: Can not instantiate CCClass 'undefined' with arguments.
-2022-04-11T13:56:29.000Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
-2022-04-11T13:56:29.000Z - warn: Should not specify class name GameDirector for Component which defines in project.
-2022-04-11T13:56:29.001Z - warn: Should not specify class name GameManager for Component which defines in project.
-2022-04-11T13:56:29.002Z - warn: Should not specify class name GameTable for Component which defines in project.
-2022-04-11T13:56:29.003Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T18:26:16.416Z - normal: Load ~/.CocosCreator/settings.json
+2022-04-15T18:26:16.466Z - normal: Initializing Asset Database
+2022-04-15T18:26:16.469Z - normal: checking language setting...
+2022-04-15T18:26:16.469Z - normal: Language: en
+2022-04-15T18:26:17.097Z - success: preview server running at http://localhost:7457
+2022-04-15T18:26:17.109Z - success: protocol editor-framework registered
+2022-04-15T18:26:17.109Z - success: protocol app registered
+2022-04-15T18:26:17.109Z - success: protocol theme registered
+2022-04-15T18:26:17.110Z - success: protocol packages registered
+2022-04-15T18:26:17.110Z - success: protocol uuid registerred
+2022-04-15T18:26:17.110Z - success: protocol db registerred
+2022-04-15T18:26:17.110Z - success: protocol thumbnail registerred
+2022-04-15T18:26:17.110Z - success: protocol unpack registerred
+2022-04-15T18:26:17.110Z - success: protocol disable-commonjs registerred
+2022-04-15T18:26:17.997Z - normal: connected!
+2022-04-15T18:26:17.999Z - normal: Check project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
+2022-04-15T18:26:18.001Z - normal: Initializing project /Users/fe-anhtu-fresher/Desktop/cocos/2048/2048-project
+2022-04-15T18:26:18.344Z - normal: Initializing Cocos2d
+2022-04-15T18:26:18.993Z - normal: Initializing engine extends
+2022-04-15T18:26:19.013Z - success: alipay-adapter loaded
+2022-04-15T18:26:19.018Z - success: asset-db-debugger loaded
+2022-04-15T18:26:19.019Z - success: baidu-adapter loaded
+2022-04-15T18:26:19.020Z - success: color-picker loaded
+2022-04-15T18:26:19.131Z - success: fb-audience-network loaded
+2022-04-15T18:26:19.174Z - success: fb-live-stream loaded
+2022-04-15T18:26:19.177Z - success: google-play-instant loaded
+2022-04-15T18:26:19.182Z - success: huawei-runtime loaded
+2022-04-15T18:26:19.388Z - success: cpk-publish loaded
+2022-04-15T18:26:19.390Z - success: jsb-adapter loaded
+2022-04-15T18:26:19.395Z - success: oppo-runtime loaded
+2022-04-15T18:26:19.400Z - success: package-manager loaded
+2022-04-15T18:26:19.515Z - success: qqplay-adapter loaded
+2022-04-15T18:26:19.518Z - success: runtime-dev-tools loaded
+2022-04-15T18:26:19.545Z - success: sdkbox loaded
+2022-04-15T18:26:19.549Z - success: tester loaded
+2022-04-15T18:26:19.554Z - success: ui-kit-preview-extra loaded
+2022-04-15T18:26:19.557Z - success: ui-kit-preview loaded
+2022-04-15T18:26:19.561Z - success: ui-kit loaded
+2022-04-15T18:26:19.567Z - success: vivo-runtime loaded
+2022-04-15T18:26:19.569Z - success: weapp-adapter loaded
+2022-04-15T18:26:19.570Z - success: xiaomi-adapter loaded
+2022-04-15T18:26:19.572Z - success: alipay-minigame loaded
+2022-04-15T18:26:19.609Z - success: assets loaded
+2022-04-15T18:26:19.612Z - success: builder loaded
+2022-04-15T18:26:19.861Z - success: cocos-services loaded
+2022-04-15T18:26:19.867Z - success: console loaded
+2022-04-15T18:26:19.895Z - success: fb-instant-games loaded
+2022-04-15T18:26:19.898Z - success: game-window loaded
+2022-04-15T18:26:19.899Z - success: google-instant-games loaded
+2022-04-15T18:26:19.904Z - success: hierarchy loaded
+2022-04-15T18:26:19.907Z - success: inspector loaded
+2022-04-15T18:26:19.909Z - success: keystore loaded
+2022-04-15T18:26:19.914Z - success: node-library loaded
+2022-04-15T18:26:19.915Z - success: package-asset loaded
+2022-04-15T18:26:19.916Z - success: preferences loaded
+2022-04-15T18:26:19.919Z - success: project-exporter loaded
+2022-04-15T18:26:19.923Z - success: project-importer loaded
+2022-04-15T18:26:19.928Z - success: project-settings loaded
+2022-04-15T18:26:19.933Z - success: scene loaded
+2022-04-15T18:26:19.934Z - success: simulator-debugger loaded
+2022-04-15T18:26:19.935Z - success: sprite-editor loaded
+2022-04-15T18:26:19.939Z - success: store loaded
+2022-04-15T18:26:19.946Z - success: timeline loaded
+2022-04-15T18:26:19.950Z - success: xiaomi-runtime loaded
+2022-04-15T18:26:24.634Z - normal: Loading packages
+2022-04-15T18:26:24.637Z - normal: Watching packages
+2022-04-15T18:26:24.715Z - normal: Run Application
+2022-04-15T18:26:26.602Z - info: Cocos Services load base data!
+2022-04-15T18:26:28.597Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T18:26:28.598Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T18:26:28.599Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T18:26:28.600Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T18:26:28.602Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T18:26:28.605Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T18:30:27.970Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T18:30:27.971Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T18:30:27.972Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T18:30:27.972Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T18:30:27.975Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T18:30:27.979Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T18:37:58.927Z - error: In the editor, the component in the auto-syncable prefab can not reference to external object outside that prefab. Detailed information:
+Component: "TilePrefabComponent", Property: "sprite"
+Node: "Canvas/TilePrefab"
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3372
+    at b (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3446)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:8447
+    at o.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:2037)
+    at o.parseCCClass (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1033)
+    at o.parseObject (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:878)
+    at a (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1799)
+    at n.iteratee (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1989)
+    at n.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1571)
+2022-04-15T18:37:58.929Z - error: In the editor, the component in the auto-syncable prefab can not reference to external object outside that prefab. Detailed information:
+Component: "TilePrefabComponent", Property: "label"
+Node: "Canvas/TilePrefab"
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3372
+    at b (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3446)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:8447
+    at o.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:2037)
+    at o.parseCCClass (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1033)
+    at o.parseObject (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:878)
+    at a (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1799)
+    at n.iteratee (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1989)
+    at n.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1571)
+2022-04-15T18:38:36.445Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T18:38:36.446Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T18:38:36.447Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T18:38:36.448Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T18:38:36.451Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T18:38:36.455Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T18:38:46.944Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T18:38:46.944Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T18:38:46.944Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T18:38:46.945Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T18:38:46.946Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T18:38:46.947Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T18:41:27.046Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T18:41:27.047Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T18:41:27.048Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T18:41:27.048Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T18:41:27.048Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T18:41:27.049Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T18:41:27.052Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T18:41:51.833Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T18:41:51.834Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T18:41:51.836Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T18:41:51.836Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T18:41:51.836Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T18:41:51.837Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T18:41:51.837Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T18:47:38.233Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T18:47:38.234Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T18:47:38.234Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T18:47:38.235Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T18:47:38.235Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T18:47:38.235Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T18:47:38.239Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T18:48:47.297Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T18:48:47.298Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T18:48:47.298Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T18:48:47.299Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T18:48:47.299Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T18:48:47.301Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T18:48:47.302Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T19:07:43.803Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T19:07:43.805Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T19:07:43.805Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T19:07:43.806Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T19:07:43.806Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T19:07:43.806Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T19:07:43.807Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T19:15:02.798Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T19:15:02.799Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T19:15:02.799Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T19:15:02.800Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T19:15:02.800Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T19:15:02.802Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T19:15:02.803Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T19:15:20.013Z - error: In the editor, the component in the auto-syncable prefab can not reference to external object outside that prefab. Detailed information:
+Component: "TilePrefabComponent", Property: "sprite"
+Node: "Canvas/TileHolder/TilePrefab"
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3372
+    at b (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3446)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:8447
+    at o.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:2037)
+    at o.parseCCClass (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1033)
+    at o.parseObject (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:878)
+    at a (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1799)
+    at n.iteratee (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1989)
+    at n.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1571)
+2022-04-15T19:15:20.014Z - error: In the editor, the component in the auto-syncable prefab can not reference to external object outside that prefab. Detailed information:
+Component: "TilePrefabComponent", Property: "label"
+Node: "Canvas/TileHolder/TilePrefab"
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3372
+    at b (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3446)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:8447
+    at o.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:2037)
+    at o.parseCCClass (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1033)
+    at o.parseObject (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:878)
+    at a (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1799)
+    at n.iteratee (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1989)
+    at n.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1571)
+2022-04-15T19:15:57.546Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T19:15:57.548Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T19:15:57.549Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T19:15:57.549Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T19:15:57.549Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T19:15:57.551Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T19:15:57.552Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T19:17:30.390Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T19:17:30.392Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T19:17:30.392Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T19:17:30.393Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T19:17:30.393Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T19:17:30.393Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T19:17:30.395Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T19:21:29.683Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T19:21:29.684Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T19:21:29.685Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T19:21:29.685Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T19:21:29.685Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T19:21:29.687Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T19:21:29.687Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T19:21:34.688Z - error: In the editor, the component in the auto-syncable prefab can not reference to external object outside that prefab. Detailed information:
+Component: "TilePrefabComponent", Property: "sprite"
+Node: "Canvas/TileHolder/TilePrefab"
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3372
+    at b (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3446)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:8447
+    at o.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:2037)
+    at o.parseCCClass (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1033)
+    at o.parseObject (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:878)
+    at a (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1799)
+    at n.iteratee (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1989)
+    at n.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1571)
+2022-04-15T19:21:34.688Z - error: In the editor, the component in the auto-syncable prefab can not reference to external object outside that prefab. Detailed information:
+Component: "TilePrefabComponent", Property: "label"
+Node: "Canvas/TileHolder/TilePrefab"
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3372
+    at b (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:3446)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/prefab.js:1:8447
+    at o.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:2037)
+    at o.parseCCClass (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1033)
+    at o.parseObject (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:878)
+    at a (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1799)
+    at n.iteratee (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1989)
+    at n.walk (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/share/engine-extends/object-walker.js:1:1571)
+2022-04-15T19:24:22.113Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T19:24:22.114Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T19:24:22.115Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T19:24:22.115Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T19:24:22.115Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T19:24:22.116Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T19:24:22.117Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T19:52:21.805Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T19:52:21.808Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T19:52:21.810Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T19:52:21.811Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T19:52:21.811Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T19:52:21.814Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T19:52:21.818Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T20:02:05.105Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-15T20:02:05.106Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-15T20:02:05.106Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-15T20:02:05.107Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-15T20:02:05.107Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-15T20:02:05.107Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-15T20:02:05.109Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-15T20:18:47.889Z - info: Path: Canvas, UUID: edoTeZNoxEhaCUxMaFQ/tK
+2022-04-16T04:28:28.180Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-16T04:28:28.184Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-16T04:28:28.184Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-16T04:28:28.184Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-16T04:28:28.184Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-16T04:28:28.186Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-16T04:28:28.190Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-16T04:28:32.444Z - warn: Script attached to "window" in scene "game.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/window"
+Asset url: "db://assets/scenes/game.fire"
+Script UUID: "79545e93-e5ee-4111-82d0-17980efb3361"
+Class ID: "795456T5e5BEYLQF5gO+zNh"
+
+2022-04-16T04:40:48.118Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-16T04:40:48.119Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-16T04:40:48.120Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-16T04:40:48.121Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-16T04:40:48.121Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-16T04:40:48.124Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-16T04:40:48.127Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-16T04:42:36.142Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-16T04:42:36.144Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-16T04:42:36.144Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-16T04:42:36.145Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-16T04:42:36.145Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-16T04:42:36.149Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-16T04:42:36.149Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-16T04:49:59.311Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-16T04:49:59.313Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-16T04:49:59.313Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-16T04:49:59.314Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-16T04:49:59.315Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-16T04:49:59.318Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-16T04:49:59.322Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-16T04:51:45.099Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-16T04:51:45.102Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-16T04:51:45.102Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-16T04:51:45.102Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-16T04:51:45.102Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-16T04:51:45.102Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-16T04:51:45.103Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-16T05:08:16.470Z - warn: Should not specify class name SpritePoolManager for Component which defines in project.
+2022-04-16T05:08:16.472Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-16T05:08:16.473Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-16T05:08:16.474Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-16T05:08:16.475Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-16T05:08:16.475Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-16T05:08:16.477Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-16T05:08:16.479Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-16T05:09:32.565Z - warn: Should not specify class name SpritePoolManager for Component which defines in project.
+2022-04-16T05:09:32.566Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-16T05:09:32.568Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-16T05:09:32.568Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-16T05:09:32.569Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-16T05:09:32.569Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-16T05:09:32.571Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-16T05:09:32.572Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2022-04-16T05:23:57.896Z - warn: Should not specify class name SpritePoolManager for Component which defines in project.
+2022-04-16T05:23:57.900Z - warn: Should not specify class name TileController for Component which defines in project.
+2022-04-16T05:23:57.902Z - warn: Should not specify class name getGameConfig for Component which defines in project.
+2022-04-16T05:23:57.903Z - warn: Should not specify class name GameControllerComponent for Component which defines in project.
+2022-04-16T05:23:57.904Z - warn: Should not specify class name GameDirector for Component which defines in project.
+2022-04-16T05:23:57.905Z - warn: Should not specify class name GameManager for Component which defines in project.
+2022-04-16T05:23:57.907Z - warn: Should not specify class name GameTable for Component which defines in project.
+2022-04-16T05:23:57.912Z - warn: Can not instantiate CCClass 'undefined' with arguments.

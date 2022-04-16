@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "upg_wand",
+    "texture": "4d3e5244-4900-4c71-b54b-45ecd54be504",
+    "atlas": "",
+    "rect": [
+      0,
+      8,
+      107,
+      114
+    ],
+    "offset": [
+      -10.5,
+      -1
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

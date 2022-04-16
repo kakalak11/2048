@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "potionGreen",
+    "texture": "7c5a1bcb-f59e-443c-a54b-5aa87feefc05",
+    "atlas": "",
+    "rect": [
+      18,
+      14,
+      30,
+      35
+    ],
+    "offset": [
+      1,
+      0.5
+    ],
+    "originalSize": [
+      64,
+      64
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

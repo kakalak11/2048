@@ -4,12 +4,12 @@ cc._RF.push(module, 'f4918CWTRVPeYLRi00t9BQG', 'getGameConfig', __filename);
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var NewClass = /** @class */ (function (_super) {
-    __extends(NewClass, _super);
-    function NewClass() {
+var getGameConfig = /** @class */ (function (_super) {
+    __extends(getGameConfig, _super);
+    function getGameConfig() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    NewClass.prototype.onLoad = function () {
+    getGameConfig.prototype.onLoad = function () {
         this.node.config = {
             TILE_COLOR: {
                 GRAY: cc.Color.GRAY,
@@ -29,12 +29,12 @@ var NewClass = /** @class */ (function (_super) {
             }
         };
     };
-    NewClass = __decorate([
-        ccclass
-    ], NewClass);
-    return NewClass;
+    getGameConfig = __decorate([
+        ccclass('getGameConfig')
+    ], getGameConfig);
+    return getGameConfig;
 }(cc.Component));
-exports.default = NewClass;
+exports.default = getGameConfig;
 
 cc._RF.pop();
         }
