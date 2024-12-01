@@ -8,8 +8,8 @@ export class NumberTileManager extends Component {
 
     updateValue(value) {
         const spriteIndex = Math.log2(value) - 1;
+        (this.node as any).value = value;
         this.node.getComponent(Sprite).spriteFrame = this.numberSpriteFrames[spriteIndex];
-
         this.node.getComponent(Animation).play();
     }
 

@@ -27,6 +27,10 @@ function moveNumberToPos(numberTile, newPos) {
     });
 }
 
+function canAddUp(nextNumberTile, numberTile) {
+    return nextNumberTile && nextNumberTile !== numberTile && nextNumberTile.value == numberTile.value;
+}
+
 @ccclass('GameManager')
 export class GameManager extends Component {
 
@@ -78,16 +82,17 @@ export class GameManager extends Component {
             Promise.all(allPromises)
                 .then(() => {
                     this.canMove = true;
+                    this.spawnRandomTile();
                 });
         }
     }
 
-    spawnRandomTile(data) {
+    spawnRandomTile(data = null) {
         const numberTile: any = instantiate(this.numberTilePrefab);
         const { randomCol, randomRow } = data || this.getRandomColRow();
         const randomPos = getPosition(randomCol, randomRow);
-        // const randomValue = Math.random() > 0.5 ? 2 : 4;
-        const randomValue = 2
+        const randomValue = Math.random() > 0.5 ? 2 : 4;
+        // const randomValue = 2;
 
         numberTile.setParent(this.table);
         numberTile.setPosition(randomPos);
@@ -127,7 +132,7 @@ export class GameManager extends Component {
                 }
 
                 nextNumberTile = this.tableData[col][nextRow];
-                const isAddUp = nextNumberTile && nextNumberTile.value == numberTile.value;
+                const isAddUp = canAddUp(nextNumberTile, numberTile);
                 const newPos = getPosition(col, nextRow);
 
                 if (isAddUp) {
@@ -144,7 +149,7 @@ export class GameManager extends Component {
                 } else {
                     this.tableData[col][row] = null;
                     this.tableData[col][nextRow] = numberTile;
-
+                    if (row == nextRow) continue;
                     promises.push(moveNumberToPos(numberTile, newPos));
                 }
             }
@@ -169,7 +174,7 @@ export class GameManager extends Component {
                 }
 
                 nextNumberTile = this.tableData[col][nextRow];
-                const isAddUp = nextNumberTile && nextNumberTile.value == numberTile.value;
+                const isAddUp = canAddUp(nextNumberTile, numberTile);
                 const newPos = getPosition(col, nextRow);
 
                 if (isAddUp) {
@@ -186,7 +191,7 @@ export class GameManager extends Component {
                 } else {
                     this.tableData[col][row] = null;
                     this.tableData[col][nextRow] = numberTile;
-
+                    if (row == nextRow) continue;
                     promises.push(moveNumberToPos(numberTile, newPos));
                 }
             }
@@ -211,7 +216,7 @@ export class GameManager extends Component {
                 }
 
                 nextNumberTile = this.tableData[nextCol][row];
-                const isAddUp = nextNumberTile && nextNumberTile.value == numberTile.value;
+                const isAddUp = canAddUp(nextNumberTile, numberTile);
                 const newPos = getPosition(nextCol, row);
 
                 if (isAddUp) {
@@ -228,7 +233,7 @@ export class GameManager extends Component {
                 } else {
                     this.tableData[col][row] = null;
                     this.tableData[nextCol][row] = numberTile;
-
+                    if (col == nextCol) continue;
                     promises.push(moveNumberToPos(numberTile, newPos));
                 }
             }
@@ -253,7 +258,7 @@ export class GameManager extends Component {
                 }
 
                 nextNumberTile = this.tableData[nextCol][row];
-                const isAddUp = nextNumberTile && nextNumberTile.value == numberTile.value;
+                const isAddUp = canAddUp(nextNumberTile, numberTile);
                 const newPos = getPosition(nextCol, row);
 
                 if (isAddUp) {
@@ -270,7 +275,7 @@ export class GameManager extends Component {
                 } else {
                     this.tableData[col][row] = null;
                     this.tableData[nextCol][row] = numberTile;
-
+                    if (col == nextCol) continue;
                     promises.push(moveNumberToPos(numberTile, newPos));
                 }
             }
