@@ -50,31 +50,6 @@
     }
   },
   "camera-infos": {
-    "c77ecaa8-c936-46c4-a5b0-98692673ed87": {
-      "position": {
-        "x": 640,
-        "y": 360.00000000000006,
-        "z": 5000
-      },
-      "rotation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "viewCenter": {
-        "x": 0,
-        "y": 0,
-        "z": 0
-      },
-      "contentRect": {
-        "x": -99.72053872053868,
-        "y": -228.99999999999994,
-        "width": 1280,
-        "height": 720
-      },
-      "scale": 1
-    },
     "7cc887c4-3fbb-4caf-ac20-6bd056cc2e14": {
       "position": {
         "x": 360,
@@ -99,6 +74,31 @@
         "height": 128
       },
       "scale": 1
+    },
+    "c77ecaa8-c936-46c4-a5b0-98692673ed87": {
+      "position": {
+        "x": 360,
+        "y": 639.9999999999999,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "contentRect": {
+        "x": -574.4927536231884,
+        "y": 0,
+        "width": 615.375,
+        "height": 1094
+      },
+      "scale": 0.8546875
     },
     "4fdc7a2a-de9b-4ab6-a84d-39390a2b2b85": {
       "position": {
@@ -127,8 +127,8 @@
     }
   },
   "camera-uuids": [
-    "c77ecaa8-c936-46c4-a5b0-98692673ed87",
     "7cc887c4-3fbb-4caf-ac20-6bd056cc2e14",
+    "c77ecaa8-c936-46c4-a5b0-98692673ed87",
     "4fdc7a2a-de9b-4ab6-a84d-39390a2b2b85"
   ],
   "camera": {
