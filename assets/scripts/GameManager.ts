@@ -83,18 +83,20 @@ export class GameManager extends Component {
     }
 
     spawnRandomTile(data) {
-        const numberTile = instantiate(this.numberTilePrefab);
+        const numberTile: any = instantiate(this.numberTilePrefab);
         const { randomCol, randomRow } = data || this.getRandomColRow();
         const randomPos = getPosition(randomCol, randomRow);
-        const randomValue = Math.random() > 0.5 ? 2 : 4;
+        // const randomValue = Math.random() > 0.5 ? 2 : 4;
+        const randomValue = 2
 
         numberTile.setParent(this.table);
         numberTile.setPosition(randomPos);
-        numberTile.getComponent(NumberTileManager).updateValue(randomValue);
-        numberTile['value'] = randomValue;
-        numberTile['col'] = randomCol;
-        numberTile['row'] = randomRow;
+        numberTile.manager = numberTile.getComponent(NumberTileManager);
+        numberTile.value = randomValue;
+        numberTile.col = randomCol;
+        numberTile.row = randomRow;
 
+        numberTile.manager.updateValue(randomValue);
         this.tableData[randomCol][randomRow] = numberTile;
     }
 
@@ -118,15 +120,33 @@ export class GameManager extends Component {
                 const numberTile = this.tableData[col][row];
 
                 let nextRow = row;
-                while (this.tableData[col][nextRow + 1] === null) {
+                let nextNumberTile = this.tableData[col][nextRow + 1];
+                while (nextNumberTile === null || (nextNumberTile && nextNumberTile.value == numberTile.value)) {
                     nextRow++;
+                    nextNumberTile = this.tableData[col][nextRow + 1];
                 }
 
-                this.tableData[col][row] = null;
-                this.tableData[col][nextRow] = numberTile;
-
+                nextNumberTile = this.tableData[col][nextRow];
+                const isAddUp = nextNumberTile && nextNumberTile.value == numberTile.value;
                 const newPos = getPosition(col, nextRow);
-                promises.push(moveNumberToPos(numberTile, newPos));
+
+                if (isAddUp) {
+                    this.tableData[col][row] = null;
+
+                    numberTile.setSiblingIndex(nextNumberTile.getSiblingIndex() - 1);
+                    promises.push(
+                        moveNumberToPos(numberTile, newPos)
+                            .then(() => {
+                                nextNumberTile.manager.updateValue(numberTile['value'] * 2);
+                                numberTile.destroy();
+                            })
+                    );
+                } else {
+                    this.tableData[col][row] = null;
+                    this.tableData[col][nextRow] = numberTile;
+
+                    promises.push(moveNumberToPos(numberTile, newPos));
+                }
             }
         }
 
@@ -142,15 +162,33 @@ export class GameManager extends Component {
                 const numberTile = this.tableData[col][row];
 
                 let nextRow = row;
-                while (this.tableData[col][nextRow - 1] === null) {
+                let nextNumberTile = this.tableData[col][nextRow - 1];
+                while (nextNumberTile === null || (nextNumberTile && nextNumberTile.value == numberTile.value)) {
                     nextRow--;
+                    nextNumberTile = this.tableData[col][nextRow - 1];
                 }
 
-                this.tableData[col][row] = null;
-                this.tableData[col][nextRow] = numberTile;
-
+                nextNumberTile = this.tableData[col][nextRow];
+                const isAddUp = nextNumberTile && nextNumberTile.value == numberTile.value;
                 const newPos = getPosition(col, nextRow);
-                promises.push(moveNumberToPos(numberTile, newPos));
+
+                if (isAddUp) {
+                    this.tableData[col][row] = null;
+
+                    numberTile.setSiblingIndex(nextNumberTile.getSiblingIndex() - 1);
+                    promises.push(
+                        moveNumberToPos(numberTile, newPos)
+                            .then(() => {
+                                nextNumberTile.manager.updateValue(numberTile['value'] * 2);
+                                numberTile.destroy();
+                            })
+                    );
+                } else {
+                    this.tableData[col][row] = null;
+                    this.tableData[col][nextRow] = numberTile;
+
+                    promises.push(moveNumberToPos(numberTile, newPos));
+                }
             }
         }
 
@@ -166,15 +204,33 @@ export class GameManager extends Component {
                 const numberTile = this.tableData[col][row];
 
                 let nextCol = col;
-                while (this.tableData[nextCol + 1] && this.tableData[nextCol + 1][row] === null) {
+                let nextNumberTile = this.tableData[nextCol + 1] && this.tableData[nextCol + 1][row];
+                while (nextNumberTile === null || (nextNumberTile && nextNumberTile.value == numberTile.value)) {
                     nextCol++;
+                    nextNumberTile = this.tableData[nextCol + 1] && this.tableData[nextCol + 1][row];
                 }
 
-                this.tableData[col][row] = null;
-                this.tableData[nextCol][row] = numberTile;
-
+                nextNumberTile = this.tableData[nextCol][row];
+                const isAddUp = nextNumberTile && nextNumberTile.value == numberTile.value;
                 const newPos = getPosition(nextCol, row);
-                promises.push(moveNumberToPos(numberTile, newPos));
+
+                if (isAddUp) {
+                    this.tableData[col][row] = null;
+
+                    numberTile.setSiblingIndex(nextNumberTile.getSiblingIndex() - 1);
+                    promises.push(
+                        moveNumberToPos(numberTile, newPos)
+                            .then(() => {
+                                nextNumberTile.manager.updateValue(numberTile['value'] * 2);
+                                numberTile.destroy();
+                            })
+                    );
+                } else {
+                    this.tableData[col][row] = null;
+                    this.tableData[nextCol][row] = numberTile;
+
+                    promises.push(moveNumberToPos(numberTile, newPos));
+                }
             }
         }
 
@@ -190,15 +246,33 @@ export class GameManager extends Component {
                 const numberTile = this.tableData[col][row];
 
                 let nextCol = col;
-                while (this.tableData[nextCol - 1] && this.tableData[nextCol - 1][row] === null) {
+                let nextNumberTile = this.tableData[nextCol - 1] && this.tableData[nextCol - 1][row];
+                while (nextNumberTile === null || (nextNumberTile && nextNumberTile.value == numberTile.value)) {
                     nextCol--;
+                    nextNumberTile = this.tableData[nextCol - 1] && this.tableData[nextCol - 1][row];
                 }
 
-                this.tableData[col][row] = null;
-                this.tableData[nextCol][row] = numberTile;
-
+                nextNumberTile = this.tableData[nextCol][row];
+                const isAddUp = nextNumberTile && nextNumberTile.value == numberTile.value;
                 const newPos = getPosition(nextCol, row);
-                promises.push(moveNumberToPos(numberTile, newPos));
+
+                if (isAddUp) {
+                    this.tableData[col][row] = null;
+
+                    numberTile.setSiblingIndex(nextNumberTile.getSiblingIndex() - 1);
+                    promises.push(
+                        moveNumberToPos(numberTile, newPos)
+                            .then(() => {
+                                nextNumberTile.manager.updateValue(numberTile['value'] * 2);
+                                numberTile.destroy();
+                            })
+                    );
+                } else {
+                    this.tableData[col][row] = null;
+                    this.tableData[nextCol][row] = numberTile;
+
+                    promises.push(moveNumberToPos(numberTile, newPos));
+                }
             }
         }
 
