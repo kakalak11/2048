@@ -1,7 +1,7 @@
 {
   "modules": {
     "cce:/internal/x/cc": {
-      "mTimestamp": 9871.006958000362,
+      "mTimestamp": 9887.975290998816,
       "chunkId": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b",
       "imports": [
         {
@@ -367,7 +367,7 @@
       ]
     },
     "cce:/internal/x/prerequisite-imports": {
-      "mTimestamp": 28730060.65325,
+      "mTimestamp": 10927.629624992609,
       "chunkId": "6d8fd2b0177941b032ddc0733af48a561fb60657",
       "imports": [
         {
@@ -385,7 +385,7 @@
           }
         },
         {
-          "value": "file:///Users/fe-tu/Desktop/Personal/2048-kakalak/assets/scripts/GameManager.ts",
+          "value": "file:///Users/fe-tu/Desktop/Personal/2048/assets/scripts/GameManager.ts",
           "resolved": "__unresolved_1",
           "loc": {
             "start": {
@@ -394,12 +394,12 @@
             },
             "end": {
               "line": 5,
-              "column": 88
+              "column": 80
             }
           }
         },
         {
-          "value": "file:///Users/fe-tu/Desktop/Personal/2048-kakalak/assets/scripts/NumberTileManager.ts",
+          "value": "file:///Users/fe-tu/Desktop/Personal/2048/assets/scripts/NumberTileManager.ts",
           "resolved": "__unresolved_2",
           "loc": {
             "start": {
@@ -408,7 +408,7 @@
             },
             "end": {
               "line": 6,
-              "column": 94
+              "column": 86
             }
           }
         }
@@ -425,14 +425,14 @@
         {
           "resolved": {
             "type": "module",
-            "url": "file:///Users/fe-tu/Desktop/Personal/2048-kakalak/assets/scripts/GameManager.ts"
+            "url": "file:///Users/fe-tu/Desktop/Personal/2048/assets/scripts/GameManager.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///Users/fe-tu/Desktop/Personal/2048-kakalak/assets/scripts/NumberTileManager.ts"
+            "url": "file:///Users/fe-tu/Desktop/Personal/2048/assets/scripts/NumberTileManager.ts"
           },
           "messages": []
         }
@@ -490,12 +490,12 @@
         }
       ]
     },
-    "file:///Users/fe-tu/Desktop/Personal/2048-kakalak/assets/scripts/GameManager.ts": {
+    "file:///Users/fe-tu/Desktop/Personal/2048/assets/scripts/GameManager.ts": {
       "mTimestamp": {
-        "mtime": 1733046742811.9119,
+        "mtime": 1733054989038.9192,
         "uuid": "32b6e70a-365c-4d88-a883-1cd08039441e"
       },
-      "chunkId": "e2221c798085f74e97c68ecfb409f919205f4cc4",
+      "chunkId": "b034bae845578681b7e375c7f47538a567ed6846",
       "imports": [
         {
           "value": "cce:/internal/code-quality/cr.mjs",
@@ -568,18 +568,25 @@
         {
           "resolved": {
             "type": "module",
-            "url": "file:///Users/fe-tu/Desktop/Personal/2048-kakalak/assets/scripts/NumberTileManager.ts"
+            "url": "file:///Users/fe-tu/Desktop/Personal/2048/assets/scripts/NumberTileManager.ts"
           },
           "messages": []
         }
       ]
     },
-    "file:///Users/fe-tu/Desktop/Personal/2048-kakalak/assets/scripts/NumberTileManager.ts": {
+    "cce:/internal/code-quality/cr.mjs": {
+      "mTimestamp": 1733055233421,
+      "chunkId": "6a5019a719a9014c047e67aa1cf34453ab8392ce",
+      "imports": [],
+      "type": "esm",
+      "resolutions": []
+    },
+    "file:///Users/fe-tu/Desktop/Personal/2048/assets/scripts/NumberTileManager.ts": {
       "mTimestamp": {
         "mtime": 1733018586381.4622,
         "uuid": "0f2a9f8f-b0dc-4b46-a9b4-73e4af70ed47"
       },
-      "chunkId": "ae166a2e0378f158075e0817e19168dcb4425f58",
+      "chunkId": "329a7829ee6b5e5f5c149f4a85758bd97d99d4a9",
       "imports": [
         {
           "value": "cc"
@@ -625,13 +632,6 @@
           "messages": []
         }
       ]
-    },
-    "cce:/internal/code-quality/cr.mjs": {
-      "mTimestamp": 1733018014973,
-      "chunkId": "6a5019a719a9014c047e67aa1cf34453ab8392ce",
-      "imports": [],
-      "type": "esm",
-      "resolutions": []
     }
   }
 }

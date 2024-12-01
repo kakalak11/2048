@@ -1,17 +1,5 @@
 {
   "chunks": {
-    "f0eb614dff6710c7d3e4255bd944130032704458": {
-      "imports": {
-        "cc": {
-          "resolved": {
-            "type": "chunk",
-            "id": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b"
-          },
-          "messages": []
-        }
-      },
-      "timestamp": 1732955656838
-    },
     "93ba276ea7b26ffcdc433fab14afc1ed6f05647b": {
       "imports": {
         "__unresolved_0": {
@@ -134,13 +122,9 @@
           "messages": []
         }
       },
-      "timestamp": 1733018024932
+      "timestamp": 1733055243567
     },
-    "6a5019a719a9014c047e67aa1cf34453ab8392ce": {
-      "imports": {},
-      "timestamp": 1733018024952
-    },
-    "ae166a2e0378f158075e0817e19168dcb4425f58": {
+    "f0eb614dff6710c7d3e4255bd944130032704458": {
       "imports": {
         "cc": {
           "resolved": {
@@ -150,7 +134,49 @@
           "messages": []
         }
       },
-      "timestamp": 1733018588684
+      "timestamp": 1733055243635
+    },
+    "b034bae845578681b7e375c7f47538a567ed6846": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "6a5019a719a9014c047e67aa1cf34453ab8392ce"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "329a7829ee6b5e5f5c149f4a85758bd97d99d4a9"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1733055243678
+    },
+    "6a5019a719a9014c047e67aa1cf34453ab8392ce": {
+      "imports": {},
+      "timestamp": 1733055243687
+    },
+    "329a7829ee6b5e5f5c149f4a85758bd97d99d4a9": {
+      "imports": {
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1733055243701
     },
     "6d8fd2b0177941b032ddc0733af48a561fb60657": {
       "imports": {
@@ -164,52 +190,26 @@
         "__unresolved_1": {
           "resolved": {
             "type": "chunk",
-            "id": "e2221c798085f74e97c68ecfb409f919205f4cc4"
+            "id": "b034bae845578681b7e375c7f47538a567ed6846"
           },
           "messages": []
         },
         "__unresolved_2": {
           "resolved": {
             "type": "chunk",
-            "id": "ae166a2e0378f158075e0817e19168dcb4425f58"
+            "id": "329a7829ee6b5e5f5c149f4a85758bd97d99d4a9"
           },
           "messages": []
         }
       },
-      "timestamp": 1733046744818
-    },
-    "e2221c798085f74e97c68ecfb409f919205f4cc4": {
-      "imports": {
-        "__unresolved_0": {
-          "resolved": {
-            "type": "chunk",
-            "id": "6a5019a719a9014c047e67aa1cf34453ab8392ce"
-          },
-          "messages": []
-        },
-        "__unresolved_1": {
-          "resolved": {
-            "type": "chunk",
-            "id": "ae166a2e0378f158075e0817e19168dcb4425f58"
-          },
-          "messages": []
-        },
-        "cc": {
-          "resolved": {
-            "type": "chunk",
-            "id": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b"
-          },
-          "messages": []
-        }
-      },
-      "timestamp": 1733046744847
+      "timestamp": 1733055244322
     }
   },
   "entries": {
     "cce:/internal/x/cc": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b",
     "cce:/internal/x/prerequisite-imports": "6d8fd2b0177941b032ddc0733af48a561fb60657",
     "file:///Applications/Cocos/Creator/3.8.1/CocosCreator.app/Contents/Resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts": "f0eb614dff6710c7d3e4255bd944130032704458",
-    "file:///Users/fe-tu/Desktop/Personal/2048-kakalak/assets/scripts/GameManager.ts": "e2221c798085f74e97c68ecfb409f919205f4cc4",
-    "file:///Users/fe-tu/Desktop/Personal/2048-kakalak/assets/scripts/NumberTileManager.ts": "ae166a2e0378f158075e0817e19168dcb4425f58"
+    "file:///Users/fe-tu/Desktop/Personal/2048/assets/scripts/GameManager.ts": "b034bae845578681b7e375c7f47538a567ed6846",
+    "file:///Users/fe-tu/Desktop/Personal/2048/assets/scripts/NumberTileManager.ts": "329a7829ee6b5e5f5c149f4a85758bd97d99d4a9"
   }
 }

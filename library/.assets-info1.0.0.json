@@ -287,6 +287,293 @@
     "/Users/fe-tu/Desktop/Personal/2048-kakalak/assets/2048/animClips/numberTileAnim.anim": {
       "time": 1733018548425.7085,
       "uuid": "1a211582-0720-4100-89e7-73298db04295"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048": {
+      "time": 1733018312147.7468,
+      "uuid": "ed9fd949-5195-49b2-97ac-cacfbdf7ef73"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/prefabs": {
+      "time": 1732980616351.121,
+      "uuid": "ec4a991c-f15c-4c2b-bfb8-e11c61157c2c"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/scripts": {
+      "time": 1732980459505.4343,
+      "uuid": "47b274d7-d79a-4651-8fe7-29c88c4ac4ec"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/animClips": {
+      "time": 1733018344108.445,
+      "uuid": "553376bb-b3aa-48aa-b7e2-a7dfdbce6650"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas": {
+      "time": 1733017906993.454,
+      "uuid": "1e78b0bb-3693-4aff-a83a-b272c0855b56"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/scripts/GameManager.ts": {
+      "time": 1733054989038.9192,
+      "uuid": "32b6e70a-365c-4d88-a883-1cd08039441e"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/scripts/NumberTileManager.ts": {
+      "time": 1733018586381.4622,
+      "uuid": "0f2a9f8f-b0dc-4b46-a9b4-73e4af70ed47"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048.meta": {
+      "time": 1732955662216.2317
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/prefabs.meta": {
+      "time": 1732980374212.7725
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/scripts.meta": {
+      "time": 1732980229530.7705
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/animClips.meta": {
+      "time": 1733018312149.0525
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas.meta": {
+      "time": 1733017883820.2393
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/scripts/GameManager.ts.meta": {
+      "time": 1732980237304.094
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/scripts/NumberTileManager.ts.meta": {
+      "time": 1732980459506.3088
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/main.scene": {
+      "time": 1733018817391.249,
+      "uuid": "4fdc7a2a-de9b-4ab6-a84d-39390a2b2b85"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/2048.afdesign": {
+      "time": 1732955662207.885,
+      "uuid": "f3ddbc55-d5c1-40fc-aeda-a2bd88641a0f"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Background 2.png": {
+      "time": 1732955662203.068,
+      "uuid": "0c005e3f-b8d0-46e0-8e48-f6c34c1e2a7b"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Background.png": {
+      "time": 1732955662201.77,
+      "uuid": "b73c968b-ec54-4f28-8051-2547c9c49674"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Bottom UI.png": {
+      "time": 1732955662200.8066,
+      "uuid": "de2faa70-55ad-4b0f-9805-046f7c5370b8"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Buttons.afdesign": {
+      "time": 1732955662200.3462,
+      "uuid": "f0bb6ebc-8e92-4877-abc8-563dedcfebd5"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Green Button.png": {
+      "time": 1732955662199.6714,
+      "uuid": "40264a43-1ca6-4ff9-ac78-dae1e152dd82"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Mockup 2.png": {
+      "time": 1732955662199.1084,
+      "uuid": "772fb734-1a62-4e3c-aabd-184162b00169"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Pink Button.png": {
+      "time": 1732955662197.9712,
+      "uuid": "fc554bff-7452-4f3c-80ba-ab2dc45b62ba"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Tile Background.png": {
+      "time": 1732955662197.6028,
+      "uuid": "e7eaae19-1be5-4661-a18e-f8c85fa504c7"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Top UI.png": {
+      "time": 1732955662196.9824,
+      "uuid": "527a3095-697e-4066-a265-6765c9fdc4c9"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/bottom ui.afdesign": {
+      "time": 1732955662196.595,
+      "uuid": "5aac235c-5665-49e8-8c2b-b34b9335d01b"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/mockup.afdesign": {
+      "time": 1732955662196.0217,
+      "uuid": "6cbd1bea-8e03-475d-b90c-f872ac815a3b"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/mockup.png": {
+      "time": 1732955662195.1277,
+      "uuid": "a866f765-4ddf-4343-bff1-4b8034b73afd"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/top ui.afdesign": {
+      "time": 1732955662193.4446,
+      "uuid": "76006e10-9a2a-4ef3-9b62-fe23dd35bd9c"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/prefabs/NumberTile.prefab": {
+      "time": 1733018557099.3008,
+      "uuid": "7cc887c4-3fbb-4caf-ac20-6bd056cc2e14"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/animClips/numberTileAnim.anim": {
+      "time": 1733018548425.7085,
+      "uuid": "1a211582-0720-4100-89e7-73298db04295"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/1024 Tile.png": {
+      "time": 1732955662209.8486,
+      "uuid": "e0977dcb-d286-4c94-8b9c-eff1bb0672f5"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/128 Tile.png": {
+      "time": 1732955662209.5505,
+      "uuid": "9f208dd8-7552-4fdf-9c71-1cf74eac28b9"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/16 Tile.png": {
+      "time": 1732955662209.2373,
+      "uuid": "2dc8d711-0e7d-4c85-9667-7aff71a56358"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/16384 Tile.png": {
+      "time": 1732955662208.866,
+      "uuid": "5eb13ae9-7896-4c17-8ab7-53952f462747"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/2 Tile.png": {
+      "time": 1732955662208.5703,
+      "uuid": "fb832bb0-1edd-41d4-b486-5c442ce24347"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/2048 Tile.png": {
+      "time": 1732955662208.2488,
+      "uuid": "7195329e-42b6-4db2-baaa-8730d1c9c730"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/256 Tile.png": {
+      "time": 1732955662206.7046,
+      "uuid": "a3532038-fe46-4651-ab20-ff38f35ad331"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/32 Tile.png": {
+      "time": 1732955662206.383,
+      "uuid": "9b38aa5b-876e-4477-b902-54f08a273920"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/32768 Tile.png": {
+      "time": 1732955662205.9663,
+      "uuid": "85aaa037-5556-4087-be71-0b5c5a662a7f"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/4 Tile.png": {
+      "time": 1732955662205.6086,
+      "uuid": "fb559e0c-e01c-4cfe-9563-f30c51cc1fa0"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/4096 Tile.png": {
+      "time": 1732955662205.2595,
+      "uuid": "f7103077-34a5-4a13-9ca3-7296d869781f"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/512 Tile.png": {
+      "time": 1732955662204.8684,
+      "uuid": "312dc752-8cb3-4b0b-9ca6-6bcc85690aa0"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/64 Tile.png": {
+      "time": 1732955662204.4832,
+      "uuid": "94983424-f163-4314-85ad-916874a2d265"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/65536 Tile.png": {
+      "time": 1732955662204.199,
+      "uuid": "be1b80c9-4b94-4e51-8a02-90f19f728bcd"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/8 Tile.png": {
+      "time": 1732955662203.8975,
+      "uuid": "b14777b2-65fe-40d7-a92b-57071ea5010c"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/8192 Tile.png": {
+      "time": 1732955662203.5422,
+      "uuid": "a84086f2-bc7b-4969-a69c-580db92613c0"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/tile-atlas.pac": {
+      "time": 1733017906992.4026,
+      "uuid": "53efb675-f07f-44e7-96d4-1c70f27823ab"
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/main.scene.meta": {
+      "time": 1732955740320.2705
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/2048.afdesign.meta": {
+      "time": 1732955662274.4065
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Buttons.afdesign.meta": {
+      "time": 1732955662358.1553
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Green Button.png.meta": {
+      "time": 1732955662389.0063
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Bottom UI.png.meta": {
+      "time": 1732955662370.782
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Background.png.meta": {
+      "time": 1732955662374.2202
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Background 2.png.meta": {
+      "time": 1732955662360.2283
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/bottom ui.afdesign.meta": {
+      "time": 1732955662391.5964
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/mockup.afdesign.meta": {
+      "time": 1732955662392.2998
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Pink Button.png.meta": {
+      "time": 1732955662393.6672
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/top ui.afdesign.meta": {
+      "time": 1732955662394.6821
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Tile Background.png.meta": {
+      "time": 1732955662399.3584
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/animClips/numberTileAnim.anim.meta": {
+      "time": 1733018344111.673
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/prefabs/NumberTile.prefab.meta": {
+      "time": 1732980616352.7554
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Mockup 2.png.meta": {
+      "time": 1732955662389.587
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/Top UI.png.meta": {
+      "time": 1732955662402.334
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/1024 Tile.png.meta": {
+      "time": 1732955662258.0286
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/128 Tile.png.meta": {
+      "time": 1732955662258.309
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/16 Tile.png.meta": {
+      "time": 1732955662256.1287
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/mockup.png.meta": {
+      "time": 1732955662412.3135
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/16384 Tile.png.meta": {
+      "time": 1732955662259.2134
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/2048 Tile.png.meta": {
+      "time": 1732955662291.2903
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/2 Tile.png.meta": {
+      "time": 1732955662275.1606
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/256 Tile.png.meta": {
+      "time": 1732955662291.7986
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/32 Tile.png.meta": {
+      "time": 1732955662306.436
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/32768 Tile.png.meta": {
+      "time": 1732955662310.6494
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/4 Tile.png.meta": {
+      "time": 1732955662307.143
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/4096 Tile.png.meta": {
+      "time": 1732955662323.4092
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/512 Tile.png.meta": {
+      "time": 1732955662324.143
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/tile-atlas.pac.meta": {
+      "time": 1733017906994.9348
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/64 Tile.png.meta": {
+      "time": 1732955662340.1077
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/8192 Tile.png.meta": {
+      "time": 1732955662355.3171
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/65536 Tile.png.meta": {
+      "time": 1732955662339.44
+    },
+    "/Users/fe-tu/Desktop/Personal/2048/assets/2048/tileAtlas/8 Tile.png.meta": {
+      "time": 1732955662355.6746
     }
   },
   "missing": {

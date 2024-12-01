@@ -15,7 +15,7 @@
         "/Applications/Cocos/Creator/3.8.1/CocosCreator.app/Contents/Resources/resources/3d/engine/editor/assets/*"
       ],
       "db://assets/*": [
-        "/Users/fe-tu/Desktop/Personal/2048-kakalak/assets/*"
+        "/Users/fe-tu/Desktop/Personal/2048/assets/*"
       ]
     },
     "experimentalDecorators": true,

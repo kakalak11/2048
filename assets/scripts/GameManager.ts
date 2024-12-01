@@ -15,6 +15,18 @@ function getPosition(col, row) {
     return new Vec3(startX + COL_SIZE * col, startY - ROW_SIZE * row, 0);
 }
 
+function moveNumberToPos(numberTile, newPos) {
+    return new Promise((resolve, _) => {
+        numberTile['moveTween'] = tween(numberTile)
+            .to(MOVE_SPEED * 2, { position: newPos })
+            .call(() => {
+                numberTile['moveTween'] = null;
+                resolve(numberTile);
+            })
+            .start();
+    });
+}
+
 @ccclass('GameManager')
 export class GameManager extends Component {
 
@@ -22,6 +34,7 @@ export class GameManager extends Component {
     @property(Prefab) numberTilePrefab: Prefab;
 
     tableData: any[][];
+    canMove: boolean = true;
 
     start() {
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
@@ -29,30 +42,43 @@ export class GameManager extends Component {
         this.tableData = new Array(TABLE_FORMAT.length).fill([]).map((_, index) => new Array(TABLE_FORMAT[index]).fill(null));
         this.spawnRandomTile({ randomCol: 2, randomRow: 2 });
         this.spawnRandomTile({ randomCol: 1, randomRow: 1 });
-        console.table(this.tableData)
+        this.spawnRandomTile({ randomCol: 2, randomRow: 1 });
+        console.table(this.tableData);
     }
 
     onKeyDown(event: EventKeyboard) {
+        if (!this.canMove) return;
+        let allPromises;
+
         switch (event.keyCode) {
             case KeyCode.SPACE:
-                this.moveDown();
+                allPromises = this.moveDown();
                 break;
             case KeyCode.KEY_A:
             case KeyCode.ARROW_LEFT:
-                this.moveLeft();
+                allPromises = this.moveLeft();
                 break;
             case KeyCode.KEY_D:
             case KeyCode.ARROW_RIGHT:
-                this.moveRight();
+                allPromises = this.moveRight();
                 break;
             case KeyCode.KEY_S:
             case KeyCode.ARROW_DOWN:
-                this.moveDown();
+                allPromises = this.moveDown();
                 break;
             case KeyCode.KEY_W:
             case KeyCode.ARROW_UP:
-                this.moveUp();
+                allPromises = this.moveUp();
                 break;
+        }
+
+        if (allPromises && allPromises.length > 0) {
+            this.canMove = false;
+
+            Promise.all(allPromises)
+                .then(() => {
+                    this.canMove = true;
+                });
         }
     }
 
@@ -87,8 +113,7 @@ export class GameManager extends Component {
     moveDown() {
         let promises = [];
         for (let col = 0; col < TABLE_FORMAT.length; col++) {
-
-            for (let row = 0; row < TABLE_FORMAT[col]; row++) {
+            for (let row = TABLE_FORMAT[col] - 1; row >= 0; row--) {
                 if (!this.tableData[col][row]) continue;
                 const numberTile = this.tableData[col][row];
 
@@ -101,22 +126,18 @@ export class GameManager extends Component {
                 this.tableData[col][nextRow] = numberTile;
 
                 const newPos = getPosition(col, nextRow);
-                promises.push(this.moveNumberToPos(numberTile, newPos));
+                promises.push(moveNumberToPos(numberTile, newPos));
             }
-
         }
 
-        return Promise.all(promises)
-            .then(() => {
-                console.table(this.tableData);
-            });
+        return promises;
     }
 
     moveUp() {
         let promises = [];
-        for (let col = 0; col < TABLE_FORMAT.length; col++) {
 
-            for (let row = TABLE_FORMAT[col] - 1; row >= 0; row--) {
+        for (let col = 0; col < TABLE_FORMAT.length; col++) {
+            for (let row = 0; row < TABLE_FORMAT[col]; row++) {
                 if (!this.tableData[col][row]) continue;
                 const numberTile = this.tableData[col][row];
 
@@ -129,22 +150,18 @@ export class GameManager extends Component {
                 this.tableData[col][nextRow] = numberTile;
 
                 const newPos = getPosition(col, nextRow);
-                promises.push(this.moveNumberToPos(numberTile, newPos));
+                promises.push(moveNumberToPos(numberTile, newPos));
             }
-
         }
 
-        return Promise.all(promises)
-            .then(() => {
-                console.table(this.tableData);
-            });
+        return promises;
     }
 
     moveRight() {
         let promises = [];
-        for (let row = 0; row < TABLE_FORMAT[0]; row++) {
 
-            for (let col = 0; col < TABLE_FORMAT.length; col++) {
+        for (let row = 0; row < TABLE_FORMAT[0]; row++) {
+            for (let col = TABLE_FORMAT.length; col >= 0; col--) {
                 if (!this.tableData[col] || !this.tableData[col][row]) continue;
                 const numberTile = this.tableData[col][row];
 
@@ -157,22 +174,18 @@ export class GameManager extends Component {
                 this.tableData[nextCol][row] = numberTile;
 
                 const newPos = getPosition(nextCol, row);
-                promises.push(this.moveNumberToPos(numberTile, newPos));
+                promises.push(moveNumberToPos(numberTile, newPos));
             }
-
         }
 
-        return Promise.all(promises)
-            .then(() => {
-                console.table(this.tableData);
-            });
+        return promises;
     }
 
     moveLeft() {
         let promises = [];
-        for (let row = 0; row < TABLE_FORMAT[0]; row++) {
 
-            for (let col = TABLE_FORMAT.length; col >= 0; col--) {
+        for (let row = 0; row < TABLE_FORMAT[0]; row++) {
+            for (let col = 0; col < TABLE_FORMAT.length; col++) {
                 if (!this.tableData[col] || !this.tableData[col][row]) continue;
                 const numberTile = this.tableData[col][row];
 
@@ -185,28 +198,11 @@ export class GameManager extends Component {
                 this.tableData[nextCol][row] = numberTile;
 
                 const newPos = getPosition(nextCol, row);
-                promises.push(this.moveNumberToPos(numberTile, newPos));
+                promises.push(moveNumberToPos(numberTile, newPos));
             }
-
         }
 
-        return Promise.all(promises)
-            .then(() => {
-                console.table(this.tableData);
-            });
+        return promises;
     }
-
-    moveNumberToPos(numberTile, newPos) {
-        return new Promise((resolve, _) => {
-            numberTile['moveTween'] = tween(numberTile)
-                .to(MOVE_SPEED * 2, { position: newPos })
-                .call(() => {
-                    numberTile['moveTween'] = null;
-                    resolve(numberTile);
-                })
-                .start();
-        });
-    }
-
 }
 
