@@ -28,7 +28,7 @@ function moveNumberToPos(numberTile, newPos) {
 }
 
 function canAddUp(nextNumberTile, numberTile) {
-    return nextNumberTile && nextNumberTile !== numberTile && nextNumberTile.value == numberTile.value;
+    return nextNumberTile && nextNumberTile.canAdd && nextNumberTile !== numberTile && nextNumberTile.value == numberTile.value;
 }
 
 @ccclass('GameManager')
@@ -44,9 +44,12 @@ export class GameManager extends Component {
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
 
         this.tableData = new Array(TABLE_FORMAT.length).fill([]).map((_, index) => new Array(TABLE_FORMAT[index]).fill(null));
-        this.spawnRandomTile({ randomCol: 2, randomRow: 2 });
+        // this.spawnRandomTile({ randomCol: 2, randomRow: 0 });
+        // this.spawnRandomTile({ randomCol: 2, randomRow: 1 });
+        // this.spawnRandomTile({ randomCol: 2, randomRow: 2 });
+        this.spawnRandomTile({ randomCol: 0, randomRow: 1 });
         this.spawnRandomTile({ randomCol: 1, randomRow: 1 });
-        this.spawnRandomTile({ randomCol: 2, randomRow: 1 });
+        this.spawnRandomTile({ randomCol: 2, randomRow: 1, value: 4 });
         console.table(this.tableData);
     }
 
@@ -89,10 +92,13 @@ export class GameManager extends Component {
 
     spawnRandomTile(data = null) {
         const numberTile: any = instantiate(this.numberTilePrefab);
-        const { randomCol, randomRow } = data || this.getRandomColRow();
+        const { randomCol, randomRow, value } = data || this.getRandomColRow();
         const randomPos = getPosition(randomCol, randomRow);
-        const randomValue = Math.random() > 0.5 ? 2 : 4;
-        // const randomValue = 2;
+        // const randomValue = Math.random() > 0.5 ? 2 : 4;
+        let randomValue = 2;
+        if (value) {
+            randomValue = value;
+        }
 
         numberTile.setParent(this.table);
         numberTile.setPosition(randomPos);
@@ -100,6 +106,7 @@ export class GameManager extends Component {
         numberTile.value = randomValue;
         numberTile.col = randomCol;
         numberTile.row = randomRow;
+        numberTile.canAdd = true;
 
         numberTile.manager.updateValue(randomValue);
         this.tableData[randomCol][randomRow] = numberTile;
@@ -126,7 +133,7 @@ export class GameManager extends Component {
 
                 let nextRow = row;
                 let nextNumberTile = this.tableData[col][nextRow + 1];
-                while (nextNumberTile === null || (nextNumberTile && nextNumberTile.value == numberTile.value)) {
+                while (nextNumberTile === null || canAddUp(nextNumberTile, numberTile)) {
                     nextRow++;
                     nextNumberTile = this.tableData[col][nextRow + 1];
                 }
@@ -137,12 +144,17 @@ export class GameManager extends Component {
 
                 if (isAddUp) {
                     this.tableData[col][row] = null;
+                    const newValue = numberTile['value'] * 2;
 
-                    numberTile.setSiblingIndex(nextNumberTile.getSiblingIndex() - 1);
+                    numberTile.setSiblingIndex(0);
+                    nextNumberTile.value = newValue;
+                    nextNumberTile.canAdd = false;
+
                     promises.push(
                         moveNumberToPos(numberTile, newPos)
                             .then(() => {
-                                nextNumberTile.manager.updateValue(numberTile['value'] * 2);
+                                nextNumberTile.manager.updateValue(newValue);
+                                nextNumberTile.canAdd = true;
                                 numberTile.destroy();
                             })
                     );
@@ -168,7 +180,7 @@ export class GameManager extends Component {
 
                 let nextRow = row;
                 let nextNumberTile = this.tableData[col][nextRow - 1];
-                while (nextNumberTile === null || (nextNumberTile && nextNumberTile.value == numberTile.value)) {
+                while (nextNumberTile === null || canAddUp(nextNumberTile, numberTile)) {
                     nextRow--;
                     nextNumberTile = this.tableData[col][nextRow - 1];
                 }
@@ -179,12 +191,17 @@ export class GameManager extends Component {
 
                 if (isAddUp) {
                     this.tableData[col][row] = null;
+                    const newValue = numberTile['value'] * 2;
 
-                    numberTile.setSiblingIndex(nextNumberTile.getSiblingIndex() - 1);
+                    numberTile.setSiblingIndex(0);
+                    nextNumberTile.value = newValue;
+                    nextNumberTile.canAdd = false;
+
                     promises.push(
                         moveNumberToPos(numberTile, newPos)
                             .then(() => {
-                                nextNumberTile.manager.updateValue(numberTile['value'] * 2);
+                                nextNumberTile.manager.updateValue(newValue);
+                                nextNumberTile.canAdd = true;
                                 numberTile.destroy();
                             })
                     );
@@ -210,7 +227,7 @@ export class GameManager extends Component {
 
                 let nextCol = col;
                 let nextNumberTile = this.tableData[nextCol + 1] && this.tableData[nextCol + 1][row];
-                while (nextNumberTile === null || (nextNumberTile && nextNumberTile.value == numberTile.value)) {
+                while (nextNumberTile === null || canAddUp(nextNumberTile, numberTile)) {
                     nextCol++;
                     nextNumberTile = this.tableData[nextCol + 1] && this.tableData[nextCol + 1][row];
                 }
@@ -221,12 +238,16 @@ export class GameManager extends Component {
 
                 if (isAddUp) {
                     this.tableData[col][row] = null;
+                    const newValue = numberTile['value'] * 2;
+                    nextNumberTile.value = newValue;
+                    nextNumberTile.canAdd = false;
 
-                    numberTile.setSiblingIndex(nextNumberTile.getSiblingIndex() - 1);
+                    numberTile.setSiblingIndex(0);
                     promises.push(
                         moveNumberToPos(numberTile, newPos)
                             .then(() => {
-                                nextNumberTile.manager.updateValue(numberTile['value'] * 2);
+                                nextNumberTile.manager.updateValue(newValue);
+                                nextNumberTile.canAdd = true;
                                 numberTile.destroy();
                             })
                     );
@@ -252,7 +273,7 @@ export class GameManager extends Component {
 
                 let nextCol = col;
                 let nextNumberTile = this.tableData[nextCol - 1] && this.tableData[nextCol - 1][row];
-                while (nextNumberTile === null || (nextNumberTile && nextNumberTile.value == numberTile.value)) {
+                while (nextNumberTile === null || canAddUp(nextNumberTile, numberTile)) {
                     nextCol--;
                     nextNumberTile = this.tableData[nextCol - 1] && this.tableData[nextCol - 1][row];
                 }
@@ -263,12 +284,16 @@ export class GameManager extends Component {
 
                 if (isAddUp) {
                     this.tableData[col][row] = null;
+                    const newValue = numberTile['value'] * 2;
+                    nextNumberTile.value = newValue;
+                    nextNumberTile.canAdd = false;
 
-                    numberTile.setSiblingIndex(nextNumberTile.getSiblingIndex() - 1);
+                    numberTile.setSiblingIndex(0);
                     promises.push(
                         moveNumberToPos(numberTile, newPos)
                             .then(() => {
-                                nextNumberTile.manager.updateValue(numberTile['value'] * 2);
+                                nextNumberTile.manager.updateValue(newValue);
+                                nextNumberTile.canAdd = true;
                                 numberTile.destroy();
                             })
                     );
