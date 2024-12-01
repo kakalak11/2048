@@ -1,0 +1,11 @@
+{
+    "systemInfo": {
+        "arch": "arm64",
+        "cpu": "Apple M1 Pro",
+        "version": "Darwin Kernel Version 22.3.0: Mon Jan 30 20:38:37 PST 2023; root:xnu-8792.81.3~2/RELEASE_ARM64_T6000"
+    },
+    "sceneListMap": {
+        "4fdc7a2a-de9b-4ab6-a84d-39390a2b2b85": "/Users/fe-tu/Desktop/Personal/2048-kakalak/assets/main.scene"
+    },
+    "deviceMd5": "92d723001556edaf4411c46911dfaac9"
+}

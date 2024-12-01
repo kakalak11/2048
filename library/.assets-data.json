@@ -1,0 +1,669 @@
+{
+  "ed9fd949-5195-49b2-97ac-cacfbdf7ef73": {
+    "url": "db://assets/2048",
+    "value": {}
+  },
+  "e0977dcb-d286-4c94-8b9c-eff1bb0672f5": {
+    "url": "db://assets/2048/tileAtlas/1024 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "9f208dd8-7552-4fdf-9c71-1cf74eac28b9": {
+    "url": "db://assets/2048/tileAtlas/128 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "2dc8d711-0e7d-4c85-9667-7aff71a56358": {
+    "url": "db://assets/2048/tileAtlas/16 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "5eb13ae9-7896-4c17-8ab7-53952f462747": {
+    "url": "db://assets/2048/tileAtlas/16384 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fb832bb0-1edd-41d4-b486-5c442ce24347": {
+    "url": "db://assets/2048/tileAtlas/2 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "2dc8d711-0e7d-4c85-9667-7aff71a56358@6c48a": {
+    "url": "db://assets/2048/tileAtlas/16 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "2dc8d711-0e7d-4c85-9667-7aff71a56358"
+      ]
+    }
+  },
+  "e0977dcb-d286-4c94-8b9c-eff1bb0672f5@6c48a": {
+    "url": "db://assets/2048/tileAtlas/1024 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "e0977dcb-d286-4c94-8b9c-eff1bb0672f5"
+      ]
+    }
+  },
+  "9f208dd8-7552-4fdf-9c71-1cf74eac28b9@6c48a": {
+    "url": "db://assets/2048/tileAtlas/128 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "9f208dd8-7552-4fdf-9c71-1cf74eac28b9"
+      ]
+    }
+  },
+  "5eb13ae9-7896-4c17-8ab7-53952f462747@6c48a": {
+    "url": "db://assets/2048/tileAtlas/16384 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "5eb13ae9-7896-4c17-8ab7-53952f462747"
+      ]
+    }
+  },
+  "2dc8d711-0e7d-4c85-9667-7aff71a56358@f9941": {
+    "url": "db://assets/2048/tileAtlas/16 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "2dc8d711-0e7d-4c85-9667-7aff71a56358@6c48a"
+      ]
+    }
+  },
+  "7195329e-42b6-4db2-baaa-8730d1c9c730": {
+    "url": "db://assets/2048/tileAtlas/2048 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "e0977dcb-d286-4c94-8b9c-eff1bb0672f5@f9941": {
+    "url": "db://assets/2048/tileAtlas/1024 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "e0977dcb-d286-4c94-8b9c-eff1bb0672f5@6c48a"
+      ]
+    }
+  },
+  "9f208dd8-7552-4fdf-9c71-1cf74eac28b9@f9941": {
+    "url": "db://assets/2048/tileAtlas/128 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "9f208dd8-7552-4fdf-9c71-1cf74eac28b9@6c48a"
+      ]
+    }
+  },
+  "f3ddbc55-d5c1-40fc-aeda-a2bd88641a0f": {
+    "url": "db://assets/2048/2048.afdesign",
+    "value": {
+      "depends": []
+    }
+  },
+  "a3532038-fe46-4651-ab20-ff38f35ad331": {
+    "url": "db://assets/2048/tileAtlas/256 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "5eb13ae9-7896-4c17-8ab7-53952f462747@f9941": {
+    "url": "db://assets/2048/tileAtlas/16384 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "5eb13ae9-7896-4c17-8ab7-53952f462747@6c48a"
+      ]
+    }
+  },
+  "9b38aa5b-876e-4477-b902-54f08a273920": {
+    "url": "db://assets/2048/tileAtlas/32 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fb832bb0-1edd-41d4-b486-5c442ce24347@6c48a": {
+    "url": "db://assets/2048/tileAtlas/2 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "fb832bb0-1edd-41d4-b486-5c442ce24347"
+      ]
+    }
+  },
+  "85aaa037-5556-4087-be71-0b5c5a662a7f": {
+    "url": "db://assets/2048/tileAtlas/32768 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fb832bb0-1edd-41d4-b486-5c442ce24347@f9941": {
+    "url": "db://assets/2048/tileAtlas/2 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "fb832bb0-1edd-41d4-b486-5c442ce24347@6c48a"
+      ]
+    }
+  },
+  "fb559e0c-e01c-4cfe-9563-f30c51cc1fa0": {
+    "url": "db://assets/2048/tileAtlas/4 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "7195329e-42b6-4db2-baaa-8730d1c9c730@6c48a": {
+    "url": "db://assets/2048/tileAtlas/2048 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "7195329e-42b6-4db2-baaa-8730d1c9c730"
+      ]
+    }
+  },
+  "a3532038-fe46-4651-ab20-ff38f35ad331@6c48a": {
+    "url": "db://assets/2048/tileAtlas/256 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "a3532038-fe46-4651-ab20-ff38f35ad331"
+      ]
+    }
+  },
+  "9b38aa5b-876e-4477-b902-54f08a273920@6c48a": {
+    "url": "db://assets/2048/tileAtlas/32 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "9b38aa5b-876e-4477-b902-54f08a273920"
+      ]
+    }
+  },
+  "7195329e-42b6-4db2-baaa-8730d1c9c730@f9941": {
+    "url": "db://assets/2048/tileAtlas/2048 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "7195329e-42b6-4db2-baaa-8730d1c9c730@6c48a"
+      ]
+    }
+  },
+  "f7103077-34a5-4a13-9ca3-7296d869781f": {
+    "url": "db://assets/2048/tileAtlas/4096 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "a3532038-fe46-4651-ab20-ff38f35ad331@f9941": {
+    "url": "db://assets/2048/tileAtlas/256 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "a3532038-fe46-4651-ab20-ff38f35ad331@6c48a"
+      ]
+    }
+  },
+  "312dc752-8cb3-4b0b-9ca6-6bcc85690aa0": {
+    "url": "db://assets/2048/tileAtlas/512 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fb559e0c-e01c-4cfe-9563-f30c51cc1fa0@6c48a": {
+    "url": "db://assets/2048/tileAtlas/4 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "fb559e0c-e01c-4cfe-9563-f30c51cc1fa0"
+      ]
+    }
+  },
+  "85aaa037-5556-4087-be71-0b5c5a662a7f@6c48a": {
+    "url": "db://assets/2048/tileAtlas/32768 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "85aaa037-5556-4087-be71-0b5c5a662a7f"
+      ]
+    }
+  },
+  "9b38aa5b-876e-4477-b902-54f08a273920@f9941": {
+    "url": "db://assets/2048/tileAtlas/32 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "9b38aa5b-876e-4477-b902-54f08a273920@6c48a"
+      ]
+    }
+  },
+  "94983424-f163-4314-85ad-916874a2d265": {
+    "url": "db://assets/2048/tileAtlas/64 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fb559e0c-e01c-4cfe-9563-f30c51cc1fa0@f9941": {
+    "url": "db://assets/2048/tileAtlas/4 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "fb559e0c-e01c-4cfe-9563-f30c51cc1fa0@6c48a"
+      ]
+    }
+  },
+  "be1b80c9-4b94-4e51-8a02-90f19f728bcd": {
+    "url": "db://assets/2048/tileAtlas/65536 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "f7103077-34a5-4a13-9ca3-7296d869781f@6c48a": {
+    "url": "db://assets/2048/tileAtlas/4096 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "f7103077-34a5-4a13-9ca3-7296d869781f"
+      ]
+    }
+  },
+  "312dc752-8cb3-4b0b-9ca6-6bcc85690aa0@6c48a": {
+    "url": "db://assets/2048/tileAtlas/512 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "312dc752-8cb3-4b0b-9ca6-6bcc85690aa0"
+      ]
+    }
+  },
+  "85aaa037-5556-4087-be71-0b5c5a662a7f@f9941": {
+    "url": "db://assets/2048/tileAtlas/32768 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "85aaa037-5556-4087-be71-0b5c5a662a7f@6c48a"
+      ]
+    }
+  },
+  "b14777b2-65fe-40d7-a92b-57071ea5010c": {
+    "url": "db://assets/2048/tileAtlas/8 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "f7103077-34a5-4a13-9ca3-7296d869781f@f9941": {
+    "url": "db://assets/2048/tileAtlas/4096 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "f7103077-34a5-4a13-9ca3-7296d869781f@6c48a"
+      ]
+    }
+  },
+  "a84086f2-bc7b-4969-a69c-580db92613c0": {
+    "url": "db://assets/2048/tileAtlas/8192 Tile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "312dc752-8cb3-4b0b-9ca6-6bcc85690aa0@f9941": {
+    "url": "db://assets/2048/tileAtlas/512 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "312dc752-8cb3-4b0b-9ca6-6bcc85690aa0@6c48a"
+      ]
+    }
+  },
+  "0c005e3f-b8d0-46e0-8e48-f6c34c1e2a7b": {
+    "url": "db://assets/2048/Background 2.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "be1b80c9-4b94-4e51-8a02-90f19f728bcd@6c48a": {
+    "url": "db://assets/2048/tileAtlas/65536 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "be1b80c9-4b94-4e51-8a02-90f19f728bcd"
+      ]
+    }
+  },
+  "94983424-f163-4314-85ad-916874a2d265@6c48a": {
+    "url": "db://assets/2048/tileAtlas/64 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "94983424-f163-4314-85ad-916874a2d265"
+      ]
+    }
+  },
+  "0c005e3f-b8d0-46e0-8e48-f6c34c1e2a7b@6c48a": {
+    "url": "db://assets/2048/Background 2.png@6c48a",
+    "value": {
+      "depends": [
+        "0c005e3f-b8d0-46e0-8e48-f6c34c1e2a7b"
+      ]
+    }
+  },
+  "be1b80c9-4b94-4e51-8a02-90f19f728bcd@f9941": {
+    "url": "db://assets/2048/tileAtlas/65536 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "be1b80c9-4b94-4e51-8a02-90f19f728bcd@6c48a"
+      ]
+    }
+  },
+  "b73c968b-ec54-4f28-8051-2547c9c49674": {
+    "url": "db://assets/2048/Background.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "94983424-f163-4314-85ad-916874a2d265@f9941": {
+    "url": "db://assets/2048/tileAtlas/64 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "94983424-f163-4314-85ad-916874a2d265@6c48a"
+      ]
+    }
+  },
+  "de2faa70-55ad-4b0f-9805-046f7c5370b8": {
+    "url": "db://assets/2048/Bottom UI.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "b14777b2-65fe-40d7-a92b-57071ea5010c@6c48a": {
+    "url": "db://assets/2048/tileAtlas/8 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "b14777b2-65fe-40d7-a92b-57071ea5010c"
+      ]
+    }
+  },
+  "a84086f2-bc7b-4969-a69c-580db92613c0@6c48a": {
+    "url": "db://assets/2048/tileAtlas/8192 Tile.png@6c48a",
+    "value": {
+      "depends": [
+        "a84086f2-bc7b-4969-a69c-580db92613c0"
+      ]
+    }
+  },
+  "b73c968b-ec54-4f28-8051-2547c9c49674@6c48a": {
+    "url": "db://assets/2048/Background.png@6c48a",
+    "value": {
+      "depends": [
+        "b73c968b-ec54-4f28-8051-2547c9c49674"
+      ]
+    }
+  },
+  "a84086f2-bc7b-4969-a69c-580db92613c0@f9941": {
+    "url": "db://assets/2048/tileAtlas/8192 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "a84086f2-bc7b-4969-a69c-580db92613c0@6c48a"
+      ]
+    }
+  },
+  "b14777b2-65fe-40d7-a92b-57071ea5010c@f9941": {
+    "url": "db://assets/2048/tileAtlas/8 Tile.png@f9941",
+    "value": {
+      "depends": [
+        "b14777b2-65fe-40d7-a92b-57071ea5010c@6c48a"
+      ]
+    }
+  },
+  "f0bb6ebc-8e92-4877-abc8-563dedcfebd5": {
+    "url": "db://assets/2048/Buttons.afdesign",
+    "value": {
+      "depends": []
+    }
+  },
+  "40264a43-1ca6-4ff9-ac78-dae1e152dd82": {
+    "url": "db://assets/2048/Green Button.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "772fb734-1a62-4e3c-aabd-184162b00169": {
+    "url": "db://assets/2048/Mockup 2.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "de2faa70-55ad-4b0f-9805-046f7c5370b8@6c48a": {
+    "url": "db://assets/2048/Bottom UI.png@6c48a",
+    "value": {
+      "depends": [
+        "de2faa70-55ad-4b0f-9805-046f7c5370b8"
+      ]
+    }
+  },
+  "0c005e3f-b8d0-46e0-8e48-f6c34c1e2a7b@f9941": {
+    "url": "db://assets/2048/Background 2.png@f9941",
+    "value": {
+      "depends": [
+        "0c005e3f-b8d0-46e0-8e48-f6c34c1e2a7b@6c48a"
+      ]
+    }
+  },
+  "fc554bff-7452-4f3c-80ba-ab2dc45b62ba": {
+    "url": "db://assets/2048/Pink Button.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "772fb734-1a62-4e3c-aabd-184162b00169@6c48a": {
+    "url": "db://assets/2048/Mockup 2.png@6c48a",
+    "value": {
+      "depends": [
+        "772fb734-1a62-4e3c-aabd-184162b00169"
+      ]
+    }
+  },
+  "de2faa70-55ad-4b0f-9805-046f7c5370b8@f9941": {
+    "url": "db://assets/2048/Bottom UI.png@f9941",
+    "value": {
+      "depends": [
+        "de2faa70-55ad-4b0f-9805-046f7c5370b8@6c48a"
+      ]
+    }
+  },
+  "e7eaae19-1be5-4661-a18e-f8c85fa504c7": {
+    "url": "db://assets/2048/Tile Background.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "40264a43-1ca6-4ff9-ac78-dae1e152dd82@6c48a": {
+    "url": "db://assets/2048/Green Button.png@6c48a",
+    "value": {
+      "depends": [
+        "40264a43-1ca6-4ff9-ac78-dae1e152dd82"
+      ]
+    }
+  },
+  "b73c968b-ec54-4f28-8051-2547c9c49674@f9941": {
+    "url": "db://assets/2048/Background.png@f9941",
+    "value": {
+      "depends": [
+        "b73c968b-ec54-4f28-8051-2547c9c49674@6c48a"
+      ]
+    }
+  },
+  "527a3095-697e-4066-a265-6765c9fdc4c9": {
+    "url": "db://assets/2048/Top UI.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fc554bff-7452-4f3c-80ba-ab2dc45b62ba@6c48a": {
+    "url": "db://assets/2048/Pink Button.png@6c48a",
+    "value": {
+      "depends": [
+        "fc554bff-7452-4f3c-80ba-ab2dc45b62ba"
+      ]
+    }
+  },
+  "40264a43-1ca6-4ff9-ac78-dae1e152dd82@f9941": {
+    "url": "db://assets/2048/Green Button.png@f9941",
+    "value": {
+      "depends": [
+        "40264a43-1ca6-4ff9-ac78-dae1e152dd82@6c48a"
+      ]
+    }
+  },
+  "5aac235c-5665-49e8-8c2b-b34b9335d01b": {
+    "url": "db://assets/2048/bottom ui.afdesign",
+    "value": {
+      "depends": []
+    }
+  },
+  "772fb734-1a62-4e3c-aabd-184162b00169@f9941": {
+    "url": "db://assets/2048/Mockup 2.png@f9941",
+    "value": {
+      "depends": [
+        "772fb734-1a62-4e3c-aabd-184162b00169@6c48a"
+      ]
+    }
+  },
+  "6cbd1bea-8e03-475d-b90c-f872ac815a3b": {
+    "url": "db://assets/2048/mockup.afdesign",
+    "value": {
+      "depends": []
+    }
+  },
+  "e7eaae19-1be5-4661-a18e-f8c85fa504c7@6c48a": {
+    "url": "db://assets/2048/Tile Background.png@6c48a",
+    "value": {
+      "depends": [
+        "e7eaae19-1be5-4661-a18e-f8c85fa504c7"
+      ]
+    }
+  },
+  "a866f765-4ddf-4343-bff1-4b8034b73afd": {
+    "url": "db://assets/2048/mockup.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "76006e10-9a2a-4ef3-9b62-fe23dd35bd9c": {
+    "url": "db://assets/2048/top ui.afdesign",
+    "value": {
+      "depends": []
+    }
+  },
+  "527a3095-697e-4066-a265-6765c9fdc4c9@6c48a": {
+    "url": "db://assets/2048/Top UI.png@6c48a",
+    "value": {
+      "depends": [
+        "527a3095-697e-4066-a265-6765c9fdc4c9"
+      ]
+    }
+  },
+  "fc554bff-7452-4f3c-80ba-ab2dc45b62ba@f9941": {
+    "url": "db://assets/2048/Pink Button.png@f9941",
+    "value": {
+      "depends": [
+        "fc554bff-7452-4f3c-80ba-ab2dc45b62ba@6c48a"
+      ]
+    }
+  },
+  "a866f765-4ddf-4343-bff1-4b8034b73afd@6c48a": {
+    "url": "db://assets/2048/mockup.png@6c48a",
+    "value": {
+      "depends": [
+        "a866f765-4ddf-4343-bff1-4b8034b73afd"
+      ]
+    }
+  },
+  "e7eaae19-1be5-4661-a18e-f8c85fa504c7@f9941": {
+    "url": "db://assets/2048/Tile Background.png@f9941",
+    "value": {
+      "depends": [
+        "e7eaae19-1be5-4661-a18e-f8c85fa504c7@6c48a"
+      ]
+    }
+  },
+  "527a3095-697e-4066-a265-6765c9fdc4c9@f9941": {
+    "url": "db://assets/2048/Top UI.png@f9941",
+    "value": {
+      "depends": [
+        "527a3095-697e-4066-a265-6765c9fdc4c9@6c48a"
+      ]
+    }
+  },
+  "a866f765-4ddf-4343-bff1-4b8034b73afd@f9941": {
+    "url": "db://assets/2048/mockup.png@f9941",
+    "value": {
+      "depends": [
+        "a866f765-4ddf-4343-bff1-4b8034b73afd@6c48a"
+      ]
+    }
+  },
+  "4fdc7a2a-de9b-4ab6-a84d-39390a2b2b85": {
+    "url": "db://assets/main.scene",
+    "value": {
+      "depends": [
+        "4fdc7a2a-de9b-4ab6-a84d-39390a2b2b85",
+        "b73c968b-ec54-4f28-8051-2547c9c49674@f9941",
+        "a866f765-4ddf-4343-bff1-4b8034b73afd@f9941",
+        "e7eaae19-1be5-4661-a18e-f8c85fa504c7@f9941",
+        "7cc887c4-3fbb-4caf-ac20-6bd056cc2e14"
+      ],
+      "dependScripts": [
+        "32b6e70a-365c-4d88-a883-1cd08039441e"
+      ]
+    }
+  },
+  "47b274d7-d79a-4651-8fe7-29c88c4ac4ec": {
+    "url": "db://assets/scripts",
+    "value": {}
+  },
+  "32b6e70a-365c-4d88-a883-1cd08039441e": {
+    "url": "db://assets/scripts/GameManager.ts",
+    "value": {}
+  },
+  "6da78291-efc3-4bbd-a4e4-7135290fcb9b": {
+    "url": "db://assets/Node.prefab",
+    "value": {}
+  },
+  "ec4a991c-f15c-4c2b-bfb8-e11c61157c2c": {
+    "url": "db://assets/prefabs",
+    "value": {}
+  },
+  "0f2a9f8f-b0dc-4b46-a9b4-73e4af70ed47": {
+    "url": "db://assets/scripts/NumberTileManager.ts",
+    "value": {}
+  },
+  "7cc887c4-3fbb-4caf-ac20-6bd056cc2e14": {
+    "url": "db://assets/prefabs/NumberTile.prefab",
+    "value": {
+      "depends": [
+        "fb832bb0-1edd-41d4-b486-5c442ce24347@f9941",
+        "53efb675-f07f-44e7-96d4-1c70f27823ab",
+        "fb559e0c-e01c-4cfe-9563-f30c51cc1fa0@f9941",
+        "b14777b2-65fe-40d7-a92b-57071ea5010c@f9941",
+        "2dc8d711-0e7d-4c85-9667-7aff71a56358@f9941",
+        "9b38aa5b-876e-4477-b902-54f08a273920@f9941",
+        "94983424-f163-4314-85ad-916874a2d265@f9941",
+        "9f208dd8-7552-4fdf-9c71-1cf74eac28b9@f9941",
+        "a3532038-fe46-4651-ab20-ff38f35ad331@f9941",
+        "312dc752-8cb3-4b0b-9ca6-6bcc85690aa0@f9941",
+        "e0977dcb-d286-4c94-8b9c-eff1bb0672f5@f9941",
+        "7195329e-42b6-4db2-baaa-8730d1c9c730@f9941",
+        "f7103077-34a5-4a13-9ca3-7296d869781f@f9941",
+        "a84086f2-bc7b-4969-a69c-580db92613c0@f9941",
+        "5eb13ae9-7896-4c17-8ab7-53952f462747@f9941",
+        "85aaa037-5556-4087-be71-0b5c5a662a7f@f9941",
+        "be1b80c9-4b94-4e51-8a02-90f19f728bcd@f9941",
+        "1a211582-0720-4100-89e7-73298db04295"
+      ],
+      "dependScripts": [
+        "0f2a9f8f-b0dc-4b46-a9b4-73e4af70ed47"
+      ]
+    }
+  },
+  "1e78b0bb-3693-4aff-a83a-b272c0855b56": {
+    "url": "db://assets/2048/tileAtlas",
+    "value": {}
+  },
+  "53efb675-f07f-44e7-96d4-1c70f27823ab": {
+    "url": "db://assets/2048/tileAtlas/tile-atlas.pac",
+    "value": {
+      "depends": []
+    }
+  },
+  "553376bb-b3aa-48aa-b7e2-a7dfdbce6650": {
+    "url": "db://assets/2048/animClips",
+    "value": {}
+  },
+  "1a211582-0720-4100-89e7-73298db04295": {
+    "url": "db://assets/2048/animClips/numberTileAnim.anim",
+    "value": {
+      "depends": []
+    }
+  }
+}
