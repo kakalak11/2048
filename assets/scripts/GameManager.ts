@@ -387,5 +387,19 @@ export class GameManager extends Component {
 
         return promises;
     }
+
+    onRetryGame() {
+        this.tableData = new Array(TABLE_FORMAT.length).fill([]).map((_, index) => new Array(TABLE_FORMAT[index]).fill(null));
+        this.currentScore = 0;
+        this.scoreLabel.string = "0";
+        this.canMove = true;
+
+        this.table.removeAllChildren();
+        this.winPopup.emit("HIDE_POPUP");
+        this.losePopup.emit("HIDE_POPUP");
+
+        this.spawnRandomTile();
+        this.spawnRandomTile();
+    }
 }
 
