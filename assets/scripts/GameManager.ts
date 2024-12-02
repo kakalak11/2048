@@ -6,6 +6,7 @@ const TABLE_WIDTH = 512, TABLE_HEIGHT = 512;
 const TABLE_FORMAT = [4, 4, 4, 4];
 const ROW_SIZE = TABLE_HEIGHT / TABLE_FORMAT.length;
 const COL_SIZE = TABLE_WIDTH / TABLE_FORMAT[0];
+const MAX_TILES = TABLE_FORMAT.length * TABLE_FORMAT[0];
 const MOVE_SPEED = 0.1;
 
 function getPosition(col, row) {
@@ -40,17 +41,24 @@ export class GameManager extends Component {
     tableData: any[][];
     canMove: boolean = true;
 
-    start() {
+    protected onLoad(): void {
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
-
         this.tableData = new Array(TABLE_FORMAT.length).fill([]).map((_, index) => new Array(TABLE_FORMAT[index]).fill(null));
-        // this.spawnRandomTile({ randomCol: 2, randomRow: 0 });
-        // this.spawnRandomTile({ randomCol: 2, randomRow: 1 });
-        // this.spawnRandomTile({ randomCol: 2, randomRow: 2 });
-        this.spawnRandomTile({ randomCol: 0, randomRow: 1 });
-        this.spawnRandomTile({ randomCol: 1, randomRow: 1 });
-        this.spawnRandomTile({ randomCol: 2, randomRow: 1, value: 4 });
-        console.table(this.tableData);
+    }
+
+    start() {
+        this.spawnRandomTile();
+        this.spawnRandomTile();
+    }
+
+    testLoseCondition() {
+        let value = 2;
+        for (let col = 0; col < TABLE_FORMAT.length; col++) {
+            for (let row = 0; row < TABLE_FORMAT[col]; row++) {
+                this.spawnRandomTile({ randomCol: col, randomRow: row, value });
+                value *= 2;
+            }
+        }
     }
 
     onKeyDown(event: EventKeyboard) {
@@ -86,8 +94,51 @@ export class GameManager extends Component {
                 .then(() => {
                     this.canMove = true;
                     this.spawnRandomTile();
+
+                    if (this.isLost()) {
+
+                    } else {
+
+                    }
                 });
+
+        } else if (this.isLost()) {
+            console.log("You lose");
+            this.canMove = false;
+
+
         }
+    }
+
+    isLost() {
+        let availableMove = 0;
+        for (let col = 0; col < TABLE_FORMAT.length; col++) {
+            for (let row = 0; row < TABLE_FORMAT[col]; row++) {
+                if (!this.tableData[col][row]) continue;
+
+                const currVal = this.tableData[col][row].value;
+                // up
+                if (this.tableData[col - 1] && this.tableData[col - 1][row] && this.tableData[col - 1][row].value == currVal) {
+                    availableMove++;
+                }
+                // down
+                if (this.tableData[col + 1] && this.tableData[col + 1][row] && this.tableData[col + 1][row].value == currVal) {
+                    availableMove++;
+                }
+                // left
+                if (this.tableData[col] && this.tableData[col][row - 1] && this.tableData[col][row - 1].value == currVal) {
+                    availableMove++;
+                }
+                // right
+                if (this.tableData[col] && this.tableData[col][row + 1] && this.tableData[col][row + 1].value == currVal) {
+                    availableMove++;
+                }
+            }
+        }
+
+        const isFullTable = globalThis._.flatten().filter(element => element !== null).length >= MAX_TILES;
+
+        return availableMove == 0 && isFullTable;
     }
 
     spawnRandomTile(data = null) {

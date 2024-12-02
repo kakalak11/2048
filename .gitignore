@@ -30,3 +30,4 @@ node_modules/
 .idea/
 /library
 /library
+.DS_Store
