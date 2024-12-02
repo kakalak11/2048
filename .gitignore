@@ -31,3 +31,4 @@ node_modules/
 /library
 /library
 .DS_Store
+/.creator

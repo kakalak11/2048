@@ -41,6 +41,8 @@ export class GameManager extends Component {
     @property(Label) highscoreLabel: Label;
     @property(Label) scoreLabel: Label;
 
+    @property(Node) losePopup: Node;
+
     tableData: any[][];
     canMove: boolean = true;
     currentScore: Number = 0;
@@ -54,6 +56,8 @@ export class GameManager extends Component {
         this.spawnRandomTile();
         this.spawnRandomTile();
         // this.testLoseCondition();
+
+        this.losePopup.emit("SHOW_LOSE_POPUP", 5000);
     }
 
     testLoseCondition() {
@@ -101,7 +105,7 @@ export class GameManager extends Component {
                     this.spawnRandomTile();
                     this.updateScore();
                     if (this.isLost()) {
-
+                        this.losePopup.emit("SHOW_LOSE_POPUP", this.currentScore);
                     } else {
 
                     }
@@ -110,8 +114,7 @@ export class GameManager extends Component {
         } else if (this.isLost()) {
             console.log("You lose");
             this.canMove = false;
-
-
+            this.losePopup.emit("SHOW_LOSE_POPUP", this.currentScore);
         }
     }
 
