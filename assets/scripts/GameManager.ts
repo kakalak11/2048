@@ -1,4 +1,4 @@
-import { _decorator, Component, EventKeyboard, Input, input, instantiate, KeyCode, Node, Prefab, tween, Vec2, Vec3 } from 'cc';
+import { _decorator, Component, EventKeyboard, Input, input, instantiate, KeyCode, Label, Node, Prefab, tween, Vec2, Vec3 } from 'cc';
 import { NumberTileManager } from './NumberTileManager';
 const { ccclass, property } = _decorator;
 
@@ -38,8 +38,12 @@ export class GameManager extends Component {
     @property(Node) table: Node;
     @property(Prefab) numberTilePrefab: Prefab;
 
+    @property(Label) highscoreLabel: Label;
+    @property(Label) scoreLabel: Label;
+
     tableData: any[][];
     canMove: boolean = true;
+    currentScore: Number = 0;
 
     protected onLoad(): void {
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
@@ -49,6 +53,7 @@ export class GameManager extends Component {
     start() {
         this.spawnRandomTile();
         this.spawnRandomTile();
+        // this.testLoseCondition();
     }
 
     testLoseCondition() {
@@ -94,7 +99,7 @@ export class GameManager extends Component {
                 .then(() => {
                     this.canMove = true;
                     this.spawnRandomTile();
-
+                    this.updateScore();
                     if (this.isLost()) {
 
                     } else {
@@ -108,6 +113,15 @@ export class GameManager extends Component {
 
 
         }
+    }
+
+    updateScore() {
+        this.currentScore = globalThis._.flatten(this.tableData).reduce((acc, curr) => {
+            if (!curr) return acc;
+            return acc + curr.value;
+        }, 0);
+
+        this.scoreLabel.string = this.currentScore.toString();
     }
 
     isLost() {
@@ -136,7 +150,7 @@ export class GameManager extends Component {
             }
         }
 
-        const isFullTable = globalThis._.flatten().filter(element => element !== null).length >= MAX_TILES;
+        const isFullTable = globalThis._.flatten(this.tableData).filter(element => element !== null).length >= MAX_TILES;
 
         return availableMove == 0 && isFullTable;
     }
@@ -145,8 +159,8 @@ export class GameManager extends Component {
         const numberTile: any = instantiate(this.numberTilePrefab);
         const { randomCol, randomRow, value } = data || this.getRandomColRow();
         const randomPos = getPosition(randomCol, randomRow);
-        // const randomValue = Math.random() > 0.5 ? 2 : 4;
-        let randomValue = 2;
+        let randomValue = Math.random() > 0.5 ? 2 : 4;
+        // let randomValue = 2;
         if (value) {
             randomValue = value;
         }
