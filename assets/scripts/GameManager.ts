@@ -42,6 +42,7 @@ export class GameManager extends Component {
     @property(Label) scoreLabel: Label;
 
     @property(Node) losePopup: Node;
+    @property(Node) winPopup: Node;
 
     tableData: any[][];
     canMove: boolean = true;
@@ -56,8 +57,12 @@ export class GameManager extends Component {
         this.spawnRandomTile();
         this.spawnRandomTile();
         // this.testLoseCondition();
+        // this.testWinCondition();
+    }
 
-        this.losePopup.emit("SHOW_LOSE_POPUP", 5000);
+    testWinCondition() {
+        this.spawnRandomTile({ value: 2048 });
+
     }
 
     testLoseCondition() {
@@ -101,20 +106,22 @@ export class GameManager extends Component {
 
             Promise.all(allPromises)
                 .then(() => {
-                    this.canMove = true;
                     this.spawnRandomTile();
                     this.updateScore();
-                    if (this.isLost()) {
-                        this.losePopup.emit("SHOW_LOSE_POPUP", this.currentScore);
-                    } else {
 
+                    if (this.isWin()) {
+                        this.winPopup.emit("SHOW_POPUP", this.currentScore);
+                    } else if (this.isLost()) {
+                        this.losePopup.emit("SHOW_POPUP", this.currentScore);
+                    } else {
+                        this.canMove = true;
                     }
                 });
 
         } else if (this.isLost()) {
             console.log("You lose");
             this.canMove = false;
-            this.losePopup.emit("SHOW_LOSE_POPUP", this.currentScore);
+            this.losePopup.emit("SHOW_POPUP", this.currentScore);
         }
     }
 
@@ -125,6 +132,10 @@ export class GameManager extends Component {
         }, 0);
 
         this.scoreLabel.string = this.currentScore.toString();
+    }
+
+    isWin() {
+        return globalThis._.flatten(this.tableData).findIndex(numberTile => numberTile && numberTile.value === 2048) > -1;
     }
 
     isLost() {
@@ -160,7 +171,7 @@ export class GameManager extends Component {
 
     spawnRandomTile(data = null) {
         const numberTile: any = instantiate(this.numberTilePrefab);
-        const { randomCol, randomRow, value } = data || this.getRandomColRow();
+        const { randomCol, randomRow, value } = Object.assign({}, this.getRandomColRow(), data);
         const randomPos = getPosition(randomCol, randomRow);
         let randomValue = Math.random() > 0.5 ? 2 : 4;
         // let randomValue = 2;

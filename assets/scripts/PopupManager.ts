@@ -8,10 +8,10 @@ export class LosePopup extends Component {
     @property(Label) loseScore: Label;
 
     start() {
-        this.node.on("SHOW_LOSE_POPUP", this.showLosePopup, this);
+        this.node.on("SHOW_POPUP", this.showPopup, this);
     }
 
-    showLosePopup(score = 0) {
+    showPopup(score = 0) {
         this.node.active = true;
         this.node.getComponent(UIOpacity).opacity = 0;
         tween(this.node.getComponent(UIOpacity))
