@@ -3500,7 +3500,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "HighscoreLose",
+    "_name": "Highscore",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
@@ -4352,7 +4352,7 @@
         "__id__": 96
       }
     ],
-    "loseScore": {
+    "score": {
       "__id__": 95
     },
     "_id": "d25azyvd5EZbuOi39+3qeH"
@@ -4774,7 +4774,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "HighscoreLose",
+    "_name": "Highscore",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
@@ -5626,7 +5626,7 @@
         "__id__": 131
       }
     ],
-    "loseScore": {
+    "score": {
       "__id__": 130
     },
     "_id": "3fiAmPqiBOc72lrAei8MXZ"

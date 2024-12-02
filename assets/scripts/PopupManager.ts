@@ -5,7 +5,7 @@ const { ccclass, property } = _decorator;
 export class LosePopup extends Component {
 
     @property(Node) fadeInList: Node[] = [];
-    @property(Label) loseScore: Label;
+    @property(Label) score: Label;
 
     start() {
         this.node.on("SHOW_POPUP", this.showPopup, this);
@@ -47,7 +47,7 @@ export class LosePopup extends Component {
             }
         });
 
-        this.loseScore.string = score.toString();
+        this.score.string = score.toString();
     }
 
 }
