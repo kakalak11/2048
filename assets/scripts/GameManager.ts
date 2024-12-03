@@ -1,4 +1,4 @@
-import { _decorator, Component, EventKeyboard, Game, Input, input, instantiate, KeyCode, Label, Node, NodePool, Prefab, tween, Vec2, Vec3 } from 'cc';
+import { _decorator, Component, EventKeyboard, Game, Input, input, instantiate, KeyCode, Label, Node, NodePool, Prefab, tween, v3, Vec2, Vec3 } from 'cc';
 import { NumberTileManager } from './NumberTileManager';
 const { ccclass, property } = _decorator;
 
@@ -30,6 +30,22 @@ function moveNumberToPos(numberTile, newPos) {
 
 function canAddUp(nextNumberTile, numberTile) {
     return nextNumberTile && nextNumberTile.canAdd && nextNumberTile !== numberTile && nextNumberTile.value == numberTile.value;
+}
+
+function shaking(node: Node, { duration = 0.16, distance = 10, repeat = 1 }) {
+    const dur = duration / 8;
+    const shake = tween()
+        .by(dur, { position: v3(0, distance) })
+        .by(dur, { position: v3(0, -distance) })
+        .by(dur, { position: v3(0, -distance) })
+        .by(dur, { position: v3(0, distance) })
+        .by(dur, { position: v3(distance, 0) })
+        .by(dur, { position: v3(-distance, 0) })
+        .by(dur, { position: v3(-distance, 0) })
+        .by(dur, { position: v3(distance, 0) })
+
+    const tweenShake = tween(node).repeat(repeat, shake).start();
+    return tweenShake;
 }
 
 @ccclass('GameManager')
@@ -137,6 +153,9 @@ export class GameManager extends Component {
             this.canMove = false;
             this.isPlaying = true;
             this.losePopup.emit("SHOW_POPUP", this.currentScore);
+        } else {
+            // nothing move, shake the table to let user know
+            shaking(this.node, {});
         }
     }
 
