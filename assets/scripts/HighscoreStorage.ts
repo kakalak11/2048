@@ -2,7 +2,7 @@ import { _decorator, Button, Component, EditBox, log, Node, sys } from 'cc';
 import { GameManager } from './GameManager';
 const { ccclass, property } = _decorator;
 
-const STORAGE_KEY = "highscoreData";
+export const STORAGE_KEY = "highscoreData";
 
 @ccclass('HighscoreStorage')
 export class HighscoreStorage extends Component {
@@ -29,7 +29,7 @@ export class HighscoreStorage extends Component {
             name: this.playerName.string,
             score: GameManager?.instance?.currentScore ?? 0,
         };
-        
+
         if (highscoreData.find(data => this.playerName.string == data.name)) {
             highscoreData.find(data => this.playerName.string == data.name).score = GameManager?.instance?.currentScore ?? 0
         } else {
