@@ -1,4 +1,4 @@
-import { _decorator, Component, EventKeyboard, Game, Input, input, instantiate, KeyCode, Label, Node, NodePool, Prefab, tween, v3, Vec2, Vec3 } from 'cc';
+import { _decorator, Button, Component, EditBox, EventKeyboard, Game, Input, input, instantiate, KeyCode, Label, Node, NodePool, Prefab, tween, v3, Vec2, Vec3 } from 'cc';
 import { NumberTileManager } from './NumberTileManager';
 const { ccclass, property } = _decorator;
 
@@ -33,6 +33,7 @@ function canAddUp(nextNumberTile, numberTile) {
 }
 
 function shaking(node: Node, { duration = 0.16, distance = 10, repeat = 1 }) {
+    const originalPos = node.getPosition();
     const dur = duration / 8;
     const shake = tween()
         .by(dur, { position: v3(0, distance) })
@@ -43,6 +44,9 @@ function shaking(node: Node, { duration = 0.16, distance = 10, repeat = 1 }) {
         .by(dur, { position: v3(-distance, 0) })
         .by(dur, { position: v3(-distance, 0) })
         .by(dur, { position: v3(distance, 0) })
+        .call(() => {
+            node.setPosition(originalPos);
+        })
 
     const tweenShake = tween(node).repeat(repeat, shake).start();
     return tweenShake;
@@ -59,6 +63,7 @@ export class GameManager extends Component {
 
     @property(Node) losePopup: Node;
     @property(Node) winPopup: Node;
+    @property(Node) menuPopup: Node;
 
     tableData: any[][];
     canMove: boolean = true;
@@ -101,6 +106,7 @@ export class GameManager extends Component {
                 value *= 2;
             }
         }
+        this.updateScore();
     }
 
     onKeyDown(event: EventKeyboard) {
@@ -438,7 +444,7 @@ export class GameManager extends Component {
         return promises;
     }
 
-    onRetryGame() {
+    gameReset() {
         this.tableData = new Array(TABLE_FORMAT.length).fill([]).map((_, index) => new Array(TABLE_FORMAT[index]).fill(null));
         this.currentScore = 0;
         this.scoreLabel.string = "0";
@@ -447,8 +453,17 @@ export class GameManager extends Component {
         this.table.removeAllChildren();
         this.winPopup.emit("HIDE_POPUP");
         this.losePopup.emit("HIDE_POPUP");
+    }
 
+    onRetryGame() {
+        this.gameReset();
         this.gameStart();
+    }
+
+    onMenuClick() {
+        this.menuPopup.emit("SHOW_POPUP");
+
+        this.gameReset();
     }
 
     gameStart() {

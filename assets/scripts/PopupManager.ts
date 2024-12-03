@@ -13,8 +13,12 @@ export class LosePopup extends Component {
     }
 
     hidePopup() {
-        this.node.getComponent(UIOpacity).opacity = 0;
-        this.node.getComponentInChildren(BlockInputEvents).enabled = false;
+        tween(this.node.getComponent(UIOpacity))
+            .to(0.5, { opacity: 0 })
+            .call(() => {
+                this.node.getComponentInChildren(BlockInputEvents).enabled = false;
+            })
+            .start();
     }
 
     showPopup(score = 0) {
