@@ -1,4 +1,4 @@
-import { _decorator, Component, EventKeyboard, Game, Input, input, instantiate, KeyCode, Label, Node, Prefab, tween, Vec2, Vec3 } from 'cc';
+import { _decorator, Component, EventKeyboard, Game, Input, input, instantiate, KeyCode, Label, Node, NodePool, Prefab, tween, Vec2, Vec3 } from 'cc';
 import { NumberTileManager } from './NumberTileManager';
 const { ccclass, property } = _decorator;
 
@@ -48,12 +48,21 @@ export class GameManager extends Component {
     canMove: boolean = true;
     currentScore: Number = 0;
     isPlaying: boolean = false;
+    pool: NodePool;
 
     static instance: GameManager;
 
     protected onLoad(): void {
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
+
         this.tableData = new Array(TABLE_FORMAT.length).fill([]).map((_, index) => new Array(TABLE_FORMAT[index]).fill(null));
+
+        this.pool = new NodePool();
+
+        for (let i = 0; i < 16; i++) {
+            const numberTile = instantiate(this.numberTilePrefab);
+            this.pool.put(numberTile);
+        }
     }
 
     start() {
@@ -145,7 +154,11 @@ export class GameManager extends Component {
     }
 
     isLost() {
+        const isFullTable = globalThis._.flatten(this.tableData).filter(element => element !== null).length >= MAX_TILES;
+
+        if (!isFullTable) return;
         let availableMove = 0;
+
         for (let col = 0; col < TABLE_FORMAT.length; col++) {
             for (let row = 0; row < TABLE_FORMAT[col]; row++) {
                 if (!this.tableData[col][row]) continue;
@@ -170,13 +183,25 @@ export class GameManager extends Component {
             }
         }
 
-        const isFullTable = globalThis._.flatten(this.tableData).filter(element => element !== null).length >= MAX_TILES;
 
-        return availableMove == 0 && isFullTable;
+        return availableMove == 0;
+    }
+
+    getNumberTile() {
+        if (this.pool.size() > 0) {
+            return this.pool.get();
+        } else {
+            return instantiate(this.numberTilePrefab);
+        }
+    }
+
+    removeNumberTile(node) {
+        node.setParent(null);
+        this.pool.put(node);
     }
 
     spawnRandomTile(data = null) {
-        const numberTile: any = instantiate(this.numberTilePrefab);
+        const numberTile: any = this.getNumberTile();
         const { randomCol, randomRow, value } = Object.assign({}, this.getRandomColRow(), data);
         const randomPos = getPosition(randomCol, randomRow);
         let randomValue = Math.random() > 0.5 ? 2 : 4;
@@ -240,7 +265,7 @@ export class GameManager extends Component {
                             .then(() => {
                                 nextNumberTile.manager.updateValue(newValue);
                                 nextNumberTile.canAdd = true;
-                                numberTile.destroy();
+                                this.removeNumberTile(numberTile);
                             })
                     );
                 } else {
@@ -287,7 +312,7 @@ export class GameManager extends Component {
                             .then(() => {
                                 nextNumberTile.manager.updateValue(newValue);
                                 nextNumberTile.canAdd = true;
-                                numberTile.destroy();
+                                this.removeNumberTile(numberTile);
                             })
                     );
                 } else {
@@ -333,7 +358,7 @@ export class GameManager extends Component {
                             .then(() => {
                                 nextNumberTile.manager.updateValue(newValue);
                                 nextNumberTile.canAdd = true;
-                                numberTile.destroy();
+                                this.removeNumberTile(numberTile);
                             })
                     );
                 } else {
@@ -379,7 +404,7 @@ export class GameManager extends Component {
                             .then(() => {
                                 nextNumberTile.manager.updateValue(newValue);
                                 nextNumberTile.canAdd = true;
-                                numberTile.destroy();
+                                this.removeNumberTile(numberTile);
                             })
                     );
                 } else {
@@ -409,7 +434,7 @@ export class GameManager extends Component {
 
     gameStart() {
         if (this.isPlaying) return;
-        
+
         this.isPlaying = true;
         this.spawnRandomTile();
         this.spawnRandomTile();

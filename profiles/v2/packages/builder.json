@@ -2,5 +2,59 @@
   "__version__": "1.3.7",
   "log": {
     "level": 4
+  },
+  "common": {
+    "polyfills": {
+      "asyncFunctions": true
+    }
+  },
+  "BuildTaskManager": {
+    "taskMap": {
+      "1733194124101": {
+        "type": "build",
+        "id": "1733194124101",
+        "progress": 1,
+        "state": "success",
+        "stage": "run",
+        "message": "12-3-2024 17:13:35 run package /Users/fe-tu/Desktop/Personal/2048/build/web-desktop success!",
+        "options": {
+          "name": "2048-kakalak",
+          "server": "",
+          "platform": "web-desktop",
+          "buildPath": "project://build",
+          "debug": false,
+          "md5Cache": false,
+          "skipCompressTexture": false,
+          "sourceMaps": false,
+          "polyfills": {
+            "asyncFunctions": true
+          },
+          "experimentalEraseModules": false,
+          "startSceneAssetBundle": false,
+          "bundleConfigs": [],
+          "useBuiltinServer": false,
+          "mainBundleIsRemote": false,
+          "mainBundleCompressionType": "merge_dep",
+          "useSplashScreen": true,
+          "bundleCommonChunk": false,
+          "packAutoAtlas": true,
+          "startScene": "4fdc7a2a-de9b-4ab6-a84d-39390a2b2b85",
+          "outputName": "web-desktop",
+          "taskName": "web-desktop",
+          "scenes": [
+            {
+              "url": "db://assets/main.scene",
+              "uuid": "4fdc7a2a-de9b-4ab6-a84d-39390a2b2b85"
+            }
+          ],
+          "packages": {},
+          "__version__": "1.3.7",
+          "buildMode": "normal",
+          "logDest": "project://temp/builder/log/web-desktop12-3-2024 09-48.log"
+        },
+        "time": "12-3-2024 09:48:44",
+        "dirty": false
+      }
+    }
   }
 }
