@@ -1,4 +1,4 @@
-import { _decorator, Component, EventKeyboard, Input, input, instantiate, KeyCode, Label, Node, Prefab, tween, Vec2, Vec3 } from 'cc';
+import { _decorator, Component, EventKeyboard, Game, Input, input, instantiate, KeyCode, Label, Node, Prefab, tween, Vec2, Vec3 } from 'cc';
 import { NumberTileManager } from './NumberTileManager';
 const { ccclass, property } = _decorator;
 
@@ -47,6 +47,9 @@ export class GameManager extends Component {
     tableData: any[][];
     canMove: boolean = true;
     currentScore: Number = 0;
+    isPlaying: boolean = false;
+
+    static instance: GameManager;
 
     protected onLoad(): void {
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
@@ -54,10 +57,10 @@ export class GameManager extends Component {
     }
 
     start() {
-        this.spawnRandomTile();
-        this.spawnRandomTile();
+        // this.gameStart();
         // this.testLoseCondition();
         // this.testWinCondition();
+        GameManager.instance = this;
     }
 
     testWinCondition() {
@@ -111,8 +114,10 @@ export class GameManager extends Component {
 
                     if (this.isWin()) {
                         this.winPopup.emit("SHOW_POPUP", this.currentScore);
+                        this.isPlaying = true;
                     } else if (this.isLost()) {
                         this.losePopup.emit("SHOW_POPUP", this.currentScore);
+                        this.isPlaying = true;
                     } else {
                         this.canMove = true;
                     }
@@ -121,6 +126,7 @@ export class GameManager extends Component {
         } else if (this.isLost()) {
             console.log("You lose");
             this.canMove = false;
+            this.isPlaying = true;
             this.losePopup.emit("SHOW_POPUP", this.currentScore);
         }
     }
@@ -398,8 +404,16 @@ export class GameManager extends Component {
         this.winPopup.emit("HIDE_POPUP");
         this.losePopup.emit("HIDE_POPUP");
 
+        this.gameStart();
+    }
+
+    gameStart() {
+        if (this.isPlaying) return;
+        
+        this.isPlaying = true;
         this.spawnRandomTile();
         this.spawnRandomTile();
+        this.updateScore();
     }
 }
 

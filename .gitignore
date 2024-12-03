@@ -32,3 +32,4 @@ node_modules/
 /library
 .DS_Store
 /.creator
+/profiles

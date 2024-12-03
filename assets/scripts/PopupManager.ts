@@ -1,4 +1,4 @@
-import { _decorator, Button, Component, Label, Node, Sprite, tween, UIOpacity } from 'cc';
+import { _decorator, BlockInputEvents, Button, Component, Label, Node, Sprite, tween, UIOpacity } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('LosePopup')
@@ -14,11 +14,13 @@ export class LosePopup extends Component {
 
     hidePopup() {
         this.node.getComponent(UIOpacity).opacity = 0;
+        this.node.getComponentInChildren(BlockInputEvents).enabled = false;
     }
 
     showPopup(score = 0) {
         this.node.active = true;
         this.node.getComponent(UIOpacity).opacity = 0;
+        this.node.getComponentInChildren(BlockInputEvents).enabled = true;
         tween(this.node.getComponent(UIOpacity))
             .to(0.5, { opacity: 255 })
             .start();
