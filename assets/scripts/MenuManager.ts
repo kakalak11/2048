@@ -10,6 +10,8 @@ export class MenuManager extends Component {
     start() {
         this.node.on("SHOW_POPUP", this.showPopup, this);
         this.node.on("HIDE_POPUP", this.hidePopup, this);
+
+        this.showPopup(true);
     }
 
     hidePopup() {
@@ -31,7 +33,7 @@ export class MenuManager extends Component {
         }
     }
 
-    showPopup() {
+    showPopup(isStartGame) {
         this.node.active = true;
         const opacityComp = this.node.getComponent(UIOpacity);
         const buttonComps = this.node.getComponentsInChildren(Button);
@@ -42,19 +44,23 @@ export class MenuManager extends Component {
         } else {
             this.playButton.getComponentInChildren(Label).string = "Play";
         }
-
-        if (opacityComp) {
-            tween(opacityComp)
-                .to(0.5, { opacity: 255 })
-                .call(() => {
-                    if (buttonComps) {
-                        buttonComps.forEach(button => button.interactable = true);
-                    }
-                })
-                .start()
+        if (isStartGame) {
+            if (opacityComp) opacityComp.opacity = 255;
+            if (buttonComps) {
+                buttonComps.forEach(button => button.interactable = true);
+            }
+        } else {
+            if (opacityComp) {
+                tween(opacityComp)
+                    .to(0.5, { opacity: 255 })
+                    .call(() => {
+                        if (buttonComps) {
+                            buttonComps.forEach(button => button.interactable = true);
+                        }
+                    })
+                    .start()
+            }
         }
-
-
     }
 }
 
