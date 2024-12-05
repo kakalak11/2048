@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "test",
+    "_name": "DragAndDrop",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -56,7 +56,7 @@
     "_globals": {
       "__id__": 20
     },
-    "_id": "b93e0286-ddf3-4a5f-a5a2-44f51ec1f118"
+    "_id": "b43a9b27-a8c0-402f-9aa9-ec526311208e"
   },
   {
     "__type__": "cc.Node",
