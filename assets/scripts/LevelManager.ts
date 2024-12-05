@@ -51,7 +51,7 @@ export class LevelManager extends Component {
 
     protected start(): void {
         this.node.on("UPDATE_LEVEL", this.updateLevel, this);
-        this.showAnimationLevelUp(this.levelUI.children[2]);
+        // this.showAnimationLevelUp(this.levelUI.children[2]);
     }
 
     updateLevel(levelIndex) {
