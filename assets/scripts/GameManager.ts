@@ -452,8 +452,8 @@ export class GameManager extends Component {
 
     gameStart() {
         if (this.isPlaying) return;
-        this.spawnRandomTile({ randomCol: 1, randomRow: 1, value: 64 });
-        this.spawnRandomTile({ randomCol: 1, randomRow: 2, value: 64 });
+        // this.spawnRandomTile({ randomCol: 1, randomRow: 1, value: 64 });
+        // this.spawnRandomTile({ randomCol: 1, randomRow: 2, value: 64 });
         this.isPlaying = true;
         this.spawnRandomTile();
         this.spawnRandomTile();
