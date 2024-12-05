@@ -81,6 +81,7 @@ export class GameManager extends Component {
     pool: NodePool;
     currentHighestValue: number = 64;
     currentRandomLevel: number = 0;
+    isShowingPopup: boolean;
 
     static instance: GameManager;
 
@@ -105,11 +106,12 @@ export class GameManager extends Component {
     }
 
     testWinCondition() {
+        this.isPlaying = true;
         this.spawnRandomTile({ value: 2048 });
-
     }
 
     testLoseCondition() {
+        this.isPlaying = true;
         let value = 2;
         for (let col = 0; col < TABLE_FORMAT.length; col++) {
             for (let row = 0; row < TABLE_FORMAT[col]; row++) {
@@ -121,7 +123,7 @@ export class GameManager extends Component {
     }
 
     onKeyDown(event: EventKeyboard) {
-        if (!this.canMove) return;
+        if (!this.canMove || this.isShowingPopup) return;
         let allPromises;
 
         switch (event.keyCode) {
@@ -430,10 +432,12 @@ export class GameManager extends Component {
         this.currentScore = 0;
         this.scoreLabel.string = "0";
         this.canMove = true;
+        this.isPlaying = false;
 
         this.table.removeAllChildren();
         this.winPopup.emit("HIDE_POPUP");
         this.losePopup.emit("HIDE_POPUP");
+        this.levelManager.emit("RESET_LEVEL");
     }
 
     onRetryGame() {
@@ -442,14 +446,14 @@ export class GameManager extends Component {
     }
 
     onMenuClick() {
-        this.menuPopup.emit("SHOW_POPUP");
-
         this.gameReset();
+        this.menuPopup.emit("SHOW_POPUP");
     }
 
     gameStart() {
         if (this.isPlaying) return;
-
+        this.spawnRandomTile({ randomCol: 1, randomRow: 1, value: 64 });
+        this.spawnRandomTile({ randomCol: 1, randomRow: 2, value: 64 });
         this.isPlaying = true;
         this.spawnRandomTile();
         this.spawnRandomTile();
