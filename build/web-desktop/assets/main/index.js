@@ -1,14 +1,1815 @@
-System.register("chunks:///_virtual/debug-view-runtime-control.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(t){var e,o,i,n,s,l,r,a,g,h,p,c,C,d,m,u,L;return{setters:[function(t){e=t.applyDecoratedDescriptor,o=t.inheritsLoose,i=t.initializerDefineProperty,n=t.assertThisInitialized},function(t){s=t.cclegacy,l=t._decorator,r=t.Node,a=t.Canvas,g=t.UITransform,h=t.instantiate,p=t.Label,c=t.Color,C=t.RichText,d=t.Toggle,m=t.Button,u=t.director,L=t.Component}],execute:function(){var f,M,b,v,T,S,x,E,I;s._RF.push({},"b2bd1+njXxJxaFY3ymm06WU","debug-view-runtime-control",void 0);var A=l.ccclass,y=l.property;t("DebugViewRuntimeControl",(f=A("internal.DebugViewRuntimeControl"),M=y(r),b=y(r),v=y(r),f((x=e((S=function(t){function e(){for(var e,o=arguments.length,s=new Array(o),l=0;l<o;l++)s[l]=arguments[l];return e=t.call.apply(t,[this].concat(s))||this,i(e,"compositeModeToggle",x,n(e)),i(e,"singleModeToggle",E,n(e)),i(e,"EnableAllCompositeModeButton",I,n(e)),e._single=0,e.strSingle=["No Single Debug","Vertex Color","Vertex Normal","Vertex Tangent","World Position","Vertex Mirror","Face Side","UV0","UV1","UV Lightmap","Project Depth","Linear Depth","Fragment Normal","Fragment Tangent","Fragment Binormal","Base Color","Diffuse Color","Specular Color","Transparency","Metallic","Roughness","Specular Intensity","IOR","Direct Diffuse","Direct Specular","Direct All","Env Diffuse","Env Specular","Env All","Emissive","Light Map","Shadow","AO","Fresnel","Direct Transmit Diffuse","Direct Transmit Specular","Env Transmit Diffuse","Env Transmit Specular","Transmit All","Direct Internal Specular","Env Internal Specular","Internal All","Fog"],e.strComposite=["Direct Diffuse","Direct Specular","Env Diffuse","Env Specular","Emissive","Light Map","Shadow","AO","Normal Map","Fog","Tone Mapping","Gamma Correction","Fresnel","Transmit Diffuse","Transmit Specular","Internal Specular","TT"],e.strMisc=["CSM Layer Coloration","Lighting With Albedo"],e.compositeModeToggleList=[],e.singleModeToggleList=[],e.miscModeToggleList=[],e.textComponentList=[],e.labelComponentList=[],e.textContentList=[],e.hideButtonLabel=void 0,e._currentColorIndex=0,e.strColor=["<color=#ffffff>","<color=#000000>","<color=#ff0000>","<color=#00ff00>","<color=#0000ff>"],e.color=[c.WHITE,c.BLACK,c.RED,c.GREEN,c.BLUE],e}o(e,t);var s=e.prototype;return s.start=function(){if(this.node.parent.getComponent(a)){var t=this.node.parent.getComponent(g),e=.5*t.width,o=.5*t.height,i=.1*e-e,n=o-.1*o,s=this.node.getChildByName("MiscMode"),l=h(s);l.parent=this.node,l.name="Buttons";var r=h(s);r.parent=this.node,r.name="Titles";for(var u=0;u<2;u++){var L=h(this.EnableAllCompositeModeButton.getChildByName("Label"));L.setPosition(i+(u>0?450:150),n,0),L.setScale(.75,.75,.75),L.parent=r;var f=L.getComponent(p);f.string=u?"----------Composite Mode----------":"----------Single Mode----------",f.color=c.WHITE,f.overflow=0,this.labelComponentList[this.labelComponentList.length]=f}n-=20;for(var M=0,b=0;b<this.strSingle.length;b++,M++){b===this.strSingle.length>>1&&(i+=200,M=0);var v=b?h(this.singleModeToggle):this.singleModeToggle;v.setPosition(i,n-20*M,0),v.setScale(.5,.5,.5),v.parent=this.singleModeToggle.parent;var T=v.getComponentInChildren(C);T.string=this.strSingle[b],this.textComponentList[this.textComponentList.length]=T,this.textContentList[this.textContentList.length]=T.string,v.on(d.EventType.TOGGLE,this.toggleSingleMode,this),this.singleModeToggleList[b]=v}i+=200,this.EnableAllCompositeModeButton.setPosition(i+15,n,0),this.EnableAllCompositeModeButton.setScale(.5,.5,.5),this.EnableAllCompositeModeButton.on(m.EventType.CLICK,this.enableAllCompositeMode,this),this.EnableAllCompositeModeButton.parent=l;var S=this.EnableAllCompositeModeButton.getComponentInChildren(p);this.labelComponentList[this.labelComponentList.length]=S;var x=h(this.EnableAllCompositeModeButton);x.setPosition(i+90,n,0),x.setScale(.5,.5,.5),x.on(m.EventType.CLICK,this.changeTextColor,this),x.parent=l,(S=x.getComponentInChildren(p)).string="TextColor",this.labelComponentList[this.labelComponentList.length]=S;var E=h(this.EnableAllCompositeModeButton);E.setPosition(i+200,n,0),E.setScale(.5,.5,.5),E.on(m.EventType.CLICK,this.hideUI,this),E.parent=this.node.parent,(S=E.getComponentInChildren(p)).string="Hide UI",this.labelComponentList[this.labelComponentList.length]=S,this.hideButtonLabel=S,n-=40;for(var I=0;I<this.strMisc.length;I++){var A=h(this.compositeModeToggle);A.setPosition(i,n-20*I,0),A.setScale(.5,.5,.5),A.parent=s;var y=A.getComponentInChildren(C);y.string=this.strMisc[I],this.textComponentList[this.textComponentList.length]=y,this.textContentList[this.textContentList.length]=y.string,A.getComponent(d).isChecked=!!I,A.on(d.EventType.TOGGLE,I?this.toggleLightingWithAlbedo:this.toggleCSMColoration,this),this.miscModeToggleList[I]=A}n-=150;for(var D=0;D<this.strComposite.length;D++){var B=D?h(this.compositeModeToggle):this.compositeModeToggle;B.setPosition(i,n-20*D,0),B.setScale(.5,.5,.5),B.parent=this.compositeModeToggle.parent;var w=B.getComponentInChildren(C);w.string=this.strComposite[D],this.textComponentList[this.textComponentList.length]=w,this.textContentList[this.textContentList.length]=w.string,B.on(d.EventType.TOGGLE,this.toggleCompositeMode,this),this.compositeModeToggleList[D]=B}}else console.error("debug-view-runtime-control should be child of Canvas")},s.isTextMatched=function(t,e){var o=new String(t),i=o.search(">");return-1===i?t===e:(o=(o=o.substr(i+1)).substr(0,o.search("<")))===e},s.toggleSingleMode=function(t){for(var e=u.root.debugView,o=t.getComponentInChildren(C),i=0;i<this.strSingle.length;i++)this.isTextMatched(o.string,this.strSingle[i])&&(e.singleMode=i)},s.toggleCompositeMode=function(t){for(var e=u.root.debugView,o=t.getComponentInChildren(C),i=0;i<this.strComposite.length;i++)this.isTextMatched(o.string,this.strComposite[i])&&e.enableCompositeMode(i,t.isChecked)},s.toggleLightingWithAlbedo=function(t){u.root.debugView.lightingWithAlbedo=t.isChecked},s.toggleCSMColoration=function(t){u.root.debugView.csmLayerColoration=t.isChecked},s.enableAllCompositeMode=function(t){var e=u.root.debugView;e.enableAllCompositeMode(!0);for(var o=0;o<this.compositeModeToggleList.length;o++){this.compositeModeToggleList[o].getComponent(d).isChecked=!0}var i=this.miscModeToggleList[0].getComponent(d);i.isChecked=!1,e.csmLayerColoration=!1,(i=this.miscModeToggleList[1].getComponent(d)).isChecked=!0,e.lightingWithAlbedo=!0},s.hideUI=function(t){var e=this.node.getChildByName("Titles"),o=!e.active;this.singleModeToggleList[0].parent.active=o,this.miscModeToggleList[0].parent.active=o,this.compositeModeToggleList[0].parent.active=o,this.EnableAllCompositeModeButton.parent.active=o,e.active=o,this.hideButtonLabel.string=o?"Hide UI":"Show UI"},s.changeTextColor=function(t){this._currentColorIndex++,this._currentColorIndex>=this.strColor.length&&(this._currentColorIndex=0);for(var e=0;e<this.textComponentList.length;e++)this.textComponentList[e].string=this.strColor[this._currentColorIndex]+this.textContentList[e]+"</color>";for(var o=0;o<this.labelComponentList.length;o++)this.labelComponentList[o].color=this.color[this._currentColorIndex]},s.onLoad=function(){},s.update=function(t){},e}(L)).prototype,"compositeModeToggle",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=e(S.prototype,"singleModeToggle",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),I=e(S.prototype,"EnableAllCompositeModeButton",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),T=S))||T));s._RF.pop()}}}));
+System.register("chunks:///_virtual/debug-view-runtime-control.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Canvas, UITransform, instantiate, Label, Color, RichText, Toggle, Button, director, Component;
 
-System.register("chunks:///_virtual/GameManager.ts",["./rollupPluginModLoBabelHelpers.js","cc","./NumberTileManager.ts"],(function(a){var t,e,n,l,i,r,o,u,s,c,h,b,f,v,p,D,d;return{setters:[function(a){t=a.applyDecoratedDescriptor,e=a.inheritsLoose,n=a.initializerDefineProperty,l=a.assertThisInitialized},function(a){i=a.cclegacy,r=a._decorator,o=a.Node,u=a.Prefab,s=a.Label,c=a.input,h=a.Input,b=a.KeyCode,f=a.instantiate,v=a.Vec3,p=a.tween,D=a.Component},function(a){d=a.NumberTileManager}],execute:function(){var m,g,P,w,y,R,A,S,M,_,T,L,O,C,W,E;i._RF.push({},"32b6ecKNlxNiKiDHNCAOUQe","GameManager",void 0);var I=r.ccclass,K=r.property,U=[4,4,4,4],z=512/U.length,H=512/U[0],N=U.length*U[0];function x(a,t){return new v((-U.length/2+.5)*H+H*a,(U[0]/2-.5)*z-z*t,0)}function k(a,t){return new Promise((function(e,n){a.moveTween=p(a).to(.2,{position:t}).call((function(){a.moveTween=null,e(a)})).start()}))}function G(a,t){return a&&a.canAdd&&a!==t&&a.value==t.value}a("GameManager",(m=I("GameManager"),g=K(o),P=K(u),w=K(s),y=K(s),R=K(o),A=K(o),m(((E=function(a){function t(){for(var t,e=arguments.length,i=new Array(e),r=0;r<e;r++)i[r]=arguments[r];return t=a.call.apply(a,[this].concat(i))||this,n(t,"table",_,l(t)),n(t,"numberTilePrefab",T,l(t)),n(t,"highscoreLabel",L,l(t)),n(t,"scoreLabel",O,l(t)),n(t,"losePopup",C,l(t)),n(t,"winPopup",W,l(t)),t.tableData=void 0,t.canMove=!0,t.currentScore=0,t.isPlaying=!1,t}e(t,a);var i=t.prototype;return i.onLoad=function(){c.on(h.EventType.KEY_DOWN,this.onKeyDown,this),this.tableData=new Array(U.length).fill([]).map((function(a,t){return new Array(U[t]).fill(null)}))},i.start=function(){t.instance=this},i.testWinCondition=function(){this.spawnRandomTile({value:2048})},i.testLoseCondition=function(){for(var a=2,t=0;t<U.length;t++)for(var e=0;e<U[t];e++)this.spawnRandomTile({randomCol:t,randomRow:e,value:a}),a*=2},i.onKeyDown=function(a){var t=this;if(this.canMove){var e;switch(a.keyCode){case b.SPACE:e=this.moveDown();break;case b.KEY_A:case b.ARROW_LEFT:e=this.moveLeft();break;case b.KEY_D:case b.ARROW_RIGHT:e=this.moveRight();break;case b.KEY_S:case b.ARROW_DOWN:e=this.moveDown();break;case b.KEY_W:case b.ARROW_UP:e=this.moveUp()}e&&e.length>0?(this.canMove=!1,Promise.all(e).then((function(){t.spawnRandomTile(),t.updateScore(),t.isWin()?(t.winPopup.emit("SHOW_POPUP",t.currentScore),t.isPlaying=!0):t.isLost()?(t.losePopup.emit("SHOW_POPUP",t.currentScore),t.isPlaying=!0):t.canMove=!0}))):this.isLost()&&(console.log("You lose"),this.canMove=!1,this.isPlaying=!0,this.losePopup.emit("SHOW_POPUP",this.currentScore))}},i.updateScore=function(){this.currentScore=globalThis._.flatten(this.tableData).reduce((function(a,t){return t?a+t.value:a}),0),this.scoreLabel.string=this.currentScore.toString()},i.isWin=function(){return globalThis._.flatten(this.tableData).findIndex((function(a){return a&&2048===a.value}))>-1},i.isLost=function(){for(var a=0,t=0;t<U.length;t++)for(var e=0;e<U[t];e++)if(this.tableData[t][e]){var n=this.tableData[t][e].value;this.tableData[t-1]&&this.tableData[t-1][e]&&this.tableData[t-1][e].value==n&&a++,this.tableData[t+1]&&this.tableData[t+1][e]&&this.tableData[t+1][e].value==n&&a++,this.tableData[t]&&this.tableData[t][e-1]&&this.tableData[t][e-1].value==n&&a++,this.tableData[t]&&this.tableData[t][e+1]&&this.tableData[t][e+1].value==n&&a++}var l=globalThis._.flatten(this.tableData).filter((function(a){return null!==a})).length>=N;return 0==a&&l},i.spawnRandomTile=function(a){void 0===a&&(a=null);var t=f(this.numberTilePrefab),e=Object.assign({},this.getRandomColRow(),a),n=e.randomCol,l=e.randomRow,i=e.value,r=x(n,l),o=Math.random()>.5?2:4;i&&(o=i),t.setParent(this.table),t.setPosition(r),t.manager=t.getComponent(d),t.value=o,t.col=n,t.row=l,t.canAdd=!0,t.manager.updateValue(o),this.tableData[n][l]=t},i.getRandomColRow=function(){for(var a=Math.floor(U.length*Math.random()),t=Math.floor(U[0]*Math.random());null!==this.tableData[a][t];)a=Math.floor(U.length*Math.random()),t=Math.floor(U[0]*Math.random());return{randomCol:a,randomRow:t}},i.moveDown=function(){for(var a=this,t=[],e=0;e<U.length;e++)for(var n=function(){if(!a.tableData[e][l])return 0;for(var n=a.tableData[e][l],i=l,r=a.tableData[e][i+1];null===r||G(r,n);)i++,r=a.tableData[e][i+1];var o=G(r=a.tableData[e][i],n),u=x(e,i);if(o){a.tableData[e][l]=null;var s=2*n.value;n.setSiblingIndex(0),r.value=s,r.canAdd=!1,t.push(k(n,u).then((function(){r.manager.updateValue(s),r.canAdd=!0,n.destroy()})))}else{if(a.tableData[e][l]=null,a.tableData[e][i]=n,l==i)return 0;t.push(k(n,u))}},l=U[e]-1;l>=0;l--)n();return t},i.moveUp=function(){for(var a=this,t=[],e=0;e<U.length;e++)for(var n=function(){if(!a.tableData[e][l])return 0;for(var n=a.tableData[e][l],i=l,r=a.tableData[e][i-1];null===r||G(r,n);)i--,r=a.tableData[e][i-1];var o=G(r=a.tableData[e][i],n),u=x(e,i);if(o){a.tableData[e][l]=null;var s=2*n.value;n.setSiblingIndex(0),r.value=s,r.canAdd=!1,t.push(k(n,u).then((function(){r.manager.updateValue(s),r.canAdd=!0,n.destroy()})))}else{if(a.tableData[e][l]=null,a.tableData[e][i]=n,l==i)return 0;t.push(k(n,u))}},l=0;l<U[e];l++)n();return t},i.moveRight=function(){for(var a=this,t=[],e=0;e<U[0];e++)for(var n=function(){if(!a.tableData[l]||!a.tableData[l][e])return 0;for(var n=a.tableData[l][e],i=l,r=a.tableData[i+1]&&a.tableData[i+1][e];null===r||G(r,n);)i++,r=a.tableData[i+1]&&a.tableData[i+1][e];var o=G(r=a.tableData[i][e],n),u=x(i,e);if(o){a.tableData[l][e]=null;var s=2*n.value;r.value=s,r.canAdd=!1,n.setSiblingIndex(0),t.push(k(n,u).then((function(){r.manager.updateValue(s),r.canAdd=!0,n.destroy()})))}else{if(a.tableData[l][e]=null,a.tableData[i][e]=n,l==i)return 0;t.push(k(n,u))}},l=U.length;l>=0;l--)n();return t},i.moveLeft=function(){for(var a=this,t=[],e=0;e<U[0];e++)for(var n=function(){if(!a.tableData[l]||!a.tableData[l][e])return 0;for(var n=a.tableData[l][e],i=l,r=a.tableData[i-1]&&a.tableData[i-1][e];null===r||G(r,n);)i--,r=a.tableData[i-1]&&a.tableData[i-1][e];var o=G(r=a.tableData[i][e],n),u=x(i,e);if(o){a.tableData[l][e]=null;var s=2*n.value;r.value=s,r.canAdd=!1,n.setSiblingIndex(0),t.push(k(n,u).then((function(){r.manager.updateValue(s),r.canAdd=!0,n.destroy()})))}else{if(a.tableData[l][e]=null,a.tableData[i][e]=n,l==i)return 0;t.push(k(n,u))}},l=0;l<U.length;l++)n();return t},i.onRetryGame=function(){this.tableData=new Array(U.length).fill([]).map((function(a,t){return new Array(U[t]).fill(null)})),this.currentScore=0,this.scoreLabel.string="0",this.canMove=!0,this.table.removeAllChildren(),this.winPopup.emit("HIDE_POPUP"),this.losePopup.emit("HIDE_POPUP"),this.gameStart()},i.gameStart=function(){this.isPlaying||(this.isPlaying=!0,this.spawnRandomTile(),this.spawnRandomTile(),this.updateScore())},t}(D)).instance=void 0,_=t((M=E).prototype,"table",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),T=t(M.prototype,"numberTilePrefab",[P],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),L=t(M.prototype,"highscoreLabel",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),O=t(M.prototype,"scoreLabel",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),C=t(M.prototype,"losePopup",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),W=t(M.prototype,"winPopup",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),S=M))||S));i._RF.pop()}}}));
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Canvas = module.Canvas;
+      UITransform = module.UITransform;
+      instantiate = module.instantiate;
+      Label = module.Label;
+      Color = module.Color;
+      RichText = module.RichText;
+      Toggle = module.Toggle;
+      Button = module.Button;
+      director = module.director;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3;
 
-System.register("chunks:///_virtual/main",["./debug-view-runtime-control.ts","./GameManager.ts","./MenuManager.ts","./NumberTileManager.ts","./PopupManager.ts"],(function(){return{setters:[null,null,null,null,null],execute:function(){}}}));
+      cclegacy._RF.push({}, "b2bd1+njXxJxaFY3ymm06WU", "debug-view-runtime-control", undefined);
 
-System.register("chunks:///_virtual/MenuManager.ts",["./rollupPluginModLoBabelHelpers.js","cc","./GameManager.ts"],(function(n){var t,e,o,i,a,r,s,c,l,u,p,h,d,g;return{setters:[function(n){t=n.applyDecoratedDescriptor,e=n.inheritsLoose,o=n.initializerDefineProperty,i=n.assertThisInitialized},function(n){a=n.cclegacy,r=n._decorator,s=n.Node,c=n.UIOpacity,l=n.Button,u=n.tween,p=n.BlockInputEvents,h=n.Label,d=n.Component},function(n){g=n.GameManager}],execute:function(){var f,y,m,C,P;a._RF.push({},"d3606+4RRBHKqmRE6rslX2K","MenuManager",void 0);var v=r.ccclass,M=r.property;n("MenuManager",(f=v("MenuManager"),y=M(s),f((P=t((C=function(n){function t(){for(var t,e=arguments.length,a=new Array(e),r=0;r<e;r++)a[r]=arguments[r];return t=n.call.apply(n,[this].concat(a))||this,o(t,"playButton",P,i(t)),t}e(t,n);var a=t.prototype;return a.start=function(){this.node.on("SHOW_POPUP",this.showPopup,this),this.node.on("HIDE_POPUP",this.hidePopup,this)},a.hidePopup=function(){var n=this;this.node.active=!0;var t=this.node.getComponent(c),e=this.node.getComponentsInChildren(l);t&&u(t).to(.5,{opacity:0}).call((function(){n.node.getComponentInChildren(p).enabled=!1})).start(),e&&e.forEach((function(n){return n.interactable=!1}))},a.showPopup=function(){this.node.active=!0;var n=this.node.getComponent(c),t=this.node.getComponentsInChildren(l);this.node.getComponentInChildren(p).enabled=!0,g.instance&&g.instance.isPlaying?this.playButton.getComponentInChildren(h).string="Resume":this.playButton.getComponentInChildren(h).string="Play",n&&u(n).to(.5,{opacity:255}).call((function(){t&&t.forEach((function(n){return n.interactable=!0}))})).start()},t}(d)).prototype,"playButton",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),m=C))||m));a._RF.pop()}}}));
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var DebugViewRuntimeControl = exports('DebugViewRuntimeControl', (_dec = ccclass('internal.DebugViewRuntimeControl'), _dec2 = property(Node), _dec3 = property(Node), _dec4 = property(Node), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(DebugViewRuntimeControl, _Component);
 
-System.register("chunks:///_virtual/NumberTileManager.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var r,t,n,i,a,o,u,p,c,s;return{setters:[function(e){r=e.applyDecoratedDescriptor,t=e.inheritsLoose,n=e.initializerDefineProperty,i=e.assertThisInitialized},function(e){a=e.cclegacy,o=e._decorator,u=e.SpriteFrame,p=e.Sprite,c=e.Animation,s=e.Component}],execute:function(){var l,m,f,g,b;a._RF.push({},"0f2a9+PsNxLRqm0c+SvcO1H","NumberTileManager",void 0);var h=o.ccclass,y=o.property;e("NumberTileManager",(l=h("NumberTileManager"),m=y(u),l((b=r((g=function(e){function r(){for(var r,t=arguments.length,a=new Array(t),o=0;o<t;o++)a[o]=arguments[o];return r=e.call.apply(e,[this].concat(a))||this,n(r,"numberSpriteFrames",b,i(r)),r}return t(r,e),r.prototype.updateValue=function(e){var r=Math.log2(e)-1;this.node.getComponent(p).spriteFrame=this.numberSpriteFrames[r],this.node.getComponent(c).play()},r}(s)).prototype,"numberSpriteFrames",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),f=g))||f));a._RF.pop()}}}));
+        function DebugViewRuntimeControl() {
+          var _this;
 
-System.register("chunks:///_virtual/PopupManager.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(t){var e,n,o,i,r,a,p,c,s,u,l,h,d;return{setters:[function(t){e=t.applyDecoratedDescriptor,n=t.inheritsLoose,o=t.initializerDefineProperty,i=t.assertThisInitialized},function(t){r=t.cclegacy,a=t._decorator,p=t.Node,c=t.Label,s=t.UIOpacity,u=t.BlockInputEvents,l=t.tween,h=t.Button,d=t.Component}],execute:function(){var f,g,y,P,b,m,v;r._RF.push({},"2eb03ZfJI1EpI+2UJ/UY2qt","PopupManager",void 0);var C=a.ccclass,I=a.property;t("LosePopup",(f=C("LosePopup"),g=I(p),y=I(c),f((m=e((b=function(t){function e(){for(var e,n=arguments.length,r=new Array(n),a=0;a<n;a++)r[a]=arguments[a];return e=t.call.apply(t,[this].concat(r))||this,o(e,"fadeInList",m,i(e)),o(e,"score",v,i(e)),e}n(e,t);var r=e.prototype;return r.start=function(){this.node.on("SHOW_POPUP",this.showPopup,this),this.node.on("HIDE_POPUP",this.hidePopup,this)},r.hidePopup=function(){this.node.getComponent(s).opacity=0,this.node.getComponentInChildren(u).enabled=!1},r.showPopup=function(t){void 0===t&&(t=0),this.node.active=!0,this.node.getComponent(s).opacity=0,this.node.getComponentInChildren(u).enabled=!0,l(this.node.getComponent(s)).to(.5,{opacity:255}).start();var e=0;this.fadeInList.forEach((function(t){e+=.5;var n=t.getComponentsInChildren(h),o=t.getComponent(s)||t.addComponent(s);o&&(o.opacity=0,n&&n.forEach((function(t){return t.interactable=!1})),l(o).delay(e).to(.3,{opacity:255}).call((function(){n&&n.forEach((function(t){return t.interactable=!0}))})).start())})),this.score.string=t.toString()},e}(d)).prototype,"fadeInList",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),v=e(b.prototype,"score",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),P=b))||P));r._RF.pop()}}}));
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_this, "compositeModeToggle", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "singleModeToggle", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "EnableAllCompositeModeButton", _descriptor3, _assertThisInitialized(_this));
+
+          _this._single = 0;
+          _this.strSingle = ['No Single Debug', 'Vertex Color', 'Vertex Normal', 'Vertex Tangent', 'World Position', 'Vertex Mirror', 'Face Side', 'UV0', 'UV1', 'UV Lightmap', 'Project Depth', 'Linear Depth', 'Fragment Normal', 'Fragment Tangent', 'Fragment Binormal', 'Base Color', 'Diffuse Color', 'Specular Color', 'Transparency', 'Metallic', 'Roughness', 'Specular Intensity', 'IOR', 'Direct Diffuse', 'Direct Specular', 'Direct All', 'Env Diffuse', 'Env Specular', 'Env All', 'Emissive', 'Light Map', 'Shadow', 'AO', 'Fresnel', 'Direct Transmit Diffuse', 'Direct Transmit Specular', 'Env Transmit Diffuse', 'Env Transmit Specular', 'Transmit All', 'Direct Internal Specular', 'Env Internal Specular', 'Internal All', 'Fog'];
+          _this.strComposite = ['Direct Diffuse', 'Direct Specular', 'Env Diffuse', 'Env Specular', 'Emissive', 'Light Map', 'Shadow', 'AO', 'Normal Map', 'Fog', 'Tone Mapping', 'Gamma Correction', 'Fresnel', 'Transmit Diffuse', 'Transmit Specular', 'Internal Specular', 'TT'];
+          _this.strMisc = ['CSM Layer Coloration', 'Lighting With Albedo'];
+          _this.compositeModeToggleList = [];
+          _this.singleModeToggleList = [];
+          _this.miscModeToggleList = [];
+          _this.textComponentList = [];
+          _this.labelComponentList = [];
+          _this.textContentList = [];
+          _this.hideButtonLabel = void 0;
+          _this._currentColorIndex = 0;
+          _this.strColor = ['<color=#ffffff>', '<color=#000000>', '<color=#ff0000>', '<color=#00ff00>', '<color=#0000ff>'];
+          _this.color = [Color.WHITE, Color.BLACK, Color.RED, Color.GREEN, Color.BLUE];
+          return _this;
+        }
+
+        var _proto = DebugViewRuntimeControl.prototype;
+
+        _proto.start = function start() {
+          // get canvas resolution
+          var canvas = this.node.parent.getComponent(Canvas);
+
+          if (!canvas) {
+            console.error('debug-view-runtime-control should be child of Canvas');
+            return;
+          }
+
+          var uiTransform = this.node.parent.getComponent(UITransform);
+          var halfScreenWidth = uiTransform.width * 0.5;
+          var halfScreenHeight = uiTransform.height * 0.5;
+          var x = -halfScreenWidth + halfScreenWidth * 0.1,
+              y = halfScreenHeight - halfScreenHeight * 0.1;
+          var width = 200,
+              height = 20; // new nodes
+
+          var miscNode = this.node.getChildByName('MiscMode');
+          var buttonNode = instantiate(miscNode);
+          buttonNode.parent = this.node;
+          buttonNode.name = 'Buttons';
+          var titleNode = instantiate(miscNode);
+          titleNode.parent = this.node;
+          titleNode.name = 'Titles'; // title
+
+          for (var i = 0; i < 2; i++) {
+            var newLabel = instantiate(this.EnableAllCompositeModeButton.getChildByName('Label'));
+            newLabel.setPosition(x + (i > 0 ? 50 + width * 2 : 150), y, 0.0);
+            newLabel.setScale(0.75, 0.75, 0.75);
+            newLabel.parent = titleNode;
+
+            var _labelComponent = newLabel.getComponent(Label);
+
+            _labelComponent.string = i ? '----------Composite Mode----------' : '----------Single Mode----------';
+            _labelComponent.color = Color.WHITE;
+            _labelComponent.overflow = 0;
+            this.labelComponentList[this.labelComponentList.length] = _labelComponent;
+          }
+
+          y -= height; // single
+
+          var currentRow = 0;
+
+          for (var _i = 0; _i < this.strSingle.length; _i++, currentRow++) {
+            if (_i === this.strSingle.length >> 1) {
+              x += width;
+              currentRow = 0;
+            }
+
+            var newNode = _i ? instantiate(this.singleModeToggle) : this.singleModeToggle;
+            newNode.setPosition(x, y - height * currentRow, 0.0);
+            newNode.setScale(0.5, 0.5, 0.5);
+            newNode.parent = this.singleModeToggle.parent;
+            var textComponent = newNode.getComponentInChildren(RichText);
+            textComponent.string = this.strSingle[_i];
+            this.textComponentList[this.textComponentList.length] = textComponent;
+            this.textContentList[this.textContentList.length] = textComponent.string;
+            newNode.on(Toggle.EventType.TOGGLE, this.toggleSingleMode, this);
+            this.singleModeToggleList[_i] = newNode;
+          }
+
+          x += width; // buttons
+
+          this.EnableAllCompositeModeButton.setPosition(x + 15, y, 0.0);
+          this.EnableAllCompositeModeButton.setScale(0.5, 0.5, 0.5);
+          this.EnableAllCompositeModeButton.on(Button.EventType.CLICK, this.enableAllCompositeMode, this);
+          this.EnableAllCompositeModeButton.parent = buttonNode;
+          var labelComponent = this.EnableAllCompositeModeButton.getComponentInChildren(Label);
+          this.labelComponentList[this.labelComponentList.length] = labelComponent;
+          var changeColorButton = instantiate(this.EnableAllCompositeModeButton);
+          changeColorButton.setPosition(x + 90, y, 0.0);
+          changeColorButton.setScale(0.5, 0.5, 0.5);
+          changeColorButton.on(Button.EventType.CLICK, this.changeTextColor, this);
+          changeColorButton.parent = buttonNode;
+          labelComponent = changeColorButton.getComponentInChildren(Label);
+          labelComponent.string = 'TextColor';
+          this.labelComponentList[this.labelComponentList.length] = labelComponent;
+          var HideButton = instantiate(this.EnableAllCompositeModeButton);
+          HideButton.setPosition(x + 200, y, 0.0);
+          HideButton.setScale(0.5, 0.5, 0.5);
+          HideButton.on(Button.EventType.CLICK, this.hideUI, this);
+          HideButton.parent = this.node.parent;
+          labelComponent = HideButton.getComponentInChildren(Label);
+          labelComponent.string = 'Hide UI';
+          this.labelComponentList[this.labelComponentList.length] = labelComponent;
+          this.hideButtonLabel = labelComponent; // misc
+
+          y -= 40;
+
+          for (var _i2 = 0; _i2 < this.strMisc.length; _i2++) {
+            var _newNode = instantiate(this.compositeModeToggle);
+
+            _newNode.setPosition(x, y - height * _i2, 0.0);
+
+            _newNode.setScale(0.5, 0.5, 0.5);
+
+            _newNode.parent = miscNode;
+
+            var _textComponent = _newNode.getComponentInChildren(RichText);
+
+            _textComponent.string = this.strMisc[_i2];
+            this.textComponentList[this.textComponentList.length] = _textComponent;
+            this.textContentList[this.textContentList.length] = _textComponent.string;
+
+            var toggleComponent = _newNode.getComponent(Toggle);
+
+            toggleComponent.isChecked = _i2 ? true : false;
+
+            _newNode.on(Toggle.EventType.TOGGLE, _i2 ? this.toggleLightingWithAlbedo : this.toggleCSMColoration, this);
+
+            this.miscModeToggleList[_i2] = _newNode;
+          } // composite
+
+
+          y -= 150;
+
+          for (var _i3 = 0; _i3 < this.strComposite.length; _i3++) {
+            var _newNode2 = _i3 ? instantiate(this.compositeModeToggle) : this.compositeModeToggle;
+
+            _newNode2.setPosition(x, y - height * _i3, 0.0);
+
+            _newNode2.setScale(0.5, 0.5, 0.5);
+
+            _newNode2.parent = this.compositeModeToggle.parent;
+
+            var _textComponent2 = _newNode2.getComponentInChildren(RichText);
+
+            _textComponent2.string = this.strComposite[_i3];
+            this.textComponentList[this.textComponentList.length] = _textComponent2;
+            this.textContentList[this.textContentList.length] = _textComponent2.string;
+
+            _newNode2.on(Toggle.EventType.TOGGLE, this.toggleCompositeMode, this);
+
+            this.compositeModeToggleList[_i3] = _newNode2;
+          }
+        };
+
+        _proto.isTextMatched = function isTextMatched(textUI, textDescription) {
+          var tempText = new String(textUI);
+          var findIndex = tempText.search('>');
+
+          if (findIndex === -1) {
+            return textUI === textDescription;
+          } else {
+            tempText = tempText.substr(findIndex + 1);
+            tempText = tempText.substr(0, tempText.search('<'));
+            return tempText === textDescription;
+          }
+        };
+
+        _proto.toggleSingleMode = function toggleSingleMode(toggle) {
+          var debugView = director.root.debugView;
+          var textComponent = toggle.getComponentInChildren(RichText);
+
+          for (var i = 0; i < this.strSingle.length; i++) {
+            if (this.isTextMatched(textComponent.string, this.strSingle[i])) {
+              debugView.singleMode = i;
+            }
+          }
+        };
+
+        _proto.toggleCompositeMode = function toggleCompositeMode(toggle) {
+          var debugView = director.root.debugView;
+          var textComponent = toggle.getComponentInChildren(RichText);
+
+          for (var i = 0; i < this.strComposite.length; i++) {
+            if (this.isTextMatched(textComponent.string, this.strComposite[i])) {
+              debugView.enableCompositeMode(i, toggle.isChecked);
+            }
+          }
+        };
+
+        _proto.toggleLightingWithAlbedo = function toggleLightingWithAlbedo(toggle) {
+          var debugView = director.root.debugView;
+          debugView.lightingWithAlbedo = toggle.isChecked;
+        };
+
+        _proto.toggleCSMColoration = function toggleCSMColoration(toggle) {
+          var debugView = director.root.debugView;
+          debugView.csmLayerColoration = toggle.isChecked;
+        };
+
+        _proto.enableAllCompositeMode = function enableAllCompositeMode(button) {
+          var debugView = director.root.debugView;
+          debugView.enableAllCompositeMode(true);
+
+          for (var i = 0; i < this.compositeModeToggleList.length; i++) {
+            var _toggleComponent = this.compositeModeToggleList[i].getComponent(Toggle);
+
+            _toggleComponent.isChecked = true;
+          }
+
+          var toggleComponent = this.miscModeToggleList[0].getComponent(Toggle);
+          toggleComponent.isChecked = false;
+          debugView.csmLayerColoration = false;
+          toggleComponent = this.miscModeToggleList[1].getComponent(Toggle);
+          toggleComponent.isChecked = true;
+          debugView.lightingWithAlbedo = true;
+        };
+
+        _proto.hideUI = function hideUI(button) {
+          var titleNode = this.node.getChildByName('Titles');
+          var activeValue = !titleNode.active;
+          this.singleModeToggleList[0].parent.active = activeValue;
+          this.miscModeToggleList[0].parent.active = activeValue;
+          this.compositeModeToggleList[0].parent.active = activeValue;
+          this.EnableAllCompositeModeButton.parent.active = activeValue;
+          titleNode.active = activeValue;
+          this.hideButtonLabel.string = activeValue ? 'Hide UI' : 'Show UI';
+        };
+
+        _proto.changeTextColor = function changeTextColor(button) {
+          this._currentColorIndex++;
+
+          if (this._currentColorIndex >= this.strColor.length) {
+            this._currentColorIndex = 0;
+          }
+
+          for (var i = 0; i < this.textComponentList.length; i++) {
+            this.textComponentList[i].string = this.strColor[this._currentColorIndex] + this.textContentList[i] + '</color>';
+          }
+
+          for (var _i4 = 0; _i4 < this.labelComponentList.length; _i4++) {
+            this.labelComponentList[_i4].color = this.color[this._currentColorIndex];
+          }
+        };
+
+        _proto.onLoad = function onLoad() {};
+
+        _proto.update = function update(deltaTime) {};
+
+        return DebugViewRuntimeControl;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "compositeModeToggle", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "singleModeToggle", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "EnableAllCompositeModeButton", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/DebugNodeInfo.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Label, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Label = module.Label;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor;
+
+      cclegacy._RF.push({}, "c31ee8kJEpLEqzAIKNdGYAK", "DebugNodeInfo", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var DebugNodeInfo = exports('DebugNodeInfo', (_dec = ccclass('DebugNodeInfo'), _dec2 = property(Node), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(DebugNodeInfo, _Component);
+
+        function DebugNodeInfo() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_this, "targetNode", _descriptor, _assertThisInitialized(_this));
+
+          _this._label = void 0;
+          return _this;
+        }
+
+        var _proto = DebugNodeInfo.prototype;
+
+        _proto.start = function start() {
+          this._label = this.node.getComponent(Label);
+        };
+
+        _proto.update = function update(dt) {
+          if (!this.targetNode) {
+            this._label.string = "No target !";
+            return;
+          }
+
+          if (this._label) {
+            this._label.string = "Node position:\nx: " + Math.floor(this.targetNode.getPosition().x) + ", y: " + Math.floor(this.targetNode.getPosition().y);
+          }
+        };
+
+        return DebugNodeInfo;
+      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "targetNode", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/DragAndDrop.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, v3, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      v3 = module.v3;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor;
+
+      cclegacy._RF.push({}, "0d8e92ddQJEb7WseFfSU/iV", "DragAndDrop", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var DragAndDrop = exports('DragAndDrop', (_dec = ccclass('DragAndDrop'), _dec2 = property(Node), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(DragAndDrop, _Component);
+
+        function DragAndDrop() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_this, "target", _descriptor, _assertThisInitialized(_this));
+
+          _this._isDragging = void 0;
+          return _this;
+        }
+
+        var _proto = DragAndDrop.prototype;
+
+        _proto.start = function start() {
+          this.node.on(Node.EventType.MOUSE_DOWN, this.onMouseDown, this);
+          this.node.on(Node.EventType.MOUSE_UP, this.onMouseUp, this);
+          this.node.on(Node.EventType.MOUSE_MOVE, this.onMouseMove, this);
+        };
+
+        _proto.onMouseDown = function onMouseDown(event) {
+          this._isDragging = true;
+          this.setPositionTarget(event.getLocation());
+        };
+
+        _proto.onMouseMove = function onMouseMove(event) {
+          if (this._isDragging) {
+            this.setPositionTarget(event.getLocation());
+          }
+        };
+
+        _proto.onMouseUp = function onMouseUp(event) {
+          this._isDragging = false;
+        };
+
+        _proto.setPositionTarget = function setPositionTarget(worldPos) {
+          var mouseWorldPos = v3(worldPos.x, worldPos.y, 0);
+          this.target.setWorldPosition(mouseWorldPos);
+        };
+
+        return DragAndDrop;
+      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "target", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './NumberTileManager.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Prefab, Label, input, Input, NodePool, instantiate, KeyCode, Vec3, tween, v3, Component, NumberTileManager;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Prefab = module.Prefab;
+      Label = module.Label;
+      input = module.input;
+      Input = module.Input;
+      NodePool = module.NodePool;
+      instantiate = module.instantiate;
+      KeyCode = module.KeyCode;
+      Vec3 = module.Vec3;
+      tween = module.tween;
+      v3 = module.v3;
+      Component = module.Component;
+    }, function (module) {
+      NumberTileManager = module.NumberTileManager;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _class3;
+
+      cclegacy._RF.push({}, "32b6ecKNlxNiKiDHNCAOUQe", "GameManager", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var TABLE_WIDTH = 512,
+          TABLE_HEIGHT = 512;
+      var TABLE_FORMAT = [4, 4, 4, 4];
+      var ROW_SIZE = TABLE_HEIGHT / TABLE_FORMAT.length;
+      var COL_SIZE = TABLE_WIDTH / TABLE_FORMAT[0];
+      var MAX_TILES = TABLE_FORMAT.length * TABLE_FORMAT[0];
+      var MOVE_SPEED = 0.1;
+
+      function getPosition(col, row) {
+        var startX = (-TABLE_FORMAT.length / 2 + 0.5) * COL_SIZE;
+        var startY = (TABLE_FORMAT[0] / 2 - 0.5) * ROW_SIZE;
+        return new Vec3(startX + COL_SIZE * col, startY - ROW_SIZE * row, 0);
+      }
+
+      function moveNumberToPos(numberTile, newPos) {
+        return new Promise(function (resolve, _) {
+          numberTile['moveTween'] = tween(numberTile).to(MOVE_SPEED * 2, {
+            position: newPos
+          }).call(function () {
+            numberTile['moveTween'] = null;
+            resolve(numberTile);
+          }).start();
+        });
+      }
+
+      function canAddUp(nextNumberTile, numberTile) {
+        return nextNumberTile && nextNumberTile.canAdd && nextNumberTile !== numberTile && nextNumberTile.value == numberTile.value;
+      }
+
+      function shaking(node, _ref) {
+        var _ref$duration = _ref.duration,
+            duration = _ref$duration === void 0 ? 0.16 : _ref$duration,
+            _ref$distance = _ref.distance,
+            distance = _ref$distance === void 0 ? 10 : _ref$distance,
+            _ref$repeat = _ref.repeat,
+            repeat = _ref$repeat === void 0 ? 1 : _ref$repeat;
+        if (!node["originalPos"]) node["originalPos"] = node.getPosition();
+        var dur = duration / 8;
+        var shake = tween().by(dur, {
+          position: v3(0, distance)
+        }).by(dur, {
+          position: v3(0, -distance)
+        }).by(dur, {
+          position: v3(0, -distance)
+        }).by(dur, {
+          position: v3(0, distance)
+        }).by(dur, {
+          position: v3(distance, 0)
+        }).by(dur, {
+          position: v3(-distance, 0)
+        }).by(dur, {
+          position: v3(-distance, 0)
+        }).by(dur, {
+          position: v3(distance, 0)
+        }).call(function () {
+          node.setPosition(node["originalPos"]);
+          node["tweenShake"] = null;
+        });
+        var tweenShake = tween(node).repeat(repeat, shake);
+
+        if (node["tweenShake"]) {
+          node["tweenShake"].stop();
+          node.setPosition(node["originalPos"]);
+        }
+
+        node["tweenShake"] = tweenShake;
+        node["tweenShake"].start();
+        return tweenShake;
+      }
+
+      var GameManager = exports('GameManager', (_dec = ccclass('GameManager'), _dec2 = property(Node), _dec3 = property(Prefab), _dec4 = property(Label), _dec5 = property(Label), _dec6 = property(Node), _dec7 = property(Node), _dec8 = property(Node), _dec9 = property(Node), _dec(_class = (_class2 = (_class3 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(GameManager, _Component);
+
+        function GameManager() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_this, "table", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "numberTilePrefab", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "highscoreLabel", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "scoreLabel", _descriptor4, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "losePopup", _descriptor5, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "winPopup", _descriptor6, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "menuPopup", _descriptor7, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "levelManager", _descriptor8, _assertThisInitialized(_this));
+
+          _this.tableData = void 0;
+          _this.canMove = true;
+          _this.currentScore = 0;
+          _this.isPlaying = false;
+          _this.pool = void 0;
+          _this.currentHighestValue = 64;
+          _this.currentRandomLevel = 0;
+          _this.isShowingPopup = void 0;
+          return _this;
+        }
+
+        var _proto = GameManager.prototype;
+
+        _proto.onLoad = function onLoad() {
+          input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
+          this.tableData = new Array(TABLE_FORMAT.length).fill([]).map(function (_, index) {
+            return new Array(TABLE_FORMAT[index]).fill(null);
+          });
+          this.pool = new NodePool();
+
+          for (var i = 0; i < 16; i++) {
+            var numberTile = instantiate(this.numberTilePrefab);
+            this.pool.put(numberTile);
+          }
+        };
+
+        _proto.start = function start() {
+          // this.gameStart();
+          // this.testLoseCondition();
+          // this.testWinCondition();
+          GameManager.instance = this;
+        };
+
+        _proto.testWinCondition = function testWinCondition() {
+          this.isPlaying = true;
+          this.spawnRandomTile({
+            value: 2048
+          });
+        };
+
+        _proto.testLoseCondition = function testLoseCondition() {
+          this.isPlaying = true;
+          var value = 2;
+
+          for (var col = 0; col < TABLE_FORMAT.length; col++) {
+            for (var row = 0; row < TABLE_FORMAT[col]; row++) {
+              this.spawnRandomTile({
+                randomCol: col,
+                randomRow: row,
+                value: value
+              });
+              value *= 2;
+            }
+          }
+
+          this.updateScore();
+        };
+
+        _proto.onKeyDown = function onKeyDown(event) {
+          var _this2 = this;
+
+          if (!this.canMove || this.isShowingPopup) return;
+          var allPromises;
+
+          switch (event.keyCode) {
+            case KeyCode.SPACE:
+              allPromises = this.moveDown();
+              break;
+
+            case KeyCode.KEY_A:
+            case KeyCode.ARROW_LEFT:
+              allPromises = this.moveLeft();
+              break;
+
+            case KeyCode.KEY_D:
+            case KeyCode.ARROW_RIGHT:
+              allPromises = this.moveRight();
+              break;
+
+            case KeyCode.KEY_S:
+            case KeyCode.ARROW_DOWN:
+              allPromises = this.moveDown();
+              break;
+
+            case KeyCode.KEY_W:
+            case KeyCode.ARROW_UP:
+              allPromises = this.moveUp();
+              break;
+          }
+
+          if (allPromises && allPromises.length > 0) {
+            this.canMove = false;
+            Promise.all(allPromises).then(function () {
+              _this2.spawnRandomTile();
+
+              _this2.updateScore();
+
+              if (_this2.isWin()) {
+                _this2.winPopup.emit("SHOW_POPUP", _this2.currentScore);
+
+                _this2.isPlaying = true;
+              } else if (_this2.isLost()) {
+                _this2.losePopup.emit("SHOW_POPUP", _this2.currentScore);
+
+                _this2.isPlaying = true;
+              } else {
+                _this2.canMove = true;
+              }
+            });
+          } else if (this.isLost()) {
+            console.log("You lose");
+            this.canMove = false;
+            this.isPlaying = true;
+            this.losePopup.emit("SHOW_POPUP", this.currentScore);
+          } else {
+            // nothing move, shake the table to let user know
+            shaking(this.node, {});
+          }
+        };
+
+        _proto.updateScore = function updateScore() {
+          this.currentScore = globalThis._.flatten(this.tableData).reduce(function (acc, curr) {
+            if (!curr) return acc;
+            return acc + curr.value;
+          }, 0);
+          this.scoreLabel.string = this.currentScore.toString();
+        };
+
+        _proto.isWin = function isWin() {
+          return globalThis._.flatten(this.tableData).findIndex(function (numberTile) {
+            return numberTile && numberTile.value === 2048;
+          }) > -1;
+        };
+
+        _proto.isLost = function isLost() {
+          var isFullTable = globalThis._.flatten(this.tableData).filter(function (element) {
+            return element !== null;
+          }).length >= MAX_TILES;
+          if (!isFullTable) return;
+          var availableMove = 0;
+
+          for (var col = 0; col < TABLE_FORMAT.length; col++) {
+            for (var row = 0; row < TABLE_FORMAT[col]; row++) {
+              if (!this.tableData[col][row]) continue;
+              var currVal = this.tableData[col][row].value; // up
+
+              if (this.tableData[col - 1] && this.tableData[col - 1][row] && this.tableData[col - 1][row].value == currVal) {
+                availableMove++;
+              } // down
+
+
+              if (this.tableData[col + 1] && this.tableData[col + 1][row] && this.tableData[col + 1][row].value == currVal) {
+                availableMove++;
+              } // left
+
+
+              if (this.tableData[col] && this.tableData[col][row - 1] && this.tableData[col][row - 1].value == currVal) {
+                availableMove++;
+              } // right
+
+
+              if (this.tableData[col] && this.tableData[col][row + 1] && this.tableData[col][row + 1].value == currVal) {
+                availableMove++;
+              }
+            }
+          }
+
+          return availableMove == 0;
+        };
+
+        _proto.getNumberTile = function getNumberTile() {
+          if (this.pool.size() > 0) {
+            return this.pool.get();
+          } else {
+            return instantiate(this.numberTilePrefab);
+          }
+        };
+
+        _proto.removeNumberTile = function removeNumberTile(node) {
+          node.setParent(null);
+          this.pool.put(node);
+        };
+
+        _proto.spawnRandomTile = function spawnRandomTile(data) {
+          if (data === void 0) {
+            data = null;
+          }
+
+          var numberTile = this.getNumberTile();
+
+          var _Object$assign = Object.assign({}, this.getRandomColRow(), data),
+              randomCol = _Object$assign.randomCol,
+              randomRow = _Object$assign.randomRow,
+              value = _Object$assign.value;
+
+          var randomPos = getPosition(randomCol, randomRow);
+          var randomPool = [2, 4].concat([8, 16, 32, 64].slice(0, this.currentRandomLevel));
+          var randomValue = randomPool[Math.floor(randomPool.length * Math.random())]; // let randomValue = 2;
+
+          if (value) {
+            randomValue = value;
+          }
+
+          numberTile.setParent(this.table);
+          numberTile.setPosition(randomPos);
+          numberTile.manager = numberTile.getComponent(NumberTileManager);
+          numberTile.value = randomValue;
+          numberTile.col = randomCol;
+          numberTile.row = randomRow;
+          numberTile.canAdd = true;
+          numberTile.manager.updateValue(randomValue);
+          this.tableData[randomCol][randomRow] = numberTile;
+        };
+
+        _proto.getRandomColRow = function getRandomColRow() {
+          var randomCol = Math.floor(TABLE_FORMAT.length * Math.random());
+          var randomRow = Math.floor(TABLE_FORMAT[0] * Math.random());
+
+          while (this.tableData[randomCol][randomRow] !== null) {
+            randomCol = Math.floor(TABLE_FORMAT.length * Math.random());
+            randomRow = Math.floor(TABLE_FORMAT[0] * Math.random());
+          }
+
+          return {
+            randomCol: randomCol,
+            randomRow: randomRow
+          };
+        };
+
+        _proto.addUpTile = function addUpTile(nextNumberTile, numberTile, newPos) {
+          var _this3 = this;
+
+          var newValue = numberTile['value'] * 2;
+
+          if (newValue > this.currentHighestValue) {
+            this.currentHighestValue = newValue;
+            this.levelManager.emit("UPDATE_LEVEL", this.currentRandomLevel);
+            this.currentRandomLevel++;
+          }
+
+          nextNumberTile.value = newValue;
+          nextNumberTile.canAdd = false;
+          return moveNumberToPos(numberTile, newPos).then(function () {
+            nextNumberTile.manager.updateValue(newValue);
+            nextNumberTile.canAdd = true;
+
+            _this3.removeNumberTile(numberTile);
+          });
+        };
+
+        _proto.moveDown = function moveDown() {
+          var promises = [];
+
+          for (var col = 0; col < TABLE_FORMAT.length; col++) {
+            for (var row = TABLE_FORMAT[col] - 1; row >= 0; row--) {
+              if (!this.tableData[col][row]) continue;
+              var numberTile = this.tableData[col][row];
+              var nextRow = row;
+              var nextNumberTile = this.tableData[col][nextRow + 1];
+
+              while (nextNumberTile === null || canAddUp(nextNumberTile, numberTile)) {
+                nextRow++;
+                nextNumberTile = this.tableData[col][nextRow + 1];
+              }
+
+              nextNumberTile = this.tableData[col][nextRow];
+              this.tableData[col][row] = null;
+              var isAddUp = canAddUp(nextNumberTile, numberTile);
+              var newPos = getPosition(col, nextRow);
+
+              if (isAddUp) {
+                promises.push(this.addUpTile(nextNumberTile, numberTile, newPos));
+              } else {
+                this.tableData[col][nextRow] = numberTile;
+                if (row == nextRow) continue;
+                promises.push(moveNumberToPos(numberTile, newPos));
+              }
+            }
+          }
+
+          return promises;
+        };
+
+        _proto.moveUp = function moveUp() {
+          var promises = [];
+
+          for (var col = 0; col < TABLE_FORMAT.length; col++) {
+            for (var row = 0; row < TABLE_FORMAT[col]; row++) {
+              if (!this.tableData[col][row]) continue;
+              var numberTile = this.tableData[col][row];
+              var nextRow = row;
+              var nextNumberTile = this.tableData[col][nextRow - 1];
+
+              while (nextNumberTile === null || canAddUp(nextNumberTile, numberTile)) {
+                nextRow--;
+                nextNumberTile = this.tableData[col][nextRow - 1];
+              }
+
+              nextNumberTile = this.tableData[col][nextRow];
+              this.tableData[col][row] = null;
+              var isAddUp = canAddUp(nextNumberTile, numberTile);
+              var newPos = getPosition(col, nextRow);
+
+              if (isAddUp) {
+                promises.push(this.addUpTile(nextNumberTile, numberTile, newPos));
+              } else {
+                this.tableData[col][nextRow] = numberTile;
+                if (row == nextRow) continue;
+                promises.push(moveNumberToPos(numberTile, newPos));
+              }
+            }
+          }
+
+          return promises;
+        };
+
+        _proto.moveRight = function moveRight() {
+          var promises = [];
+
+          for (var row = 0; row < TABLE_FORMAT[0]; row++) {
+            for (var col = TABLE_FORMAT.length; col >= 0; col--) {
+              if (!this.tableData[col] || !this.tableData[col][row]) continue;
+              var numberTile = this.tableData[col][row];
+              var nextCol = col;
+              var nextNumberTile = this.tableData[nextCol + 1] && this.tableData[nextCol + 1][row];
+
+              while (nextNumberTile === null || canAddUp(nextNumberTile, numberTile)) {
+                nextCol++;
+                nextNumberTile = this.tableData[nextCol + 1] && this.tableData[nextCol + 1][row];
+              }
+
+              nextNumberTile = this.tableData[nextCol][row];
+              this.tableData[col][row] = null;
+              var isAddUp = canAddUp(nextNumberTile, numberTile);
+              var newPos = getPosition(nextCol, row);
+
+              if (isAddUp) {
+                promises.push(this.addUpTile(nextNumberTile, numberTile, newPos));
+              } else {
+                this.tableData[nextCol][row] = numberTile;
+                if (col == nextCol) continue;
+                promises.push(moveNumberToPos(numberTile, newPos));
+              }
+            }
+          }
+
+          return promises;
+        };
+
+        _proto.moveLeft = function moveLeft() {
+          var promises = [];
+
+          for (var row = 0; row < TABLE_FORMAT[0]; row++) {
+            for (var col = 0; col < TABLE_FORMAT.length; col++) {
+              if (!this.tableData[col] || !this.tableData[col][row]) continue;
+              var numberTile = this.tableData[col][row];
+              var nextCol = col;
+              var nextNumberTile = this.tableData[nextCol - 1] && this.tableData[nextCol - 1][row];
+
+              while (nextNumberTile === null || canAddUp(nextNumberTile, numberTile)) {
+                nextCol--;
+                nextNumberTile = this.tableData[nextCol - 1] && this.tableData[nextCol - 1][row];
+              }
+
+              nextNumberTile = this.tableData[nextCol][row];
+              this.tableData[col][row] = null;
+              var isAddUp = canAddUp(nextNumberTile, numberTile);
+              var newPos = getPosition(nextCol, row);
+
+              if (isAddUp) {
+                promises.push(this.addUpTile(nextNumberTile, numberTile, newPos));
+              } else {
+                this.tableData[nextCol][row] = numberTile;
+                if (col == nextCol) continue;
+                promises.push(moveNumberToPos(numberTile, newPos));
+              }
+            }
+          }
+
+          return promises;
+        };
+
+        _proto.gameReset = function gameReset() {
+          this.tableData = new Array(TABLE_FORMAT.length).fill([]).map(function (_, index) {
+            return new Array(TABLE_FORMAT[index]).fill(null);
+          });
+          this.currentScore = 0;
+          this.scoreLabel.string = "0";
+          this.canMove = true;
+          this.isPlaying = false;
+          this.table.removeAllChildren();
+          this.winPopup.emit("HIDE_POPUP");
+          this.losePopup.emit("HIDE_POPUP");
+          this.levelManager.emit("RESET_LEVEL");
+        };
+
+        _proto.onRetryGame = function onRetryGame() {
+          this.gameReset();
+          this.gameStart();
+        };
+
+        _proto.onMenuClick = function onMenuClick() {
+          this.gameReset();
+          this.menuPopup.emit("SHOW_POPUP");
+        };
+
+        _proto.gameStart = function gameStart() {
+          if (this.isPlaying) return; // this.spawnRandomTile({ randomCol: 1, randomRow: 1, value: 64 });
+          // this.spawnRandomTile({ randomCol: 1, randomRow: 2, value: 64 });
+
+          this.isPlaying = true;
+          this.spawnRandomTile();
+          this.spawnRandomTile();
+          this.updateScore();
+        };
+
+        return GameManager;
+      }(Component), _class3.instance = void 0, _class3), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "table", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "numberTilePrefab", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "highscoreLabel", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "scoreLabel", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "losePopup", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "winPopup", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "menuPopup", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "levelManager", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/HighscorePopup.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './HighscoreStorage.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Prefab, sys, instantiate, Label, UIOpacity, BlockInputEvents, tween, Component, STORAGE_KEY;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Prefab = module.Prefab;
+      sys = module.sys;
+      instantiate = module.instantiate;
+      Label = module.Label;
+      UIOpacity = module.UIOpacity;
+      BlockInputEvents = module.BlockInputEvents;
+      tween = module.tween;
+      Component = module.Component;
+    }, function (module) {
+      STORAGE_KEY = module.STORAGE_KEY;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2;
+
+      cclegacy._RF.push({}, "4e4ccTCT91H/7r9N5SIwmvV", "HighscorePopup", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var HighscorePopup = exports('HighscorePopup', (_dec = ccclass('HighscorePopup'), _dec2 = property(Node), _dec3 = property(Prefab), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(HighscorePopup, _Component);
+
+        function HighscorePopup() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_this, "dataTable", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "dataCell", _descriptor2, _assertThisInitialized(_this));
+
+          return _this;
+        }
+
+        var _proto = HighscorePopup.prototype;
+
+        _proto.start = function start() {
+          this.node.on("SHOW_POPUP", this.showPopup, this);
+          this.node.on("HIDE_POPUP", this.hidePopup, this);
+        };
+
+        _proto.showPopup = function showPopup() {
+          var _this2 = this;
+
+          var highscoreData = JSON.parse(sys.localStorage.getItem(STORAGE_KEY)) || []; // let highscoreData = [{ name: "kakalak", score: 100000 }, { name: "hihi", score: 5000 }, { name: "haha", score: 20000 }];
+
+          highscoreData.sort(function (a, b) {
+            return b.score - a.score;
+          });
+          highscoreData = highscoreData.slice(0, 6);
+          this.dataTable.removeAllChildren();
+          highscoreData.forEach(function (data) {
+            var dataCell = instantiate(_this2.dataCell);
+            dataCell.setParent(_this2.dataTable);
+            dataCell.getComponentsInChildren(Label).forEach(function (label, index) {
+              if (index == 0) {
+                label.string = data.name;
+              } else {
+                label.string = data.score;
+              }
+            });
+          });
+          this.node.getComponent(UIOpacity).opacity = 0;
+          this.node.getComponentInChildren(BlockInputEvents).enabled = true;
+          tween(this.node.getComponent(UIOpacity)).to(0.5, {
+            opacity: 255
+          }).start();
+        };
+
+        _proto.hidePopup = function hidePopup() {
+          var _this3 = this;
+
+          tween(this.node.getComponent(UIOpacity)).to(0.5, {
+            opacity: 0
+          }).call(function () {
+            _this3.node.getComponentInChildren(BlockInputEvents).enabled = false;
+          }).start();
+        };
+
+        return HighscorePopup;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "dataTable", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "dataCell", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/HighscoreStorage.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameManager.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, EditBox, Button, sys, Component, GameManager;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      EditBox = module.EditBox;
+      Button = module.Button;
+      sys = module.sys;
+      Component = module.Component;
+    }, function (module) {
+      GameManager = module.GameManager;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2;
+
+      cclegacy._RF.push({}, "587b5dYHlxDcqQaA78aW/qh", "HighscoreStorage", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var STORAGE_KEY = exports('STORAGE_KEY', "highscoreData");
+      var HighscoreStorage = exports('HighscoreStorage', (_dec = ccclass('HighscoreStorage'), _dec2 = property(EditBox), _dec3 = property(Button), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(HighscoreStorage, _Component);
+
+        function HighscoreStorage() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_this, "playerName", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "submitButton", _descriptor2, _assertThisInitialized(_this));
+
+          return _this;
+        }
+
+        var _proto = HighscoreStorage.prototype;
+
+        _proto.start = function start() {
+          this.submitButton.interactable = false;
+        };
+
+        _proto.onEditEnd = function onEditEnd() {
+          if (!this.playerName.string) {
+            this.submitButton.interactable = false;
+          } else {
+            this.submitButton.interactable = true;
+          }
+        };
+
+        _proto.submitScore = function submitScore() {
+          var _GameManager$instance,
+              _GameManager$instance2,
+              _this2 = this;
+
+          var highscoreData = JSON.parse(sys.localStorage.getItem(STORAGE_KEY)) || [];
+          var userData = {
+            name: this.playerName.string,
+            score: (_GameManager$instance = GameManager == null || (_GameManager$instance2 = GameManager.instance) == null ? void 0 : _GameManager$instance2.currentScore) != null ? _GameManager$instance : 0
+          };
+
+          if (highscoreData.find(function (data) {
+            return _this2.playerName.string == data.name;
+          })) {
+            var _GameManager$instance3, _GameManager$instance4;
+
+            highscoreData.find(function (data) {
+              return _this2.playerName.string == data.name;
+            }).score = (_GameManager$instance3 = GameManager == null || (_GameManager$instance4 = GameManager.instance) == null ? void 0 : _GameManager$instance4.currentScore) != null ? _GameManager$instance3 : 0;
+          } else {
+            highscoreData.push(userData);
+          }
+
+          sys.localStorage.setItem(STORAGE_KEY, JSON.stringify(highscoreData));
+          console.log(sys.localStorage);
+        };
+
+        return HighscoreStorage;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "playerName", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "submitButton", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/LevelManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameManager.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, BlockInputEvents, UIOpacity, v2, tween, Animation, bezier, Vec3, Component, GameManager;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      BlockInputEvents = module.BlockInputEvents;
+      UIOpacity = module.UIOpacity;
+      v2 = module.v2;
+      tween = module.tween;
+      Animation = module.Animation;
+      bezier = module.bezier;
+      Vec3 = module.Vec3;
+      Component = module.Component;
+    }, function (module) {
+      GameManager = module.GameManager;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3;
+
+      cclegacy._RF.push({}, "e0222Z/QrxHEb0Jv/fTkOzg", "LevelManager", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+
+      function tweenBezier2DTo(target, duration, c1, c2, to, opts) {
+        if (target['bezierX']) target['bezierX'].stop();
+        if (target['bezierY']) target['bezierY'].stop();
+        var c0x = c1.x,
+            c0y = c1.y,
+            c1x = c2.x,
+            c1y = c2.y;
+        var _targetX = {
+          value: target.getPosition().x
+        };
+        var _targetY = {
+          value: target.getPosition().y
+        };
+        var aOpts = opts || Object.create(null);
+
+        aOpts.progress = function (startX, endX, currentX, t) {
+          currentX = bezier(startX, c0x, c1x, endX, t);
+          return currentX;
+        };
+
+        aOpts.onUpdate = function () {
+          if (target && target.position) {
+            target.setPosition(new Vec3(_targetX.value, target.position.y, target.position.z));
+          }
+        };
+
+        var bOpts = opts || Object.create(null);
+
+        bOpts.progress = function (startY, endY, currentY, t) {
+          currentY = bezier(startY, c0y, c1y, endY, t);
+          return currentY;
+        };
+
+        bOpts.onUpdate = function () {
+          if (target && target.position) {
+            target.setPosition(new Vec3(target.position.x, _targetY.value, target.position.z));
+          }
+        };
+
+        target['bezierX'] = tween(_targetX).to(duration, {
+          value: to.x
+        }, aOpts).call(function () {
+          target['bezierX'] = null;
+        }).start();
+        target['bezierY'] = tween(_targetY).to(duration, {
+          value: to.y
+        }, bOpts).call(function () {
+          target['bezierY'] = null;
+        }).start();
+      }
+
+      var LevelManager = exports('LevelManager', (_dec = ccclass('LevelManager'), _dec2 = property(Node), _dec3 = property(Node), _dec4 = property(Node), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(LevelManager, _Component);
+
+        function LevelManager() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_this, "gradient", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "content", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "levelUI", _descriptor3, _assertThisInitialized(_this));
+
+          return _this;
+        }
+
+        var _proto = LevelManager.prototype;
+
+        _proto.start = function start() {
+          this.node.on("UPDATE_LEVEL", this.updateLevel, this);
+          this.node.on("RESET_LEVEL", this.resetLevel, this); // this.showAnimationLevelUp(this.levelUI.children[2]);
+        };
+
+        _proto.resetLevel = function resetLevel() {
+          this.levelUI.children.forEach(function (node) {
+            node.active = false;
+          });
+        };
+
+        _proto.updateLevel = function updateLevel(levelIndex) {
+          levelIndex = Math.min(levelIndex, this.levelUI.children.length - 1);
+
+          if (!this.levelUI.children[levelIndex].active) {
+            return this.showAnimationLevelUp(this.levelUI.children[levelIndex]);
+          }
+
+          this.levelUI.children.forEach(function (node, index) {
+            if (index > levelIndex) {
+              node.active = false;
+            } else {
+              node.active = true;
+            }
+          });
+        };
+
+        _proto.showAnimationLevelUp = function showAnimationLevelUp(levelTile) {
+          var _this2 = this;
+
+          GameManager.instance.isShowingPopup = true;
+          this.gradient.getComponent(BlockInputEvents).enabled = true;
+          this.gradient.getComponent(UIOpacity).opacity = 0;
+          this.content.getComponent(UIOpacity).opacity = 0;
+          levelTile.active = true;
+          levelTile.getComponent(UIOpacity).opacity = 0;
+          var originalPos = levelTile.getPosition();
+          levelTile.setPosition(v2(0, 0));
+          var point1 = v2(originalPos.x / 3 * 1, 75);
+          var point2 = v2(originalPos.x / 3 * 2, 75);
+          var highlightLevelTween = tween(levelTile.getComponent(UIOpacity)).to(0.5, {
+            opacity: 255
+          }).call(function () {
+            levelTile.getComponent(Animation).play("levelUpAnim");
+          }).delay(1.2).call(function () {
+            levelTile.getComponent(Animation).play("levelUpAnim");
+          }).delay(1).call(function () {
+            tweenBezier2DTo(levelTile, 0.3, point1, point2, originalPos);
+          }).delay(0.3).call(function () {
+            levelTile.getComponent(Animation).play("landingAnim");
+          });
+          tween(this.gradient.getComponent(UIOpacity)).to(0.5, {
+            opacity: 255
+          }).call(function () {
+            tween(_this2.content.getComponent(UIOpacity)).to(0.5, {
+              opacity: 255
+            }).start();
+          }).delay(0.5).call(function () {
+            highlightLevelTween.start();
+          }).delay(2.7).call(function () {
+            tween(_this2.content.getComponent(UIOpacity)).to(0.5, {
+              opacity: 0
+            }).start();
+          }).to(0.5, {
+            opacity: 0
+          }).call(function () {
+            _this2.gradient.getComponent(BlockInputEvents).enabled = false;
+            GameManager.instance.isShowingPopup = false;
+          }).start();
+        };
+
+        return LevelManager;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "gradient", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "content", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "levelUI", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/main", ['./debug-view-runtime-control.ts', './DebugNodeInfo.ts', './DragAndDrop.ts', './GameManager.ts', './HighscorePopup.ts', './HighscoreStorage.ts', './LevelManager.ts', './MenuManager.ts', './NumberTileManager.ts', './PopupManager.ts'], function () {
+  return {
+    setters: [null, null, null, null, null, null, null, null, null, null],
+    execute: function () {}
+  };
+});
+
+System.register("chunks:///_virtual/MenuManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameManager.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, UIOpacity, Button, tween, BlockInputEvents, Label, Component, GameManager;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      UIOpacity = module.UIOpacity;
+      Button = module.Button;
+      tween = module.tween;
+      BlockInputEvents = module.BlockInputEvents;
+      Label = module.Label;
+      Component = module.Component;
+    }, function (module) {
+      GameManager = module.GameManager;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor;
+
+      cclegacy._RF.push({}, "d3606+4RRBHKqmRE6rslX2K", "MenuManager", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var MenuManager = exports('MenuManager', (_dec = ccclass('MenuManager'), _dec2 = property(Node), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(MenuManager, _Component);
+
+        function MenuManager() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_this, "playButton", _descriptor, _assertThisInitialized(_this));
+
+          return _this;
+        }
+
+        var _proto = MenuManager.prototype;
+
+        _proto.start = function start() {
+          this.node.on("SHOW_POPUP", this.showPopup, this);
+          this.node.on("HIDE_POPUP", this.hidePopup, this);
+          this.showPopup(true);
+        };
+
+        _proto.hidePopup = function hidePopup() {
+          var _this2 = this;
+
+          this.node.active = true;
+          var opacityComp = this.node.getComponent(UIOpacity);
+          var buttonComps = this.node.getComponentsInChildren(Button);
+
+          if (opacityComp) {
+            tween(opacityComp).to(0.5, {
+              opacity: 0
+            }).call(function () {
+              _this2.node.getComponentInChildren(BlockInputEvents).enabled = false;
+            }).start();
+          }
+
+          if (buttonComps) {
+            buttonComps.forEach(function (button) {
+              return button.interactable = false;
+            });
+          }
+        };
+
+        _proto.showPopup = function showPopup(isStartGame) {
+          this.node.active = true;
+          var opacityComp = this.node.getComponent(UIOpacity);
+          var buttonComps = this.node.getComponentsInChildren(Button);
+          this.node.getComponentInChildren(BlockInputEvents).enabled = true;
+
+          if (GameManager.instance && GameManager.instance.isPlaying) {
+            this.playButton.getComponentInChildren(Label).string = "Resume";
+          } else {
+            this.playButton.getComponentInChildren(Label).string = "Play";
+          }
+
+          if (isStartGame) {
+            if (opacityComp) opacityComp.opacity = 255;
+
+            if (buttonComps) {
+              buttonComps.forEach(function (button) {
+                return button.interactable = true;
+              });
+            }
+          } else {
+            if (opacityComp) {
+              tween(opacityComp).to(0.5, {
+                opacity: 255
+              }).call(function () {
+                if (buttonComps) {
+                  buttonComps.forEach(function (button) {
+                    return button.interactable = true;
+                  });
+                }
+              }).start();
+            }
+          }
+        };
+
+        return MenuManager;
+      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "playButton", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/NumberTileManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, SpriteFrame, Sprite, Animation, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      SpriteFrame = module.SpriteFrame;
+      Sprite = module.Sprite;
+      Animation = module.Animation;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor;
+
+      cclegacy._RF.push({}, "0f2a9+PsNxLRqm0c+SvcO1H", "NumberTileManager", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var NumberTileManager = exports('NumberTileManager', (_dec = ccclass('NumberTileManager'), _dec2 = property(SpriteFrame), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(NumberTileManager, _Component);
+
+        function NumberTileManager() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_this, "numberSpriteFrames", _descriptor, _assertThisInitialized(_this));
+
+          return _this;
+        }
+
+        var _proto = NumberTileManager.prototype;
+
+        _proto.updateValue = function updateValue(value) {
+          var spriteIndex = Math.log2(value) - 1;
+          this.node.getComponent(Sprite).spriteFrame = this.numberSpriteFrames[spriteIndex];
+          this.node.getComponent(Animation).play();
+        };
+
+        return NumberTileManager;
+      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "numberSpriteFrames", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/PopupManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Label, tween, UIOpacity, BlockInputEvents, Button, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Label = module.Label;
+      tween = module.tween;
+      UIOpacity = module.UIOpacity;
+      BlockInputEvents = module.BlockInputEvents;
+      Button = module.Button;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2;
+
+      cclegacy._RF.push({}, "2eb03ZfJI1EpI+2UJ/UY2qt", "PopupManager", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var LosePopup = exports('LosePopup', (_dec = ccclass('LosePopup'), _dec2 = property(Node), _dec3 = property(Label), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(LosePopup, _Component);
+
+        function LosePopup() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_this, "fadeInList", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_this, "score", _descriptor2, _assertThisInitialized(_this));
+
+          return _this;
+        }
+
+        var _proto = LosePopup.prototype;
+
+        _proto.start = function start() {
+          this.node.on("SHOW_POPUP", this.showPopup, this);
+          this.node.on("HIDE_POPUP", this.hidePopup, this);
+        };
+
+        _proto.hidePopup = function hidePopup() {
+          var _this2 = this;
+
+          tween(this.node.getComponent(UIOpacity)).to(0.5, {
+            opacity: 0
+          }).call(function () {
+            _this2.node.getComponentInChildren(BlockInputEvents).enabled = false;
+          }).start();
+        };
+
+        _proto.showPopup = function showPopup(score) {
+          if (score === void 0) {
+            score = 0;
+          }
+
+          this.node.active = true;
+          this.node.getComponent(UIOpacity).opacity = 0;
+          this.node.getComponentInChildren(BlockInputEvents).enabled = true;
+          tween(this.node.getComponent(UIOpacity)).to(0.5, {
+            opacity: 255
+          }).start();
+          var delay = 0;
+          this.fadeInList.forEach(function (node) {
+            delay += 0.5;
+            var buttonComps = node.getComponentsInChildren(Button);
+            var opacityComp = node.getComponent(UIOpacity) || node.addComponent(UIOpacity);
+
+            if (opacityComp) {
+              opacityComp.opacity = 0;
+
+              if (buttonComps) {
+                buttonComps.forEach(function (button) {
+                  return button.interactable = false;
+                });
+              }
+
+              tween(opacityComp).delay(delay).to(0.3, {
+                opacity: 255
+              }).call(function () {
+                if (buttonComps) {
+                  buttonComps.forEach(function (button) {
+                    return button.interactable = true;
+                  });
+                }
+              }).start();
+            }
+          });
+          this.score.string = score.toString();
+        };
+
+        return LosePopup;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "fadeInList", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "score", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
 
 (function(r) {
   r('virtual:///prerequisite-imports/main', 'chunks:///_virtual/main'); 
@@ -28,3 +1829,4 @@ System.register("chunks:///_virtual/PopupManager.ts",["./rollupPluginModLoBabelH
     };
     });
 });
+//# sourceMappingURL=index.js.map

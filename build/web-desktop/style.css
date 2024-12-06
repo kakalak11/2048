@@ -9,9 +9,7 @@ body {
   font-family: Helvetica, Verdana, Arial, sans-serif;
 }
 
-body,
-canvas,
-div {
+body, canvas, div {
   outline: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -23,10 +21,9 @@ div {
 /* Remove spin of input type number */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
+    /* display: none; <- Crashes Chrome on hover */
   -webkit-appearance: none;
-  margin: 0;
-  /* <-- Apparently some margin are still there even though it's hidden */
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 canvas {
@@ -45,8 +42,7 @@ canvas {
   height: 80vh;
 }
 
-#Cocos3dGameContainer,
-#GameCanvas {
+#Cocos3dGameContainer, #GameCanvas {
   width: 100%;
   height: 100%;
 }
