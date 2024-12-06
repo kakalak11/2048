@@ -7,12 +7,6 @@ temp/
 local/
 # build/
 profiles/
-native
-hotupdate-data/
-extensions/generate-loc-scene/node_modules/
-extensions/shortcut-encrypt-data/node_modules/
-extensions/shortcut-encrypt-data/@types/
-extensions/generate-loc-scene/@types/
 
 #//////////////////////////
 # NPM
